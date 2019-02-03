@@ -14,4 +14,22 @@ function plip_theme_setup(){
 }
 
 add_action('init', 'plip_theme_setup'); // execute after theme setup
+
+function plip_navbar_logo($wp_customize){
+  $wp_customize->add_section('plip-navbar-section', array(
+    'title' => 'Navbar'
+  ));
+
+  $wp_customize->add_setting('plip-navbar-image');
+
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-navbar-image-control', array(
+    'label' => 'image',
+    'section' => 'plip-navbar-section',
+    'settings' => 'plip-navbar-image',
+    'width' => 674,
+    'height' => 129
+  )));
+}
+
+add_action('customize_register', 'plip_navbar_logo');
 ?>
