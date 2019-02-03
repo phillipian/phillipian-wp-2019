@@ -1,4 +1,93 @@
 html, body{
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Mercury Text G1';
+}
+
+.above-fold-articles{
+  max-width: 1200px;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: auto 390px;
+  grid-column-gap: 25px;
+  min-height: 200px;
+}
+
+.art-group{
+  min-height: 200px;
+}
+
+.art-group p{
+  font-size: 16px;
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+.art-group .author{
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+.art-group h3{
+  font-family: 'ITC Cheltenham Std';
+  font-size: 20px;
+  line-height: 1.1;
+  margin: 8px 0 8px 0;
+}
+
+.art-group#news{
+  padding-right: 25px;
+  border-right: 1px solid #000;
+}
+
+.article .img-container{
+  width: 100%;
+}
+
+h2.section-header{
+  font-family: 'ITC Cheltenham Std';
+  font-weight: 300;
+  margin: 0;
+  font-size: 32px;
+}
+
+.article.comm-2, .article.news-2{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 16px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.article.news-2{
+  grid-column-gap: 24px;
+}
+
+.article *{
+  grid-row: 1;
+}
+
+.news-2 h3{
+  font-size: 32px;
+}
+
+.news-2 .image-container{
+  grid-column: 1;
+}
+
+.news-2 .article-body{
+  grid-column: 2;
+}
+
+.img-container img{
+  width: 100%;
+}
+
+#news{
+  grid-column: 1;
+}
+
+#commentary{
+  grid-column: 2;
 }
