@@ -3,6 +3,17 @@
   <head>
     <meta charset='utf-8'>
     <title>Phillipian Prototype</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <script type="text/javascript">
+    (function() {
+        var trial = document.createElement('script');
+        trial.type = 'text/javascript';
+        trial.async = true;
+        trial.src = 'https://easy.myfonts.net/v2/js?sid=341832(font-family=Avenir+Pro+35+Light)&sid=341836(font-family=Avenir+Pro+55+Roman)&sid=341838(font-family=Avenir+Pro+65+Medium)&sid=341840(font-family=Avenir+Pro+85+Heavy)&key=YOOzoYVN77';
+        var head = document.getElementsByTagName("head")[0];
+        head.appendChild(trial);
+    })();
+</script>
     <?php wp_head(); ?>
   </head>
   <body>
