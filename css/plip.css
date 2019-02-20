@@ -4,17 +4,43 @@ html, body{
   font-size: 16px;
 }
 
+#mfPreviewBar{
+  display: none;
+}
+
 .articles-container{
   display: grid;
   width: 1200px;
-  grid-template-columns: repeat(5,1fr);
+  grid-template-columns: repeat(3,1fr) 1px repeat(2, 1fr);
+  grid-column-gap: 32px;
   margin: 0 auto;
+  grid-template-rows: auto;
+}
+
+.home-divider{
+  width: 1px;
+  height: 100%;
+  background-color: rgba(0,0,0,0.2);
+  grid-column: 4;
+  grid-row: 1;
 }
 
 .article-item{
-  display: contents;
   display: grid;
+  grid-column-gap: 24px;
+}
+
+.sect-commentary .article-item{
+  grid-template-columns: repeat(2,1fr);
+  grid-column: 1/3;
+}
+
+.sect-news .article-item{
   grid-template-columns: repeat(3,1fr);
+}
+
+.article-item *{
+  margin: 0;
 }
 
 .sect-news{
@@ -22,9 +48,10 @@ html, body{
 }
 
 .sect-commentary{
-  grid-column: 4/6;
+  grid-column: 5/7;
   display: grid;
   grid-template-columns: repeat(2,1fr);
+  grid-auto-rows: min-content;
 }
 
 .article-image img{
@@ -37,21 +64,71 @@ html, body{
 
 .sect-header h1{
   display: inline-block;
-  border-bottom: 4px solid #000;
+  border-bottom: 3px solid #000;
   padding-bottom: 2px;
   font-family: 'Avenir Pro 85 Heavy';
   font-size: 24px;
 }
 
-.article-item h2{
-  grid-column: 1/4;
-  font-size: 36px;
-  font-family: 'ITC Cheltenham Std';
-  line-height: 1.1;
+.article-item{
+  padding: 24px 0;
+  border-bottom: 1px solid #000;
 }
 
-.article-image{
-  grid-column: 2 / 4;
+.article-item h2{
+  font-family: 'ITC Cheltenham Std';
+  line-height: 1.1;
+  margin: 0 0 8px 0;
+}
+
+.article-item .article-author{
+  font-family: 'Avenir Pro 85 Heavy';
+  padding-bottom: 8px;
+}
+
+.article-news-feature h2{
+  grid-column: 1/4;
+  font-size: 42px;
+}
+
+.article-news-feature .article-image{
+  grid-column: 1/3;
+  grid-row: 3;
+}
+
+.article-news-feature .article-text{
+  grid-column: 3/4;
+  grid-row: 3;
+}
+
+.article-news-alt1 h2{
+  grid-column: 1/2;
+  font-size: 26px;
+}
+
+.article-news-alt1 .article-text{
+  grid-column: 1/2;
+  grid-row: 2;
+}
+
+.article-news-alt1 .article-image{
+  grid-column: 2/4;
+  grid-row: 1/3;
+}
+
+.article-news-alt2 h2{
+  grid-column: 1/3;
+  font-size: 22px;
+}
+
+.article-news-alt2 .article-text{
+  grid-column: 1/3;
+  grid-row: 2;
+}
+
+.article-news-alt2 .article-image{
+  grid-column: 3/4;
+  grid-row: 1/3;
 }
 
 .navbar{
@@ -66,7 +143,7 @@ html, body{
 
 .navbar-content{
   height: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-flow: row nowrap;
