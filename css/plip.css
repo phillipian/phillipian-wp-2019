@@ -8,19 +8,80 @@ html, body{
   display: none;
 }
 
+.articles-container, .single-container{
+  padding-top: 72px;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.single-container{
+  font-size: 20px;
+  display: grid;
+  grid-template-columns: 1fr 700px 1fr;
+  grid-column-gap: 32px;
+}
+
+.single-container figcaption{
+  font-family: 'Avenir Pro 55 Roman';
+}
+
+.article-about{
+  grid-row: 2;
+  grid-column: 1/2;
+  font-family: 'Avenir Pro 85 Heavy';
+}
+
+.article-date{
+  font-family: 'Avenir Pro 55 Roman';
+  color: rgba(0,0,0,0.6);
+}
+
+.advertisement{
+  width: 160px;
+  height: 600px;
+  background-color: #bbb;
+  grid-column: 1/2;
+  grid-row: 3/7;
+}
+
+.single-container .wp-block-image{
+  grid-column: 2/4;
+  margin: 0;
+}
+
+.single-container p{
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 16px 0;
+  grid-column: 2/3;
+}
+
+.single-container h1{
+  grid-row: 1;
+  grid-column: 2/3;
+  font-family: 'ITC Cheltenham Std';
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+.article-about-top{
+  width: 64px;
+  height: 8px;
+  background-color: #000;
+  margin-bottom: 16px;
+}
+
 .articles-container{
   display: grid;
-  width: 1200px;
   grid-template-columns: repeat(3,1fr) 1px repeat(2, 1fr);
   grid-column-gap: 32px;
-  margin: 0 auto;
   grid-template-rows: auto;
 }
 
 .home-divider{
   width: 1px;
   height: 100%;
-  background-color: rgba(0,0,0,0.2);
+  background-color: #000;
   grid-column: 4;
   grid-row: 1;
 }
@@ -72,13 +133,22 @@ html, body{
 
 .article-item{
   padding: 24px 0;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
 .article-item h2{
   font-family: 'ITC Cheltenham Std';
   line-height: 1.1;
   margin: 0 0 8px 0;
+}
+
+.article-item h2 a{
+  color: #000;
+  text-decoration: none;
+}
+
+.article-item h2 a:hover{
+  color: #555;
 }
 
 .article-item .article-author{
@@ -88,7 +158,8 @@ html, body{
 
 .article-news-feature h2{
   grid-column: 1/4;
-  font-size: 42px;
+  font-size: 36px;
+  margin-bottom: 14px;
 }
 
 .article-news-feature .article-image{
