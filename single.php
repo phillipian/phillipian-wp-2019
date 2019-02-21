@@ -8,17 +8,20 @@ if (have_posts()): while (have_posts()): the_post(); ?>
     </h1>
     <div class='article-about'>
         <div class='article-about-top'></div>
-        <span class='article-author'><?php the_author(); ?><br/></span>
-        <span class='article-date'><?php the_date(); ?></span>    
+        <span class='article-author'>
+            <?php the_author(); ?><br /></span>
+        <span class='article-date'>
+            <?php the_date(); ?></span>
         </span>
     </div>
-    <div class='advertisement'><span>Skyscraper ad</span></div>
+    <!--<div class='advertisement ad-skyscraper'><span>Skyscraper ad</span></div>
+    <div class='advertisement ad-banner'><span>Banner ad</span></div>-->
     <?php the_content(); ?>
 </div>
 
 
 
-    <?php endwhile;
+<?php endwhile;
 endif; ?>
 
-    <?php get_footer(); ?> 
+<?php get_footer(); ?> 
