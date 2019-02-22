@@ -9,4 +9,4 @@ CXLII redesign of Phillipian.net:
   - Digital "Look of the Week" lookbook
   - Digital masthead
   
-By Samson Zhang '20
+By Samson Zhang '20 and Anthony Kim '20
