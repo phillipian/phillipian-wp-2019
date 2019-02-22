@@ -3,6 +3,7 @@
 if (have_posts()): while (have_posts()): the_post(); ?>
 
 <div class='single-container'>
+    <div class='article-category'><span><?php the_category(); ?></span></div>
     <h1>
         <?php the_title(); ?>
     </h1>

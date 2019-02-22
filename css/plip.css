@@ -66,7 +66,7 @@ html, body{
   }
 
   .article-about{
-    grid-row: 2;
+    grid-row: 3;
     grid-column: 1/2;
   }
 
@@ -107,14 +107,31 @@ html, body{
     margin: 0 0 32px 0;
   }
 
+  .single-container h1{
+    font-size: 48px;
+  }
+
   .single-container p{
     margin: 0 0 32px 0;
     grid-column: 2/3;
   }
 
-  .single-container h1{
+  .post-categories{
+    border-bottom: 3px solid #000;
+  }
+
+  .article-category{
     grid-row: 1;
     grid-column: 2/3;
+  }
+
+  .single-container h1{
+    grid-row: 2;
+    grid-column: 2/3;
+  }
+
+  img.mobile-logo{
+    display: none;
   }
 }
 
@@ -127,9 +144,51 @@ html, body{
     display: none;
   }
 
-  .sect-commentary .article-item{
-    grid-template-columns: 1fr 64px;
+  .article-news-alt2{
+    grid-template-columns: 1fr 96px;
   }
+
+  img.desktop-logo{
+    display: none;
+  }
+
+  .article-text p{
+    margin-bottom: 16px;
+  }
+
+  .article-item{
+    grid-row-gap: 16px;
+  }
+
+  .article-news-feature h2{
+    font-size: 32px;
+  }
+
+  .article-news-feature .article-image, .article-news-alt1 .article-image{
+    grid-row: 2;
+  }
+
+  .article-news-alt2 h2{
+    grid-row: 1;
+    grid-column: 1/3;
+  }
+
+  .single-container h1{
+    font-size: 36px;
+  }
+
+  .article-about{
+    font-size: 16px;
+    padding-bottom: 32px;
+  }
+
+  .article-category{
+    padding-bottom: 64px;
+  }
+}
+
+.article-text p{
+  color: #888;
 }
 
 .articles-container, .single-container{
@@ -144,6 +203,7 @@ html, body{
   }
 
 .single-container{
+  padding-top: 128px;
   font-size: 20px;
   display: grid;
 }
@@ -155,7 +215,6 @@ html, body{
 
 .single-container h1{
     font-family: 'ITC Cheltenham Std';
-    font-size: 48px;
     line-height: 1.1;
 }
 
@@ -170,6 +229,14 @@ html, body{
 .article-date{
   font-family: 'Avenir Pro 55 Roman';
   color: rgba(0,0,0,0.6);
+}
+
+.single-container .wp-block-image{
+  box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.24);
+}
+
+.single-container .wp-block-image img{
+  width: 100%;
 }
 
 .advertisement{
@@ -199,7 +266,7 @@ html, body{
 
 .article-about-top{
   width: 64px;
-  height: 8px;
+  height: 4px;
   background-color: #000;
   margin-bottom: 16px;
 }
@@ -221,11 +288,31 @@ html, body{
 }
 
 .sect-header h1{
-  display: inline-block;
   border-bottom: 3px solid #000;
+}
+
+.sect-header h1, .post-categories{
+  display: inline-block;
   padding-bottom: 2px;
   font-family: 'Avenir Pro 85 Heavy';
   font-size: 24px;
+  font-weight: 700;
+}
+
+.sect-commentary .article-item{
+  grid-template-columns: 1fr 96px;
+}
+
+.post-categories{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-categories a{
+  color: #333;
+  font-family: 'Avenir Pro 85 Heavy';
+  text-decoration: none;
 }
 
 .article-item{
@@ -236,7 +323,6 @@ html, body{
 .article-item h2{
   font-family: 'ITC Cheltenham Std';
   line-height: 1.1;
-  margin: 0 0 8px 0;
 }
 
 .article-item h2 a{
@@ -263,12 +349,19 @@ html, body{
 
 .navbar{
   background-color: #000;
-  font-family: 'Roboto';
-  position: fixed;
-  width: 100%;
   height: 64px;
   top: 0;
+  z-index: 5;
+  font-family: 'Avenir Pro 55 Roman';
+}
+
+.sections-dropdown, .navbar{
+  color: #fff;
+  position: fixed;
+  width: 100%;
   left: 0;
+  box-sizing: border-box;
+  padding: 0 24px;
 }
 
 .navbar-content{
@@ -279,6 +372,11 @@ html, body{
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+}
+
+.navbar-item, .navbar-menu{
+  height: 100%;
 }
 
 .navbar-logo{
@@ -288,6 +386,42 @@ html, body{
 .navbar-logo img{
   height: 100%;
   filter: invert(100%);
+}
+
+.sections-dropdown{
+  background-color: #222;
+  transition: all 0.4s ease;
+  transform: translateY(-100%);
+  z-index: 2;
+  top: 64px;
+  padding-bottom: 8px;
+}
+
+.sections-dropdown.activated{
+  transform: translateY(0);
+}
+
+.sections-dropdown-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 24px;
+}
+
+.sections-dropdown-inner ul{
+  padding: 0;
+  list-style: none;
+}
+
+.sections-dropdown-inner ul li{
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+.sections-dropdown-inner ul li a{
+  color: #fff;
+  text-decoration: none;
 }
 
 #wpadminbar{

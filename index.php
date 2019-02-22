@@ -1,24 +1,5 @@
 <?php get_header(); ?>
 
-
-<?php 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-?>
-
-
 <div class='articles-container'>
     <div class='home-divider'></div>
 
@@ -39,9 +20,7 @@
             <div class=' article-text'>
                 <div class='article-author'><span>By
                         <?php the_author(); ?></span></div>
-                <p class='article-blurb'>
-                    <?php the_excerpt(); ?>
-                </p>
+                <?php the_excerpt(); ?>
             </div>
             <div class='article-image'><img src='<?php echo catch_that_image() ?>'></div>
         </div>
@@ -84,8 +63,7 @@ endif; ?>
                     </a></h2>
                 <div class='article-author'><span>By
                         <?php the_author(); ?></span></div>
-                <p class='article-blurb'>
-                    <?php the_excerpt(); ?>
+                <?php the_excerpt(); ?>
                 </p>
             </div>
             <div class='article-image'><img src='<?php echo catch_that_image() ?>'></div>
