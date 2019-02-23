@@ -2,9 +2,7 @@
     window.$ = jQuery.noConflict();
 })(jQuery);
 
-$(".navbar-sections-hover").hover(function(){
-    console.log("activated");
-    $(".sections-dropdown").addClass("activated");
-}, function(){
-    $(".sections-dropdown").removeClass("activated");
+$(".navbar-sections-button").click(function(){
+    $(".sections-dropdown").toggleClass("activated");
+    $(".navbar-sections-button").toggleClass("activated");
 });

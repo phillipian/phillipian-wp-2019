@@ -1,0 +1,135 @@
+.navbar{
+  background-color: #000;
+  height: 64px;
+  top: 0;
+  z-index: 5;
+  font-family: 'Avenir Pro 55 Roman';
+}
+
+.sections-dropdown, .navbar{
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  box-sizing: border-box;
+  padding: 0 24px;
+}
+
+.navbar-content{
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  position: relative;
+}
+
+.navbar-sections-button{
+  color: rgba(255,255,255,0.8);
+  height: 36px;
+  background-color: #333;
+  padding: 0 12px;
+  cursor: pointer;
+  line-height: 36px;
+  border-radius: 4px;
+}
+
+.navbar-sections-button .fas{
+  font-size: 12px;
+  padding-right: 4px;
+}
+
+.navbar-sections-button:hover, .navbar-sections-button.activated{
+  color: rgba(255,255,255,1.0);
+}
+
+.navbar-sections-button:hover{
+  background-color: #2d2d2d;
+}
+
+.navbar-logo{
+  height: 36px;
+}
+
+.navbar-logo img{
+  height: 100%;
+  filter: invert(100%);
+}
+
+.navbar-rightnav{
+  margin-left: auto;
+  display: inline-flex;
+  flex-flow: row nowrap;
+}
+
+.navbar-item{
+  padding-left: 32px;
+}
+
+.navbar-item a{
+  color: #fff;
+}
+
+.sections-dropdown{
+  background-color: #222;
+  transition: all 0.4s ease;
+  transform: translateY(-100%);
+  z-index: 2;
+  top: 64px;
+  padding-bottom: 8px;
+}
+
+.sections-dropdown.activated{
+  transform: translateY(0);
+}
+
+.sections-dropdown-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 24px;
+}
+
+.sections-dropdown-inner ul{
+  padding: 0;
+  list-style: none;
+}
+
+.sections-dropdown-inner ul li{
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+.sections-dropdown-inner ul li a{
+  color: #fff;
+  text-decoration: none;
+}
+
+@media(min-width: 1200px){
+  img.mobile-logo{
+    display: none;
+  }
+
+  .navbar-logo{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    order: 3;
+  }
+}
+
+@media(max-width: 600px){
+  img.desktop-logo{
+    display: none;
+  }
+
+  .navbar-rightnav, .navbar-item{
+    display: none!important;
+  }
+
+  .navbar-sections-button{
+    margin-left: auto;
+  }
+}

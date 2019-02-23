@@ -1,5 +1,23 @@
 <?php get_header(); ?>
 
+<div class='home-top'>
+    <div class='home-col1'>
+        <div class='home-logo'><img src='<?php echo get_template_directory_uri() . '/images/nameplate.png'; ?>'></div>
+        <div class='home-tagline'><span>Vertias Super Omnia<br/><?php echo date('l, F d, Y')?></span></div>
+    </div>
+    <p>First printed in 1857, <i>The Phillipian</i> is Phillips Academy’s weekly student newspaper. Entirely uncensored and student run, the paper is distributed every Friday from September to June.</p>
+    <div class='home-cat'>
+        <div class='home-cat-item'><span><a href=''>News</a></span></div>
+        <div class='home-cat-item'><span><a href=''>Commentary</a></span></div>
+        <div class='home-cat-item'><span><a href=''>Arts & Leisure</a></span></div>
+        <div class='home-cat-item'><span><a href=''>Sports</a></span></div>
+        <div class='home-cat-item'><span><a href=''>News</a></span></div>
+        <div class='home-cat-item'><span><a href=''>Commentary</a></span></div>
+        <div class='home-cat-item'><span><a href=''>Arts & Leisure</a></span></div>
+        <div class='home-cat-item'><span><a href=''>Sports</a></span></div>
+    </div>
+</div>
+
 <div class='articles-container'>
     <div class='home-divider'></div>
 
