@@ -11,6 +11,9 @@ add_action('wp_enqueue_scripts', 'plip_script_enqueue');
 function plip_theme_setup()
 {
   add_theme_support('menus');
+  register_nav_menus(array(
+    'home-cats' => __('Home Category Bar')
+  ));
   register_nav_menu('primary', 'Primary Header Navigation');
   register_nav_menu('secondary', 'Footer Navigation');
 }

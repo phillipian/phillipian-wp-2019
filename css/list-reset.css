@@ -1,0 +1,6 @@
+footer ul, .home-cat ul, .sections-dropdown-inner ul, .post-categories{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}

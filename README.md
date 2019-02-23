@@ -1,13 +1,21 @@
 # Phillipian.net Wordpress Theme 2019
 
-CXLII redesign of Phillipian.net:
-- General UX, branding, content presentation improvements
-  - Align fonts and styles with print newspaper
-  - Homepage: greater information density, content from multiple sections, reflecting print newspaper
-- Enable development of new digital editorial experiences
-  - Digital-first sports coverage
-  - Digital "Look of the Week" lookbook
+Complete redesign of Phillipian.net by CXLII. Built on Wordpress.
+
+Objectives:
+- General design
+  - Fully mobile responsive
+  - Readable, hierarchical typography
+  - Better homepage, browsing experience
+    - Higher information density
+    - Accessible navigation
+- Branding
+  - Cohesion with print newspaper
+- New digital editorial experiences
+  - Author pages
   - Digital masthead
+  - Digital-first sports coverage
+  - "Look of the Week" lookbook
 
 # To Do
 
