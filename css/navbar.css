@@ -191,7 +191,11 @@
     display: none;
   }
 
-  .navbar-rightnav, .navbar-item{
+  .navbar-rightnav{
+    margin-left: 0;
+  }
+
+  .navbar-item:not(.navbar-search){
     display: none!important;
   }
 

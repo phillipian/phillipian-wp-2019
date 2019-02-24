@@ -215,7 +215,7 @@
 }
 
 @media (max-width: 600px){
-  .home-top, .category-container{
+  .home-top, .category-container, #searchform{
     padding: 0 24px;
   }
 
