@@ -56,6 +56,10 @@
   border-bottom: 3px solid #000;
 }
 
+.sect-header a{
+  color: #000;
+}
+
 .article-item{
     display: grid;
     grid-column-gap: 16px;

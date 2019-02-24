@@ -72,7 +72,7 @@ endif; ?>
     <div class='sect sect-commentary'>
 
         <div class='sect-header'>
-            <h1>Commentary</h1>
+            <h1><a href='category/commentary'>Commentary</a></h1>
         </div>
 
         <?php query_posts('category_name=Commentary'); ?>

@@ -20,7 +20,7 @@ a{
   color: #888;
 }
 
-.articles-container, .single-container, .home-top, .footer-inner, .category-container{
+.articles-container, .single-container, .home-top, .footer-inner, #searchform, .category-container{
   margin: 0 auto;
   max-width: 1200px;
   display: grid;
@@ -146,6 +146,7 @@ footer li{
 
 .category-container .article-item .article-text{
   grid-column: 1;
+  padding-top: 16px;
 }
 
 .category-container .article-item .article-image{
@@ -190,6 +191,10 @@ footer li{
 
   .category-container .article-item .article-image img{
     max-height: 100%;
+  }
+
+  .category-container > p{
+    grid-column: 2/3;
   }
 }
 
