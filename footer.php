@@ -5,6 +5,10 @@
 </footer>
 
     <?php wp_footer(); ?>
-
+  <style>
+    html{
+      margin-top: 0!important;
+    }
+    </style>
   </body>
 </html>

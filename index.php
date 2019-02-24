@@ -3,22 +3,19 @@
 <div class='home-top'>
     <div class='home-col1'>
         <div class='home-logo'><img src='<?php echo get_template_directory_uri() . '/images/nameplate.png'; ?>'></div>
-        <div class='home-tagline'><span>Vertias Super Omnia<br />
-                <?php echo date('l, F d, Y') ?></span></div>
+        <div class='home-text'>
+            <div class='home-tagline'><span>Vertias Super Omnia<br />
+                    <?php echo date('l, F d, Y') ?></span></div>
+            <div class='home-social'>
+                <div class='home-social-item'><a href=''><i class="fab fa-youtube"></i></a></div>
+                <div class='home-social-item'><a href=''><i class="fab fa-twitter"></i></a></div>
+                <div class='home-social-item'><a href=''><i class="fab fa-instagram"></i></a></div>
+            </div>
+        </div>
     </div>
     <p>First printed in 1857, <i>The Phillipian</i> is Phillips Academy’s weekly student newspaper. Entirely uncensored and student run, the paper is distributed every Friday from September to June.</p>
     <div class='home-cat'>
-        <?php  wp_nav_menu(array('theme_location' => 'home-cats')) ?>
-        <!--
-        <div class='home-cat-item'><span><a href=''>News</a></span></div>
-        <div class='home-cat-item'><span><a href=''>Commentary</a></span></div>
-        <div class='home-cat-item'><span><a href=''>Arts & Leisure</a></span></div>
-        <div class='home-cat-item'><span><a href=''>Sports</a></span></div>
-        <div class='home-cat-item'><span><a href=''>News</a></span></div>
-        <div class='home-cat-item'><span><a href=''>Commentary</a></span></div>
-        <div class='home-cat-item'><span><a href=''>Arts & Leisure</a></span></div>
-        <div class='home-cat-item'><span><a href=''>Sports</a></span></div>
-        -->
+        <?php wp_nav_menu(array('theme_location' => 'home-cats')) ?>
     </div>
 </div>
 

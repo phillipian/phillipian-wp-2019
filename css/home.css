@@ -7,6 +7,12 @@
     width: 100%;
 }
 
+.home-text{
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .home-tagline{
     color: rgba(0,0,0,0.5);
     font-size: 16px;
@@ -19,6 +25,24 @@
     line-height: 1.5;
     margin: 0;
     text-align: left;
+}
+
+.home-social{
+  display: inline-flex;
+  align-items: center;
+}
+
+.home-social a{
+  color: rgba(0,0,0,0.5);
+  font-size: 20px;
+}
+
+.home-social a:hover{
+  color: rgba(0,0,0,1.0);
+}
+
+.home-social-item{
+  margin-left: 16px;
 }
 
 .home-cat{

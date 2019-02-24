@@ -5,13 +5,12 @@
     <meta charset='utf-8'>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, target-densityDpi=device-dpi' name='viewport' />
     <title>Phillipian Prototype</title>
+    <script type=" text/javascript"> (function() { var trial=document.createElement('script'); trial.type='text/javascript' ; trial.async=true; trial.src='https://easy.myfonts.net/v2/js?sid=341832(font-family=Avenir+Pro+35+Light)&sid=341836(font-family=Avenir+Pro+55+Roman)&sid=341838(font-family=Avenir+Pro+65+Medium)&sid=341840(font-family=Avenir+Pro+85+Heavy)&key=y08LtgnAaN' ; var head=document.getElementsByTagName("head")[0]; head.appendChild(trial); })(); </script> <link href=" https: //stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/navbar.css' ?>" type='text/css' ">
     <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/home.css' ?>" type='text/css' ">
     <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/list-reset.css' ?>" type='text/css' ">
 
-    <script type=" text/javascript"> (function() { var trial=document.createElement('script'); trial.type='text/javascript' ; trial.async=true; trial.src='https://easy.myfonts.net/v2/js?sid=341832(font-family=Avenir+Pro+35+Light)&sid=341836(font-family=Avenir+Pro+55+Roman)&sid=341838(font-family=Avenir+Pro+65+Medium)&sid=341840(font-family=Avenir+Pro+85+Heavy)&key=y08LtgnAaN' ; var head=document.getElementsByTagName("head")[0]; head.appendChild(trial); })(); </script> <link href=" https: //stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    < ? php wp_enqueue_script ("jquery"); ?>
         <?php wp_head(); ?>
 </head>
 
