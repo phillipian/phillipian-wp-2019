@@ -35,13 +35,16 @@ Objectives:
   - [ ] Lookbook?
 
 ### Functionality
-- [ ] Make navbar
-  - [ ] Sections button on left
-  - [ ] Search button on right
-  - [ ] Responsive
+- [X] Make navbar
+  - [X] Sections button on left
+  - [X] Search button on right
+  - [X] Responsive
+  - [ ] Build dropdown menu
 - [ ] Category.php
-  - [ ] Figre out PHP
-  - [ ] Style
+  - [X] Figure out PHP
+  - [X] Style
+  - [ ] Paging?
+- [X] Search bar & list
 
 ## Other Goals
 
