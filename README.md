@@ -53,6 +53,6 @@ Objectives:
 - [ ] Author pages
 
 ## Technical
-- [ ] Fontface CSS
+- [X] Fontface CSS
   
 By Samson Zhang '20 and Anthony Kim '21
