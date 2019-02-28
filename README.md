@@ -49,6 +49,7 @@ Objectives:
 ### Technical / Debugging
 - [X] Fontface CSS
 - [ ] Fix multiple categories showing up on article page
+- [ ] Make Dreamhost online test
 
 ## Other Goals
 
