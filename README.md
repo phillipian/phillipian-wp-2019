@@ -39,8 +39,8 @@ Objectives:
   - [X] Sections button on left
   - [X] Search button on right
   - [X] Responsive
-  - [ ] Build dropdown menu
-- [ ] Category.php
+  - [X] Build dropdown menu
+- [X] Category.php
   - [X] Figure out PHP
   - [X] Style
   - [ ] Paging?
@@ -51,5 +51,8 @@ Objectives:
 - [ ] Digital Masthead
 - [ ] Sports dedicated site
 - [ ] Author pages
+
+## Technical
+- [ ] Fontface CSS
   
 By Samson Zhang '20 and Anthony Kim '21
