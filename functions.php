@@ -54,7 +54,7 @@ function catch_that_image()
   $first_img = $matches[1][0];
 
   if (empty($first_img)) { //Defines a default image
-    $first_img = "/images/default.jpg";
+    $first_img = false;
   }
   return $first_img;
 }

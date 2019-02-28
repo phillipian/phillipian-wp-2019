@@ -139,6 +139,10 @@
     grid-row: 3;
   }
 
+  .article-noimage .article-text{
+    grid-column: 2/4;
+  }
+
   .article-news-alt1 h2{
     grid-column: 1/2;
     font-size: 26px;
@@ -215,7 +219,7 @@
     font-size: 48px;
   }
 
-  .single-container p{
+  .single-container p, .single-container .wp-caption{
     margin: 0 0 32px 0;
     grid-column: 2/3;
   }

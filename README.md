@@ -46,13 +46,14 @@ Objectives:
   - [ ] Paging?
 - [X] Search bar & list
 
+### Technical / Debugging
+- [X] Fontface CSS
+- [ ] Fix multiple categories showing up on article page
+
 ## Other Goals
 
 - [ ] Digital Masthead
 - [ ] Sports dedicated site
 - [ ] Author pages
-
-## Technical
-- [X] Fontface CSS
   
 By Samson Zhang '20 and Anthony Kim '21
