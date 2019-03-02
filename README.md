@@ -2,7 +2,7 @@
 
 Complete redesign of Phillipian.net by CXLII. Built on Wordpress.
 
-Objectives:
+## Objectives
 - General design
   - Fully mobile responsive
   - Readable, hierarchical typography
@@ -16,6 +16,9 @@ Objectives:
   - Digital masthead
   - Digital-first sports coverage
   - "Look of the Week" lookbook
+
+## Technical
+The redesigned website will eventually hosted at [phillipian.net](http://phillipian.net/). While in development, [redesign.phillipian.net](https://redesign.phillipian.net/) will serve as a live development/staging environment. Both sites are hosted on Dreamhost and run Wordpress with the theme contained in this repository installed. Changes are deployed to the staging website manually and are not necessarily updated with this repository.
 
 # To Do
 
@@ -49,7 +52,7 @@ Objectives:
 ### Technical / Debugging
 - [X] Fontface CSS
 - [ ] Fix multiple categories showing up on article page
-- [ ] Make Dreamhost online test
+- [X] Make Dreamhost online test
 
 ## Other Goals
 
