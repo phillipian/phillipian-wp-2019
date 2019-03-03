@@ -3,7 +3,16 @@
 if (have_posts()): while (have_posts()): the_post(); ?>
 
 <div class='single-container'>
-    <div class='article-category'><span><?php the_category(); ?></span></div>
+    <div class='article-category'>
+        <div class='post-categories'>
+        <? foreach (get_the_category() as $c) {
+            if ($c->name != 'Featured Posts') {?>
+            <a href='<?php echo get_category_link($c->cat_ID)?>'>
+                <?php echo $c->name; ?></a><?php
+            }
+        }
+        ?>
+        </div></div>
     <h1>
         <?php the_title(); ?>
     </h1>
@@ -25,4 +34,4 @@ if (have_posts()): while (have_posts()): the_post(); ?>
 <?php endwhile;
 endif; ?>
 
-<?php get_footer(); ?> 
+<?php get_footer(); ?>

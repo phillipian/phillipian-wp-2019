@@ -25,10 +25,10 @@
     <div class='sect sect-news'>
 
         <div class='sect-header'>
-            <h1>News</h1>
+            <h1><a href='<?php echo get_category_link(get_cat_ID('News'))?>'>News</a></h1>
         </div>
 
-        <?php query_posts(array( 'category_name' => 'news+featured' )); ?>
+        <?php query_posts(array( 'category_name' => 'news+featured', 'posts_per_page' => 1 )); ?>
         <?php
         if (have_posts()) : while (have_posts()) : the_post(); ?>
         <div class='article-item article-news-feature'>
@@ -36,8 +36,8 @@
                     <?php the_title(); ?>
                 </a></h2>
             <div class=' article-text'>
-                <div class='article-author'><span>By
-                        <?php the_author(); ?></span></div>
+                <div class='article-author'><span>By <?php the_author(); ?></span></div>
+                <div class='article-date'><span><?php the_time( get_option( 'date_format' ) );?></span></div>
                 <?php the_excerpt(); ?>
             </div>
             <?php if (catch_that_image() == false ): else:?>
@@ -49,7 +49,7 @@ endif; ?>
         <?php wp_reset_query(); ?>
 
 
-        <?php query_posts('category_name=News'); ?>
+        <?php $exclude = get_cat_ID('featured'); $include = get_cat_ID('news'); query_posts(array( 'cat' => $include.",-".$exclude, 'posts_per_page' => 4 )); ?>
         <?php
         if (have_posts()) : while (have_posts()) : the_post(); ?>
         <div class='article-item <?php if (catch_that_image() == false): ?> article-noimage <? else: ?> article-news-alt2 <? endif ?>'>
@@ -57,8 +57,8 @@ endif; ?>
                     <?php the_title(); ?>
                 </a></h2>
             <div class=' article-text'>
-                <div class='article-author'><span>By
-                        <?php the_author(); ?></span></div>
+                <div class='article-author'><span>By <?php the_author(); ?></span></div>
+                <div class='article-date'><span><?php the_time( get_option( 'date_format' ) );?></span></div>
                 <?php the_excerpt(); ?>
             </div>
             <?php if (catch_that_image() == false ): else:?>
@@ -73,21 +73,18 @@ endif; ?>
     <div class='sect sect-commentary'>
 
         <div class='sect-header'>
-            <h1><a href='category/commentary'>Commentary</a></h1>
+            <h1><a href='<?php echo get_category_link(get_cat_ID('Commentary'))?>'>Commentary</a></h1>
         </div>
 
-        <?php query_posts('category_name=Commentary'); ?>
+        <?php query_posts(array( 'category_name' => 'commentary', 'posts_per_page' => 4 )); ?>
         <?php
         if (have_posts()): while (have_posts()): the_post(); ?>
         <div class='article-item article-commentary'>
             <div class=' article-text'>
-                <h2><a href='<?php the_permalink(); ?>'>
-                        <?php the_title(); ?>
-                    </a></h2>
-                <div class='article-author'><span>By
-                        <?php the_author(); ?></span></div>
+                <h2><a href='<?php the_permalink(); ?>'><?php the_title(); ?></a></h2>
+                <div class='article-author'><span>By <?php the_author(); ?></span></div>
+                <div class='article-date'><span><?php the_time( get_option( 'date_format' ) );?></span></div>
                 <?php the_excerpt(); ?>
-                </p>
             </div>
             <div class='article-image'><img src='<?php echo catch_that_image() ?>'></div>
         </div>

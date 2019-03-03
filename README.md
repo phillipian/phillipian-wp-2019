@@ -26,14 +26,16 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 
 ### Homepage
 - [ ] General
-  - [ ] Add date
-  - [ ] Limit # of articles that show up
+  - [X] Add date
+  - [X] Limit # of articles that show up
+  - [X] Prevent duplicate of featured article
 - [ ] News
   - [ ] 1 col / 2 col split
   - [ ] Merge w/ commentary layout
 - [X] Commentary
+- [ ] Eigth Page
 - [ ] Sports
-  - [ ] Scoreboxes
+  - [ ] Scoreboxes?
 - [ ] Arts
   - [ ] Lookbook?
 
@@ -51,8 +53,10 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 
 ### Technical / Debugging
 - [X] Fontface CSS
-- [ ] Fix multiple categories showing up on article page
+- [X] Fix multiple categories showing up on article page
 - [X] Make Dreamhost online test
+- [ ] Picture credit/size
+- [ ] Shortcodes in excerpt, single
 
 ## Other Goals
 

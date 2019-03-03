@@ -106,15 +106,17 @@
 
 .article-item .article-author{
   font-family: 'Avenir Pro 85 Heavy';
+  padding-bottom: 2px;
+}
+
+.article-item .article-date{
+  font-family: 'Avenir Pro 55 Roman';
   padding-bottom: 8px;
+  font-size: 15px;
 }
 
 .article-commentary .article-image, .article-news-alt2 .article-image{
   max-height: 200px;
-}
-
-.article-commentary .article-image img, .article-news-alt2 .article-image img{
-  max-height: 100%;
 }
 
 @media(min-width: 1200px){
@@ -141,6 +143,10 @@
 
   .article-noimage .article-text{
     grid-column: 2/4;
+  }
+
+  .article-news-alt1 h2, .article-news-alt2 h2, .article-commentary h2{
+    padding-bottom: 6px;
   }
 
   .article-news-alt1 h2{
@@ -176,6 +182,10 @@
   .article-about{
     grid-row: 3;
     grid-column: 1/2;
+  }
+
+  .article-text p{
+    padding-right: 8px;
   }
 
   .sect-commentary{
@@ -256,7 +266,7 @@
   }
 
   .article-news-alt2{
-    grid-template-columns: 1fr 96px;
+    grid-template-columns: 1fr 128px;
   }
 
   .article-text p{
