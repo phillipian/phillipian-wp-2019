@@ -53,17 +53,7 @@ endif; ?>
         <?php
         if (have_posts()) : while (have_posts()) : the_post(); ?>
         <div class='article-item <?php if (catch_that_image() == false): ?> article-noimage <? else: ?> article-news-alt2 <? endif ?>'>
-            <h2><a href=' <?php the_permalink(); ?>'>
-                    <?php the_title(); ?>
-                </a></h2>
-            <div class=' article-text'>
-                <div class='article-author'><span>By <?php the_author(); ?></span></div>
-                <div class='article-date'><span><?php the_time( get_option( 'date_format' ) );?></span></div>
-                <?php the_excerpt(); ?>
-            </div>
-            <?php if (catch_that_image() == false ): else:?>
-            <div class='article-image'><img src='<?php echo catch_that_image() ?>'></div>
-            <?php endif ?>
+            <?php include 'article-include.php' ?>
         </div>
         <?php endwhile;
 endif; ?>
@@ -79,14 +69,8 @@ endif; ?>
         <?php query_posts(array( 'category_name' => 'commentary', 'posts_per_page' => 4 )); ?>
         <?php
         if (have_posts()): while (have_posts()): the_post(); ?>
-        <div class='article-item article-commentary'>
-            <div class=' article-text'>
-                <h2><a href='<?php the_permalink(); ?>'><?php the_title(); ?></a></h2>
-                <div class='article-author'><span>By <?php the_author(); ?></span></div>
-                <div class='article-date'><span><?php the_time( get_option( 'date_format' ) );?></span></div>
-                <?php the_excerpt(); ?>
-            </div>
-            <div class='article-image'><img src='<?php echo catch_that_image() ?>'></div>
+        <div class='article-item article-commentary <?php if (catch_that_image() == false): ?> article-noimage<? endif ?>'>
+            <?php include 'article-include.php' ?>
         </div>
         <?php endwhile;
 endif; ?>
