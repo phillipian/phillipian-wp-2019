@@ -31,7 +31,7 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
   - [X] Prevent duplicate of featured article
 - [ ] News
   - [ ] 1 col / 2 col split
-  - [ ] Merge w/ commentary layout
+  - [X] Merge w/ commentary layout
 - [X] Commentary
 - [ ] Eigth Page
 - [ ] Sports
