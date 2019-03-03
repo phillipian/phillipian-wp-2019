@@ -248,10 +248,6 @@
     grid-column: 2/3;
   }
 
-  .post-categories{
-    border-bottom: 3px solid #000;
-  }
-
   .home-top{
       grid-template-columns: 2fr 1fr 2fr;
       grid-column-gap: 32px;
