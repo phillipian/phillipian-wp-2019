@@ -26,37 +26,40 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 
 ### Homepage
 - [ ] General
-  - [X] Add date
-  - [X] Limit # of articles that show up
-  - [X] Prevent duplicate of featured article
+  - [X] ~~Add date~~
+  - [X] ~~Limit # of articles that show up~~
+  - [X] ~~Prevent duplicate of featured article~~
 - [ ] News
   - [ ] 1 col / 2 col split
   - [X] Merge w/ commentary layout
-- [X] Commentary
+- [X] ~~Commentary~~
 - [ ] Eigth Page
 - [ ] Sports
   - [ ] Scoreboxes?
-- [ ] Arts
+- [X] Arts
   - [ ] Lookbook?
 
 ### Functionality
-- [X] Make navbar
-  - [X] Sections button on left
-  - [X] Search button on right
-  - [X] Responsive
-  - [X] Build dropdown menu
+- [X] ~~Make navbar~~
+  - [X] ~~Sections button on left~~
+  - [X] ~~Search button on right~~
+  - [X] ~~Responsive~~
+  - [X] ~~Build dropdown menu~~
 - [X] Category.php
-  - [X] Figure out PHP
-  - [X] Style
+  - [X] ~~Figure out PHP~~
+  - [X] ~~Style~~
   - [ ] Paging?
 - [X] Search bar & list
 
 ### Technical / Debugging
-- [X] Fontface CSS
+- [X] ~~Fontface CSS~~
 - [X] Fix multiple categories showing up on article page
-- [X] Make Dreamhost online test
+- [X] ~~Make Dreamhost online test~~
 - [ ] Picture credit/size
-- [ ] Shortcodes in excerpt, single
+  - [ ] Why is the media-credit shortcode being deleted when imported/~~exported~~? (preserved in the CSV so it's an import problem)
+  - [ ] Read and display the credit shortcode using custom code or plugin
+  - [ ] Import photos properly
+- [X] Shortcodes in excerpt, single
 
 ## Other Goals
 
