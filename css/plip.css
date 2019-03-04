@@ -108,7 +108,7 @@ a{
   font-weight: 700;
 }
 
-.sect-commentary .article-item{
+.sect-commentary .article-item, .article-commentary{
   grid-template-columns: 1fr 96px;
 }
 
@@ -173,10 +173,6 @@ footer li{
   .article-category{
     grid-row: 1;
     grid-column: 2/3;
-  }
-
-  .article-item .article-text{
-    padding-top: 16px;
   }
 
   .single-container h1{

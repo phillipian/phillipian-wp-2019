@@ -20,6 +20,7 @@
 </div>
 
 <div class='articles-container'>
+    <div class='home-top-ad'><span>1200x200 advertisement</span></div>
     <div class='home-divider'></div>
 
     <div class='sect sect-news'>
@@ -60,23 +61,44 @@ endif; ?>
         <?php wp_reset_query(); ?>
 
     </div>
-    <div class='sect sect-commentary'>
 
-        <div class='sect-header'>
-            <h1><a href='<?php echo get_category_link(get_cat_ID('Commentary'))?>'>Commentary</a></h1>
+    <div class='sect-group-right'>
+        <div class='sect sect-commentary'>
+
+            <div class='sect-header'>
+                <h1><a href='<?php echo get_category_link(get_cat_ID('Commentary'))?>'>Commentary</a></h1>
+            </div>
+
+            <?php query_posts(array( 'category_name' => 'commentary', 'posts_per_page' => 4 )); ?>
+            <?php
+            if (have_posts()): while (have_posts()): the_post(); ?>
+            <div class='article-item article-commentary <?php if (catch_that_image() == false): ?> article-noimage<? endif ?>'>
+                <?php include 'article-include.php' ?>
+            </div>
+            <?php endwhile;
+    endif; ?>
+            <?php wp_reset_query(); ?>
+
         </div>
+        <div class='sect sect-arts'>
 
-        <?php query_posts(array( 'category_name' => 'commentary', 'posts_per_page' => 4 )); ?>
-        <?php
-        if (have_posts()): while (have_posts()): the_post(); ?>
-        <div class='article-item article-commentary <?php if (catch_that_image() == false): ?> article-noimage<? endif ?>'>
-            <?php include 'article-include.php' ?>
+            <div class='sect-header'>
+                <h1><a href='<?php echo get_category_link(get_cat_ID('Arts'))?>'>Arts</a></h1>
+            </div>
+
+            <?php query_posts(array( 'category_name' => 'arts', 'posts_per_page' => 4 )); ?>
+            <?php
+            if (have_posts()): while (have_posts()): the_post(); ?>
+            <div class='article-item article-commentary <?php if (catch_that_image() == false): ?> article-noimage<? endif ?>'>
+                <?php include 'article-include.php' ?>
+            </div>
+            <?php endwhile;
+    endif; ?>
+            <?php wp_reset_query(); ?>
+
         </div>
-        <?php endwhile;
-endif; ?>
-        <?php wp_reset_query(); ?>
-
     </div>
+
 </div>
 
 

@@ -1,4 +1,7 @@
 <?php
+
+add_filter('use_block_editor_for_post', '__return_false', 10);
+
 function plip_script_enqueue()
 {
   // wp_enqueue_style(string $handle, mixed $src, array $deps, mixed $ver, string $media);
