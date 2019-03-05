@@ -20,7 +20,7 @@
 </div>
 
 <div class='articles-container'>
-    <div class='home-top-ad'><span>1200x200 advertisement</span></div>
+    <div class='home-top-ad ad'><span>1200x200 advertisement</span></div>
     <div class='home-divider'></div>
 
     <div class='sect sect-news'>
@@ -90,6 +90,9 @@ endif; ?>
             <?php wp_reset_query(); ?>
 
         </div>
+
+        <div class='sidebar-ad ad'><span>300x250 advertisement</span></div>
+
         <div class='sect sect-arts'>
 
             <div class='sect-header'>

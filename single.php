@@ -19,26 +19,34 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
     <h1>
         <?php the_title(); ?>
     </h1>
-    <div class='article-about'>
-        <div class='article-about-top'></div>
-        <span class='article-author'>
-            <?php 
-            $def_author = get_the_author();
-            $cust_author = get_post_meta(get_the_ID(), 'cpa_author', true);
-            if ($def_author == 'admin') {
-                echo $cust_author;
-            } else {
-                echo $def_author;
-            }
-            ?>
-            <br /></span>
-        <span class='article-date'>
-            <?php the_date(); ?></span>
-        </span>
+    <div class='single-left'>
+        <div class='article-about'>
+            <div class='article-about-top'></div>
+            <span class='article-author'>
+                <?php 
+                $def_author = get_the_author();
+                $cust_author = get_post_meta(get_the_ID(), 'cpa_author', true);
+                if ($def_author == 'admin') {
+                    echo $cust_author;
+                } else {
+                    echo $def_author;
+                }
+                ?>
+                <br /></span>
+            <span class='article-date'>
+                <?php the_date(); ?></span>
+            </span>
+        </div>
+        <div class='ad single-ad'><span>300x250 advertisement</span></div>
+        <?php
+        if (class_exists('Jetpack_RelatedPosts')) {
+            echo do_shortcode('[jetpack-related-posts]');
+        }
+        ?>
     </div>
-    <!--<div class='advertisement ad-skyscraper'><span>Skyscraper ad</span></div>
-    <div class='advertisement ad-banner'><span>Banner ad</span></div>-->
-    <?php the_content(); ?>
+    <div class='single-right'>
+        <?php the_content(); ?>
+    </div>
 </div>
 
 
