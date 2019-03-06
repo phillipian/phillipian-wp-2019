@@ -50,6 +50,7 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
   - [X] ~~Style~~
   - [ ] Paging?
 - [X] Search bar & list
+- [X] Related Posts
 
 ### Technical / Debugging
 - [X] ~~Fontface CSS~~

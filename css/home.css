@@ -139,8 +139,12 @@
 }
 
 .article-commentary .article-image img{
-    max-height: 100%;
-  }
+  max-height: 100%;
+}
+
+.sect-group-right{
+  display: grid;
+}
 
 @media(min-width: 1200px){
   .articles-container{
@@ -276,6 +280,14 @@
 
   .sect{
     padding-bottom: 32px;
+  }
+
+  .sect-news, .sect-group-right{
+    grid-column: 1;
+  }
+
+  .sidebar-ad{
+    grid-row: 1;
   }
 
   .article-news-alt1 p, .article-news-alt2 p, .category-container .article-commentary p{

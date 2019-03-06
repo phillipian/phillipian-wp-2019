@@ -38,14 +38,12 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
             </span>
         </div>
         <div class='ad single-ad'><span>300x250 advertisement</span></div>
-        <?php
-        if (class_exists('Jetpack_RelatedPosts')) {
-            echo do_shortcode('[jetpack-related-posts]');
-        }
-        ?>
+        <?php include 'related-include.php' ?>
+        <div class='ad single-ad'><span>300x250 advertisement</span></div>
     </div>
     <div class='single-right'>
         <?php the_content(); ?>
+        <?php include 'related-include.php' ?>
     </div>
 </div>
 
