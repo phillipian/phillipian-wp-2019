@@ -274,7 +274,7 @@
 }
 
 @media (max-width: 600px){
-  .home-top, .category-container, #searchform, .sections-dropdown-inner{
+  .home-top, .category-container, #searchform, .sections-dropdown-inner, .about-inner{
     padding: 0 24px;
   }
 

@@ -51,6 +51,7 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
   - [ ] Paging?
 - [X] Search bar & list
 - [X] Related Posts
+- [X] About Page, Basic Masthead
 
 ### Technical / Debugging
 - [X] ~~Fontface CSS~~

@@ -236,8 +236,14 @@ footer li{
 }
 
 @media(min-width: 1200px){
-  .single-container, .category-container{
+  .single-container{
     grid-template-columns: 300px 728px 1fr;
+    grid-column-gap: 32px;
+  }
+
+  .category-container, .about-inner{
+    display: grid;
+    grid-template-columns: 1fr 728px 1fr;
     grid-column-gap: 32px;
   }
 

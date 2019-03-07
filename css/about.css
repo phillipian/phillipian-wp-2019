@@ -1,0 +1,69 @@
+.about-container{
+    width: 100%;
+    margin-top: 64px;
+    padding: 64px 0;
+    background-color: #222;
+    color: #fff;
+}
+
+.about-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-container + footer{
+    margin: 0;
+}
+
+.about-container h1{
+    font-family: 'ITC Cheltenham Std';
+    font-weight: 700;
+    margin: 0 0 16px 0;
+}
+
+.about-container p, ol{
+    line-height: 1.5;
+    font-size: 20px;
+}
+
+.about-container ol{
+    padding-left: 20px;
+}
+
+.about-container li{
+    margin: 20px 0;
+    opacity: 0.4;
+    transition: all 0.2s ease;
+}
+
+.about-container li:hover{
+    opacity: 1.0;
+}
+
+.about-1, .about-charter, .about-masthead{
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    margin-bottom: 32px;
+}
+
+.about-masthead img{
+    width: 100%;
+}
+
+.about-disc p{
+    font-size: 16px;
+}
+
+@media(min-width: 1200px){
+    .about-container h1{
+        font-size: 56px;
+    }
+    .about-1, .about-disc, .about-charter{
+        grid-column: 2;
+    }
+
+    .about-inner h2{
+        grid-column: 1;
+        text-align: right;
+    }
+}
