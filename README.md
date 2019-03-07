@@ -54,11 +54,14 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 
 ### Technical / Debugging
 - [X] ~~Fontface CSS~~
-- [X] Fix multiple categories showing up on article page
+- [ ] Fix multiple categories showing up on article page
+  - [X] ~~Featured~~
+  - [ ] Look of the week
+  - [ ] Sports
 - [X] ~~Make Dreamhost online test~~
 - [ ] Picture credit/size
-  - [ ] Why is the media-credit shortcode being deleted when imported/~~exported~~? (preserved in the CSV so it's an import problem)
-  - [ ] Read and display the credit shortcode using custom code or plugin
+  - [X] ~~Why is the media-credit shortcode being deleted when imported/~~exported~~? (preserved in the CSV so it's an import problem)~~ It was never an import problem, it just displayed incorrectly in the Visual Editor when trying to render shortcodes.
+  - [X] ~~Read and display the credit shortcode using custom code or plugin~~ (ended up using custom code overriding default caption shortcode)
   - [ ] Import photos properly
 - [X] Shortcodes in excerpt, single
 

@@ -2,6 +2,24 @@
 
 add_filter('use_block_editor_for_post', '__return_false', 10);
 
+function media_credit_sc($atts, $content = null){
+  $a = shortcode_atts(array(
+    'name' => 'The Phillipian',
+  ), $atts );
+  preg_match( "/<img(.*)\/>/",$content,$array1);
+  return "<div class='single-image'>".$array1[0]."<div class='media-credit'><span>".$a['name'].'</span></div></div><p></p>';
+}
+
+add_shortcode( 'media-credit', 'media_credit_sc');
+
+function caption_override_sc($atts, $content = null){
+  preg_match( "/\[media\-credit(.*)\[\/media-credit\]/",$content,$array2);
+  preg_match( "/(?<=\[\/media-credit\])(.*)/",$content,$array3);
+  return "<div class='single-image'>".do_shortcode($array2[0])."<div class='single-image-caption'><span>".$array3[0]."</span></div></div><p></p>";
+}
+
+add_shortcode('caption','caption_override_sc');
+
 function jetpackme_remove_rp()
 {
   if (class_exists('Jetpack_RelatedPosts')) {
