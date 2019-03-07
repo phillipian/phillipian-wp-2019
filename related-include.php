@@ -21,7 +21,7 @@ if (class_exists('Jetpack_RelatedPosts') && method_exists('Jetpack_RelatedPosts'
                 <?php echo $related_post->post_title; ?>
             </a>
         </h3>
-        <div class='related-date'><span><?php echo get_the_date(get_option('date_format'), $related_post); ?></span></div>
+        <div class='related-date'><span><?php $cat = get_the_category($related_post); echo esc_html($cat[0]->name)." • "; echo get_the_date(get_option('date_format'), $related_post); ?></span></div>
     </div>
     <?php 
 } ?>

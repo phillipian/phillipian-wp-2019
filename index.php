@@ -22,54 +22,52 @@
 <div class='articles-container'>
     <div class='home-top-ad ad'><span>1200x200 advertisement</span></div>
     <div class='home-divider'></div>
-
-    <div class='sect sect-news'>
-
-        <div class='sect-header'>
-            <h1><a href='<?php echo get_category_link(get_cat_ID('News'))?>'>News</a></h1>
-        </div>
-
-        <?php query_posts(array( 'category_name' => 'news+featured', 'posts_per_page' => 1 )); ?>
-        <?php
-        if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <div class='article-item article-news-feature'>
-            <h2><a href=' <?php the_permalink(); ?>'>
-                    <?php the_title(); ?>
-                </a></h2>
-            <div class=' article-text'>
-                <div class='article-author'><span>By
-                    <?php 
-                    $def_author = get_the_author();
-                    $cust_author = get_post_meta(get_the_ID(), 'cpa_author', true);
-                    if ($def_author == 'admin'){
-                        echo $cust_author;
-                    } else{
-                        echo $def_author;
-                    }
-                    ?>
-                </span></div>
-                <div class='article-date'><span><?php the_time( get_option( 'date_format' ) );?></span></div>
-                <?php the_excerpt(); ?>
+    <div class='sect-group-left'>
+        <div class='sect sect-news'>
+    
+            <div class='sect-header'>
+                <h1><a href='<?php echo get_category_link(get_cat_ID('News'))?>'>News</a></h1>
             </div>
-            <?php if (catch_that_image() == false ): else:?>
-            <div class='article-image'><img src='<?php echo catch_that_image() ?>'></div>
-            <?php endif ?>
+    
+            <?php query_posts(array( 'category_name' => 'news+featured', 'posts_per_page' => 1 )); ?>
+            <?php
+            if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <?php include 'article-featured.php'?>
+            <?php endwhile;
+    endif; ?>
+            <?php wp_reset_query(); ?>
+    
+    
+            <?php $exclude = get_cat_ID('featured'); $include = get_cat_ID('news'); query_posts(array( 'cat' => $include.",-".$exclude, 'posts_per_page' => 4 )); ?>
+            <?php
+            if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <div class='article-item <?php if (catch_that_image() == false): ?> article-noimage <? else: ?> article-news-alt2 <? endif ?>'>
+                <?php include 'article-include.php' ?>
+            </div>
+            <?php endwhile;
+    endif; ?>
+            <?php wp_reset_query(); ?>
+    
         </div>
-        <?php endwhile;
-endif; ?>
-        <?php wp_reset_query(); ?>
-
-
-        <?php $exclude = get_cat_ID('featured'); $include = get_cat_ID('news'); query_posts(array( 'cat' => $include.",-".$exclude, 'posts_per_page' => 4 )); ?>
-        <?php
-        if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <div class='article-item <?php if (catch_that_image() == false): ?> article-noimage <? else: ?> article-news-alt2 <? endif ?>'>
-            <?php include 'article-include.php' ?>
+        <div class='sect sect-sports'>
+    
+            <div class='sect-header'>
+                <h1><a href='<?php echo get_category_link(get_cat_ID('Sports'))?>'>Sports</a></h1>
+            </div>
+    
+    
+            <?php $exclude = get_cat_ID('featured'); $include = get_cat_ID('Sports'); query_posts(array( 'cat' => $include.",-".$exclude, 'posts_per_page' => 5 )); ?>
+            <?php
+            if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <div class='article-item <?php if (catch_that_image() == false): ?> article-noimage <? else: ?> article-news-alt2 <? endif ?>'>
+                <?php include 'article-include.php' ?>
+            </div>
+            <?php endwhile;
+    endif; ?>
+            <?php wp_reset_query(); ?>
+    
         </div>
-        <?php endwhile;
-endif; ?>
-        <?php wp_reset_query(); ?>
-
+        
     </div>
 
     <div class='sect-group-right'>
@@ -99,7 +97,7 @@ endif; ?>
                 <h1><a href='<?php echo get_category_link(get_cat_ID('Arts'))?>'>Arts</a></h1>
             </div>
 
-            <?php query_posts(array( 'category_name' => 'arts', 'posts_per_page' => 4 )); ?>
+            <?php query_posts(array( 'category_name' => 'arts', 'posts_per_page' => 5 )); ?>
             <?php
             if (have_posts()): while (have_posts()): the_post(); ?>
             <div class='article-item article-commentary <?php if (catch_that_image() == false): ?> article-noimage<? endif ?>'>

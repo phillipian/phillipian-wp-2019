@@ -80,10 +80,15 @@
 
 .article-image{
   text-align: right;
+  transition: all 0.2s ease;
 }
 
 .article-image img{
   max-width: 100%;
+}
+
+.article-image:hover{
+  opacity: 0.8;
 }
 
 .sect-header h1{
@@ -113,10 +118,11 @@
 
 .article-item h2 a{
   color: #000;
+  transition: color 0.1s ease;
 }
 
 .article-item h2 a:hover{
-  color: #555;
+  color: rgba(0,0,0,0.5);
 }
 
 .article-item .article-author{
@@ -130,8 +136,8 @@
   font-size: 15px;
 }
 
-.article-commentary .article-image, .article-news-alt2 .article-image{
-  max-height: 200px;
+.article-commentary .article-image, .article-news-alt2 .article-image, .article-news-alt2 .article-image img{
+  max-height: 180px;
 }
 
 .article-commentary.article-noimage .article-text, .category-container .article-noimage .article-text{
@@ -144,6 +150,10 @@
 
 .sect-group-right{
   display: grid;
+}
+
+.sect-group-left{
+  grid-column: 1/4;
 }
 
 @media(min-width: 1200px){
@@ -207,6 +217,7 @@
 
   .sect-group-right{
     grid-column: 5/7;
+    grid-template-rows: repeat(3, min-content);
   }
 
   .sect-commentary, .sect-arts{
@@ -233,11 +244,11 @@
     grid-template-columns: repeat(3,1fr);
   }
 
-  .sect-news{
+  .sect-news, .sect-sports{
     grid-column: 1/4;
   }
 
-  .sect-arts{
+  .sect-arts, .sect-sports{
     margin-top: 48px;
   }
 

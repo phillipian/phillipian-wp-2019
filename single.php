@@ -37,11 +37,14 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <?php the_date(); ?></span>
             </span>
         </div>
-        <div class='ad single-ad'><span>300x250 advertisement</span></div>
-        <?php include 'related-include.php' ?>
-        <div class='ad single-ad'><span>300x250 advertisement</span></div>
+        <div class='desktop-ads-related'>
+            <?php include 'single-sidebar-include.php' ?>
+        </div>
     </div>
     <div class='single-right'>
+        <div class='mobile-ads-related'>
+            <?php include 'single-sidebar-include.php' ?>
+        </div>
         <?php the_content(); ?>
         <?php include 'related-include.php' ?>
     </div>

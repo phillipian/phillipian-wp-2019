@@ -267,6 +267,10 @@ footer li{
     grid-column: 2/3;
   }
 
+  .mobile-ads-related{
+    display: none;
+  }
+
   .category-container .article-item{
     grid-column: 2;
     grid-template-columns: 1fr 256px;
@@ -298,6 +302,18 @@ footer li{
 
   .single-container h1{
     font-size: 36px;
+  }
+
+  .single-right{
+    display: grid;
+  }
+
+  .desktop-ads-related{
+    display: none;
+  }
+
+  .mobile-ads-related{
+    grid-row: 6;
   }
 
   .article-about{

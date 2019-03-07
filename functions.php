@@ -38,6 +38,7 @@ function plip_script_enqueue()
 }
 
 add_action('wp_enqueue_scripts', 'plip_script_enqueue');
+add_theme_support('post-thumbnails'); 
 
 function plip_theme_setup()
 {
