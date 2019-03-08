@@ -64,9 +64,7 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 - [X] ~~Commentary~~
 - [ ] Eighth Page
 - [X] Sports
-  - [ ] Scoreboxes?
 - [X] Arts
-  - [ ] Lookbook?
 
 ### Technical / Debugging
 - [X] ~~Fontface CSS~~
@@ -81,10 +79,18 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
   - [ ] Import photos properly
 - [X] Shortcodes in excerpt, single
 
-## Other Goals
+## Non-Critical Ideas
 
+- [ ] Cleaner home nameplate thing
+- [ ] Home horizontal row
+  - [ ] Eighth Page
+  - [ ] Join The Phillipian
+  - [ ] Plip Video
+  - [ ] Social Media
 - [ ] Digital Masthead
 - [ ] Sports dedicated site
+  - [ ] Scoreboxes?
 - [ ] Author pages
+- [ ] Arts Lookbook
   
 By Samson Zhang '20 and Anthony Kim '21

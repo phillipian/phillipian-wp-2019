@@ -301,7 +301,7 @@
     grid-row: 1;
   }
 
-  .article-news-alt1 p, .article-news-alt2 p, .category-container .article-commentary p{
+  .article-news-alt1 p, .article-news-alt2 p, .category-container .article-commentary p, .article-noimage p{
   display: none;
   }
 
