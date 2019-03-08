@@ -98,5 +98,6 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
   - [ ] Scoreboxes?
 - [ ] Author pages
 - [ ] Arts Lookbook
+- [ ] small visual changes: related posts, dropdown button, article sidebar, author info, etc.
   
 By Samson Zhang '20 and Anthony Kim '21
