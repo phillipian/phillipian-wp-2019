@@ -37,20 +37,9 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
   - [ ] Install New Theme
   - [ ] Clear out old plugins
 
-## General
-- [X] Cleaner home nameplate thing
-- [X] Home horizontal row
-  - [X] Eighth Page
-    - [ ] link up through wp-admin or auto script
-  - [X] Join The Phillipian
-    - [ ] create page, link up
-  - [X] Subscribe
-    - [ ] create page, link up
-  - [ ] Plip Video
-    - [ ] Figure out thumbnail/image situation
-    - [ ] link up through wp-admin or YT API?
-  - [ ] ~~Social Media (not doing)~~
-- [ ] Tablet Responsiveness
+## Active
+
+### General
 - [X] ~~Make navbar~~
   - [X] ~~Sections button on left~~
   - [X] ~~Search button on right~~
@@ -64,7 +53,7 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 - [X] Related Posts
 - [X] About Page, Basic Masthead
 
-## Homepage
+### Homepage
 - [X] General
   - [X] ~~Add date~~
   - [X] ~~Limit # of articles that show up~~
@@ -78,7 +67,7 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
   - [ ] Show specific sport (second-level category) i.e. Boys Varsity Hockey b/c some titles don't specify sport
 - [X] Arts
 
-## Technical / Debugging
+### Technical / Debugging
 - [X] ~~Fontface CSS~~
 - [ ] Fix multiple categories showing up on article page
   - [X] ~~Featured~~
@@ -93,6 +82,12 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 
 ## Non-Critical Ideas
 
+- [ ] Cleaner home nameplate thing
+- [ ] Home horizontal row
+  - [ ] Eighth Page
+  - [ ] Join The Phillipian
+  - [ ] Plip Video
+  - [ ] Social Media
 - [ ] Digital Masthead
 - [ ] Sports dedicated site
   - [ ] Scoreboxes?

@@ -21,7 +21,6 @@
     <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/home.css' ?>" type='text/css' ">
     <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/list-reset.css' ?>" type='text/css' ">
     <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/about.css' ?>" type='text/css' ">
-    <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/home-strip.css' ?>" type='text/css' ">
     <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/fonts/fontface.css' ?>" type='text/css' ">
 
         <?php wp_head(); ?>

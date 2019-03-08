@@ -3,7 +3,6 @@
     <div class='about-inner'>
         <div class='about-1'>
             <h1>About <i>The Phillipian</i></h1>
-            <p>Veritas Super Omnia: Truth Above All</p>
             <p>First printed in 1857, <i>The Phillipian</i> is Phillips Academy’s weekly student newspaper. Entirely uncensored and student run, the paper is distributed every Friday from September to June.</p>
             <p><i>The Phillipian</i> is 16-20 pages long and consists of five sections: News, Commentary, Sports, Arts and The Eighth Page. Each issue reports on campus news, athletics and performances, publishes insightful opinion pieces and provides original humor.</p>
         </div>

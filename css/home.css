@@ -1,16 +1,16 @@
-.home-top{
-  margin: 64px auto 0 auto;
-  padding-top: 24px!important;
-  max-width: 1200px;
-}
-
 .home-logo{
+    width: 100%;
     max-width: 400px;
-    margin: 0 auto;
 }
 
 .home-logo img{
     width: 100%;
+}
+
+.home-text{
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .home-tagline{
@@ -18,27 +18,35 @@
     font-size: 16px;
     padding-top: 10px;
     font-family: 'ITC Cheltenham Std';
-    text-align: center;
 }
 
-.home-tagline a, .home-social a{
-  color: inherit;
-}
-
-.home-tagline a:hover, .home-social a:hover{
-  color: #000;
+.home-top p{
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
 }
 
 .home-social{
   display: inline-flex;
+  align-items: center;
+}
+
+.home-social a{
+  color: rgba(0,0,0,0.5);
+  font-size: 20px;
+}
+
+.home-social a:hover{
+  color: rgba(0,0,0,1.0);
 }
 
 .home-social-item{
-  margin: 0 6px;
+  margin-left: 16px;
 }
 
 .home-cat{
-    margin: 12px 0;
+    margin: 32px 0;
     height: 48px;
     border-top: 1px solid rgba(0,0,0,0.2);
     border-bottom: 1px solid rgba(0,0,0,0.2);
@@ -141,10 +149,6 @@ div.article-item:last-of-type{
 
 .sect-group-left{
   grid-column: 1/4;
-}
-
-.home-top, .category-container, #searchform, .sections-dropdown-inner, .about-inner{
-    padding: 0 24px;
 }
 
 @media(min-width: 1200px){
@@ -276,16 +280,8 @@ div.article-item:last-of-type{
 }
 
 @media (max-width: 600px){
-  .home-top{
-    padding-top: 24px;
-  }
-
-  .dot, .home-social{
-    display: none;
-  }
-
-  .home-tagline span:not(.dot){
-    display: block;
+  .home-top, .category-container, #searchform, .sections-dropdown-inner, .about-inner{
+    padding: 0 24px;
   }
 
   .sect{
@@ -309,11 +305,7 @@ div.article-item:last-of-type{
   }
 
   .home-logo{
-    max-width: 240px;
-  }
-
-  .home-top-ad{
-    display: none;
+    max-width: 320px;
   }
 
   .article-news-alt2{
