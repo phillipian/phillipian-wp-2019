@@ -22,24 +22,24 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 
 # To Do
 
+## Transition
+- [X] Switch to PHP 7.2
+- [X] Enable SSL
+  - [X] Certificate / Dreamhost
+  - [X] Wordpress
+    - [X] Main Site
+    - [X] Redirects
+    - [X] Media Links
+- [ ] Upgrade to WP 5.1
+  - [ ] Backup?
+  - [ ] Test Visual Composer, etc. in local environment?
+- [ ] Eventually
+  - [ ] Install New Theme
+  - [ ] Clear out old plugins
+
 ## Active
 
-### Homepage
-- [ ] General
-  - [X] ~~Add date~~
-  - [X] ~~Limit # of articles that show up~~
-  - [X] ~~Prevent duplicate of featured article~~
-- [ ] News
-  - [ ] 1 col / 2 col split
-  - [X] Merge w/ commentary layout
-- [X] ~~Commentary~~
-- [ ] Eigth Page
-- [ ] Sports
-  - [ ] Scoreboxes?
-- [X] Arts
-  - [ ] Lookbook?
-
-### Functionality
+### General
 - [X] ~~Make navbar~~
   - [X] ~~Sections button on left~~
   - [X] ~~Search button on right~~
@@ -52,6 +52,21 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 - [X] Search bar & list
 - [X] Related Posts
 - [X] About Page, Basic Masthead
+
+### Homepage
+- [X] General
+  - [X] ~~Add date~~
+  - [X] ~~Limit # of articles that show up~~
+  - [X] ~~Prevent duplicate of featured article~~
+- [X] News
+  - [ ] 1 col / 2 col split
+  - [X] Merge w/ commentary layout
+- [X] ~~Commentary~~
+- [ ] Eighth Page
+- [X] Sports
+  - [ ] Scoreboxes?
+- [X] Arts
+  - [ ] Lookbook?
 
 ### Technical / Debugging
 - [X] ~~Fontface CSS~~
