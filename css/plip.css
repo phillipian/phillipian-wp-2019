@@ -20,13 +20,13 @@ a{
   color: #888;
 }
 
-.articles-container, .single-container, .home-top, .footer-inner, #searchform, .category-container{
+.articles-container, .single-container,.footer-inner, #searchform, .category-container{
   margin: 0 auto;
   max-width: 1200px;
   display: grid;
 }
 
-.single-container, .home-top, .category-container{
+.single-container, .category-container{
   padding-top: 128px!important;
 }
 
@@ -102,7 +102,8 @@ a{
 }
 
 .post-categories{
-  border-bottom: 3px solid #000;
+  font-size: 20px;
+  letter-spacing: 2px;
 }
 
 .post-categories a{
@@ -168,7 +169,6 @@ footer li{
 .home-top-ad{
   height: 200px;
   grid-column: 1/7;
-  margin-top: -16px;
   margin-bottom: 16px;
 }
 
@@ -332,10 +332,6 @@ footer li{
   .article-about{
     font-size: 16px;
     padding-bottom: 32px;
-  }
-
-  .article-category{
-    padding-bottom: 24px;
   }
 
   .category-container .article-item{
