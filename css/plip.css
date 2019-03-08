@@ -81,8 +81,20 @@ a{
   display: inline-block;
   padding-bottom: 2px;
   font-family: 'Avenir Pro 85 Heavy';
-  font-size: 24px;
+  font-size: 16px;
+  text-transform: uppercase;
   font-weight: 700;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+}
+
+.sect-header a{
+  color: rgba(0,0,0,0.3);
+  transition: color 0.1s ease;
+}
+
+.sect-header a:hover{
+  color: #000;
 }
 
 .sect-commentary .article-item, .article-commentary{
@@ -199,8 +211,9 @@ footer li{
 }
 
 .related-container .related-date{
-  font-size: 16px;
-  font-family: 'Avenir Pro 35 Light';
+  font-size: 15px;
+  font-family: 'Avenir Pro 55 Roman';
+  color: rgba(0,0,0,0.6);
 }
 
 .media-credit{

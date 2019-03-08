@@ -71,6 +71,23 @@
     </div>
 
     <div class='sect-group-right'>
+        <div class='sect sect-editorial'>
+
+            <div class='sect-header'>
+                <h1><a href='<?php echo get_category_link(get_cat_ID('Editorial'))?>'>Editorial</a></h1>
+            </div>
+
+            <?php query_posts(array( 'category_name' => 'editorial', 'posts_per_page' => 1 )); ?>
+            <?php
+            if (have_posts()): while (have_posts()): the_post(); ?>
+            <div class='article-item article-commentary <?php if (catch_that_image() == false): ?> article-noimage<? endif ?>'>
+                <?php include 'article-include.php' ?>
+            </div>
+            <?php endwhile;
+    endif; ?>
+            <?php wp_reset_query(); ?>
+
+        </div>
         <div class='sect sect-commentary'>
 
             <div class='sect-header'>

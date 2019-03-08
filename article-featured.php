@@ -18,6 +18,6 @@
         <?php the_excerpt(); ?>
     </div>
     <?php if (catch_that_image() == false ): else:?>
-    <div class='article-image'><a href='<?php the_permalink(); ?>'><img src='<?php echo catch_that_image() ?>'></a><a href='<?php the_permalink(); ?>'></div>
+    <div class='article-image'><a href='<?php the_permalink(); ?>'><img src='<?php echo catch_that_image() ?>'></a></div>
     <?php endif ?>
 </div>

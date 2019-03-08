@@ -64,6 +64,7 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 - [X] ~~Commentary~~
 - [ ] Eighth Page
 - [X] Sports
+  - [ ] Show specific sport (second-level category) i.e. Boys Varsity Hockey b/c some titles don't specify sport
 - [X] Arts
 
 ### Technical / Debugging
