@@ -225,14 +225,14 @@ footer li{
 }
 
 .single-image-caption{
-  background-color: #333;
+  background-color: #222;
   padding: 16px;
 }
 
 .single-image{
   background-color: #444;
   color: #fff;
-  border-bottom: 8px solid #222;
+  border-bottom: 8px solid #000;
   font-size: 16px;
 }
 

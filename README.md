@@ -39,11 +39,17 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 
 ## General
 - [X] Cleaner home nameplate thing
-- [ ] Home horizontal row
-  - [ ] Eighth Page
-  - [ ] Join The Phillipian
+- [X] Home horizontal row
+  - [X] Eighth Page
+    - [ ] link up through wp-admin or auto script
+  - [X] Join The Phillipian
+    - [ ] create page, link up
+  - [X] Subscribe
+    - [ ] create page, link up
   - [ ] Plip Video
-  - [ ] Social Media
+    - [ ] Figure out thumbnail/image situation
+    - [ ] link up through wp-admin or YT API?
+  - [ ] ~~Social Media (not doing)~~
 - [ ] Tablet Responsiveness
 - [X] ~~Make navbar~~
   - [X] ~~Sections button on left~~
