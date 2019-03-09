@@ -1,8 +1,9 @@
 <div class='sect sect-<?php
 echo strtolower($catname) ?>'>
     <div class='sect-header'>
-        <h1><a href='<?php
-echo get_category_link(get_cat_ID($catname)) ?>'><?php
+		<h1><a href='<?php
+$catlink = get_category_link(get_cat_ID($catname));
+echo $catlink ?>'><?php
 echo $catname ?></a></h1>
     </div>
 
@@ -86,6 +87,6 @@ else {
 } ?>
     <a class='sect-more' href='<?php
 echo $catlink ?>'>All <?php
-echo $catname ?> Stories ></a>
+echo $catname ?> Articles ></a>
 
  </div>
