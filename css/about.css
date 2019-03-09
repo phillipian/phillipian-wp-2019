@@ -6,12 +6,12 @@
     color: #fff;
 }
 
-.about-inner{
+.about-inner, .subscribe-inner{
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.about-container + footer{
+.about-container + footer, .subscribe-container + footer{
     margin: 0;
 }
 
@@ -21,7 +21,7 @@
     margin: 0 0 16px 0;
 }
 
-.about-container p, ol{
+.about-container p, .about-container ol, .subscribe-container p, .subscribe-container ul{
     line-height: 1.5;
     font-size: 20px;
 }

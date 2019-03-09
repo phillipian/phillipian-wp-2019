@@ -14,6 +14,7 @@ html{
 
 a{
   text-decoration: none;
+  color: #0082ca;
 }
 
 .article-text p{
@@ -172,6 +173,10 @@ footer li{
   margin-bottom: 16px;
 }
 
+.home-top-ad img{
+  max-width: 100%;
+}
+
 .sidebar-ad, .single-ad{
   width: 300px;
   height: 250px;
@@ -244,6 +249,13 @@ footer li{
 
 .single-image > p{
   margin: 0;
+}
+
+.single-container .strip-item{
+  margin-right: 0;
+  padding-right: 0;
+  border: none;
+  font-family: 'Avenir Pro 55 Roman';
 }
 
 @media(min-width: 1200px){

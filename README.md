@@ -44,13 +44,18 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
     - [ ] link up through wp-admin or auto script
   - [X] Join The Phillipian
     - [ ] create page, link up
+    - [ ] Make video: life of the paper
   - [X] Subscribe
-    - [ ] create page, link up
+    - [X] create page, link up
   - [ ] Plip Video
     - [ ] Figure out thumbnail/image situation
     - [ ] link up through wp-admin or YT API?
   - [ ] ~~Social Media (not doing)~~
 - [ ] Tablet Responsiveness
+- [X] About Page
+  - [ ] Resources section
+    - [ ] Logos, photos
+    - [ ] Technical: dev website?
 - [X] ~~Make navbar~~
   - [X] ~~Sections button on left~~
   - [X] ~~Search button on right~~
@@ -85,11 +90,15 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
   - [ ] Look of the week
   - [ ] Sports
 - [X] ~~Make Dreamhost online test~~
-- [ ] Picture credit/size
+- [X] Picture credit/size
   - [X] ~~Why is the media-credit shortcode being deleted when imported/~~exported~~? (preserved in the CSV so it's an import problem)~~ It was never an import problem, it just displayed incorrectly in the Visual Editor when trying to render shortcodes.
   - [X] ~~Read and display the credit shortcode using custom code or plugin~~ (ended up using custom code overriding default caption shortcode)
-  - [ ] Import photos properly
+  - [ ] ~~Import photos properly (not doing this b/c just using the old WP)~~
 - [X] Shortcodes in excerpt, single
+- [X] Ads
+  - [X] Uploaded from wp-admin
+  - [ ] Links
+  - [ ] RNG to cycle through?
 
 ## Non-Critical Ideas
 

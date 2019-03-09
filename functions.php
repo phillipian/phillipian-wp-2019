@@ -56,29 +56,69 @@ function plip_theme_setup()
 
 add_action('init', 'plip_theme_setup'); // execute after theme setup
 
-function plip_navbar_logo($wp_customize)
-{
-  $wp_customize->add_section('plip-navbar-section', array(
-    'title' => 'Navbar'
+function plip_ads($wp_customize){
+  $wp_customize -> add_section('plip-ad-sec', array(
+    'title' => 'Advertisements'
   ));
-
-  $wp_customize->add_setting('plip-navbar-image');
-  $wp_customize->add_setting('plip-navbar-image-mobile');
-
-  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-navbar-image-control', array(
-    'label' => 'image',
-    'section' => 'plip-navbar-section',
-    'settings' => 'plip-navbar-image'
+  $wp_customize->add_setting('plip-ad-homewide');
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-ad-homewide-control', array(
+    'label' => 'Home Wide Ad',
+    'section' => 'plip-ad-sec',
+    'settings' => 'plip-ad-homewide',
+    'width' => 1200,
+    'height' => 200
   )));
-
-  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-navbar-image-mobile-control', array(
-    'label' => 'image',
-    'section' => 'plip-navbar-section',
-    'settings' => 'plip-navbar-image-mobile'
+  $wp_customize->add_setting('plip-ad-homesmall');
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-ad-homesmall-control', array(
+    'label' => 'Home Small Ad',
+    'section' => 'plip-ad-sec',
+    'settings' => 'plip-ad-homesmall',
+    'width' => 300,
+    'height' => 250
+  )));
+  $wp_customize->add_setting('plip-ad-single1');
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-ad-single1-control', array(
+    'label' => 'Single Ad 1',
+    'section' => 'plip-ad-sec',
+    'settings' => 'plip-ad-single1',
+    'width' => 300,
+    'height' => 250
+  )));
+  $wp_customize->add_setting('plip-ad-single2');
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-ad-single2-control', array(
+    'label' => 'Single Ad 2',
+    'section' => 'plip-ad-sec',
+    'settings' => 'plip-ad-single2',
+    'width' => 300,
+    'height' => 250
   )));
 }
 
-add_action('customize_register', 'plip_navbar_logo');
+function plip_ytstrip($wp_customize){
+  $wp_customize->add_section('plip-ytstrip-sec', array(
+    'title' => 'Home Strip YouTube'
+  ));
+  $wp_customize->add_setting('plip-yt-title');
+  $wp_customize->add_setting('plip-yt-link');
+  $wp_customize->add_setting('plip-yt-thumb');
+  $wp_customize->add_control('plip-yt-title', array(
+    'label' => 'Home Strip YouTube Title',
+    'section' => 'plip-ytstrip-sec'
+  ));
+  $wp_customize->add_control('plip-yt-link', array(
+    'label' => 'Home Strip YouTube Link',
+    'section' => 'plip-ytstrip-sec'
+  ));
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-yt-thumb-control', array(
+    'label' => 'Home Strip YouTube Thumb',
+    'section' => 'plip-ytstrip-sec',
+    'settings' => 'plip-yt-thumb',
+    'width' => 300,
+    'height' => 300
+  )));
+}
+
+add_action('customize_register', 'plip_ytstrip');
 
 function catch_that_image()
 {

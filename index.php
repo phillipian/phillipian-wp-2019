@@ -20,9 +20,9 @@
     <div class='home-strip-outer'>
         <div class='home-strip'>
             <?php
-            $strip_link = '';
-            $strip_img_url = '';
-            $strip_main = 'Billy Flynn: 30 Years at Paresky Commons';
+            $strip_link = get_theme_mod('plip-yt-link','');
+            $strip_img_url = wp_get_attachment_url(get_theme_mod('plip-yt-thumb',null));
+            $strip_main = get_theme_mod('plip-yt-title',"No Video Featured");
             $strip_tag = 'Video';
             include 'home-strip-include.php';
 
@@ -49,7 +49,7 @@
                 ?>
             </div>
             <?php
-            $strip_link = '';
+            $strip_link = 'subscribe';
             $strip_img_url = get_template_directory_uri() . '/images/subscribe.png';
             $strip_main = 'Support student journalism and get the latest Andover news delivered to your mailbox';
             $small = true;
@@ -63,7 +63,9 @@
 </div>
 
 <div class='articles-container'>
-    <div class='home-top-ad ad'><span>1200x200 advertisement</span></div>
+    <div class='home-top-ad ad'>
+        <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-ad-homewide', null)); ?>'>
+    </div>
     <div class='home-divider'></div>
     <div class='sect-group-left'>
         <div class='sect sect-news'>
@@ -151,7 +153,9 @@
 
         </div>
 
-        <div class='sidebar-ad ad'><span>300x250 advertisement</span></div>
+        <div class='sidebar-ad ad'>
+            <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-ad-homesmall', null)); ?>'>
+        </div>
 
         <div class='sect sect-arts'>
 

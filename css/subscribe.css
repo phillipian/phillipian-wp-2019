@@ -1,0 +1,46 @@
+.subscribe-container{
+    padding: 128px 0 64px 0;
+    background-color: #222;
+    color: #fff;
+    min-height: calc(100vh - 64px);
+    box-sizing: border-box;
+}
+
+.subscribe-inner{
+    padding: 0 24px;
+}
+
+p.subscribe-hero{
+    font-size: 32px;
+    line-height: 1.2;
+    max-width: 800px;
+    font-family: 'ITC Cheltenham Std';
+}
+
+.clear{
+    width: 1px;
+    height: 1px;
+}
+
+img.subscribe-img{
+    max-height:700px;
+    width: 100%;
+    grid-column: 2;
+}
+
+.subscribe-text{
+    grid-row: 1;
+}
+
+.subscribe-text a{
+    font-family: 'ITC Cheltenham Std';
+    font-weight: 600;
+}
+
+@media (min-width: 1200px){
+.subscribe-inner{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 64px;
+}
+}
