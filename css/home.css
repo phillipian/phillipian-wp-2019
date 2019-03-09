@@ -157,6 +157,14 @@ div.article-item:last-of-type{
     padding: 0 24px;
 }
 
+.sect-more{
+  text-align: right;
+  font-size: 20px;
+  margin-top: 16px;
+  font-family: 'Avenir Pro 85 Heavy';
+  display: block /* this is super ugly but there's a div.article-item:last-of-type earlier that would get messed up if this were a div */
+}
+
 @media(min-width: 1200px){
   .articles-container{
     grid-template-columns: repeat(3,1fr) 1px repeat(2, 1fr);
@@ -223,9 +231,6 @@ div.article-item:last-of-type{
 
   .sect-group-right .sect{
     grid-column: 1/3;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-auto-rows: min-content;
   }
 
   .home-divider{
