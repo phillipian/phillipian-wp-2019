@@ -32,7 +32,8 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
                     echo $def_author;
                 }
                 ?>
-                <br /></span>
+                <br />
+            </span>
             <span class='article-date'>
                 <?php the_date(); ?></span>
             </span>

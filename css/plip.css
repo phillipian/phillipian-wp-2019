@@ -156,37 +156,38 @@ footer li{
 }
 
 .ad{
-  background-color: #ccc;
-  position: relative;
+  text-align: right;
 }
 
-.ad span{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.ad a{
+  font-size: 12px;
+  color: rgba(0,0,0,0.4);
+}
+
+.ad a:hover{
+  color: #000;
+}
+
+.ad img{
+  border: 2px solid #666;
 }
 
 .home-top-ad{
-  height: 200px;
   grid-column: 1/7;
   margin-bottom: 16px;
 }
 
-.home-top-ad img{
-  max-width: 100%;
+.home-top-ad img, .sidebar-ad img, .single-ad img{
+  width: 100%;
+  display: block;
 }
 
 .sidebar-ad, .single-ad{
   width: 300px;
-  height: 250px;
   margin: 32px auto;
-  background-color: #ccc;
 }
 
 .single-ad{
-  width: 300px;
-  height: 250px;
   grid-column: 1;
   grid-row: 4/7;
 }
@@ -258,6 +259,10 @@ footer li{
   font-family: 'Avenir Pro 55 Roman';
 }
 
+.single-ad + .article-about-top{
+  margin-top: 32px;
+}
+
 @media(min-width: 1200px){
   .single-container{
     grid-template-columns: 300px 728px 1fr;
@@ -315,6 +320,10 @@ footer li{
 
   .category-container > p{
     grid-column: 2/3;
+  }
+
+  .sidebar-ad{
+    grid-column: 1/3;
   }
 }
 

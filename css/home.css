@@ -79,6 +79,10 @@
   max-width: 100%;
 }
 
+.article-news-feature .article-image img {
+  width: 100%;
+}
+
 .article-image:hover{
   opacity: 0.8;
 }

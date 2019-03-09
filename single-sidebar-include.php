@@ -1,10 +1,15 @@
-<div class='ad single-ad'>
-    <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-ad-single1', null)); ?>'>
-</div>
+<?php
+$adarea = 'plip-ad-single1';
+$adclass = 'single-ad';
+include 'ad-include.php';
+?>
 <?php include 'related-include.php' ?>
-<div class='ad single-ad'>
-    <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-ad-single2', null)); ?>'>
-</div>
+<?php
+$adarea = 'plip-ad-single2';
+$adclass = 'single-ad';
+include 'ad-include.php';
+?>
+<div class='article-about-top'></div>
 <?php
 $strip_link = 'subscribe';
 $strip_img_url = get_template_directory_uri() . '/images/subscribe.png';

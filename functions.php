@@ -69,12 +69,14 @@ function plip_ads($wp_customize){
     'height' => 200
   )));
   $wp_customize->add_setting('plip-ad-homesmall');
-  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-ad-homesmall-control', array(
+  $wp_customize->add_control(new WP_Customize_Media_control($wp_customize, 'plip-ad-homesmall-control', array(
     'label' => 'Home Small Ad',
     'section' => 'plip-ad-sec',
     'settings' => 'plip-ad-homesmall',
     'width' => 300,
-    'height' => 250
+    'height' => 250,
+    'flex-width' => true,
+    'flex-height' => true
   )));
   $wp_customize->add_setting('plip-ad-single1');
   $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-ad-single1-control', array(
@@ -94,13 +96,16 @@ function plip_ads($wp_customize){
   )));
 }
 
+add_action('customize_register', 'plip_ads');
+
 function plip_ytstrip($wp_customize){
   $wp_customize->add_section('plip-ytstrip-sec', array(
-    'title' => 'Home Strip YouTube'
+    'title' => 'Home Strip'
   ));
   $wp_customize->add_setting('plip-yt-title');
   $wp_customize->add_setting('plip-yt-link');
   $wp_customize->add_setting('plip-yt-thumb');
+  $wp_customize->add_setting('plip-a8-title');
   $wp_customize->add_control('plip-yt-title', array(
     'label' => 'Home Strip YouTube Title',
     'section' => 'plip-ytstrip-sec'
@@ -116,6 +121,10 @@ function plip_ytstrip($wp_customize){
     'width' => 300,
     'height' => 300
   )));
+  $wp_customize->add_control('plip-a8-title', array(
+    'label' => 'Home Strip Eighth Page Title',
+    'section' => 'plip-ytstrip-sec'
+  ));
 }
 
 add_action('customize_register', 'plip_ytstrip');

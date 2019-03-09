@@ -47,9 +47,10 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
     - [ ] Make video: life of the paper
   - [X] Subscribe
     - [X] create page, link up
-  - [ ] Plip Video
-    - [ ] Figure out thumbnail/image situation
-    - [ ] link up through wp-admin or YT API?
+  - [X] Plip Video
+    - [X] Figure out thumbnail/image situation
+    - [X] link up through wp-admin or YT API?
+    - Flip video and editorial?
   - [ ] ~~Social Media (not doing)~~
 - [ ] Tablet Responsiveness
 - [X] About Page
@@ -68,6 +69,10 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 - [X] Search bar & list
 - [X] Related Posts
 - [X] About Page, Basic Masthead
+- Random Pages
+  - [ ] Advertise with The Phillipian
+  - [ ] Sign up for newsletter
+  - [ ] Write for The Phillipian (/join? make video for this?)
 
 ## Homepage
 - [X] General
