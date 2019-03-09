@@ -2,23 +2,25 @@
 
 add_filter('use_block_editor_for_post', '__return_false', 10);
 
-function media_credit_sc($atts, $content = null){
+function media_credit_sc($atts, $content = null)
+{
   $a = shortcode_atts(array(
     'name' => 'The Phillipian',
-  ), $atts );
-  preg_match( "/<img(.*)\/>/",$content,$array1);
-  return "<div class='single-image'>".$array1[0]."<div class='media-credit'><span>".$a['name'].'</span></div></div><p></p>';
+  ), $atts);
+  preg_match("/<img(.*)\/>/", $content, $array1);
+  return "<div class='single-image'>" . $array1[0] . "<div class='media-credit'><span>" . $a['name'] . '</span></div></div><p></p>';
 }
 
-add_shortcode( 'media-credit', 'media_credit_sc');
+add_shortcode('media-credit', 'media_credit_sc');
 
-function caption_override_sc($atts, $content = null){
-  preg_match( "/\[media\-credit(.*)\[\/media-credit\]/",$content,$array2);
-  preg_match( "/(?<=\[\/media-credit\])(.*)/",$content,$array3);
-  return "<div class='single-image'>".do_shortcode($array2[0])."<div class='single-image-caption'><span>".$array3[0]."</span></div></div><p></p>";
+function caption_override_sc($atts, $content = null)
+{
+  preg_match("/\[media\-credit(.*)\[\/media-credit\]/", $content, $array2);
+  preg_match("/(?<=\[\/media-credit\])(.*)/", $content, $array3);
+  return "<div class='single-image'>" . do_shortcode($array2[0]) . "<div class='single-image-caption'><span>" . $array3[0] . "</span></div></div><p></p>";
 }
 
-add_shortcode('caption','caption_override_sc');
+add_shortcode('caption', 'caption_override_sc');
 
 function jetpackme_remove_rp()
 {
@@ -38,14 +40,14 @@ function plip_script_enqueue()
 }
 
 add_action('wp_enqueue_scripts', 'plip_script_enqueue');
-add_theme_support('post-thumbnails'); 
+add_theme_support('post-thumbnails');
 
 function plip_theme_setup()
 {
   add_theme_support('menus');
   register_nav_menus(array(
     'primary' => __('Primary Header Navigation'),
-    'secondary' => __( 'Footer Navigation'),
+    'secondary' => __('Footer Navigation'),
     'home-cats' => __('Home Category Bar'),
     'sections-1' => __('Sections Dropdown 1'),
     'sections-2' => __('Sections Dropdown 2'),
@@ -56,8 +58,9 @@ function plip_theme_setup()
 
 add_action('init', 'plip_theme_setup'); // execute after theme setup
 
-function plip_ads($wp_customize){
-  $wp_customize -> add_section('plip-ad-sec', array(
+function plip_ads($wp_customize)
+{
+  $wp_customize->add_section('plip-ad-sec', array(
     'title' => 'Advertisements'
   ));
   $wp_customize->add_setting('plip-ad-homewide');
@@ -98,7 +101,8 @@ function plip_ads($wp_customize){
 
 add_action('customize_register', 'plip_ads');
 
-function plip_ytstrip($wp_customize){
+function plip_ytstrip($wp_customize)
+{
   $wp_customize->add_section('plip-ytstrip-sec', array(
     'title' => 'Home Strip'
   ));
@@ -155,4 +159,43 @@ function custom_excerpt_more($more)
   return '...';
 }
 add_filter('excerpt_more', 'custom_excerpt_more');
- 
+
+add_filter('parse_query', 'ba_admin_posts_filter');
+add_action('restrict_manage_posts', 'ba_admin_posts_filter_restrict_manage_posts');
+
+function ba_admin_posts_filter($query)
+{
+  global $pagenow;
+  if (is_admin() && $pagenow == 'edit.php' && isset($_GET['ADMIN_FILTER_FIELD_NAME']) && $_GET['ADMIN_FILTER_FIELD_NAME'] != '') {
+    $query->query_vars['meta_key'] = $_GET['ADMIN_FILTER_FIELD_NAME'];
+    if (isset($_GET['ADMIN_FILTER_FIELD_VALUE']) && $_GET['ADMIN_FILTER_FIELD_VALUE'] != '')
+      $query->query_vars['meta_value'] = $_GET['ADMIN_FILTER_FIELD_VALUE'];
+  }
+}
+
+function ba_admin_posts_filter_restrict_manage_posts()
+{
+  global $wpdb;
+  $sql = 'SELECT DISTINCT meta_key FROM ' . $wpdb->postmeta . ' ORDER BY 1';
+  $fields = $wpdb->get_results($sql, ARRAY_N);
+  ?>
+<select name="ADMIN_FILTER_FIELD_NAME">
+    <option value=""><?php _e('Filter By Custom Fields', 'baapf'); ?></option>
+    <?php
+    $current = isset($_GET['ADMIN_FILTER_FIELD_NAME']) ? $_GET['ADMIN_FILTER_FIELD_NAME'] : '';
+    $current_v = isset($_GET['ADMIN_FILTER_FIELD_VALUE']) ? $_GET['ADMIN_FILTER_FIELD_VALUE'] : '';
+    foreach ($fields as $field) {
+      if (substr($field[0], 0, 1) != "_") {
+        printf(
+          '<option value="%s"%s>%s</option>',
+          $field[0],
+          $field[0] == $current ? ' selected="selected"' : '',
+          $field[0]
+        );
+      }
+    }
+    ?>
+</select> <?php _e('Value:', 'baapf'); ?><input type="TEXT" name="ADMIN_FILTER_FIELD_VALUE" value="<?php echo $current_v; ?>" />
+<?php
+
+}

@@ -8,7 +8,7 @@
             if ($def_author == 'admin'){
                 echo $cust_author;
             } else{
-                echo $def_author;
+                echo get_the_author_posts_link();
             }
             ?></span></div>
     <div class='article-date'><span>

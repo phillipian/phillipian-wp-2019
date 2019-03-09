@@ -35,7 +35,7 @@ a{
   font-size: 20px;
 }
 
-.single-container p{
+.single-container p, .category-container p{
     line-height: 1.5;
     font-size: 20px;
 }
