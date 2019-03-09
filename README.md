@@ -111,7 +111,8 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 - [ ] Digital Masthead
 - [ ] Sports dedicated site
   - [ ] Scoreboxes?
-- [ ] Author pages
+- [X] Author pages
+  - [ ] Automate (Sarah)
 - [ ] Arts Lookbook
 - [ ] small visual changes: related posts, dropdown button, article sidebar, author info, etc.
   

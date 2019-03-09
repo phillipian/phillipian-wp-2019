@@ -22,18 +22,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
     <div class='single-left'>
         <div class='article-about'>
             <div class='article-about-top'></div>
-            <span class='article-author'>
-                <?php 
-                $def_author = get_the_author();
-                $cust_author = get_post_meta(get_the_ID(), 'cpa_author', true);
-                if ($def_author == 'admin') {
-                    echo $cust_author;
-                } else {
-                    echo $def_author;
-                }
-                ?>
-                <br />
-            </span>
+            <?php $singlepage = true; include 'article-author-include.php'?>
             <span class='article-date'>
                 <?php the_date(); ?></span>
             </span>
