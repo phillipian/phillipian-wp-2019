@@ -20,6 +20,7 @@
   width: 64px;
   height: 64px;
   box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .strip-square img{

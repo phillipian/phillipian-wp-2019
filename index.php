@@ -67,7 +67,6 @@
     <div class='home-divider'></div>
     <div class='sect-group-left'>
         <div class='sect sect-news'>
-
             <div class='sect-header'>
                 <h1><a href='<?php echo get_category_link(get_cat_ID('News')) ?>'>News</a></h1>
             </div>
@@ -95,7 +94,6 @@
 
         </div>
         <div class='sect sect-sports'>
-
             <div class='sect-header'>
                 <h1><a href='<?php echo get_category_link(get_cat_ID('Sports')) ?>'>Sports</a></h1>
             </div>

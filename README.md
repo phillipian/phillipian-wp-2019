@@ -30,7 +30,7 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
     - [X] Main Site
     - [X] Redirects
     - [X] Media Links
-- [ ] Upgrade to WP 5.1
+- [ ] Upgrade to WP 5.1 (wait until install new theme?)
   - [ ] Backup?
   - [ ] Test Visual Composer, etc. in local environment?
 - [ ] Eventually

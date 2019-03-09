@@ -87,11 +87,11 @@
     display: grid;
     grid-column-gap: 16px;
     padding: 20px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 div.article-item:last-of-type{
-  border-color: rgba(0,0,0,0.5);
+  border: none;
 }
 
 .article-item h2{
@@ -141,6 +141,12 @@ div.article-item:last-of-type{
 
 .sect-group-left{
   grid-column: 1/4;
+}
+
+.sect-arts, .sect-commentary, .sect-sports{
+  border-top: 1px solid rgba(0,0,0,0.2);
+  padding-top: 8px;
+  margin-top: 32px;
 }
 
 .home-top, .category-container, #searchform, .sections-dropdown-inner, .about-inner{
@@ -204,10 +210,6 @@ div.article-item:last-of-type{
 
   .article-text p{
     padding-right: 8px;
-  }
-
-  .sect{
-    margin-bottom: 32px;
   }
 
   .sect-group-right{
