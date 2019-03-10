@@ -23,14 +23,14 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 # To Do
 
 ## Active / High Priority
-- Technical
-  - [ ] Make title appear properly
 - [ ] Add links to ads
+- New pages
+  - [ ] Join Plip
+  - [ ] Advertise for Plip
+  - [ ] Sub to newsletter
+    - [ ] Figure out newsletter subscription system
 
 ## In Queue
-- Page Creation
-  - [ ] Join Plip
-  - [ ] Sub to newsletter
 - [ ] Automate Author Pages (Sarah)
 - [ ] Test archive.php pagination
 - Technical
@@ -38,6 +38,8 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
     - [X] ~~Featured~~
     - [ ] Look of the week
     - [ ] Sports
+- Home
+  - [ ] Choose which sports articles to put on frontpage (tags?)
 
 ## Low Priority / Future Ideas
 - Transition
@@ -47,9 +49,20 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
   - [ ] Eventually
     - [ ] Install New Theme
     - [ ] Clear out old plugins
-- Page Creation
-  - [ ] Advertise for Plip
+    - [ ] Delete old themes through FTP
+  - [ ] Design Menu Content
+  - [ ] "Give Feedback" floater and page
+    - [ ] About the redesign page
+    - [ ] Redesign fancy video
+    - [ ] Ad / campaign in newspaper, social media
+  - [ ] Troubleshoot author linking being weird
 - About
+  - [ ] Image of first issue
+  - [ ] Pictures of newsroom / staff?
+    - [ ] Video: life of the paper
+    - [ ] Video: about the CXLII board?
+    - [ ] Coordinate w/ fall 19 recruiting campaign
+  - [ ] Links to newsletter signup, subscription, advertise with us, write for us
   - [ ] Resources section
     - [ ] Logos, photos
     - [ ] Technical: dev website?
@@ -59,9 +72,10 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
   - [ ] Sign up for newsletter bigger box
   - [ ] Sign up to write bigger box
 - Other
+  - [ ] Search by / browse through sports
   - [ ] Digital Masthead
   - [ ] Sports dedicated site
-    - [ ] Scoreboxes?
+    - [ ] Scoreboxes
   - [ ] Arts Lookbook
   - [ ] small visual changes: related posts, dropdown button, article sidebar, author info, etc.
 
@@ -104,6 +118,7 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
   - [X] Author pages
     - [ ] Automate (Sarah)
 - Technical
+  - [X] Make title appear properly
   - [X] Tablet Responsiveness
   - [X] ~~Fontface CSS~~
   - [X] ~~Make Dreamhost online test~~
