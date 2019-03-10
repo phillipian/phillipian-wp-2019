@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, target-densityDpi=device-dpi' name='viewport' />
-    <title><?php bloginfo('name'); ?></title>
+    <title><?php if (single_post_title() != null){echo single_post_title()."—";} bloginfo('name'); ?></title>
     <script type=" text/javascript">
         (function() {
             var trial = document.createElement('script');

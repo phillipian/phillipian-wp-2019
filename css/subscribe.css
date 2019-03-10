@@ -42,7 +42,8 @@ img.subscribe-img{
 @media (max-width: 1199.5px){
     .subscribe-inner{
         max-width: 640px;
-        width: 640px;
+        width: 100%;
+        box-sizing: border-box;
   }
 }
 
