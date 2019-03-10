@@ -66,4 +66,16 @@
         grid-column: 1;
         text-align: right;
     }
+    .about-inner{
+        display: grid;
+        grid-template-columns: 1fr 728px 1fr;
+        grid-column-gap: 32px;
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1199.5px){
+    .about-inner{
+        max-width: 640px;
+    }
 }

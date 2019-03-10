@@ -17,36 +17,28 @@ a{
   color: #0082ca;
 }
 
-.article-text p{
-  color: #888;
+.home-top, .category-container, #searchform, .sections-dropdown-inner, .about-inner, .articles-container, .single-container{
+    padding: 0 24px;
 }
 
-.articles-container, .single-container,.footer-inner, #searchform, .category-container{
+.articles-container, .single-container,.footer-inner, #searchform{
   margin: 0 auto;
   max-width: 1200px;
   display: grid;
+}
+
+.category-container{
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .single-container, .category-container{
   padding-top: 128px!important;
 }
 
-.single-container{
-  font-size: 20px;
-}
-
 .single-container p, .category-container p{
     line-height: 1.5;
     font-size: 20px;
-}
-
-.single-container h1{
-    font-family: 'ITC Cheltenham Std';
-    line-height: 1.1;
-}
-
-.single-container figcaption{
-  font-family: 'Avenir Pro 55 Roman';
 }
 
 .article-about{
@@ -64,11 +56,6 @@ a{
 
 .wp-caption{
   width: 100%!important;
-}
-
-.single-container img{
-  width: 100%;
-  height: unset;
 }
 
 .article-about-top{
@@ -96,10 +83,6 @@ a{
 
 .sect-header a:hover{
   color: #000;
-}
-
-.sect-commentary .article-item, .article-commentary{
-  grid-template-columns: 1fr 96px;
 }
 
 .post-categories{
@@ -169,12 +152,8 @@ footer li{
 }
 
 .ad img{
+  box-sizing: border-box;
   border: 2px solid #666;
-}
-
-.home-top-ad{
-  grid-column: 1/7;
-  margin-bottom: 16px;
 }
 
 .home-top-ad img, .sidebar-ad img, .single-ad img{
@@ -183,96 +162,14 @@ footer li{
 }
 
 .sidebar-ad, .single-ad{
-  width: 300px;
+  max-width: 300px;
   margin: 32px auto;
-}
-
-.single-ad{
-  grid-column: 1;
-  grid-row: 4/7;
-}
-
-.related-container{
-  margin-top: 64px;
-}
-
-.related-container h2{
-  font-size: 24px;
-  font-family: 'Avenir Pro 85 Heavy';
-}
-
-.related-container h3{
-  font-size: 20px;
-  line-height: 1.1;
-  margin: 32px 0 6px 0;
-  font-weight: 600;
-}
-
-.related-container h3 a{
-  color: #555;
-}
-
-.related-container h3 a:hover{
-  color: #000;
-}
-
-.related-container .related-date{
-  font-size: 15px;
-  font-family: 'Avenir Pro 55 Roman';
-  color: rgba(0,0,0,0.6);
-}
-
-.media-credit{
-  background-color: #222;
-  color: rgba(255,255,255,0.5);
-  padding: 8px 16px 8px 16px;
-  font-family: 'Avenir Pro 85 Heavy';
-  text-align: right;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-
-.single-image-caption{
-  background-color: #222;
-  padding: 0 16px 16px 16px;
-  color: white;
-  font-size: 16px;
-  text-align: left;
-}
-
-.single-image > .single-image{
-  border-bottom: 0;
-}
-
-.single-image img{
-  display: block;
-}
-
-.single-image > p{
-  margin: 0;
-}
-
-.single-container .strip-item{
-  margin-right: 0;
-  padding-right: 0;
-  border: none;
-  font-family: 'Avenir Pro 55 Roman';
-}
-
-.single-ad + .article-about-top{
-  margin-top: 32px;
 }
 
 .category-container .author-prof{
   width: 168px;
   height: 168px;
   margin-bottom: 32px;
-}
-
-.single-container .author-prof{
-  width: 64px;
-  height: 64px;
-  margin-bottom: 16px;
 }
 
 .author-prof img{
@@ -285,40 +182,15 @@ footer li{
   margin-bottom: 32px;
 }
 
-@media(min-width: 1200px){
-  .single-container{
-    grid-template-columns: 300px 728px 1fr;
-    grid-column-gap: 32px;
-  }
+.category-container p{
+  font-size: 18px;
+}
 
-  .category-container, .about-inner{
-    display: grid;
-    grid-template-columns: 1fr 728px 1fr;
-    grid-column-gap: 32px;
-  }
+@media(min-width: 600px){
 
-  .article-category{
-    grid-row: 1;
-    grid-column: 2/3;
-  }
-
-  .single-container h1{
-    grid-row: 2;
-    grid-column: 2/3;
-  }
-
-  .single-left{
-    grid-row: 3;
-    grid-column: 1/2;
-  }
-
-  .single-right{
-    grid-row: 3;
-    grid-column: 2/3;
-  }
-
-  .mobile-ads-related{
-    display: none;
+  .category-container{
+    max-width: 640px;
+    width: 640px;
   }
 
   .category-container .article-item{
@@ -328,7 +200,6 @@ footer li{
   }
 
   .category-container h1{
-    grid-column: 2/3;
     font-size: 56px;
   }
 
@@ -354,30 +225,6 @@ footer li{
 }
 
 @media(max-width: 600px){
-  .articles-container, .single-container{
-    padding: 24px;
-  }
-
-  .single-container h1{
-    font-size: 36px;
-  }
-
-  .single-right{
-    display: grid;
-  }
-
-  .desktop-ads-related{
-    display: none;
-  }
-
-  .mobile-ads-related{
-    grid-row: 6;
-  }
-
-  .article-about{
-    font-size: 16px;
-    padding-bottom: 32px;
-  }
 
   .category-container .article-item{
     grid-template-columns: 1fr 96px;
@@ -387,5 +234,13 @@ footer li{
 
   .category-container .article-item h2{
     font-size: 24px;
+  }
+
+  .article-commentary h2{
+    font-size: 20px!important;
+  }
+
+  .article-commentary p{
+    display: none;
   }
 }

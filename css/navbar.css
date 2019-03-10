@@ -124,12 +124,7 @@
 #searchform > div{
   margin-top: 13px;
   display: grid;
-  grid-template-columns: 1fr 96px;
-}
-
-#searchform input{
-  color: #fff;
-  font-family: 'Avenir Pro 55 Roman';
+  grid-template-columns: 1fr auto;
 }
 
 #searchform .screen-reader-text{
@@ -143,39 +138,51 @@
   box-sizing: border-box;
   font-size: 20px;
   padding-bottom: 8px;
+  font-family: 'Avenir Pro 55 Roman';
+  color: #fff;
 }
 
 #searchform input#s:focus{
   outline: none;
 }
 
-#searchform input#searchsubmit{
+.submit-button{
   margin-left: 16px;
   background-color: transparent;
   border: 2px solid #fff;
   cursor: pointer;
+  line-height: 36px;
+  padding: 0 12px;
+  text-align: center;
+  color: #fff;
 }
 
-#searchform input#searchsubmit:hover{
+.submit-button:hover{
   background-color: #fff;
   color: #333;
 }
 
-#searchform input#s, #searchform input#searchsubmit{
+#searchform input#s, .submit-button{
   height: 36px;
 }
 
-@media(min-width: 1200px){
+input#searchsubmit{
+  display: none;
+}
+
+@media (max-width: 960px){
+  img.desktop-logo{
+    display: none;
+  }
+  
+}
+
+@media (min-width: 960px){
   img.mobile-logo{
     display: none;
   }
 
-  .navbar-logo{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    order: 3;
-  }
+  
 
   .sections-dropdown-inner{
     grid-template-columns: repeat(5, 1fr);
@@ -187,17 +194,49 @@
   }
 }
 
-@media(max-width: 600px){
+@media (min-width: 600px){
+  .navbar-logo{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    order: 3;
+  }
+
+  .sections-dropdown-inner{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 800px){
+  .sections-dropdown-inner{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 750px){
+  .navbar-item:not(.navbar-search){
+    display: none!important;
+  }
+  img.mobile-logo{
+    display: none;
+  }
+  img.desktop-logo{
+    display: block;
+  }
+}
+
+@media (max-width: 450px){
+  img.mobile-logo{
+    display: block;
+  }
   img.desktop-logo{
     display: none;
   }
+}
 
+@media(max-width: 600px){
   .navbar-rightnav{
     margin-left: 0;
-  }
-
-  .navbar-item:not(.navbar-search){
-    display: none!important;
   }
 
   .navbar-sections-button{
@@ -212,14 +251,5 @@
     font-size: 16px;
     padding-top: 16px;
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .sections-dropdown-inner ul{
-    grid-column: 1;
-  }
-
-  .sections-dropdown-inner > .menu:last-of-type{
-    grid-column: 2;
-    grid-row: 1;
   }
 }
