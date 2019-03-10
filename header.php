@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, target-densityDpi=device-dpi' name='viewport' />
-    <title><?php if (single_post_title() != null){echo single_post_title()."—";} bloginfo('name'); ?></title>
+    <title><?php echo wp_get_document_title(); ?></title>
     <script type=" text/javascript">
         (function() {
             var trial = document.createElement('script');
@@ -15,6 +15,13 @@
             head.appendChild(trial);
         })();
     </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri()?>/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri()?>/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri()?>/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?php echo get_template_directory_uri()?>/favicon/site.webmanifest">
+    <link rel="mask-icon" href="<?php echo get_template_directory_uri()?>/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link href=" https: //stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/navbar.css' ?>" type='text/css' ">

@@ -26,7 +26,6 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 - [ ] Add links to ads
 - New pages
   - [ ] Join Plip
-  - [ ] Advertise for Plip
   - [ ] Sub to newsletter
     - [ ] Figure out newsletter subscription system
 
@@ -89,6 +88,8 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
       - [X] Redirects
       - [X] Media Links
 - General
+  - [X] Page.php
+    - [X] Advertise for Plip
   - [X] Cleaner home nameplate thing
     - [X] Home horizontal row (homestrip)
       - [X] Eighth Page
@@ -118,6 +119,7 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
   - [X] Author pages
     - [ ] Automate (Sarah)
 - Technical
+  - [X] Favicon
   - [X] Make title appear properly
   - [X] Tablet Responsiveness
   - [X] ~~Fontface CSS~~

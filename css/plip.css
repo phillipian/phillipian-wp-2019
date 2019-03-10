@@ -193,6 +193,12 @@ footer li{
     width: 640px;
   }
 
+  .page-container{
+    max-width: 728px;
+    width: 728px;
+    min-height: calc(100vh - 256px);
+  }
+
   .category-container .article-item{
     grid-column: 2;
     grid-template-columns: 1fr 256px;
@@ -201,6 +207,10 @@ footer li{
 
   .category-container h1{
     font-size: 56px;
+  }
+
+  .page-container h1{
+    font-size: 42px;
   }
 
   .category-container .article-item .article-image{

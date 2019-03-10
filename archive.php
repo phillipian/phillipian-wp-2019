@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<!-- do this stuff -->
-
 <div class='category-container'>
 
     <?php
