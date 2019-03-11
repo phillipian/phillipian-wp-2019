@@ -26,7 +26,7 @@
 }
 
 .navbar-sections-button{
-  color: rgba(255,255,255,0.8);
+  color: white;
   height: 36px;
   background-color: #333;
   padding: 0 12px;
@@ -83,7 +83,6 @@
   z-index: 2;
   top: 64px;
   padding: 16px 0 20px 0;
-  border-bottom: 16px solid #444;
 }
 
 .sections-dropdown.activated, .search-dropdown.activated{
@@ -174,7 +173,7 @@ input#searchsubmit{
   img.desktop-logo{
     display: none;
   }
-  
+
 }
 
 @media (min-width: 960px){
@@ -182,7 +181,7 @@ input#searchsubmit{
     display: none;
   }
 
-  
+
 
   .sections-dropdown-inner{
     grid-template-columns: repeat(5, 1fr);
