@@ -1,9 +1,10 @@
 <?php get_header(); ?>
 <div class='lotw-container'>
     <div class='lotw-text'>
-        <h1>Look of the Week</h1>
-        <p>We touch the canvas, the canvas takes what it wants. There comes a nice little fluffer. This is probably the greatest thing to happen in my life - to be able to share this with you. Isn't it great to do something you can't fail at?</p>
-        <p>Have a suggestion for who to feature? Let us know at <a href='mailto:arts@phillipian.net'>arts@phillipian.net</a>!</p>
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <h1><?php the_title();?></h1>
+        <?php the_content();
+        endwhile; endif; ?>
     </div>
     <div class='lotw-inner'>
         <div class="lotw-sizer"></div>

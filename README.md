@@ -41,6 +41,13 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
   - [ ] Choose which sports articles to put on frontpage (tags?)
 
 ## Low Priority / Future Ideas
+- Far fetched stuff
+  - Plip developer website
+    - Info about redesign
+    - Technical stuff to use for recruiting/reference for future digital staff
+  - Plip internal website
+    - Internal posts i.e. masthead changes?
+    - Gear checkout system
 - Transition
   - [ ] Upgrade to WP 5.1 (wait until install new theme?)
     - [ ] Backup?
@@ -88,6 +95,7 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
       - [X] Redirects
       - [X] Media Links
 - General
+  - [X] Look of the week masonry
   - [X] Page.php
     - [X] Advertise for Plip
   - [X] Cleaner home nameplate thing
