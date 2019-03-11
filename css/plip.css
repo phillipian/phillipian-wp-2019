@@ -36,7 +36,7 @@ a{
   padding-top: 128px!important;
 }
 
-.single-container p, .category-container p{
+.single-container p, .category-container p, .lotw-text p{
     line-height: 1.5;
     font-size: 20px;
 }
@@ -252,5 +252,97 @@ footer li{
 
   .article-commentary p{
     display: none;
+  }
+}
+
+
+/* LOOK OF THE WEEK */
+/* LOOK OF THE WEEK */
+/* LOOK OF THE WEEK */
+/* LOOK OF THE WEEK */
+/* LOOK OF THE WEEK */
+
+.lotw-container{
+  max-width: 1200px;
+  margin: 128px auto 0 auto;
+}
+
+.lotw-text{
+  padding: 0 24px;
+  max-width: 640px;
+  margin: 0 auto 48px auto;
+}
+
+.lotw-text h1{
+  font-family: 'ITC Cheltenham Std';
+  font-size: 48px;
+  margin-bottom: 8px;
+}
+
+/* clear fix */
+.lotw-inner:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.lotw-item {
+  float: left;
+  overflow: hidden;
+}
+
+.lotw-item img {
+  display: block;
+  width: 100%;
+}
+
+.lotw-descript{
+  position: absolute;
+  transition: all 0.2s ease;
+  box-shadow: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  background-color: #222;
+  color: #fff;
+  width: 100%;
+}
+
+.lotw-descript-inner{
+  padding: 16px;
+}
+
+.lotw-descript-inner h2{
+  margin: 0;
+}
+
+.lotw-descript-inner h2 a{
+  color: #fff;
+}
+
+.lotw-date{
+  margin: 8px 0;
+}
+
+.lotw-item:hover > .lotw-descript{
+  transform: translateY(0);
+  box-shadow: 0px 0px 32px -4px rgba(0,0,0,1);
+}
+
+@media (min-width: 800px){
+  .lotw-sizer,
+  .lotw-item {
+    width: 33.333%;
+  }
+}
+
+@media (max-width: 799.5px){
+  .lotw-sizer,
+  .lotw-item {
+    width: 50%;
+  }
+
+  .lotw-descript h2{
+    font-size: 16px;
   }
 }
