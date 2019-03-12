@@ -1,21 +1,16 @@
 <?php get_header(); ?>
 <div class='lotw-container'>
     <div class='lotw-text'>
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <h1><?php the_title(); ?></h1>
-        <?php the_content();
-    endwhile;
-endif; ?>
+        <h1><?php single_cat_title();?></h1>
+        <?php echo category_description();?>
     </div>
     <div class='lotw-inner'>
         <div class="lotw-sizer"></div>
 
         <?php
-        $args = array("category_name" => "lotw-arts");
-        $the_query = new WP_Query($args);
-        if ($the_query->have_posts()) {
-            while ($the_query->have_posts()) {
-                $the_query->the_post(); ?>
+        if (have_posts()) {
+            while (have_posts()) {
+                the_post(); ?>
         <div class='lotw-item'>
             <a class='lotw-outer-link' href='<?php the_permalink(); ?>'>
                 <img src='<?php echo catch_that_image() ?>'>

@@ -334,6 +334,10 @@ footer li{
   .lotw-item {
     width: 33.333%;
   }
+
+  .lotw-wide{
+    width: 66.666%;
+  }
 }
 
 @media (max-width: 799.5px){
