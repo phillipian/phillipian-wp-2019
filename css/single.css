@@ -16,6 +16,10 @@
   height: unset;
 }
 
+.single-container p:first-of-type{
+  margin-top: 0;
+}
+
 .single-ad{
   grid-column: 1;
   grid-row: 4/7;

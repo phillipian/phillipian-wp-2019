@@ -346,3 +346,26 @@ footer li{
     font-size: 16px;
   }
 }
+
+/* SCORE BOX */
+/* SCORE BOX */
+/* SCORE BOX */
+/* SCORE BOX */
+/* SCORE BOX */
+
+.score-box{
+  width: 240px;
+  display: grid;
+  color: #fff;
+  grid-template-columns: 1fr min-content;
+  background-color: #0072BC;
+}
+
+.score-name, .score-num{
+  padding: 12px;
+  border-bottom: 1px solid #fff;
+}
+
+.score-num{
+  text-align: right;
+}

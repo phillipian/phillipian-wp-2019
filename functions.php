@@ -22,6 +22,20 @@ function caption_override_sc($atts, $content = null)
 
 add_shortcode('caption', 'caption_override_sc');
 
+function scorebox_sc($atts, $content = null){
+  $scores = explode(",", $content);
+  $retval = "";
+  foreach ($scores as $score){
+    $scoresplit = explode(":", $score);
+    $retval = $retval."
+      <div class='score-name'><span>".$scoresplit[0]."</span></div>
+      <div class='score-num'><span>".$scoresplit[1]."</span></div>";
+  }
+  return "<div class='score-box'>".$retval."</div>";
+}
+
+add_shortcode('scorebox', 'scorebox_sc');
+
 function jetpackme_remove_rp()
 {
   if (class_exists('Jetpack_RelatedPosts')) {
