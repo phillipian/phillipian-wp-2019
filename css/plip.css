@@ -17,11 +17,11 @@ a{
   color: #0082ca;
 }
 
-.home-top, .category-container, #searchform, .sections-dropdown-inner, .about-inner, .articles-container, .single-container{
+.home-top, .category-container, #searchform, .sections-dropdown-inner, .about-inner, .articles-container, .single-container, .sports-container{
     padding: 0 24px;
 }
 
-.articles-container, .single-container,.footer-inner, #searchform{
+.articles-container, .single-container,.footer-inner, #searchform, .sports-container{
   margin: 0 auto;
   max-width: 1200px;
   display: grid;
@@ -294,6 +294,11 @@ footer li{
 .lotw-item img {
   display: block;
   width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.lotw-item:hover img{
+  transform: scale(1.05);
 }
 
 .lotw-descript{
@@ -349,27 +354,4 @@ footer li{
   .lotw-descript h2{
     font-size: 16px;
   }
-}
-
-/* SCORE BOX */
-/* SCORE BOX */
-/* SCORE BOX */
-/* SCORE BOX */
-/* SCORE BOX */
-
-.score-box{
-  width: 240px;
-  display: grid;
-  color: #fff;
-  grid-template-columns: 1fr min-content;
-  background-color: #0072BC;
-}
-
-.score-name, .score-num{
-  padding: 12px;
-  border-bottom: 1px solid #fff;
-}
-
-.score-num{
-  text-align: right;
 }

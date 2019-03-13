@@ -1,0 +1,46 @@
+.sports-container{
+    margin-top: 96px!important;
+}
+
+.score-box{
+  max-width: 280px;
+  width: 100%;
+  display: grid;
+  color: #fff;
+  grid-template-columns: 1fr min-content;
+  background-color: #0072BC;
+}
+
+.score-name, .score-num{
+  padding: 12px;
+  border-bottom: 1px solid #fff;
+}
+
+.score-num{
+  text-align: right;
+}
+
+.sports-coverage{
+    overflow-x: auto;
+}
+
+.sports-coverage-inner{
+    display: grid;
+}
+
+.sports-coverage-item{
+    grid-row: 1;
+    width: 280px;
+    margin-right: 20px;
+}
+
+.sports-coverage-item h3{
+    margin: 6px 0 6px 0;
+    line-height: 1.1;
+    font-size: 20px;
+}
+
+.sports-container h2{
+    font-family: 'ITC Cheltenham Std';
+    font-size: 48px;
+}

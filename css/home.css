@@ -107,12 +107,12 @@ div.article-item:last-of-type{
   padding-bottom: 6px;
 }
 
-.article-item h2 a{
+.article-item h2 a, .sports-coverage-item h3 a{
   color: #000;
   transition: color 0.1s ease;
 }
 
-.article-item h2 a:hover{
+.article-item h2 a:hover, .sports-coverage-item h3 a:hover{
   color: rgba(0,0,0,0.5);
 }
 
@@ -120,12 +120,12 @@ div.article-item:last-of-type{
   color: #888;
 }
 
-.article-item .article-author{
+.article-item .article-author, .sports-coverage-item .article-author{
   font-family: 'Avenir Pro 85 Heavy';
   padding-bottom: 2px;
 }
 
-.article-item .article-date{
+.article-item .article-date, .sports-coverage-item .article-date{
   font-family: 'Avenir Pro 55 Roman';
   padding-bottom: 8px;
   font-size: 15px;
@@ -367,8 +367,12 @@ div.article-item:last-of-type{
     padding-top: 24px;
   }
 
-  .dot, .home-social{
+  .dot{
     display: none;
+  }
+
+  .home-social{
+    margin-top: 8px;
   }
 
   .home-tagline span:not(.dot){
