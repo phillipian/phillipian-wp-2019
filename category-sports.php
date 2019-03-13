@@ -19,14 +19,30 @@
                 <?php if (catch_that_image() == false) : else  :?>
                 <div class='article-image'><a href='<?php the_permalink(); ?>'><img src='<?php echo catch_that_image() ?>'></a></div>
                 <?php endif;
-                $excerpt = get_the_content();
-                $scoreboxtrue = preg_match("/\[scorebox\](.*)\[\/scorebox\]/", $excerpt, $matches);
-                if ($scoreboxtrue){echo do_shortcode($matches[0]);}
-                ?>
+            $excerpt = get_the_content();
+            $scoreboxtrue = preg_match("/\[scorebox\](.*)\[\/scorebox\]/", $excerpt, $matches);
+            if ($scoreboxtrue) 
+                    {echo do_shortcode($matches[0])
+                ;}
+            ?>
             </div>
             <?php 
         }
     } ?>
         </div>
     </div>
-</div >
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script>
+    var $grid = $(".sports-coverage-inner").masonry({
+        itemSelector: '.sports-coverage-item',
+        percentPosition: true,
+        columnWidth: '.sports-coverage-item'
+    });
+    $grid.imagesLoaded(function() {
+        console.log("loaded");
+        $grid.masonry();
+    });
+</script >

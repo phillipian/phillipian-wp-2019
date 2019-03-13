@@ -41,7 +41,6 @@ endif; ?>
     $(".lotw-outer-link").on("click", function(event) {
         if (window.matchMedia("(pointer: coarse)").matches) {
             event.preventDefault();
-            console.log("test");
         }
     });
 </script>

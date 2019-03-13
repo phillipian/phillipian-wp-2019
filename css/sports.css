@@ -20,18 +20,16 @@
   text-align: right;
 }
 
-.sports-coverage{
-    overflow-x: auto;
-}
-
-.sports-coverage-inner{
-    display: grid;
-}
-
 .sports-coverage-item{
     grid-row: 1;
-    width: 280px;
-    margin-right: 20px;
+    width: 268px;
+    margin: 32px 32px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+.sports-coverage-item .article-image{
+    margin-top: 8px;
 }
 
 .sports-coverage-item h3{
