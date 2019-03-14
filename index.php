@@ -3,7 +3,7 @@
 <div class='home-top'>
     <div class='home-logo'><img src='<?php echo get_template_directory_uri() . '/images/nameplate.png'; ?>'></div>
     <div class='home-tagline'>
-        <span><a href='about' title='Truth Above All: About The Phillipian'>Vertias Super Omnia</a></span>
+        <span><a href='about' title='Truth Above All: About The Phillipian'>Veritas Super Omnia</a></span>
         <span class='dot'> • </span>
         <span><?php echo date('l, F d, Y') ?></span>
         <span class='dot'> • </span>

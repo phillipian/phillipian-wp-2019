@@ -1,11 +1,12 @@
 <div class='sect sect-<?php
 echo strtolower($catname) ?>'>
     <div class='sect-header'>
-		<h1><a href='<?php
+			<h1><a href='<?php
 $catlink = get_category_link(get_cat_ID($catname));
 echo $catlink ?>'><?php
 echo $catname ?></a></h1>
     </div>
+		<div class='home-divider'></div>
 
     <?php
 
@@ -56,7 +57,7 @@ else {
 		$postppg = 1;
 	}
 	else {
-		$postppg = 5;
+		$postppg = 6;
 	}
 
 	query_posts(array(

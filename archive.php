@@ -11,7 +11,7 @@
     <h1>
         <?php
         $title = get_the_archive_title();
-        preg_match("/(?<=Category: )(.*)|Author: (.*)/", $title, $array);
+        preg_match("/(?<=Category: )(.*)|(?<=Author: )(.*)/", $title, $array);
         echo $array[0];
         ?>
     </h1>
