@@ -84,6 +84,8 @@
         var $grid2 = $(".sect-news").masonry({
             itemSelector: '.article-item',
             percentPosition: true,
+            transitionDuration: '0.2s',
+            horizontalOrder: true,
             gutter: 32,
             columnWidth: '.article-news-alt2'
         });
@@ -95,6 +97,7 @@
             percentPosition: true,
             gutter: 32,
             horizontalOrder: true,
+            transitionDuration: '0.1s',
             columnWidth: '.article-item'
         });
         $grid1.imagesLoaded(function() {

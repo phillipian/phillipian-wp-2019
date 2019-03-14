@@ -28,7 +28,7 @@ if ($catname == 'News') {
 	$include = get_cat_ID($catname);
 	query_posts(array(
 		'cat' => $include . ",-" . $exclude,
-		'posts_per_page' => 4
+		'posts_per_page' => 6
 	));
 	if (have_posts()):
 		while (have_posts()):
