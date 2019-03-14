@@ -76,23 +76,22 @@ a{
   letter-spacing: 1px;
 }
 
-.sect-header a{
+.sect-header a, .post-categories a{
   /*color: rgba(0,0,0,0.3);*/
   transition: color 0.1s ease;
 }
 
-.sect-header a:hover{
+.post-categories a{
+  font-family: 'Avenir Pro 85 Heavy';
+}
+
+.sect-header a:hover, .post-categories a:hover{
   color: #000;
 }
 
 .post-categories{
   font-size: 20px;
   letter-spacing: 2px;
-}
-
-.post-categories a{
-  color: #333;
-  font-family: 'Avenir Pro 85 Heavy';
 }
 
 #wpadminbar{

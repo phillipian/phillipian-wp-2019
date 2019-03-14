@@ -31,7 +31,6 @@
 } ?>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     $(".lotw-outer-link").on("click", function(event) {
         if (window.matchMedia("(pointer: coarse)").matches) {
@@ -39,10 +38,6 @@
             console.log("test");
         }
     });
-</script>
-<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<script>
     var $grid = $(".lotw-inner").masonry({
         itemSelector: '.lotw-item',
         percentPosition: true,

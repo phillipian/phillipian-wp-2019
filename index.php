@@ -80,6 +80,27 @@
         ?>
 
     </div>
+    <script>
+        var $grid2 = $(".sect-news").masonry({
+            itemSelector: '.article-item',
+            percentPosition: true,
+            gutter: 32,
+            columnWidth: '.article-news-alt2'
+        });
+        $grid2.imagesLoaded(function() {
+            $grid2.masonry();
+        });
+        var $grid1 = $(".sect-sports").masonry({
+            itemSelector: '.article-item',
+            percentPosition: true,
+            gutter: 32,
+            horizontalOrder: true,
+            columnWidth: '.article-item'
+        });
+        $grid1.imagesLoaded(function() {
+            $grid1.masonry();
+        });
+    </script>
 
     <div class='sect-group-right'>
 

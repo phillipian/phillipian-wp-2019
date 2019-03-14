@@ -157,12 +157,6 @@ div.article-item:last-of-type{
   grid-template-columns: 1fr 128px;
 }
 
-.sect-arts, .sect-commentary, .sect-sports{
-  border-top: 1px solid rgba(0,0,0,0.2);
-  padding-top: 8px;
-  margin-top: 32px;
-}
-
 .home-top-ad{
   margin-bottom: 16px;
 }
@@ -170,7 +164,6 @@ div.article-item:last-of-type{
 .sect-more{
   text-align: right;
   font-size: 20px;
-  margin-top: 16px;
   font-family: 'Avenir Pro 85 Heavy';
   display: block; /* this is super ugly but there's a div.article-item:last-of-type earlier that would get messed up if this were a div */
   grid-column: 1/4;
@@ -207,31 +200,30 @@ div.article-item:last-of-type{
 
   .sect-news, .sect-sports{
     grid-column: 1/4;
-    display: grid;
-    grid-column-gap: 16px;
-    grid-template-columns: 1fr 1px 1fr;
-  }
-
-  .sect-group-left .home-divider{
-    grid-row: 3 / span 2;
-    grid-column: 2;
-  }
-
-  .sect-sports .home-divider{
-    grid-row: 2 / span 3;
+    clear: both;
   }
 
   .articles-container{
     grid-template-columns: repeat(3,1fr) 1px repeat(2, 1fr);
   }
 
+  .sect-group-left .sect::after{
+    content: '';
+    clear: both;
+    display: block;
+  }
+
+  .sect-group-left .article-item:not(.article-news-feature){
+    width: calc(50% - 16px);
+    float: left;
+  }
+
   .sect-group-left div.article-item:nth-last-of-type(-n+2){
     border: none;
-    padding-bottom: 0;
   }
 
   .article-news-feature{
-    grid-column: 1/4;
+    background-color: #fff;
   }
 
   .article-news-feature h2{
@@ -308,12 +300,26 @@ div.article-item:last-of-type{
     grid-column: 4;
   }
 
+  .sect-group-left .home-divider{
+    position: absolute;
+    left: calc(50% - 0.5px);
+  }
+
   .sect-news .article-item{
     grid-template-columns: repeat(3,1fr);
   }
 
   .sect-header{
     grid-column: 1 / 4;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    padding-top: 8px;
+    margin-top: 48px;
+  }
+
+  div.sect-header:first-of-type{
+    border: none;
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .single-container .wp-block-image{
@@ -351,6 +357,10 @@ div.article-item:last-of-type{
 @media (max-width: 1200px){
   .article-news-feature .article-image, .article-news-alt1 .article-image{
     grid-row: 2;
+  }
+
+  .sect-group-left .home-divider{
+    display: none;
   }
 }
 

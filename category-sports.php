@@ -32,17 +32,15 @@
         </div>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script>
     var $grid = $(".sports-coverage-inner").masonry({
         itemSelector: '.sports-coverage-item',
         percentPosition: true,
+        horizontalOrder: true,
         columnWidth: '.sports-coverage-item'
     });
     $grid.imagesLoaded(function() {
         console.log("loaded");
         $grid.masonry();
     });
-</script >
+</script>

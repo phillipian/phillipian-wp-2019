@@ -1,12 +1,12 @@
-<div class='sect sect-<?php
-echo strtolower($catname) ?>'>
-    <div class='sect-header'>
-			<h1><a href='<?php
+<div class='sect-header'>
+	<h1><a href='<?php
 $catlink = get_category_link(get_cat_ID($catname));
 echo $catlink ?>'><?php
 echo $catname ?></a></h1>
-    </div>
-		<div class='home-divider'></div>
+</div>
+<div class='sect sect-<?php
+echo strtolower($catname) ?>'>
+<div class='home-divider'></div>
 
     <?php
 
@@ -86,8 +86,8 @@ else {
 	endif;
 	wp_reset_query();
 } ?>
-    <a class='sect-more' href='<?php
-echo $catlink ?>'>All <?php
-echo $catname ?> Articles ></a>
 
  </div>
+<a class='sect-more' href='<?php
+echo $catlink ?>'>All <?php
+echo $catname ?> Articles ></a>
