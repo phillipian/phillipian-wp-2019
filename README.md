@@ -1,6 +1,6 @@
 # Phillipian.net Wordpress Theme 2019
 
-Complete redesign of Phillipian.net by CXLII. Project led by Samson Zhang with contributions from Anthony Kim, Sarah Chen, Jeffrey Pan, and Alex Turk.
+Complete redesign of The Phillipian's website by CXLII. Website redesign by Samson Zhang '20 and Anthony Kim '21. Upload Automation by Sarah Chen '21, Jeffrey Pan '21, and Alex Turk '21.
 
 ## Objectives
 - General design
