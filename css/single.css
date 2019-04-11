@@ -111,12 +111,24 @@ div.single-ad:nth-of-type(2){
         grid-template-columns: 1fr 728px 300px;
     }
 
-    .single-right, .single-container h1, .article-category{
-        grid-column: 2/3;
+    .single-container h1, .article-category{
+        grid-column: 1/3;
+    }
+
+    .single-right{
+      grid-column: 2/3;
     }
 
     .single-left{
         grid-column: 3/4;
+    }
+}
+
+@media (min-width: 1232px){
+  .single-right > .single-image{
+        position: relative;
+        width: calc(1200px - 332px);
+        left: calc(100% - 1200px + 332px);
     }
 }
 
