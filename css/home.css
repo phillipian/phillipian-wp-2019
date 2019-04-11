@@ -16,7 +16,7 @@
 .home-tagline{
     color: rgba(0,0,0,0.5);
     font-size: 16px;
-    padding-top: 10px;
+    padding-bottom: 16px;
     font-family: 'ITC Cheltenham Std';
     text-align: center;
 }
@@ -38,12 +38,12 @@
 }
 
 .home-cat{
-    margin: 12px 0;
     height: 48px;
-    border-top: 1px solid rgba(0,0,0,0.2);
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    /* border-top: 1px solid rgba(0,0,0,0.2); */
+    border-bottom: 1px solid rgba(0,0,0,0.1);
     line-height: 48px;
     overflow-x: auto;
+    margin-bottom: 32px;
 }
 
 .home-cat ul{
