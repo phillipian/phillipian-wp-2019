@@ -1,6 +1,10 @@
-.home-featured{
+.home-featured, .home-cats{
   margin: 0 auto;
   max-width: 1200px;
+}
+
+.home-cat{
+  width: 50%;
 }
 
 .home-featured-inner{
