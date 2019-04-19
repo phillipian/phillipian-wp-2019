@@ -22,16 +22,17 @@ function caption_override_sc($atts, $content = null)
 
 add_shortcode('caption', 'caption_override_sc');
 
-function scorebox_sc($atts, $content = null){
+function scorebox_sc($atts, $content = null)
+{
   $scores = explode(",", $content);
   $retval = "";
-  foreach ($scores as $score){
+  foreach ($scores as $score) {
     $scoresplit = explode(":", $score);
-    $retval = $retval."
-      <div class='score-name'><span>".$scoresplit[0]."</span></div>
-      <div class='score-num'><span>".$scoresplit[1]."</span></div>";
+    $retval = $retval . "
+      <div class='score-name'><span>" . $scoresplit[0] . "</span></div>
+      <div class='score-num'><span>" . $scoresplit[1] . "</span></div>";
   }
-  return "<div class='score-box'>".$retval."</div>";
+  return "<div class='score-box'>" . $retval . "</div>";
 }
 
 add_shortcode('scorebox', 'scorebox_sc');
@@ -193,7 +194,7 @@ function ba_admin_posts_filter_restrict_manage_posts()
   $sql = 'SELECT DISTINCT meta_key FROM ' . $wpdb->postmeta . ' ORDER BY 1';
   $fields = $wpdb->get_results($sql, ARRAY_N);
   ?>
-<select name="ADMIN_FILTER_FIELD_NAME">
+  <select name="ADMIN_FILTER_FIELD_NAME">
     <option value=""><?php _e('Filter By Custom Fields', 'baapf'); ?></option>
     <?php
     $current = isset($_GET['ADMIN_FILTER_FIELD_NAME']) ? $_GET['ADMIN_FILTER_FIELD_NAME'] : '';
@@ -209,7 +210,26 @@ function ba_admin_posts_filter_restrict_manage_posts()
       }
     }
     ?>
-</select> <?php _e('Value:', 'baapf'); ?><input type="TEXT" name="ADMIN_FILTER_FIELD_VALUE" value="<?php echo $current_v; ?>" />
+  </select> <?php _e('Value:', 'baapf'); ?><input type="TEXT" name="ADMIN_FILTER_FIELD_VALUE" value="<?php echo $current_v; ?>" />
 <?php
 
 }
+
+function catsNoFeatured(){
+  foreach (get_the_category() as $c) {
+                if ($c->name != 'Featured Posts') { ?>
+            <a href='<?php echo get_category_link($c->cat_ID) ?>'>
+                <?php echo $c->name; ?></a><?php
+}
+  }
+}
+
+function the_scorebox(){
+  $excerpt = get_the_content();
+  $scoreboxtrue = preg_match("/\[scorebox\](.*)\[\/scorebox\]/", $excerpt, $matches);
+  if ($scoreboxtrue) 
+  {
+    echo do_shortcode($matches[0]);
+  }
+}
+?>

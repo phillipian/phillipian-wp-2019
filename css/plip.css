@@ -17,11 +17,11 @@ a{
   color: #0082ca;
 }
 
-.home-top, .category-container, #searchform, .sections-dropdown-inner, .about-inner, .articles-container, .single-container, .sports-container{
+.home-top, .category-container, #searchform, .sections-dropdown-inner, .about-inner, .home-featured, .single-container, .sports-container{
     padding: 0 24px;
 }
 
-.articles-container, .single-container,.footer-inner, #searchform, .sports-container{
+.single-container,.footer-inner, #searchform, .sports-container{
   margin: 0 auto;
   max-width: 1200px;
   display: grid;
@@ -39,15 +39,6 @@ a{
 .single-container p, .category-container p, .lotw-text p{
     line-height: 1.5;
     font-size: 20px;
-}
-
-.article-about{
-  font-family: 'Avenir Pro 85 Heavy';
-}
-
-.article-date{
-  font-family: 'Avenir Pro 55 Roman';
-  color: rgba(0,0,0,0.6);
 }
 
 .single-container .wp-block-image{
@@ -69,7 +60,6 @@ a{
   display: inline-block;
   padding-bottom: 2px;
   font-family: 'Avenir Pro 85 Heavy';
-  font-size: 16px;
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 0;
@@ -87,11 +77,6 @@ a{
 
 .sect-header a:hover, .post-categories a:hover{
   color: #000;
-}
-
-.post-categories{
-  font-size: 20px;
-  letter-spacing: 2px;
 }
 
 #wpadminbar{

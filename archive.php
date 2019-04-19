@@ -20,9 +20,9 @@
         echo "<p class='author-bio'>" . get_the_author_meta('description') . " Contact the author at <a href='mailto:".$author_email."'>".$author_email.".</p>";
     }
     if (have_posts()) : while (have_posts()) : the_post(); ?>
-    <div class='article-item article-commentary <?php if (catch_that_image() == false) : ?>article-noimage<? endif ?>'>
-        <?php include 'article-include.php' ?>
-    </div>
+    <?php 
+    $archive = true;
+    include 'article-include.php' ?>
     <?php endwhile;
 endif; ?>
 </div>

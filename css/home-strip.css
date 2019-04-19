@@ -1,15 +1,83 @@
+.home-top{
+  margin: 64px auto 0 auto;
+  max-width: 1200px;
+}
+
+.home-logo{
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.home-logo img{
+    width: 100%;
+}
+
+.home-tagline{
+    color: rgba(0,0,0,0.5);
+    font-size: 14px;
+    padding: 16px 0 12px 0;
+    font-family: 'ITC Cheltenham Std';
+    text-align: center;
+}
+
+.home-tagline a, .home-social a{
+  color: inherit;
+}
+
+.home-tagline a:hover, .home-social a:hover{
+  color: #000;
+}
+
+.home-social{
+  display: inline-flex;
+}
+
+.home-social-item{
+  margin: 0 6px;
+}
+
+.home-cat{
+    height: 42px;
+    /* border-top: 1px solid rgba(0,0,0,0.2); */
+    border-bottom: 1px solid rgba(0,0,0,1.0);
+    line-height: 42px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 32px;
+    font-size: 14px;
+}
+
+.home-cat ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.home-cat ul li{
+    white-space: nowrap;
+    margin-right: 16px;
+}
+
+.home-cat ul li:last-of-type{
+  margin-right: 0;
+}
+
+.home-cat a{
+    color: rgba(0,0,0,0.5);
+    font-family: 'Avenir Pro 55 Roman'!important;
+}
+
 .home-strip-outer{
     overflow-x: auto;
 }
 
 .home-strip{
   width: 1200px;
-  height: 80px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid rgba(0,0,0,0.1);
   border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding: 16px 0;
+  padding: 12px 0;
 }
 
 .home-strip a{
