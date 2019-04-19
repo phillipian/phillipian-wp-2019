@@ -64,32 +64,53 @@
 
 <div class='home-featured'>
     <div class='home-featured-inner'>
-    <?php query_posts(array(
-        'category_name' => 'featured',
-        'posts_per_page' => 7
-    ));
-    if (have_posts()) :
-        $i = 0;
-        while (have_posts()) :
-            the_post();
-            if ($i == 0) {
-                include "article-featured.php";
-                $i++;
-            } else {
-                include "article-include.php";
-            }
-        endwhile;
-    endif; ?>
+        <?php query_posts(array(
+            'category_name' => 'featured',
+            'posts_per_page' => 7
+        ));
+        if (have_posts()) :
+            $i = 0;
+            while (have_posts()) :
+                the_post();
+                if ($i == 0) {
+                    include "article-featured.php";
+                    $i++;
+                } else {
+                    include "article-include.php";
+                }
+            endwhile;
+        endif; ?>
     </div>
 </div>
-<div class='home-cats'>
-    <div class='home-cat'>
+<div class='home-sects'>
+    <div class='home-sect'>
         <div class='sect-header'>
             <h1><a href='<?php
-        $catlink = get_category_link(get_cat_ID("Sports"));
-        echo $catlink ?>'><?php
-        echo "Sports" ?></a></h1>
+                            $catname = "News";
+                            $catlink = get_category_link(get_cat_ID($catname));
+                            echo $catlink ?>'><?php
+                            echo $catname ?></a></h1>
         </div>
+        <?php
+        query_posts(array(
+            'category_name' => 'news+featured',
+            'posts_per_page' => 1
+        ));
+        $i = 0;
+        if (have_posts()) :
+            while (have_posts()) :
+                the_post();
+                if ($i == 0){
+                    include 'article-featured.php';
+                }
+                else{
+                    include 'article-include.php';
+                }
+
+            endwhile;
+        endif;
+        wp_reset_query();
+        ?>
     </div>
 </div>
 <script>

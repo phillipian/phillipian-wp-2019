@@ -1,9 +1,9 @@
-.home-featured, .home-cats{
+.home-featured, .home-sects{
   margin: 0 auto;
   max-width: 1200px;
 }
 
-.home-cat{
+.home-sect{
   width: 50%;
 }
 
@@ -94,10 +94,13 @@
 .article-category{
   font-family: 'Avenir Pro 85 Heavy';
   font-weight: 700;
-  font-size: 12px;
   letter-spacing: 2px;
   margin-bottom: 12px;
   text-transform: uppercase;
+}
+
+.home-featured .article-category, .home-sects .article-category{
+  font-size: 12px;
 }
 
 .article-item h2{
