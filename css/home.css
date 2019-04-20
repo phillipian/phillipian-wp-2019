@@ -33,6 +33,18 @@
   max-height: 300px;
 }
 
+.sect-header + .article-sect h2{
+  font-size: 24px;
+}
+
+.article-sect .article-image{
+  text-align: right;
+}
+
+.article-sect .article-image img{
+  max-height: 140px;
+}
+
 .article-item .article-author, .sports-coverage-item .article-author{
   font-family: 'Avenir Pro 85 Heavy';
   padding-bottom: 2px;
