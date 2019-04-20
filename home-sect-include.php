@@ -19,4 +19,7 @@
 		endwhile;
 	endif;
 	?>
+	<a class='sect-more' href='<?php
+echo $catlink ?>'>All <?php
+echo $catname ?> Articles ></a>
 </div>

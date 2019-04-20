@@ -86,9 +86,9 @@
     <div class='home-sects-inner'>
     <?php
     $catname = "News"; include 'home-sect-include.php';
-    $catname = "Arts"; include 'home-sect-include.php';
-    $catname = "Sports"; include 'home-sect-include.php';
     $catname = "Commentary"; include 'home-sect-include.php';
+    $catname = "Sports"; include 'home-sect-include.php';
+    $catname = "Arts"; include 'home-sect-include.php';
     ?>
     </div>
 </div>

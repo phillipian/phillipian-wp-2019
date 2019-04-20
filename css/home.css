@@ -132,6 +132,14 @@
   grid-column-gap: 24px;
 }
 
+.sect-more{
+  display: block;
+  text-align: right;
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
 @media (min-width: 1200px){
 
   .home-featured:after{
@@ -190,7 +198,7 @@
   }
 
   .home-sect{
-    width: calc(50% - 42px);
+    width: calc(50% - 18px);
     float: left;
     border-top: 1px solid #000;
   }
