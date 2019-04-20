@@ -1,4 +1,4 @@
-<div class="article-item <?php if ($archive){?>article-archive <?php }else{?>article-news-side <?php } if (catch_that_image() == false) : ?>article-noimage<?php endif ?>">
+<div class="article-item <?php if ($archive){?>article-archive <?php }elseif($sect){?>article-sect <?php } else{?>article-news-side <?php } if (catch_that_image() == false) : ?>article-noimage<?php endif ?>">
         <div class=" article-text">
                 <div class='article-category'><a href=''><span><?php catsNoFeatured() ?></span></a></div>
                 <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>

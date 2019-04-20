@@ -82,14 +82,14 @@
     endif; ?>
     </div>
 </div>
-<div class='home-cats'>
-    <div class='home-cat'>
-        <div class='sect-header'>
-            <h1><a href='<?php
-        $catlink = get_category_link(get_cat_ID("Sports"));
-        echo $catlink ?>'><?php
-        echo "Sports" ?></a></h1>
-        </div>
+<div class='home-sects'>
+    <div class='home-sects-inner'>
+    <?php
+    $catname = "News"; include 'home-sect-include.php';
+    $catname = "Arts"; include 'home-sect-include.php';
+    $catname = "Sports"; include 'home-sect-include.php';
+    $catname = "Commentary"; include 'home-sect-include.php';
+    ?>
     </div>
 </div>
 <script>
@@ -101,6 +101,15 @@
     });
     $grid.imagesLoaded(function() {
         $grid.masonry();
+    });
+    var $grid2 = $(".home-sects-inner").masonry({
+        itemSelector: '.home-sect',
+        percentPosition: true,
+        gutter: 36,
+        columnWidth: '.home-sect'
+    });
+    $grid2.imagesLoaded(function() {
+        $grid2.masonry();
     });
 </script>
 </div>
