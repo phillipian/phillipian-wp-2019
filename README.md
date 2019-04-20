@@ -26,10 +26,13 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 - [ ] Fix author linking // get_the_author() returns CPA instead of admin for some reason
 - [X] Fix all sports categories displaying
 - [X] Fix dropdown navbar overflow
-- [ ] Link up "This Week's Paper"
 - [ ] Fix dropdown formatting (align right)
 - [ ] Update masthead
 - [ ] Category page pagination
+- Link things up
+  - [ ] "This Week's Paper"
+  - [ ] Write for Plip
+  - [ ] Subscribe to newsletter
 
 # To Do
 
