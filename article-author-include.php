@@ -1,6 +1,9 @@
 <div class='article-author'>
     <?php 
     $def_author = get_the_author();
+    ?>
+    <script>console.log("<?php echo $def_author ?>");</script>
+    <?php
     $cust_author = get_post_meta(get_the_ID(), 'cpa_author', true);
     if ($def_author == 'admin') {
         echo "<span>" . $cust_author . "</span>";

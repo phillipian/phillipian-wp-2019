@@ -23,7 +23,7 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 # New To Do (We've deployed!)
 
 - [ ] Add in homepage ads
-- [ ] Fix author linking
+- [ ] Fix author linking // get_the_author() returns CPA instead of admin for some reason
 - [X] Fix all sports categories displaying
 - [X] Fix dropdown navbar overflow
 - [ ] Link up "This Week's Paper"
