@@ -64,22 +64,22 @@
 
 <div class='home-featured'>
     <div class='home-featured-inner'>
-    <?php query_posts(array(
-        'category_name' => 'featured',
-        'posts_per_page' => 7
-    ));
-    if (have_posts()) :
-        $i = 0;
-        while (have_posts()) :
-            the_post();
-            if ($i == 0) {
-                include "article-featured.php";
-                $i++;
-            } else {
-                include "article-include.php";
-            }
-        endwhile;
-    endif; ?>
+        <?php query_posts(array(
+            'category_name' => 'featured',
+            'posts_per_page' => 7
+        ));
+        if (have_posts()) :
+            $i = 0;
+            while (have_posts()) :
+                the_post();
+                if ($i == 0) {
+                    include "article-featured.php";
+                    $i++;
+                } else {
+                    include "article-include.php";
+                }
+            endwhile;
+        endif; ?>
     </div>
 </div>
 <div class='home-sects'>

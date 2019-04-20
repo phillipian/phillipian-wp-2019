@@ -162,6 +162,7 @@ div.single-ad:nth-of-type(2){
     
     .single-container h1{
         grid-row: 2;
+        font-size: 48px;
     }
     
     .single-left{
