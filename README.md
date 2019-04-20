@@ -20,6 +20,14 @@ Complete redesign of _The Phillipian_'s website by CXLII. Website redesign by Sa
 ## Technical
 The redesigned website will eventually hosted at [phillipian.net](http://phillipian.net/). While in development, [redesign.phillipian.net](https://redesign.phillipian.net/) will serve as a live development/staging environment. Both sites are hosted on Dreamhost and run Wordpress with the theme contained in this repository installed. Changes are deployed to the staging website manually and are not necessarily updated with this repository.
 
+# New To Do (We've deployed!)
+
+- [ ] Add in homepage ads
+- [ ] Fix author linking
+- [ ] Fix all sports categories displaying
+- [X] Fix dropdown navbar overflow
+- [ ] Fix dropdown formatting (align right)
+
 # To Do
 
 ## Active / High Priority

@@ -98,6 +98,7 @@ footer{
 
 .footer-inner{
   padding: 0 24px;
+  overflow-x: auto;
 }
 
 footer a{
@@ -106,6 +107,7 @@ footer a{
 
 footer li{
   padding-right: 24px;
+  white-space: nowrap;
 }
 
 .category-container h1{
