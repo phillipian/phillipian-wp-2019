@@ -103,6 +103,10 @@
   text-transform: uppercase;
 }
 
+.article-category a:hover{
+  opacity: 0.4;
+}
+
 .home-featured .article-category, .home-sects .article-category{
   font-size: 12px;
 }

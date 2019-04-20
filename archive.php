@@ -3,6 +3,9 @@
 <div class='category-container'>
 
     <?php
+    if (is_category()){
+        $catname = "Sports"; // to trigger "catSports()" for categories
+    }
     if (is_author()){
         $author_email = get_the_author_meta('email');
         echo "<div class='author-prof'>".get_avatar($author_email)."</div>";

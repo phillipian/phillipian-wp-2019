@@ -24,9 +24,12 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 
 - [ ] Add in homepage ads
 - [ ] Fix author linking
-- [ ] Fix all sports categories displaying
+- [X] Fix all sports categories displaying
 - [X] Fix dropdown navbar overflow
+- [ ] Link up "This Week's Paper"
 - [ ] Fix dropdown formatting (align right)
+- [ ] Update masthead
+- [ ] Category page pagination
 
 # To Do
 

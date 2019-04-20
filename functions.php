@@ -217,11 +217,21 @@ function ba_admin_posts_filter_restrict_manage_posts()
 
 function catsNoFeatured(){
   foreach (get_the_category() as $c) {
-                if ($c->name != 'Featured Posts') { ?>
+                if (!in_array($c->name, ["Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts"])) { ?>
             <a href='<?php echo get_category_link($c->cat_ID) ?>'>
                 <?php echo $c->name; ?></a><?php
 }
   }
+}
+
+function catsSports(){
+  foreach (get_the_category() as $c) {
+                if (!in_array($c->name, ["Sports", "Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts"])) { ?>
+            <a href='<?php echo get_category_link($c->cat_ID) ?>'>
+                <?php echo $c->name; ?></a><?php
+}
+  }
+
 }
 
 function the_scorebox(){
