@@ -24,6 +24,7 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 
 - [ ] Add in homepage ads
 - [ ] Fix author linking // get_the_author() returns CPA instead of admin for some reason
+  - This is just being disabled for the time being. User creation automation is also not working so we'll wait until that's fixed
 - [X] Fix all sports categories displaying
 - [X] Fix dropdown navbar overflow
 - [ ] Fix dropdown formatting (align right)
