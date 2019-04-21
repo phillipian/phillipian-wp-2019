@@ -186,11 +186,11 @@ footer li{
   margin-top: 24px;
 }
 
-.page-numbers.current{
+.page-numbers.current, .page-numbers.dots{
   border: 1px solid transparent;
 }
 
-.page-numbers:not(.current):hover{
+.page-numbers:not(.current):not(.dots):hover{
   background-color: rgba(0,0,0,0.1);
   border: 1px solid transparent;
 }

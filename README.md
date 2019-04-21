@@ -28,7 +28,8 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 - [X] Fix dropdown navbar overflow
 - [ ] Fix dropdown formatting (align right)
 - [ ] Update masthead
-- [ ] Category page pagination
+- [X] Category page pagination
+  - LOTW still doesn't work // does correct amount only on mobile for some reason?
 - Link things up
   - [ ] "This Week's Paper"
   - [ ] Write for Plip

@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <div class='lotw-container'>
     <div class='lotw-text'>
-        <h1><?php single_cat_title();?></h1>
-        <?php echo category_description();?>
+        <h1><?php single_cat_title(); ?></h1>
+        <?php echo category_description(); ?>
     </div>
     <div class='lotw-inner'>
         <div class="lotw-sizer"></div>
@@ -11,27 +11,26 @@
         if (have_posts()) {
             while (have_posts()) {
                 the_post(); ?>
-        <div class='lotw-item'>
-            <a class='lotw-outer-link' href='<?php the_permalink(); ?>'>
-                <img src='<?php echo catch_that_image() ?>'>
-            </a>
-            <div class='lotw-descript'>
-                <div class='lotw-descript-inner'>
-                    <h2><a href='<?php the_permalink(); ?>'><?php
-                                                            $title = get_the_title();
-                                                            preg_match("/(?<=Look of the Week: )(.*)/", $title, $array);
-                                                            echo $array[0];
-                                                            ?></a></h2>
-                    <div class='lotw-date'><span><?php the_time(get_option('date_format')); ?></span></div>
+                <div class='lotw-item'>
+                    <a class='lotw-outer-link' href='<?php the_permalink(); ?>'>
+                        <img src='<?php echo catch_that_image() ?>'>
+                    </a>
+                    <div class='lotw-descript'>
+                        <div class='lotw-descript-inner'>
+                            <h2><a href='<?php the_permalink(); ?>'><?php
+                                                                    $title = get_the_title();
+                                                                    preg_match("/(?<=Look of the Week: )(.*)/", $title, $array);
+                                                                    echo $array[0];
+                                                                    ?></a></h2>
+                            <div class='lotw-date'><span><?php the_time(get_option('date_format')); ?></span></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <?php 
+            <?php
+        }
     }
-}
-
-echo paginate_links();
-?>
+    echo paginate_links();
+    ?>
     </div>
 </div>
 <script>
@@ -57,4 +56,4 @@ echo paginate_links();
         $grid.masonry();
     });
 </script>
-<?php get_footer(); ?> 
+<?php get_footer(); ?>
