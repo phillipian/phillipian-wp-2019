@@ -16,11 +16,10 @@ $the_query = new WP_Query($search_query);
     <h1>
         Search results for "<?php echo the_search_query() ?>"
     </h1>
-    <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
-    <div class='article-item article-commentary <?php if (catch_that_image() == false) : ?>article-noimage<? endif ?>'>
-        <?php include 'article-include.php' ?>
-    </div>
-    <?php endwhile;
+    <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post();
+    $archive = true;
+    include 'article-include.php';
+    endwhile;
 else : ?>
     <p>No results found.</p>
     <?php
