@@ -93,6 +93,13 @@ function plip_ads($wp_customize)
     'width' => 1200,
     'height' => 200
   )));
+  $wp_customize->add_setting('plip-ad-homewide-url');
+  $wp_customize->add_control('plip-ad-homewide-url', array(
+    'label' => 'Home Wide Ad Link',
+    'type' => 'url',
+    'section' => 'plip-ad-sec',
+    'settings' => 'plip-ad-homewide-url'
+  ));
   $wp_customize->add_setting('plip-ad-homesmall');
   $wp_customize->add_control(new WP_Customize_Media_control($wp_customize, 'plip-ad-homesmall-control', array(
     'label' => 'Home Small Ad',
@@ -103,6 +110,13 @@ function plip_ads($wp_customize)
     'flex-width' => true,
     'flex-height' => true
   )));
+  $wp_customize->add_setting('plip-ad-homesmall-url');
+  $wp_customize->add_control('plip-ad-homesmall-url', array(
+    'label' => 'Home Small Ad Link',
+    'type' => 'url',
+    'section' => 'plip-ad-sec',
+    'settings' => 'plip-ad-homesmall-url'
+  ));
   $wp_customize->add_setting('plip-ad-single1');
   $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-ad-single1-control', array(
     'label' => 'Single Ad 1',
@@ -111,6 +125,13 @@ function plip_ads($wp_customize)
     'width' => 300,
     'height' => 250
   )));
+  $wp_customize->add_setting('plip-ad-single1-url');
+  $wp_customize->add_control('plip-ad-single1-url', array(
+    'label' => 'Some Ad 1 Link',
+    'type' => 'url',
+    'section' => 'plip-ad-sec',
+    'settings' => 'plip-ad-single1-url'
+  ));
   $wp_customize->add_setting('plip-ad-single2');
   $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-ad-single2-control', array(
     'label' => 'Single Ad 2',
@@ -119,6 +140,13 @@ function plip_ads($wp_customize)
     'width' => 300,
     'height' => 250
   )));
+  $wp_customize->add_setting('plip-ad-single2-url');
+  $wp_customize->add_control('plip-ad-single2-url', array(
+    'label' => 'Single Ad 2 Link',
+    'type' => 'url',
+    'section' => 'plip-ad-sec',
+    'settings' => 'plip-ad-single2-url'
+  ));
 }
 
 add_action('customize_register', 'plip_ads');
@@ -247,7 +275,7 @@ function catsNoFeatured()
                               $excerpt = get_the_content();
                               $scoreboxtrue = preg_match("/\[scorebox\](.*)\[\/scorebox\]/", $excerpt, $matches);
                               if ($scoreboxtrue) {
-                                  echo do_shortcode($matches[0]);
-                                }
+                                echo do_shortcode($matches[0]);
+                              }
                             }
                             ?>

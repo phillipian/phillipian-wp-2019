@@ -82,11 +82,13 @@
         endif; ?>
     </div>
 </div>
+<?php $adclass='home-top-ad'; $adarea='plip-ad-homewide'; include 'ad-include.php'; ?>
 <div class='home-sects'>
     <div class='home-sects-inner'>
     <?php
     $catname = "News"; include 'home-sect-include.php';
     $catname = "Commentary"; include 'home-sect-include.php';
+    include 'home-ad-include.php';
     $catname = "Sports"; include 'home-sect-include.php';
     $catname = "Arts"; include 'home-sect-include.php';
     ?>

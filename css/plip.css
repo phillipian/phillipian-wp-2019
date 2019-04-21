@@ -146,7 +146,17 @@ footer li{
   border: 2px solid #666;
 }
 
-.home-top-ad img, .sidebar-ad img, .single-ad img{
+.home-top-ad{
+  max-width: 1200px;
+  margin: 32px auto;
+}
+
+.home-side-ad{
+  max-width: 300px;
+  margin: 32px auto;
+}
+
+.ad img, .home-top-ad img, .sidebar-ad img, .single-ad img{
   width: 100%;
   display: block;
 }
