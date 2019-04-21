@@ -176,6 +176,25 @@ footer li{
   font-size: 18px;
 }
 
+.page-numbers{
+  font-family: 'Avenir Pro 55 Roman';
+  font-size: 16px;
+  display: inline-block;
+  padding: 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 2px;
+  margin-top: 24px;
+}
+
+.page-numbers.current{
+  border: 1px solid transparent;
+}
+
+.page-numbers:not(.current):hover{
+  background-color: rgba(0,0,0,0.1);
+  border: 1px solid transparent;
+}
+
 @media(min-width: 600px){
 
   .category-container{

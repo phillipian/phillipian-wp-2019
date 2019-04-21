@@ -242,7 +242,7 @@
     width: 100%;
   }
 
-  .article-news-main .article-image{
+  .article-news-main .article-image, .article-archive .article-image{
     margin-top: 16px;
   }
 }

@@ -47,6 +47,13 @@ function jetpackme_remove_rp()
 }
 add_filter('wp', 'jetpackme_remove_rp', 20);
 
+function jetpackme_more_related_posts($options)
+{
+  $options['size'] = 6;
+  return $options;
+}
+add_filter('jetpack_relatedposts_filter_options', 'jetpackme_more_related_posts');
+
 function plip_script_enqueue()
 {
   // wp_enqueue_style(string $handle, mixed $src, array $deps, mixed $ver, string $media);
@@ -215,31 +222,32 @@ function ba_admin_posts_filter_restrict_manage_posts()
 
 }
 
-function catsNoFeatured(){
+function catsNoFeatured()
+{
   foreach (get_the_category() as $c) {
-                if (!in_array($c->name, ["Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts"])) { ?>
-            <a href='<?php echo get_category_link($c->cat_ID) ?>'>
-                <?php echo $c->name; ?></a><?php
-}
-  }
-}
+    if (!in_array($c->name, ["Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts"])) { ?>
+      <a href='<?php echo get_category_link($c->cat_ID) ?>'>
+        <?php echo $c->name; ?></a><?php
+                                }
+                              }
+                            }
 
-function catsSports(){
-  foreach (get_the_category() as $c) {
-                if (!in_array($c->name, ["Sports", "Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts"])) { ?>
-            <a href='<?php echo get_category_link($c->cat_ID) ?>'>
-                <?php echo $c->name; ?></a><?php
-}
-  }
+                            function catsSports()
+                            {
+                              foreach (get_the_category() as $c) {
+                                if (!in_array($c->name, ["Sports", "Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts"])) { ?>
+      <a href='<?php echo get_category_link($c->cat_ID) ?>'>
+        <?php echo $c->name; ?></a><?php
+                                }
+                              }
+                            }
 
-}
-
-function the_scorebox(){
-  $excerpt = get_the_content();
-  $scoreboxtrue = preg_match("/\[scorebox\](.*)\[\/scorebox\]/", $excerpt, $matches);
-  if ($scoreboxtrue) 
-  {
-    echo do_shortcode($matches[0]);
-  }
-}
-?>
+                            function the_scorebox()
+                            {
+                              $excerpt = get_the_content();
+                              $scoreboxtrue = preg_match("/\[scorebox\](.*)\[\/scorebox\]/", $excerpt, $matches);
+                              if ($scoreboxtrue) {
+                                  echo do_shortcode($matches[0]);
+                                }
+                            }
+                            ?>

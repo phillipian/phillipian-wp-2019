@@ -27,7 +27,9 @@
     $archive = true;
     include 'article-include.php' ?>
     <?php endwhile;
-endif; ?>
+endif;
+echo paginate_links();
+?>
 </div>
 
 
