@@ -24,7 +24,7 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 
 - [X] Add in homepage ads
   - [X] Link them up
-  - [ ] Troubleshoot second single ad not showing up
+  - [X] Troubleshoot second single ad not showing up // it just started working randomly...hm
 - [ ] Fix author linking // get_the_author() returns CPA instead of admin for some reason
   - This is just being disabled for the time being. User creation automation is also not working so we'll wait until that's fixed
 - [X] Fix all sports categories displaying
