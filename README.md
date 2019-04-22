@@ -37,8 +37,8 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 - [X] Search page thin column for some reason
 - Link things up
   - [ ] "This Week's Paper"
-  - [ ] Write for Plip
-  - [ ] Subscribe to newsletter
+  - [X] Write for Plip
+  - [X] Subscribe to newsletter
 
 # To Do
 
