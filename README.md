@@ -30,7 +30,7 @@ The redesigned website will eventually hosted at [phillipian.net](http://phillip
 - [X] Fix all sports categories displaying
 - [X] Fix dropdown navbar overflow
 - [ ] Fix dropdown formatting (align right)
-- [ ] Update masthead
+- [X] Update masthead
 - [X] Category page pagination
   - LOTW still doesn't work // does correct amount only on mobile for some reason?
 - [X] Search bar z-index issues
