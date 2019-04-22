@@ -147,6 +147,23 @@ function plip_ads($wp_customize)
     'section' => 'plip-ad-sec',
     'settings' => 'plip-ad-single2-url'
   ));
+  $wp_customize->add_setting('plip-ad-single2-url');
+  $wp_customize->add_control('plip-ad-single2-url', array(
+    'label' => 'Single Ad 2 Link',
+    'type' => 'url',
+    'section' => 'plip-ad-sec',
+    'settings' => 'plip-ad-single2-url'
+  ));
+  $wp_customize->add_section('plip-home-sec', array(
+    'title' => 'Home Custom Settings'
+  ));
+  $wp_customize->add_setting('plip-home-num');
+  $wp_customize->add_control('plip-home-num-control', array(
+    'label' => 'Number of featured posts',
+    'type' => 'number',
+    'section' => 'plip-home-sec',
+    'settings' => 'plip-home-num'
+  ));
 }
 
 add_action('customize_register', 'plip_ads');

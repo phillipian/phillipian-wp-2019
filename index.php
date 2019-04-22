@@ -66,7 +66,7 @@
     <div class='home-featured-inner'>
         <?php query_posts(array(
             'category_name' => 'featured',
-            'posts_per_page' => 7
+            'posts_per_page' => get_theme_mod('plip-home-num', null)
         ));
         if (have_posts()) :
             $i = 0;
@@ -82,16 +82,22 @@
         endif; ?>
     </div>
 </div>
-<?php $adclass='home-top-ad'; $adarea='plip-ad-homewide'; include 'ad-include.php'; ?>
+<?php $adclass = 'home-top-ad';
+$adarea = 'plip-ad-homewide';
+include 'ad-include.php'; ?>
 <div class='home-sects'>
     <div class='home-sects-inner'>
-    <?php
-    $catname = "News"; include 'home-sect-include.php';
-    $catname = "Commentary"; include 'home-sect-include.php';
-    include 'home-ad-include.php';
-    $catname = "Sports"; include 'home-sect-include.php';
-    $catname = "Arts"; include 'home-sect-include.php';
-    ?>
+        <?php
+        $catname = "News";
+        include 'home-sect-include.php';
+        $catname = "Commentary";
+        include 'home-sect-include.php';
+        include 'home-ad-include.php';
+        $catname = "Sports";
+        include 'home-sect-include.php';
+        $catname = "Arts";
+        include 'home-sect-include.php';
+        ?>
     </div>
 </div>
 <script>
