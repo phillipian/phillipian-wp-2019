@@ -5,7 +5,7 @@
     <?php
     $cust_author = get_post_meta(get_the_ID(), 'cpa_author', true);
     // if ($def_author == 'admin') {
-        echo "<span>" . $cust_author . "</span>";
+        echo "<span>" . $def_author . "</span>";
     /*} else {
         if ($singlepage) {
             $author_email = get_the_author_meta('email');
