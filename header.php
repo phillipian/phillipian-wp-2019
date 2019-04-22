@@ -50,7 +50,7 @@
                 <a href='<?php echo get_home_url() ?>'><img class='mobile-logo' src='<?php echo get_template_directory_uri() . '/images/ponly.png'; ?>'></a>
             </div>
             <div class='navbar-sections-button'><span><i class=" fas fa-bars"></i> Sections</span></div>
-    <div class='navbar-item'><span><a href=''>This Week's Paper</a></span></div>
+    <div class='navbar-item'><span><a href='http://archives.phillipian.net/latest'>This Week's Paper</a></span></div>
     <div class='navbar-rightnav'>
         <div class='navbar-item'><span><a href='<?php echo get_home_url() ?>/about/'>About</a></span></div>
         <div class='navbar-item'><span><a href='<?php echo get_home_url() ?>/about#masthead'>Masthead</a></span></div>
@@ -71,4 +71,4 @@
     </div>
     <div class='search-dropdown'>
         <?php get_search_form() ?>
-    </div> 
+    </div>
