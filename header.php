@@ -49,13 +49,13 @@
                 <a href='<?php echo get_home_url() ?>'><img class='desktop-logo' src='<?php echo get_template_directory_uri() . '/images/nameplate.png'; ?>'></a>
                 <a href='<?php echo get_home_url() ?>'><img class='mobile-logo' src='<?php echo get_template_directory_uri() . '/images/ponly.png'; ?>'></a>
             </div>
-            <div class='navbar-sections-button'><span><i class=" fas fa-bars"></i> Sections</span></div>
+            <div class='navbar-sections-button' tabindex='0' role='button'><span><i class=" fas fa-bars"></i> Sections</span></div>
     <div class='navbar-item'><span><a href='http://archives.phillipian.net/latest'>This Week's Paper</a></span></div>
     <div class='navbar-rightnav'>
         <div class='navbar-item'><span><a href='<?php echo get_home_url() ?>/about/'>About</a></span></div>
         <div class='navbar-item'><span><a href='<?php echo get_home_url() ?>/about#masthead'>Masthead</a></span></div>
         <div class='navbar-item'><span><a href='http://archives.phillipian.net/'>Archives</a></span></div>
-        <div class='navbar-item navbar-search'><span><i class="fas fa-search"></i></span></div>
+        <div class='navbar-item navbar-search' tabindex='0' role='button'><span><i class="fas fa-search"></i></span></div>
     </div>
     </div>
     </div>
