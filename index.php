@@ -30,14 +30,14 @@
             ?>
             <div class='strip-item strip-complex'>
                 <?php
-                $strip_link = '';
+                $strip_link = home_url(). '/newsletter-subscribe';
                 $strip_img_url = get_template_directory_uri() . '/images/maillist.png';
                 $strip_main = 'Sign up for our weekly newsletter';
                 $strip_tag = '';
                 $small = true;
                 $complex = true;
                 include 'home-strip-include.php';
-                $strip_link = '';
+                $strip_link = home_url(). '/join';
                 $strip_img_url = get_template_directory_uri() . '/images/write.png';
                 $strip_main = 'Write for <i>The Phillipian</i>';
                 $strip_tag = '';
