@@ -17,11 +17,12 @@
                     </a>
                     <div class='lotw-descript'>
                         <div class='lotw-descript-inner'>
-                            <h2><a href='<?php the_permalink(); ?>'><?php
-                                                                    $title = get_the_title();
-                                                                    preg_match("/(?<=Look of the Week: )(.*)/", $title, $array);
-                                                                    echo $array[0];
-                                                                    ?></a></h2>
+                            <h2><a href='<?php the_permalink(); ?>'>
+                            <?php
+                            $title = get_the_title();
+                            preg_match("/(?<=Look of the Week: )(.*)/", $title, $array);
+                            echo $array[0];
+                            ?></a></h2>
                             <div class='lotw-date'><span><?php the_time(get_option('date_format')); ?></span></div>
                         </div>
                     </div>

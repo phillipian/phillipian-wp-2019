@@ -1,6 +1,6 @@
 <div class="article-item <?php if ($archive){?>article-archive <?php }elseif($sect){?>article-sect <?php } else{?>article-news-side <?php } if (catch_that_image() == false) : ?>article-noimage<?php endif ?>">
         <div class=" article-text">
-                <div class='article-category'><a href=''><span><?php if($catname == "Sports"){catsSports();}else{catsNoFeatured();} ?></span></a></div>
+                <div class='article-category'><a href=''><span><?php if($catname == "Sports"){catsSports();}elseif($multilingual){catMulti();}else{catsNoFeatured();} ?></span></a></div>
                 <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                 <?php include 'article-author-include.php' ?>
                 <div class="article-date"><span><?php the_time("M j"); ?></span></div>

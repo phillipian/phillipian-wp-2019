@@ -277,22 +277,32 @@ function catsNoFeatured()
                               }
                             }
 
-                            function catsSports()
-                            {
-                              foreach (get_the_category() as $c) {
-                                if (!in_array($c->name, ["Sports", "Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts"])) { ?>
-      <a href='<?php echo get_category_link($c->cat_ID) ?>'>
-        <?php echo $c->name; ?></a><?php
-                                }
-                              }
-                            }
+function catsSports()
+{
+  foreach (get_the_category() as $c) {
+    if (!in_array($c->name, ["Sports", "Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts"])) { ?>
+<a href='<?php echo get_category_link($c->cat_ID) ?>'>
+<?php echo $c->name; ?></a><?php
+    }
+  }
+}
 
-                            function the_scorebox()
-                            {
-                              $excerpt = get_the_content();
-                              $scoreboxtrue = preg_match("/\[scorebox\](.*)\[\/scorebox\]/", $excerpt, $matches);
-                              if ($scoreboxtrue) {
-                                echo do_shortcode($matches[0]);
-                              }
-                            }
-                            ?>
+function the_scorebox()
+{
+  $excerpt = get_the_content();
+  $scoreboxtrue = preg_match("/\[scorebox\](.*)\[\/scorebox\]/", $excerpt, $matches);
+  if ($scoreboxtrue) {
+    echo do_shortcode($matches[0]);
+  }
+}
+
+function catMulti(){
+  foreach (get_the_category() as $c) {
+    if (!in_array($c->name, ["Multilingual"])) { ?>
+<a href='<?php echo get_category_link($c->cat_ID) ?>'>
+<?php echo $c->name; ?></a><?php
+    }
+  }
+
+}
+?>
