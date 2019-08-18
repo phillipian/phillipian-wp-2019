@@ -97,6 +97,8 @@ include 'ad-include.php'; ?>
         include 'home-sect-include.php';
         $catname = "Arts";
         include 'home-sect-include.php';
+        $catname = "Multilingual";
+        include 'home-sect-include.php';
         ?>
     </div>
 </div>

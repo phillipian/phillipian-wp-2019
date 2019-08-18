@@ -416,6 +416,33 @@ footer li{
   }
 }
 
+@media (min-width: 500px) and (max-width: 768px), (min-width: 1000px){
+.home-sect .multilingual-grid{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+}
+
+.home-sect .multilingual-grid-item{
+  margin-top: 0;
+}
+}
+
+.home-sect .multilingual-grid{
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) and (max-width: 1000px){
+  .home-sect .multilingual-grid{
+    display: block;
+  }
+
+  .home-sect .multilingual-grid-item{
+    margin-top: 12px;
+  }
+}
+
 .multilingual-grid-item{
   background-color: #222;
   padding: 24px;
