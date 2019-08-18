@@ -30,14 +30,14 @@
             ?>
             <div class='strip-item strip-complex'>
                 <?php
-                $strip_link = home_url(). '/newsletter-subscribe';
+                $strip_link = home_url() . '/newsletter-subscribe';
                 $strip_img_url = get_template_directory_uri() . '/images/maillist.png';
                 $strip_main = 'Sign up for our weekly newsletter';
                 $strip_tag = '';
                 $small = true;
                 $complex = true;
                 include 'home-strip-include.php';
-                $strip_link = home_url(). '/join';
+                $strip_link = home_url() . '/join';
                 $strip_img_url = get_template_directory_uri() . '/images/write.png';
                 $strip_main = 'Write for <i>The Phillipian</i>';
                 $strip_tag = '';
@@ -92,7 +92,6 @@ include 'ad-include.php'; ?>
         include 'home-sect-include.php';
         $catname = "Commentary";
         include 'home-sect-include.php';
-        include 'home-ad-include.php';
         $catname = "Sports";
         include 'home-sect-include.php';
         $catname = "Arts";
@@ -100,6 +99,11 @@ include 'ad-include.php'; ?>
         $catname = "Multilingual";
         include 'home-sect-include.php';
         ?>
+    </div>
+    <div class='home-sects-right'>
+        <?php $adclass = 'home-side-ad';
+        $adarea = 'plip-ad-homesmall';
+        include 'ad-include.php'; ?>
     </div>
 </div>
 <script>

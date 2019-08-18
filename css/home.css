@@ -194,17 +194,40 @@
   }
 }
 
-@media (min-width: 768px){
+.home-sect{
+  border-top: 1px solid #000;
+}
+
+.home-sects-right{
+  border-top: 1px solid #000;
+}
+
+@media (min-width: 700px){
+  .home-sects{
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .home-sects-right{
+    flex: 276px 0 0;
+  }
+
+  .home-sects-inner{
+    flex: auto 1 1;
+    margin-right: 24px;
+  }
+
   .home-sects-inner:after{
     content: '';
     display: block;
     clear: both;
   }
+}
 
+@media (min-width: 900px){
   .home-sect{
     width: calc(50% - 18px);
     float: left;
-    border-top: 1px solid #000;
   }
 }
 
