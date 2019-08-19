@@ -98,20 +98,7 @@ include 'ad-include.php'; ?>
         include 'home-sect-include.php';
         ?>
     </div>
-    <div class='home-sects-right'>
-        <?php
-
-        include "sidebar-strip-include.php";
-
-        $adclass = 'home-side-ad';
-        $adarea = 'plip-ad-homesmall';
-        include 'ad-include.php';
-
-        ?>
-        <div class='article-about-top'></div>
-        <h3>Multilingual</h3>
-        <?php include "multilingual-grid-include.php" ?>
-    </div>
+    <?php include "home-right-include.php" ?>
 </div>
 <script>
     var $grid = $(".home-featured-inner").masonry({

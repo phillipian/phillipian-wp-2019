@@ -174,24 +174,16 @@ function plip_ytstrip($wp_customize)
     'title' => 'Home Strip'
   ));
   $wp_customize->add_setting('plip-yt-title');
-  $wp_customize->add_setting('plip-yt-link');
-  $wp_customize->add_setting('plip-yt-thumb');
+  $wp_customize->add_setting('plip-yt-id');
   $wp_customize->add_setting('plip-a8-title');
   $wp_customize->add_control('plip-yt-title', array(
     'label' => 'Home Strip YouTube Title',
     'section' => 'plip-ytstrip-sec'
   ));
-  $wp_customize->add_control('plip-yt-link', array(
-    'label' => 'Home Strip YouTube Link',
+  $wp_customize->add_control('plip-yt-id', array(
+    'label' => 'Home Strip YouTube ID',
     'section' => 'plip-ytstrip-sec'
   ));
-  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-yt-thumb-control', array(
-    'label' => 'Home Strip YouTube Thumb',
-    'section' => 'plip-ytstrip-sec',
-    'settings' => 'plip-yt-thumb',
-    'width' => 300,
-    'height' => 300
-  )));
   $wp_customize->add_control('plip-a8-title', array(
     'label' => 'Home Strip Eighth Page Title',
     'section' => 'plip-ytstrip-sec'
