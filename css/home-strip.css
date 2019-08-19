@@ -3,6 +3,16 @@
   max-width: 1200px;
 }
 
+@media (max-width: 600px){
+  .home-top{
+    display: none;
+  }
+
+  .home-featured{
+    margin-top: 96px;
+  }
+}
+
 .home-logo{
     max-width: 400px;
     margin: 0 auto;

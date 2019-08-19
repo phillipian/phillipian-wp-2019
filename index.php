@@ -13,7 +13,7 @@
             <div class='home-social-item'><a href='https://www.instagram.com/thephillipian/'><i class="fab fa-instagram"></i></a></div>
         </div>
     </div>
-    <div class='home-strip-outer'>
+    <!-- <div class='home-strip-outer'>
         <div class='home-strip'>
             <?php
             $strip_link = get_theme_mod('plip-yt-link', '');
@@ -55,7 +55,7 @@
             ?>
 
         </div>
-    </div>
+    </div> -->
     <div class='home-cat'>
         <?php wp_nav_menu(array('theme_location' => 'home-cats')) ?>
     </div>
