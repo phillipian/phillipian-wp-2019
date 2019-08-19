@@ -96,14 +96,21 @@ include 'ad-include.php'; ?>
         include 'home-sect-include.php';
         $catname = "Arts";
         include 'home-sect-include.php';
-        $catname = "Multilingual";
-        include 'home-sect-include.php';
         ?>
     </div>
     <div class='home-sects-right'>
-        <?php $adclass = 'home-side-ad';
+        <?php
+
+        include "sidebar-strip-include.php";
+
+        $adclass = 'home-side-ad';
         $adarea = 'plip-ad-homesmall';
-        include 'ad-include.php'; ?>
+        include 'ad-include.php';
+
+        ?>
+        <div class='article-about-top'></div>
+        <h3>Multilingual</h3>
+        <?php include "multilingual-grid-include.php" ?>
     </div>
 </div>
 <script>

@@ -85,14 +85,7 @@
   margin: 0;
 }
 
-.single-container .strip-item{
-  margin-right: 0;
-  padding-right: 0;
-  border: none;
-  font-family: 'Avenir Pro 55 Roman';
-}
-
-.single-ad + .article-about-top{
+.single-ad + .article-about-top, .home-sects-right .article-about-top{
   margin-top: 32px;
 }
 

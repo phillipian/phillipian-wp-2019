@@ -198,9 +198,17 @@
   border-top: 1px solid #000;
 }
 
-.home-sects-right{
+.home-sect .article-category{
+  display: none;
+}
+
+/* .home-sects-right{
   border-top: 1px solid #000;
 }
+
+.home-sects-right > div:first-of-type{
+  margin-top: 36px;
+} */
 
 @media (min-width: 700px){
   .home-sects{
@@ -214,7 +222,7 @@
 
   .home-sects-inner{
     flex: auto 1 1;
-    margin-right: 24px;
+    margin-right: 32px;
   }
 
   .home-sects-inner:after{
