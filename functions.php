@@ -37,6 +37,12 @@ function scorebox_sc($atts, $content = null)
 
 add_shortcode('scorebox', 'scorebox_sc');
 
+function ytembed_sc($atts, $content = null){
+  return "<div class='yt-container'><iframe src='https://www.youtube.com/embed/" + $content + "'></iframe></div>";
+}
+
+add_shortcode('ytembed', 'ytembed_sc');
+
 function jetpackme_remove_rp()
 {
   if (class_exists('Jetpack_RelatedPosts')) {
