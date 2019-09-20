@@ -30,6 +30,10 @@ a{
   height: 100%;
 }
 
+.single-image .yt-container{
+  margin-bottom: 20px;
+}
+
 .home-top, .home-sects, .category-container, #searchform, .sections-dropdown-inner, .about-inner, .home-featured, .single-container, .sports-container{
     padding: 0 24px;
 }

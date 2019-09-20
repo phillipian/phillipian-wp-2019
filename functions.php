@@ -38,7 +38,7 @@ function scorebox_sc($atts, $content = null)
 add_shortcode('scorebox', 'scorebox_sc');
 
 function ytembed_sc($atts, $content = null){
-  return "<div class='yt-container'><iframe src='https://www.youtube.com/embed/" + $content + "'></iframe></div>";
+  return "<div class='single-image'><div class='yt-container'><iframe src='https://www.youtube.com/embed/" . $content . "'></iframe></div></div>";
 }
 
 add_shortcode('ytembed', 'ytembed_sc');
