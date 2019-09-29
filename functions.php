@@ -36,18 +36,17 @@ function scorebox_sc($atts, $content = null)
 }
 
 function imggallery_sc($atts, $content = null){
-  $retval = "<div class='imggallery'>" . do_shortcode($content) . "</div>";
+  $retval = "<div class='imggallery'>" . do_shortcode($content) . "
+  <div class='gallery-controls'>
+    <div class='gallery-next'></div>
+    <div class='gallery-prev'></div>
+    <div class='gallery-index'><span></span></div>
+  </div>
+  </div>";
   $retval = str_replace("<p>","",$retval);
   $retval = str_replace("</p>","",$retval);
-  return $retval;
+  return $retval."<p></p>";
 }
-
-// function imggallery_sc($atts, $content = null){
-//   return "hi";
-//   // "<div class='imggallery'>" . do_shortcode($content) . "</div>";
-//   // retval = str_replace("<p></p>","",htmlval);
-//   // return retval;
-// }
 
 add_shortcode('imggallery', 'imggallery_sc');
 

@@ -85,8 +85,20 @@
   margin: 0;
 }
 
+.imggallery{
+  position: relative;
+}
+
 .imggallery > .single-image:not(.selected){
   display: none;
+}
+
+.gallery-controls{
+  width: 128px;
+  height: 64px;
+  background-color: rgba(0,0,0,0.4);
+  position: absolute;
+  top: 0;
 }
 
 .single-ad + .article-about-top, .home-sects-right .article-about-top{
@@ -127,6 +139,10 @@ div.single-ad:nth-of-type(2){
         width: calc(1200px - 332px);
         left: calc(100% - 1200px + 332px);
     }
+
+  .gallery-controls{
+    left: calc(50% - 600px + 166px);
+  }
 }
 
 @media (min-width: 1000px) and (max-width: 1200px){

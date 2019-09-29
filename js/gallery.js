@@ -1,4 +1,7 @@
 $('.imggallery').each(function(){
-    firstimage = $(this).children().first();
-    firstimage.addClass('selected');
+    images = $(this).children(".single-image");
+    numimages = images.length;
+    
+    index = 1;
+    images.first().addClass('selected');
 })
