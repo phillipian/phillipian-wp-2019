@@ -35,6 +35,13 @@ function scorebox_sc($atts, $content = null)
   return "<div class='score-box'>" . $retval . "</div>";
 }
 
+function imggallery_sc($atts, $content = null){
+  $content = preg_replace("/\r|\n/", "", $content);
+  return "<div class='imggallery'>".do_shortcode($content)."</div>";
+}
+
+add_shortcode('imggallery', 'imggallery_sc');
+
 add_shortcode('scorebox', 'scorebox_sc');
 
 function ytembed_sc($atts, $content = null){

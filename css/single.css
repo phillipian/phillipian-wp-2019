@@ -118,7 +118,7 @@ div.single-ad:nth-of-type(2){
 }
 
 @media (min-width: 1232px){
-  .single-right > .single-image{
+  .single-right > .single-image, .imggallery > .single-image{
         position: relative;
         width: calc(1200px - 332px);
         left: calc(100% - 1200px + 332px);
