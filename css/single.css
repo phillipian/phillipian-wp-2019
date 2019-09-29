@@ -85,6 +85,10 @@
   margin: 0;
 }
 
+.imggallery > .single-image:not(.selected){
+  display: none;
+}
+
 .single-ad + .article-about-top, .home-sects-right .article-about-top{
   margin-top: 32px;
 }

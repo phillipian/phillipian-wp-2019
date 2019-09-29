@@ -30,23 +30,3 @@ $('label.submit-button').keydown(function (e) {
         $('#' + labelID).trigger('click');
     }
 });
-
-/*
-
-$(document).click(function(e){
-    if ($(e.target).is(".navbar-sections-button span, .navbar-sections-button i") || $(e.target).is(".navbar-sections-button")){
-        $(".sections-dropdown").toggleClass("activated");
-    }
-    else if ($(e.target).is()
-    else{
-        $(".sections-dropdown").removeClass("activated");
-    }
-    if ($(e.target).is(".navbar-search span i")){
-        $(".search-dropdown").toggleClass("activated");
-    }
-    else{
-        $(".search-dropdown").removeClass("activated");
-    }
-})
-
-*/

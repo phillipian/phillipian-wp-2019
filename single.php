@@ -40,6 +40,8 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
     </div>
 </div>
 
+<script src='<?php echo get_template_directory_uri()."/js/gallery.js"?>'></script>
+
 
 
 <?php endwhile;
