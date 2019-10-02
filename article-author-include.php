@@ -2,7 +2,8 @@
     <?php 
     $def_author = get_the_author();
     if (function_exists('coauthors_posts_links')) {
-        $coauthors = coauthors_posts_links();
+        // $coauthors = coauthors_posts_links();
+        coauthors();
         // print_r($coauthors);
     }
     else{
