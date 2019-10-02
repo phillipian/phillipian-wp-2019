@@ -94,11 +94,31 @@
 }
 
 .gallery-controls{
-  width: 128px;
-  height: 64px;
-  background-color: rgba(0,0,0,0.4);
+  height: 48px;
+  background-color: rgba(0,0,0,0.7);
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   top: 0;
+  display: flex;
+  color: #fff;
+  font-family: 'Avenir Pro 85 Heavy';
+  line-height: 48px;
+}
+
+.gallery-index{
+  padding: 0 16px;
+}
+
+.gallery-next, .gallery-prev{
+  width: 48px;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
+}
+
+.gallery-next:hover, .gallery-prev:hover{
+  background-color: rgba(255,255,255,0.2);
 }
 
 .single-ad + .article-about-top, .home-sects-right .article-about-top{
@@ -134,15 +154,11 @@ div.single-ad:nth-of-type(2){
 }
 
 @media (min-width: 1232px){
-  .single-right > .single-image, .imggallery > .single-image{
+  .single-right > .single-image, .imggallery{
         position: relative;
         width: calc(1200px - 332px);
         left: calc(100% - 1200px + 332px);
     }
-
-  .gallery-controls{
-    left: calc(50% - 600px + 166px);
-  }
 }
 
 @media (min-width: 1000px) and (max-width: 1200px){

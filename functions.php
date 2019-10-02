@@ -38,9 +38,9 @@ function scorebox_sc($atts, $content = null)
 function imggallery_sc($atts, $content = null){
   $retval = "<div class='imggallery'>" . do_shortcode($content) . "
   <div class='gallery-controls'>
-    <div class='gallery-next'></div>
-    <div class='gallery-prev'></div>
-    <div class='gallery-index'><span></span></div>
+  <div class='gallery-prev'><i class='fas fa-arrow-left'></i></div>
+  <div class='gallery-index'><span class='num'>1</span><span class='total'>/4</span></div>
+  <div class='gallery-next'><i class='fas fa-arrow-right'></i></div>
   </div>
   </div>";
   $retval = str_replace("<p>","",$retval);

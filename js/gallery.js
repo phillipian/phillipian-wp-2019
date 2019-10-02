@@ -1,7 +1,42 @@
 $('.imggallery').each(function(){
     images = $(this).children(".single-image");
     numimages = images.length;
-    
-    index = 1;
+    $(this).find(".gallery-index .total").text("/" + numimages);
     images.first().addClass('selected');
 })
+
+$('.gallery-next').on('click',function(){
+    gallery = $(this).parent().parent();
+    index = changeSlide(gallery,true);
+})
+
+$('.gallery-prev').on('click',function(){
+    gallery = $(this).parent().parent();
+    index = changeSlide(gallery,false);
+})
+
+function changeSlide(gallery,forward){
+    index = gallery.find(".num").text();
+    selected = gallery.find(".selected");
+    selected.removeClass("selected");
+    if (forward) changeTo = selected.next();
+    else changeTo = selected.prev();
+    if (changeTo.is(".single-image")) {
+        changeTo.addClass("selected");
+        if (forward) index = parseInt(index) + 1;
+        else index = parseInt(index) - 1;
+    }
+    else {
+        images = gallery.children(".single-image");
+        if (forward){
+            images.first().addClass("selected");
+            index = 1;  
+        }
+        else{
+            images.last().addClass("selected");
+            index = images.length;
+            console.log(index);
+        }
+    }
+    gallery.find(".num").text(index);
+}
