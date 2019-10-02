@@ -1,11 +1,15 @@
 <div class='article-author'>
     <?php 
     $def_author = get_the_author();
-    ?>
-    <?php
-    $cust_author = get_post_meta(get_the_ID(), 'cpa_author', true);
+    if (function_exists('coauthors_posts_links')) {
+        $coauthors = coauthors_posts_links();
+        // print_r($coauthors);
+    }
+    else{
+        the_author();
+    }
     // if ($def_author == 'admin') {
-        echo "<span>" . $def_author . "</span>";
+        // echo "<span>" . $def_author . "</span>";
     /*} else {
         if ($singlepage) {
             $author_email = get_the_author_meta('email');
