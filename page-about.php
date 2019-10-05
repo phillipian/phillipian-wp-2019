@@ -25,7 +25,7 @@
         </div>
         <h2>Masthead</h2>
         <div class='about-masthead' id='masthead'>
-            <img src='<?php echo get_template_directory_uri()."/images/masthead-6-28.png"?>'>
+            <img src='<?php echo get_template_directory_uri()."/images/masthead-10-04.png"?>'>
         </div>
         <div class='about-disc'>
             <p>Students involved in organizations covered by <i>The Phillipian</i> will not play any role in assigning, writing, producing, or editing content regarding said organizations.</p>
