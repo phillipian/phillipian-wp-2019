@@ -185,6 +185,58 @@ function plip_ads($wp_customize)
     'section' => 'plip-home-sec',
     'settings' => 'plip-home-num'
   ));
+  $wp_customize->add_setting('plip-breaking-name');
+  $wp_customize->add_control('plip-breaking-name-control', array(
+    'label' => 'Name of new HOS',
+    'type' => 'string',
+    'section' => 'plip-home-sec',
+    'settings' => 'plip-breaking-name'
+  ));
+  $wp_customize->add_setting('plip-breaking-switch');
+  $wp_customize->add_control('plip-breaking-switch-control', array(
+    'label' => 'Show Breaking News?',
+    'type' => 'checkbox',
+    'section' => 'plip-home-sec',
+    'settings' => 'plip-breaking-switch'
+  ));
+  $wp_customize->add_setting('plip-breaking-image');
+  $wp_customize->add_control(new WP_Customize_Media_control($wp_customize, 'plip-breaking-image-control', array(
+    'label' => 'Picture of new HOS',
+    'section' => 'plip-home-sec',
+    'settings' => 'plip-breaking-image',
+    'width' => 1000,
+    'height' => 1500,
+    'flex-width' => true,
+    'flex-height' => true
+  )));
+  $wp_customize->add_setting('plip-breaking-item1');
+  $wp_customize->add_control('plip-breaking-item1-control', array(
+    'label' => 'Breaking News Bullet Point 1',
+    'type' => 'string',
+    'section' => 'plip-home-sec',
+    'settings' => 'plip-breaking-item1'
+  ));
+  $wp_customize->add_setting('plip-breaking-item2');
+  $wp_customize->add_control('plip-breaking-item2-control', array(
+    'label' => 'Breaking News Bullet Point 2',
+    'type' => 'string',
+    'section' => 'plip-home-sec',
+    'settings' => 'plip-breaking-item2'
+  ));
+  $wp_customize->add_setting('plip-breaking-item3');
+  $wp_customize->add_control('plip-breaking-item3-control', array(
+    'label' => 'Breaking News Bullet Point 3',
+    'type' => 'string',
+    'section' => 'plip-home-sec',
+    'settings' => 'plip-breaking-item3'
+  ));
+  $wp_customize->add_setting('plip-breaking-youtube');
+  $wp_customize->add_control('plip-breaking-youtube-control', array(
+    'label' => 'Breaking News YouTube ID',
+    'type' => 'string',
+    'section' => 'plip-home-sec',
+    'settings' => 'plip-breaking-youtube'
+  ));
 }
 
 add_action('customize_register', 'plip_ads');
@@ -317,5 +369,34 @@ function catMulti(){
     }
   }
 
+}
+
+function time_elapsed_string($datetime)
+{
+  $now = new DateTime;
+  $ago = new DateTime($datetime);
+  $diff = $now->diff($ago);
+
+  $diff->w = floor($diff->d / 7);
+  $diff->d -= $diff->w * 7;
+
+  $string = array(
+    'y' => 'year',
+    'm' => 'month',
+    'w' => 'week',
+    'd' => 'day',
+    'h' => 'hour',
+    'i' => 'minute',
+    // 's' => 'second',
+  );
+  foreach ($string as $k => &$v) {
+    if ($diff->$k) {
+      $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+    } else {
+      unset($string[$k]);
+    }
+  }
+
+  return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
 ?>

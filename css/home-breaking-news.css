@@ -1,0 +1,255 @@
+@media (min-width: 950px){
+    .breaking-grid{
+        display: flex;
+    }
+
+    .breaking-info img{
+        display: none;
+    }
+}
+
+.home-breaking-news{
+    position: relative;
+    background-color: #000;
+    padding: 0 0 0 32px;
+    color: #fff;
+    margin-bottom: 64px;
+    box-shadow: 2px 8px 32px 4px rgba(0,0,0,0.5);
+}
+
+.breaking-label{
+    position: absolute;
+    left: 50%;
+    top: 32px;
+    transform: translateX(-50%);
+    font-family: 'Avenir';
+    text-transform: uppercase;
+    font-size: 24px;
+    letter-spacing: 4px;
+    background-color: red;
+    padding: 8px;
+    border-radius: 16px;
+    display: block;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 0 24px 5px rgba(0,0,0,0.7);
+}
+
+.breaking-title{
+    padding-top: 96px;
+    font-size: 84px;
+    font-family: 'ITC Cheltenham Std';
+    line-height: 0.9;
+}
+
+.breaking-info, .breaking-image{
+    flex: 50% 0 0;
+}
+
+.breaking-info{
+    box-sizing: border-box;
+    padding-right: 32px;
+}
+
+.breaking-image{
+    background-color: #0082ca;
+}
+
+.breaking-image img{
+    width: 100%;
+}
+
+.breaking-info p{
+    font-size: 28px;
+    opacity: 0.7;
+    line-height: 1.4;
+}
+
+.breaking-info p:hover{
+    opacity: 1.0;
+}
+
+.breaking-info p:first-of-type{
+    margin-top: 32px;
+}
+
+.breaking-coverage-label{
+    background-color: #0082ca;
+    color: #fff;
+    padding: 8px;
+    display: inline-block;
+    font-family: 'Avenir';
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin: 16px 0;
+}
+
+.breaking-article{
+    box-sizing: border-box;
+    width: calc(100% - 32px);
+    border: 2px solid #fff;
+    padding: 32px;
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    margin: 32px 0;
+    background-color: #fff;
+    color: #000;
+}
+
+.breaking-article:before{
+    transition: all 0.1s ease;
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 16px;
+    top: 16px;
+    border: 2px solid #0082ca;
+    z-index: 2;
+}
+
+.breaking-article:hover{
+    transition: all 0.1s ease;
+    left: 8px;
+    top: 8px;
+    background-color: transparent;
+    color: #fff;
+}
+
+.breaking-article:hover:before{
+    transition: all 0.1s ease;
+    left: -8px;
+    top: -8px;
+    background-color: #0082ca;
+}
+
+.breaking-article h2{
+    font-family: 'ITC Cheltenham Std';
+    font-weight: 400;
+    font-size: 28px;
+    transition: all 0.1s ease;
+    margin: 0;
+    position: relative;
+    z-index: 5;
+    left: 0;
+    top: 0;
+}
+
+.breaking-article .yt-container{
+    transition: all 0.1s ease;
+    position: relative;
+    z-index: 3;
+    left: 0;
+    top: 0;
+}
+
+.breaking-article:hover h2, .breaking-article:hover .breaking-article-time, .breaking-article:hover .yt-container{
+    left: -8px;
+    top: -8px;
+    transform: scale(1.05);
+}
+
+.breaking-article-time{
+    font-family: 'Avenir';
+    text-transform: uppercase;
+    margin: 8px 0;
+    opacity: 0.7;
+    letter-spacing: 1px;
+    font-size: 14px;
+    transition: all 0.1s ease;
+    position: relative;
+    z-index: 5;
+    left: 0;
+    top: 0;
+}
+
+#breaking-input-label{
+    margin-top: 32px;
+}
+
+.breaking-input{
+    margin-top: 32px;
+}
+
+.breaking-input iframe{
+    width: 100%;
+    height: 600px;
+    border: 0;
+}
+
+.breaking-social{
+    display: flex;
+}
+
+.breaking-social-item{
+    margin-right: 16px;
+    opacity: 0.7;
+}
+
+.breaking-social-item:hover{
+    opacity: 1.0;
+}
+
+.breaking-social a{
+    color: #fff;
+    font-size: 20px;
+}
+
+@media (max-width: 950px){
+    .breaking-title{
+        padding-top: 128px;
+    }
+
+    .breaking-image img{
+        display: none;
+    }
+
+    .breaking-image{
+        padding-left: 32px;
+        padding-top: 32px;
+        margin-left: -64px;
+    }
+
+    .breaking-info img{
+        margin: 32px auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 680px){
+    .breaking-label{
+        font-size: 20px;
+        width: 280px;
+    }
+
+    .breaking-title{
+        font-size: 56px;
+    }
+}
+
+@media (max-width: 600px){
+    .home-breaking-news{
+        margin-top: 64px;
+    }
+}
+
+@media (max-width: 500px){
+    .breaking-label{
+        font-size: 16px;
+        width: 240px;
+    }
+
+    .breaking-title{
+        font-size: 32px;
+        line-height: 1.1;
+        padding-top: 96px;
+    }
+
+    .breaking-info p{
+        font-size: 20px;
+    }
+}

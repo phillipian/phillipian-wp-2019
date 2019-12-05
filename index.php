@@ -13,54 +13,76 @@
             <div class='home-social-item'><a href='https://www.instagram.com/thephillipian/'><i class="fab fa-instagram"></i></a></div>
         </div>
     </div>
-    <!-- <div class='home-strip-outer'>
-        <div class='home-strip'>
-            <?php
-            $strip_link = get_theme_mod('plip-yt-link', '');
-            $strip_img_url = wp_get_attachment_url(get_theme_mod('plip-yt-thumb', null));
-            $strip_main = get_theme_mod('plip-yt-title', "No Video Featured");
-            $strip_tag = 'Video';
-            include 'home-strip-include.php';
-
-            $strip_link = '';
-            $strip_img_url = get_template_directory_uri() . '/images/a8.png';
-            $strip_main = get_theme_mod('plip-a8-title', "No Eighth Page Article Featured");
-            $strip_tag = 'Satire';
-            include 'home-strip-include.php';
-            ?>
-            <div class='strip-item strip-complex'>
-                <?php
-                $strip_link = home_url() . '/newsletter-subscribe';
-                $strip_img_url = get_template_directory_uri() . '/images/maillist.png';
-                $strip_main = 'Sign up for our weekly newsletter';
-                $strip_tag = '';
-                $small = true;
-                $complex = true;
-                include 'home-strip-include.php';
-                $strip_link = home_url() . '/join';
-                $strip_img_url = get_template_directory_uri() . '/images/write.png';
-                $strip_main = 'Write for <i>The Phillipian</i>';
-                $strip_tag = '';
-                include 'home-strip-include.php';
-                ?>
-            </div>
-            <?php
-            $strip_link = 'subscribe';
-            $strip_img_url = get_template_directory_uri() . '/images/subscribe.png';
-            $strip_main = 'Support student journalism and get the latest Andover news delivered to your mailbox';
-            $small = true;
-            $strip_tag = '';
-            $complex = false;
-            include 'home-strip-include.php';
-            ?>
-
-        </div>
-    </div> -->
     <div class='home-cat'>
         <?php wp_nav_menu(array('theme_location' => 'home-cats')) ?>
     </div>
-    <!--<p>First printed in 1857, <i>The Phillipian</i> is Phillips Academy’s weekly student newspaper. Entirely uncensored and student run, the paper is distributed every Friday from September to June.</p>-->
 </div>
+
+<?php if (get_theme_mod('plip-breaking-switch', 'no mod') == 1) : ?>
+    <div class='home-breaking-news'>
+        <div class='breaking-label'><span>Breaking News</span></div>
+        <div class='breaking-grid'>
+            <div class='breaking-info'>
+                <div class='breaking-title'>
+                    <span><b><?php echo get_theme_mod('plip-breaking-name', 'no mod'); ?></b></span>
+                    <span style='opacity: 0.7;'>Announced </span>
+                    <span style='color: #0082ca'>New Head of School</span>
+                </div>
+                <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-breaking-image', null)); ?>'>
+                <p><?php echo get_theme_mod('plip-breaking-item1', null); ?></p>
+                <p><?php echo get_theme_mod('plip-breaking-item2', null); ?></p>
+                <p><?php echo get_theme_mod('plip-breaking-item3', null); ?></p>
+                <?php query_posts(array(
+                        'category_name' => 'breaking'
+                    )); ?>
+
+                <div class='breaking-coverage-label'><span>Our Latest Coverage</span></div>
+
+                <?php if (get_theme_mod('plip-breaking-youtube', '') != '') :
+                    $breakingcoverage = true; ?>
+
+                    <div class='breaking-article'>
+                        <div class='yt-container'><iframe src='https://www.youtube.com/embed/<?php echo get_theme_mod('plip-breaking-youtube'); ?>?modestbranding=1' frameborder='0' allowfullscreen></iframe></div>
+                    </div>
+
+                <?php endif; ?>
+
+                <?php if (have_posts()) :
+                    $breakingcoverage = true; ?>
+
+                    <?php while (have_posts()) :
+                                the_post(); ?>
+
+                        <a href='<?php the_permalink(); ?>'>
+                            <div class='breaking-article'>
+                                <div class='breaking-article-time'><?php echo time_elapsed_string(get_the_time()); ?></div>
+                                <h2><?php the_title(); ?></h2>
+                            </div>
+                        </a>
+
+                    <?php endwhile; endif;
+                        if (!$breakingcoverage) : ?>
+
+                    <div class='breaking-social'>
+                        <div class='breaking-social-item'><a href='https://www.youtube.com/channel/UCQrKknXWKCGhlF1XCOewoBA'><i class="fab fa-youtube"></i></a></div>
+                        <div class='breaking-social-item'><a href='https://twitter.com/phillipian'><i class="fab fa-twitter"></i></a></div>
+                        <div class='breaking-social-item'><a href='https://www.instagram.com/thephillipian/'><i class="fab fa-instagram"></i></a></div>
+                    </div>
+
+                    <p class='breaking-checkback'>Check back later and follow our social media for more coverage, including an exclusive interview with the new Head of School.</p>
+
+                <?php
+                    endif; ?>
+            </div>
+            <div class='breaking-image'>
+                <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-breaking-image', null)); ?>'>
+                <div class='breaking-input'>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdeBchqSs3vzeXcJyZSZ8--B9TuKKyuktB_0UD4DK7Z1CQw_g/viewform?embedded=true" marginheight="0" marginwidth="0">Loading…</iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
 
 <div class='home-featured'>
     <div class='home-featured-inner'>
