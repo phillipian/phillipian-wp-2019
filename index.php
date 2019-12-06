@@ -20,13 +20,13 @@
 
 <?php if (get_theme_mod('plip-breaking-switch', 'no mod') == 1) : ?>
     <div class='home-breaking-news'>
-        <div class='breaking-label'><span>Breaking News</span></div>
+        <!-- <div class='breaking-label'><span>Breaking News</span></div> -->
         <div class='breaking-grid'>
             <div class='breaking-info'>
                 <div class='breaking-title'>
                     <span><b><?php echo get_theme_mod('plip-breaking-name', 'no mod'); ?></b></span>
                     <span style='opacity: 0.7;'>Announced </span>
-                    <span style='color: #0082ca'>New Head of School</span>
+                    <span style='color: #0082ca'>16th Head of School</span>
                 </div>
                 <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-breaking-image', null)); ?>'>
                 <p><?php echo get_theme_mod('plip-breaking-item1', null); ?></p>
@@ -76,9 +76,9 @@
             </div>
             <div class='breaking-image'>
                 <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-breaking-image', null)); ?>'>
-                <div class='breaking-input'>
+                <!-- <div class='breaking-input'>
                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdeBchqSs3vzeXcJyZSZ8--B9TuKKyuktB_0UD4DK7Z1CQw_g/viewform?embedded=true" marginheight="0" marginwidth="0">Loading…</iframe>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
