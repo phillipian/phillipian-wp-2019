@@ -53,26 +53,27 @@
 .breaking-info{
     box-sizing: border-box;
     padding-right: 32px;
+    padding-bottom: 32px;
 }
 
 .breaking-image{
     /* background-color: #0082ca; */
     background-color: #222222;
     box-sizing: border-box;
-    padding: 128px 24px;
+    padding: 72px 24px;
 }
 
 .breaking-image img{
     width: 100%;
 }
 
-.breaking-info p{
+.breaking-info p, .breaking-image p{
     font-size: 28px;
     opacity: 0.7;
     line-height: 1.4;
 }
 
-.breaking-info p:hover{
+.breaking-info p:hover, .breaking-image p:hover{
     opacity: 1.0;
 }
 
@@ -89,7 +90,7 @@
     text-transform: uppercase;
     font-size: 16px;
     letter-spacing: 2px;
-    margin: 16px 0;
+    margin: 64px 0 16px 0;
 }
 
 .breaking-article{

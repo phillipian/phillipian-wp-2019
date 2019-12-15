@@ -86,8 +86,12 @@
                 <?php
                     endif; ?>
 
-                <!-- <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-breaking-image', null)); ?>'> -->
-                <!-- <div class='breaking-input'>
+                <div class='breaking-coverage-label'><span>Student Commentary</span></div>
+
+                <p>Do you have thoughts about these policy changes? Start writing, be it a 100-word or 1000-word response, and email <a href='mailto:commentary@phillipian.net'>commentary@phillipian.net</a>.</p>
+
+                        <!-- <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-breaking-image', null)); ?>'> -->
+                        <!-- <div class='breaking-input'>
                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdeBchqSs3vzeXcJyZSZ8--B9TuKKyuktB_0UD4DK7Z1CQw_g/viewform?embedded=true" marginheight="0" marginwidth="0">Loading…</iframe>
                 </div> -->
             </div>
