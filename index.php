@@ -20,15 +20,16 @@
 
 <?php if (get_theme_mod('plip-breaking-switch', 'no mod') == 1) : ?>
     <div class='home-breaking-news'>
-        <!-- <div class='breaking-label'><span>Breaking News</span></div> -->
+        <div class='breaking-label'><span>Breaking News</span></div>
         <div class='breaking-grid'>
             <div class='breaking-info'>
                 <div class='breaking-title'>
-                    <span><b><?php echo get_theme_mod('plip-breaking-name', 'no mod'); ?></b></span>
+                    <!-- <span><b><?php echo get_theme_mod('plip-breaking-name', 'no mod'); ?></b></span>
                     <span style='opacity: 0.7;'>Announced </span>
-                    <span style='color: #0082ca'>16th Head of School</span>
+                    <span style='color: #0082ca'>16th Head of School</span> -->
+                    <span><?php echo get_theme_mod('plip-breaking-name', 'no mod'); ?></span>
                 </div>
-                <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-breaking-image', null)); ?>'>
+                <!-- <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-breaking-image', null)); ?>'> -->
                 <p><?php echo get_theme_mod('plip-breaking-item1', null); ?></p>
                 <p><?php echo get_theme_mod('plip-breaking-item2', null); ?></p>
                 <p><?php echo get_theme_mod('plip-breaking-item3', null); ?></p>
@@ -36,10 +37,20 @@
                         'category_name' => 'breaking'
                     )); ?>
 
+                <p>Follow <i>The Phillipian</i> on social media for the latest updates:</p>
+
+                <div class='breaking-social'>
+                    <div class='breaking-social-item'><a href='https://www.youtube.com/channel/UCQrKknXWKCGhlF1XCOewoBA'><i class="fab fa-youtube"></i></a></div>
+                    <div class='breaking-social-item'><a href='https://twitter.com/phillipian'><i class="fab fa-twitter"></i></a></div>
+                    <div class='breaking-social-item'><a href='https://www.instagram.com/thephillipian/'><i class="fab fa-instagram"></i></a></div>
+                </div>
+
+            </div>
+            <div class='breaking-image'>
                 <div class='breaking-coverage-label'><span>Our Latest Coverage</span></div>
 
                 <?php if (get_theme_mod('plip-breaking-youtube', '') != '') :
-                    $breakingcoverage = true; ?>
+                        $breakingcoverage = true; ?>
 
                     <div class='breaking-article'>
                         <div class='yt-container'><iframe src='https://www.youtube.com/embed/<?php echo get_theme_mod('plip-breaking-youtube'); ?>?modestbranding=1' frameborder='0' allowfullscreen></iframe></div>
@@ -48,7 +59,7 @@
                 <?php endif; ?>
 
                 <?php if (have_posts()) :
-                    $breakingcoverage = true; ?>
+                        $breakingcoverage = true; ?>
 
                     <?php while (have_posts()) :
                                 the_post(); ?>
@@ -60,7 +71,8 @@
                             </div>
                         </a>
 
-                    <?php endwhile; endif;
+                    <?php endwhile;
+                        endif;
                         if (!$breakingcoverage) : ?>
 
                     <div class='breaking-social'>
@@ -69,13 +81,12 @@
                         <div class='breaking-social-item'><a href='https://www.instagram.com/thephillipian/'><i class="fab fa-instagram"></i></a></div>
                     </div>
 
-                    <p class='breaking-checkback'>Check back later and follow our social media for more coverage, including an exclusive interview with the new Head of School.</p>
+                    <p class='breaking-checkback'>Check back later and follow our social media for the latest coverage.</p>
 
                 <?php
                     endif; ?>
-            </div>
-            <div class='breaking-image'>
-                <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-breaking-image', null)); ?>'>
+
+                <!-- <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-breaking-image', null)); ?>'> -->
                 <!-- <div class='breaking-input'>
                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdeBchqSs3vzeXcJyZSZ8--B9TuKKyuktB_0UD4DK7Z1CQw_g/viewform?embedded=true" marginheight="0" marginwidth="0">Loading…</iframe>
                 </div> -->

@@ -3,6 +3,10 @@
         display: flex;
     }
 
+    .breaking-info, .breaking-image{
+        width: 50%;
+    }
+
     .breaking-info img{
         display: none;
     }
@@ -36,10 +40,10 @@
 }
 
 .breaking-title{
-    padding-top: 96px;
-    font-size: 84px;
+    padding-top: 128px;
+    font-size: 56px;
     font-family: 'ITC Cheltenham Std';
-    line-height: 0.9;
+    line-height: 0.95;
 }
 
 .breaking-info, .breaking-image{
@@ -52,7 +56,10 @@
 }
 
 .breaking-image{
-    background-color: #0082ca;
+    /* background-color: #0082ca; */
+    background-color: #222222;
+    box-sizing: border-box;
+    padding: 128px 24px;
 }
 
 .breaking-image img{
@@ -211,7 +218,8 @@
     .breaking-image{
         padding-left: 32px;
         padding-top: 32px;
-        margin-left: -64px;
+        margin-top: 32px;
+        margin-left: -32px;
     }
 
     .breaking-info img{
