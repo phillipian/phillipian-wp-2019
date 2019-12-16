@@ -66,7 +66,11 @@
 
                         <a href='<?php the_permalink(); ?>'>
                             <div class='breaking-article'>
-                                <div class='breaking-article-time'><?php echo time_elapsed_string(get_the_time()); ?></div>
+                                <div class='breaking-article-time'>
+                                    <?php echo human_time_diff(get_the_time('U'), current_time('U')); ?>
+                                    <!-- <?php echo human_time_diff(1576408815, 1576419615); ?> -->
+                                    Ago
+                                </div>
                                 <h2><?php the_title(); ?></h2>
                             </div>
                         </a>
@@ -100,24 +104,24 @@
                         <a href='<?php the_permalink(); ?>'>
                             <div class='breaking-article'>
                                 <div class='breaking-article-time'><?php
-                        $coauthors = get_coauthors(get_the_ID());
-                        $last = end($coauthors)->display_name;
-                        foreach ($coauthors as $author) {
-                            echo $author->display_name;
-                            if (!($author->display_name == $last)) {
-                                echo ", ";
-                            }
-                        }
-                                ?></div>
+                                                                                $coauthors = get_coauthors(get_the_ID());
+                                                                                $last = end($coauthors)->display_name;
+                                                                                foreach ($coauthors as $author) {
+                                                                                    echo $author->display_name;
+                                                                                    if (!($author->display_name == $last)) {
+                                                                                        echo ", ";
+                                                                                    }
+                                                                                }
+                                                                                ?></div>
                                 <h2><?php the_title(); ?></h2>
                             </div>
                         </a>
 
-                    <?php endwhile;
-                        endif;
-                        ?>
+                <?php endwhile;
+                    endif;
+                    ?>
 
-                
+
 
                 <!-- <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-breaking-image', null)); ?>'> -->
                 <!-- <div class='breaking-input'>
