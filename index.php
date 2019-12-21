@@ -61,10 +61,16 @@
             </div>
         </div>
     </div>
-    <?php $adclass = 'home-top-ad';
-    $adarea = 'plip-ad-homewide';
-    include 'ad-include.php'; ?>
     <div class="home-featured four-col">
+        <?php
+        if (get_theme_mod('plip-breaking-switch', 'no mod') == 1) :
+            $adclass = 'home-top-ad';
+            $adarea = 'plip-ad-homewide';
+            include 'ad-include.php';
+        else:
+            echo "<div class='ad-spacer'></div>";
+        endif;
+        ?>
         <h1>Featured</h1>
         <?php query_posts(array(
             'category_name' => 'featured',
@@ -77,6 +83,37 @@
             endwhile;
         endif; ?>
     </div>
+    <div class="home-main three-col">
+        <div class="home-video">
+            <h1>Live & Video</h1>
+        </div>
+        <div class='home-sects-inner'>
+            <?php
+            $catname = "News";
+            include 'home-sect-include.php';
+            $catname = "Commentary";
+            include 'home-sect-include.php';
+            $catname = "Sports";
+            include 'home-sect-include.php';
+            $catname = "Arts";
+            include 'home-sect-include.php';
+            ?>
+        </div>
+        <?php include "home-right-include.php" ?>
+        <div class="home-video-color leftbar"></div>
+        <div class="home-right-color rightbar"></div>
+    </div>
+    <script>
+        var $grid2 = $(".home-sects-inner").masonry({
+            itemSelector: '.home-sect',
+            percentPosition: true,
+            gutter: 36,
+            columnWidth: '.home-sect'
+        });
+        $grid2.imagesLoaded(function () {
+            $grid2.masonry();
+        });
+    </script>
 
 
 <?php get_footer(); ?>
