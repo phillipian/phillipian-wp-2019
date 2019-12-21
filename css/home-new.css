@@ -1,4 +1,17 @@
-.home-container{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
+@media (min-width: 900px){
+    .three-col{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr repeat(3, 400px) 1fr;
+    }
+
+    .three-col:before{
+        content: '';
+        grid-column: 1/2;
+    }
+
+    .three-col:after{
+        content: '';
+        grid-column: 5/6;
+    }
 }
