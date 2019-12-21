@@ -1,17 +1,49 @@
-@media (min-width: 900px){
-    .three-col{
+@media (min-width: 900px) {
+    .three-col {
         width: 100%;
         display: grid;
         grid-template-columns: 1fr repeat(3, 400px) 1fr;
     }
 
-    .three-col:before{
+    .four-col {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr repeat(4, 300px) 1fr;
+    }
+
+    .three-col:before, .four-col:before, .leftbar {
         content: '';
         grid-column: 1/2;
     }
 
-    .three-col:after{
+    .three-col:after, .three-col .rightbar {
         content: '';
         grid-column: 5/6;
+    }
+
+    .four-col:after, .four-col .rightbar{
+        content: '';
+        grid-column: 6/7;
+    }
+
+    .home-featured h1 {
+        grid-row: 1;
+        grid-column: 2/6;
+        font-family: 'ITC Cheltenham Std';
+        font-size: 42px;
+        font-weight: 400;
+    }
+
+    .home-featured:before{
+        grid-row: 1/4;
+    }
+
+    .home-featured:after{
+        grid-row: 1/3;
+    }
+
+    .home-featured .article-item{
+        margin-right: 32px;
+        margin-bottom: 32px;
     }
 }

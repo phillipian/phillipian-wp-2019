@@ -28,10 +28,22 @@
         <div class="breaking-story three-col">
             <div class="breaking-info">
                 <h1>Uppers Will No Longer Be Allowed to Attend Prom</h1>
-                <p>Seniors received an email from Jennifer Elliott '94, Dean of Students and Residential Life, announcing that Commencement weekend will be "shift[ing] entirely to celebrating our Seniors' Commencement Weekend." Elliott stated that all underclassmen will depart on June 4th, and Prom will be held on June 5th.</p>
+                <p>Seniors received an email from Jennifer Elliott '94, Dean of Students and Residential Life,
+                    announcing that Commencement weekend will be "shift[ing] entirely to celebrating our Seniors'
+                    Commencement Weekend." Elliott stated that all underclassmen will depart on June 4th, and Prom will
+                    be held on June 5th.</p>
             </div>
             <div class="breaking-col">
                 <div class="breaking-coverage-label"><span>Our Latest Coverage</span></div>
+                <?php query_posts(array(
+                    'category__and' => array(get_cat_ID("breaking"), get_cat_ID("news"))
+                ));
+                if (have_posts()) :
+                    while (have_posts()) :
+                        the_post();
+                        include "article-include.php";
+                    endwhile;
+                endif; ?>
             </div>
             <div class="breaking-col">
                 <div class="breaking-coverage-label"><span>Community Commentary</span></div>
@@ -48,6 +60,22 @@
                 <div class="breaking-coverage-label"><span>Videos</span></div>
             </div>
         </div>
+    </div>
+    <?php $adclass = 'home-top-ad';
+    $adarea = 'plip-ad-homewide';
+    include 'ad-include.php'; ?>
+    <div class="home-featured four-col">
+        <h1>Featured</h1>
+        <?php query_posts(array(
+            'category_name' => 'featured',
+            'posts_per_page' => 7
+        ));
+        if (have_posts()) :
+            while (have_posts()) :
+                the_post();
+                include "article-include.php";
+            endwhile;
+        endif; ?>
     </div>
 
 
