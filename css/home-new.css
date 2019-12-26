@@ -1,8 +1,21 @@
-@media (min-width: 900px) {
-    .three-col, .four-col {
-        width: 100%;
+@media (min-width: 600px) {
+    .home-main{
         display: grid;
-        grid-template-columns: minmax(24px,1fr) repeat(3, minmax(200px,400px)) minmax(24px,1fr);
+    }
+
+    .home-video, .home-video-color {
+        grid-row: 1/2;
+        background-color: #222;
+    }
+
+    .home-video {
+        grid-column: 2/4;
+        min-height: 100px;
+    }
+
+    .home-sects-right, .home-right-color {
+        grid-row: 1/3;
+        background-color: #000;
     }
 
     .three-col:before, .four-col:before, .leftbar {
@@ -12,11 +25,29 @@
 
     .three-col:after, .four-col:after, .rightbar {
         content: '';
+        grid-column: 4/5;
+    }
+
+    .home-sects-right {
+        grid-column: 3/4;
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 900px) {
+    .three-col, .four-col {
+        width: 100%;
+        display: grid;
+        grid-template-columns: minmax(24px, 1fr) repeat(3, minmax(200px, 400px)) minmax(24px, 1fr);
+    }
+
+    .three-col:after, .four-col:after, .rightbar {
+        content: '';
         grid-column: 5/6;
     }
 
-    .home-featured:before, .home-featured:after{
-        grid-row: 1 / 5;
+    .home-featured:before, .home-featured:after {
+        grid-row: 1 / 6;
     }
 
     .home-featured h1 {
@@ -24,45 +55,27 @@
         grid-column: 2/5;
     }
 
-    .home-featured, .home-featured:after, .home-featured:before{
+    .home-featured, .home-featured:after, .home-featured:before {
         background-color: #eeeeee;
     }
 
-    .home-featured .article-item{
+    .home-featured .article-item {
         margin-right: 32px;
         margin-bottom: 32px;
     }
 
-    .home-video, .home-video-color{
-        grid-row: 1/2;
-        background-color: #222;
-    }
-
-    .home-video{
-        grid-column: 2/4;
-        height: 100px;
-    }
-
-    .home-sects-right, .home-right-color{
-        grid-row: 1/3;
-        background-color: #000;
-    }
-
-    .home-sects-right{
+    .home-sects-right {
         grid-column: 4/5;
-        padding: 24px;
-        padding-right: 0;
-     }
+    }
 
-    .home-sects-inner{
+    .home-sects-inner {
         grid-column: 2/4;
         grid-row: 2/3;
-        margin-top: 32px;
-        padding-right: 36px;
+        padding-right: 32px;
     }
 
-    .home-top-ad, .ad-spacer{
-        grid-column: 2/6;
+    .home-top-ad, .ad-spacer {
+        grid-column: 2/5;
     }
 }
 
@@ -70,7 +83,7 @@
     .four-col {
         width: 100%;
         display: grid;
-        grid-template-columns: minmax(24px,1fr) repeat(4, 300px) minmax(24px,1fr);
+        grid-template-columns: minmax(24px,1fr) repeat(4, 288px) minmax(24px,1fr);
     }
 
     .four-col:after, .four-col .rightbar{
@@ -82,10 +95,56 @@
         grid-row: 2;
         grid-column: 2/6;
     }
+
+    .home-top-ad, .ad-spacer{
+        grid-column: 2/6;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 600px){
+    .home-main{
+        grid-template-columns: minmax(24px, 1fr) repeat(2, minmax(200px, 400px)) minmax(24px, 1fr);
+    }
+
+    .home-sect{
+        margin-right: 24px;
+    }
+}
+
+@media (max-width: 900px){
+    .home-featured{
+        padding: 0 24px;
+    }
+}
+
+@media (max-width: 600px){
+    .home-main{
+        padding: 0 24px;
+    }
+
+    .home-sects-right{
+        width: calc(100% + 48px);
+        position: relative;
+        left: -24px;
+    }
+}
+
+.home-sects-right{
+    box-sizing: border-box;
+    background-color: #000;
+    padding: 24px;
+}
+
+.home-sects-inner{
+    margin-top: 32px;
 }
 
 .home-featured{
     padding-bottom: 64px;
+}
+
+.home-featured .article-image{
+    margin-top: 12px;
 }
 
 .home-video, .home-sects-right, .home-sects-right .strip-sub{
@@ -100,4 +159,10 @@
     font-family: 'ITC Cheltenham Std';
     font-size: 42px;
     font-weight: 400;
+}
+
+@media (max-width: 600px){
+    .home-new{
+        padding-top: 64px;
+    }
 }

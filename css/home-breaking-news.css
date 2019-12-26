@@ -10,10 +10,39 @@
     line-height: 36px;
 }
 
+.breaking-story-outer{
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+}
+
+.breaking-scroll{
+    padding: 12px;
+    background-color:#fff;
+    font-family: 'Avenir 85 Heavy';
+    text-transform: uppercase;
+    color:#000;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 .breaking-story{
-    min-height: 100px;
+    min-width: 1000px;
     color: #fff;
     border-bottom: 4px solid #444;
+    display: grid;
+    grid-template-columns: minmax(24px,1fr) repeat(3, minmax(200px,400px)) minmax(24px,1fr);
+}
+
+.breaking-story:before{
+    content: '';
+    grid-column: 1/2;
+}
+
+.breaking-story:after{
+    content: '';
+    grid-column: 5/6;
 }
 
 .breaking-story *{
@@ -70,4 +99,10 @@
     padding: 16px;
     background-color: #fff;
     box-shadow: 10px 4px 24px 6px rgba(0,0,0,0.4);
+}
+
+@media (min-width: 972px) {
+    .breaking-scroll{
+        display: none;
+    }
 }
