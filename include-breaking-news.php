@@ -39,6 +39,9 @@ $rightincludes = explode(",", get_theme_mod('plip-breaking-right' . $ind, "socia
                         <div class='breaking-social-item'><a href='https://www.instagram.com/thephillipian/'><i
                                         class="fab fa-instagram"></i></a></div>
                     </div>
+                <?php
+                elseif ($rightitem == 'commentary-call'): ?>
+                    <p>Do you have thoughts about these policy changes? Start writing, be it a 100-word or 1000-word response, and email <a href="mailto:commentary@phillipian.net">commentary@phillipian.net</a>.</p>
                 <?php else:
                     query_posts(array(
                         'category__and' => get_cat_ID($rightitem),
