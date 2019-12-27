@@ -27,9 +27,19 @@ $rightincludes = explode(",", get_theme_mod('plip-breaking-right' . $ind, "socia
         </div>
         <div class="breaking-col">
             <?php foreach ($rightincludes as $rightitem):
-                if ($rightitem == 'social-media'):
+                if ($rightitem == 'social-media'): ?>
+                    <p>Follow <i>The Phillipian</i> on social media for the latest updates:</p>
 
-                else:
+                    <div class='breaking-social'>
+                        <div class='breaking-social-item'><a
+                                    href='https://www.youtube.com/channel/UCQrKknXWKCGhlF1XCOewoBA'><i
+                                        class="fab fa-youtube"></i></a></div>
+                        <div class='breaking-social-item'><a href='https://twitter.com/phillipian'><i
+                                        class="fab fa-twitter"></i></a></div>
+                        <div class='breaking-social-item'><a href='https://www.instagram.com/thephillipian/'><i
+                                        class="fab fa-instagram"></i></a></div>
+                    </div>
+                <?php else:
                     query_posts(array(
                         'category__and' => get_cat_ID($rightitem),
                         'tag__in' => $slug

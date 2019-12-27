@@ -69,18 +69,22 @@
     font-weight: 400;
 }
 
-.breaking-info p{
+.breaking-info p, .breaking-col p{
     font-size: 20px;
     opacity: 0.7;
     line-height: 1.4;
 }
 
-.breaking-info p:hover{
+.breaking-info p:hover, .breaking-col p:hover{
     opacity: 1.0;
 }
 
 .breaking-col{
     padding-left: 32px;
+}
+
+.breaking-col p{
+    margin: 64px 0 16px 0
 }
 
 .breaking-coverage-label{
@@ -99,6 +103,24 @@
     padding: 16px;
     background-color: #fff;
     box-shadow: 10px 4px 24px 6px rgba(0,0,0,0.4);
+}
+
+.breaking-social{
+    display: flex;
+}
+
+.breaking-social-item{
+    margin-right: 16px;
+    opacity: 0.7;
+}
+
+.breaking-social-item:hover{
+    opacity: 1.0;
+}
+
+.breaking-social a{
+    color: #fff;
+    font-size: 20px;
 }
 
 @media (min-width: 972px) {
