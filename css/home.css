@@ -99,11 +99,14 @@
   margin-top: 12px;
 }
 
+.article-item .article-category{
+  font-size: 12px;
+}
+
 .article-category{
   font-family: 'Avenir Pro 85 Heavy';
   font-weight: 700;
   letter-spacing: 2px;
-  font-size: 12px;
   margin-bottom: 12px;
   text-transform: uppercase;
 }
