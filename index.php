@@ -47,16 +47,18 @@
         endif;
         ?>
         <h1>Featured</h1>
-        <?php query_posts(array(
-            'category_name' => 'featured',
-            'posts_per_page' => 7
-        ));
-        if (have_posts()) :
-            while (have_posts()) :
-                the_post();
-                include "article-include.php";
-            endwhile;
-        endif; ?>
+        <div class="featured-posts">
+            <?php query_posts(array(
+                'category_name' => 'featured',
+                'posts_per_page' => 7
+            ));
+            if (have_posts()) :
+                while (have_posts()) :
+                    the_post();
+                    include "article-include.php";
+                endwhile;
+            endif; ?>
+        </div>
     </div>
     <div class="home-main three-col">
         <div class="home-video">
@@ -79,6 +81,14 @@
         <div class="home-right-color rightbar"></div>
     </div>
     <script>
+        var $grid1 = $(".featured-posts").masonry({
+            itemSelector: '.article-news-side',
+            gutter: 24,
+            columnWidth: '.article-news-side'
+        });
+        $grid1.imagesLoaded(function () {
+            $grid1.masonry();
+        });
         var $grid2 = $(".home-sects-inner").masonry({
             itemSelector: '.home-sect',
             percentPosition: true,

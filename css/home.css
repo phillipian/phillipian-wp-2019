@@ -195,10 +195,6 @@
   .home-featured .article-item{
     margin-top: 32px;
   }
-
-  .article-news-side .article-image{
-    margin-top: 12px;
-  }
 }
 
 @media (max-width: 768px){
