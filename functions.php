@@ -2,22 +2,24 @@
 
 add_filter('use_block_editor_for_post', '__return_false', 10);
 
-function media_credit_sc($atts, $content = null)
-{
-    $a = shortcode_atts(array(
-        'name' => 'The Phillipian',
-        'id' => 'none'
-    ), $atts);
-    if ($a['id'] == 'none'){
-        $credit = $a['name'];
-    }
-    else{
-        $authorname = get_the_author_meta('user_firstname',$a['id']) . " " . get_the_author_meta('user_lastname',$a['id']);
-        $credit = $authorname . "/The Phillipian";
-    }
-    preg_match("/<img(.*)\/>/", $content, $array1);
-    return "<div class='single-image'>" . $array1[0] . "<div class='media-credit'><span>" . $credit . '</span></div></div><p></p>';
-}
+// not needed with proprietary media-credit plugin
+//
+//function media_credit_sc($atts, $content = null)
+//{
+//    $a = shortcode_atts(array(
+//        'name' => 'The Phillipian',
+//        'id' => 'none'
+//    ), $atts);
+//    if ($a['id'] == 'none'){
+//        $credit = $a['name'];
+//    }
+//    else{
+//        $authorname = get_the_author_meta('user_firstname',$a['id']) . " " . get_the_author_meta('user_lastname',$a['id']);
+//        $credit = $authorname . "/The Phillipian";
+//    }
+//    preg_match("/<img(.*)\/>/", $content, $array1);
+//    return "<div class='single-image'>" . $array1[0] . "<div class='media-credit'><span>" . $credit . '</span></div></div><p></p>';
+//}
 
 function caption_override_sc($atts, $content = null)
 {
@@ -27,8 +29,9 @@ function caption_override_sc($atts, $content = null)
 }
 
 function override_image_shortcodes(){
-    remove_shortcode('media-credit');
-    add_shortcode('media-credit', 'media_credit_sc');
+//    not needed with proprietary media-credit plugin
+//    remove_shortcode('media-credit');
+//    add_shortcode('media-credit', 'media_credit_sc');
     remove_shortcode('caption');
     add_shortcode('caption', 'caption_override_sc');
 }
