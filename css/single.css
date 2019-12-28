@@ -1,5 +1,5 @@
 .single-container{
-  font-size: 20px;
+    font-size: 20px;
 }
 
 .single-container h1{
@@ -8,131 +8,134 @@
 }
 
 .single-container figcaption{
-  font-family: 'Avenir Pro 55 Roman';
+    font-family: 'Avenir Pro 55 Roman';
 }
 
 .single-container img{
-  width: 100%;
-  height: unset;
+    display: block;
+    width: 100%;
+    height: unset;
 }
 
 .single-container p:first-of-type{
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .single-ad{
-  grid-column: 1;
-  grid-row: 4/7;
+    grid-column: 1;
+    grid-row: 4/7;
 }
 
 .related-container{
-  margin-top: 64px;
+    margin-top: 64px;
 }
 
 .related-container h2{
-  font-size: 24px;
-  font-family: 'Avenir Pro 85 Heavy';
+    font-size: 24px;
+    font-family: 'Avenir Pro 85 Heavy';
 }
 
 .related-container h3{
-  font-size: 20px;
-  line-height: 1.1;
-  margin: 32px 0 6px 0;
-  font-weight: 600;
+    font-size: 20px;
+    line-height: 1.1;
+    margin: 32px 0 6px 0;
+    font-weight: 600;
 }
 
 .related-container h3 a{
-  color: #555;
+    color: #555;
 }
 
 .related-container h3 a:hover{
-  color: #000;
+    color: #000;
 }
 
 .related-container .related-date{
-  font-size: 15px;
-  font-family: 'Avenir Pro 55 Roman';
-  color: rgba(0,0,0,0.6);
+    font-size: 15px;
+    font-family: 'Avenir Pro 55 Roman';
+    color: rgba(0,0,0,0.6);
 }
 
-.media-credit{
-  background-color: #222;
-  color: rgba(255,255,255,0.5);
-  padding: 8px 16px 8px 16px;
-  font-family: 'Avenir Pro 85 Heavy';
-  text-align: right;
-  font-size: 14px;
-  letter-spacing: 1px;
+.single-image div.media-credit{
+    margin: 0;
+    background-color: #222;
+    color: rgba(255,255,255,0.5);
+    padding: 8px 16px 8px 16px;
+    font-family: 'Avenir Pro 85 Heavy';
+    text-align: right;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
 .single-image-caption{
-  background-color: #222;
-  padding: 0 16px 16px 16px;
-  color: white;
-  font-size: 16px;
-  text-align: left;
+    margin: 0;
+    background-color: #222;
+    padding: 0 16px 16px 16px;
+    color: white;
+    font-size: 16px;
+    text-align: left;
 }
 
 .single-image > .single-image{
-  border-bottom: 0;
+    border-bottom: 0;
 }
 
 .single-image img{
-  display: block;
+    display: block;
 }
 
 .single-image > p{
-  margin: 0;
+    margin: 0;
 }
 
 .imggallery{
-  position: relative;
+    position: relative;
 }
 
 .imggallery > .single-image:not(.selected){
-  display: none;
+    display: none;
 }
 
 .gallery-controls{
-  height: 48px;
-  background-color: rgba(0,0,0,0.7);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
-  display: flex;
-  color: #fff;
-  font-family: 'Avenir Pro 85 Heavy';
-  line-height: 48px;
+    height: 48px;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    display: flex;
+    color: #fff;
+    font-family: 'Avenir Pro 85 Heavy';
+    line-height: 48px;
 }
 
 .gallery-index{
-  padding: 0 16px;
+    padding: 0 16px;
 }
 
 .gallery-next, .gallery-prev{
-  width: 48px;
-  height: 100%;
-  cursor: pointer;
-  text-align: center;
+    width: 48px;
+    height: 100%;
+    cursor: pointer;
+    text-align: center;
 }
 
 .gallery-next:hover, .gallery-prev:hover{
-  background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.2);
 }
 
 .single-ad + .article-about-top, .home-sects-right .article-about-top{
-  margin-top: 32px;
+    margin-top: 32px;
 }
 
 .single-container .author-prof{
-  width: 64px;
-  height: 64px;
-  margin-bottom: 16px;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
 }
 
 div.single-ad:nth-of-type(2){
-  display: none;  
+    display: none;
 }
 
 @media (min-width: 1200px){
@@ -145,7 +148,7 @@ div.single-ad:nth-of-type(2){
     }
 
     .single-right{
-      grid-column: 2/3;
+        grid-column: 2/3;
     }
 
     .single-left{
@@ -154,7 +157,7 @@ div.single-ad:nth-of-type(2){
 }
 
 @media (min-width: 1232px){
-  .single-right > .single-image, .imggallery{
+    .single-right > .single-image, .imggallery{
         position: relative;
         width: calc(1200px - 332px);
         left: calc(100% - 1200px + 332px);
@@ -188,25 +191,25 @@ div.single-ad:nth-of-type(2){
     .single-container{
         grid-column-gap: 32px;
     }
-    
+
     .single-container h1{
         grid-row: 2;
         font-size: 48px;
     }
-    
+
     .single-left{
         grid-row: 3;
     }
-    
+
     .single-right{
         grid-row: 3;
         max-width: 728px;
     }
-    
+
     .mobile-ads-related{
         display: none;
     }
-    
+
     .article-category{
         grid-row: 1;
     }
