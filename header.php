@@ -39,6 +39,7 @@
     <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/subscribe.css' ?>" type='text/css' ">
     <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/single.css' ?>" type='text/css' ">
     <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/sports.css' ?>" type='text/css' ">
+    <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/author.css' ?>" type='text/css' ">
     <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/fonts/fontface.css' ?>" type='text/css' ">
 
         <?php wp_head(); ?>

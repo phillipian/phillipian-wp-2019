@@ -34,5 +34,8 @@ echo paginate_links();
 ?>
 </div>
 
-
-<?php get_footer(); ?> 
+<?php
+if ($mediaexists){
+    echo "media exists!";
+}
+get_footer(); ?>

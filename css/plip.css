@@ -225,8 +225,8 @@ footer li{
 @media(min-width: 600px){
 
   .category-container{
-    max-width: 640px;
-    width: 640px;
+    max-width: 1000px;
+    width: 1000px;
   }
 
   .page-container{

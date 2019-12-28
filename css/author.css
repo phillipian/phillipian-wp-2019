@@ -1,0 +1,8 @@
+.media-archive-item{
+    width: calc(33.3% - 16px);
+}
+
+.media-archive-item img{
+    width: 100%;
+    height: unset;
+}
