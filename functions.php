@@ -6,9 +6,17 @@ function media_credit_sc($atts, $content = null)
 {
     $a = shortcode_atts(array(
         'name' => 'The Phillipian',
+        'id' => 'none'
     ), $atts);
+    if ($a['id'] == 'none'){
+        $credit = $a['name'];
+    }
+    else{
+        $authorname = get_the_author_meta('user_firstname',$a['id']) . " " . get_the_author_meta('user_lastname',$a['id']);
+        $credit = $authorname . "/The Phillipian";
+    }
     preg_match("/<img(.*)\/>/", $content, $array1);
-    return "<div class='single-image'>" . $array1[0] . "<div class='media-credit'><span>" . $a['name'] . '</span></div></div><p></p>';
+    return "<div class='single-image'>" . $array1[0] . "<div class='media-credit'><span>" . $credit . '</span></div></div><p></p>';
 }
 
 function caption_override_sc($atts, $content = null)
