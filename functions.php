@@ -2,16 +2,24 @@
 
 add_filter('use_block_editor_for_post', '__return_false', 10);
 
-function media_credit_sc($atts, $content = null)
-{
-    $a = shortcode_atts(array(
-        'name' => 'The Phillipian',
-    ), $atts);
-    preg_match("/<img(.*)\/>/", $content, $array1);
-    return "<div class='single-image'>" . $array1[0] . "<div class='media-credit'><span>" . $a['name'] . '</span></div></div><p></p>';
-}
-
-add_shortcode('media-credit', 'media_credit_sc');
+// not needed with proprietary media-credit plugin
+//
+//function media_credit_sc($atts, $content = null)
+//{
+//    $a = shortcode_atts(array(
+//        'name' => 'The Phillipian',
+//        'id' => 'none'
+//    ), $atts);
+//    if ($a['id'] == 'none'){
+//        $credit = $a['name'];
+//    }
+//    else{
+//        $authorname = get_the_author_meta('user_firstname',$a['id']) . " " . get_the_author_meta('user_lastname',$a['id']);
+//        $credit = $authorname . "/The Phillipian";
+//    }
+//    preg_match("/<img(.*)\/>/", $content, $array1);
+//    return "<div class='single-image'>" . $array1[0] . "<div class='media-credit'><span>" . $credit . '</span></div></div><p></p>';
+//}
 
 function caption_override_sc($atts, $content = null)
 {
@@ -20,7 +28,15 @@ function caption_override_sc($atts, $content = null)
     return "<div class='single-image'>" . do_shortcode($array2[0]) . "<div class='single-image-caption'><span>" . $array3[0] . "</span></div></div><p></p>";
 }
 
-add_shortcode('caption', 'caption_override_sc');
+function override_image_shortcodes(){
+//    not needed with proprietary media-credit plugin
+//    remove_shortcode('media-credit');
+//    add_shortcode('media-credit', 'media_credit_sc');
+    remove_shortcode('caption');
+    add_shortcode('caption', 'caption_override_sc');
+}
+
+add_action( 'wp_loaded', 'override_image_shortcodes' );
 
 function scorebox_sc($atts, $content = null)
 {
@@ -35,8 +51,7 @@ function scorebox_sc($atts, $content = null)
     return "<div class='score-box'>" . $retval . "</div>";
 }
 
-function imggallery_sc($atts, $content = null)
-{
+function imggallery_sc($atts, $content = null){
     $retval = "<div class='imggallery'>" . do_shortcode($content) . "
   <div class='gallery-controls'>
   <div class='gallery-prev'><i class='fas fa-arrow-left'></i></div>
