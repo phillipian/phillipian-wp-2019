@@ -67,6 +67,11 @@
     letter-spacing: 1px;
 }
 
+.media-credit a{
+    color: rgba(255,255,255,0.5);
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+
 .single-image-caption{
     margin: 0;
     background-color: #222;

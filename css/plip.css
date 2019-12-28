@@ -129,8 +129,14 @@ footer li{
 
 .category-container h1{
   border-bottom: 1px solid rgba(0,0,0,0.2);
-  padding-bottom: 24px;
+  padding-bottom: 16px;
   font-family: 'Avenir Pro 85 Heavy';
+  margin-top: 64px;
+}
+
+h1.author-title{
+  padding-bottom: 24px;
+  margin: 0;
 }
 
 .category-container .article-item .article-text{
@@ -139,10 +145,6 @@ footer li{
 
 .category-container .article-item .article-image{
     grid-column: 2;
-}
-
-.category-container h1{
-  margin: 0;
 }
 
 .ad{
@@ -225,8 +227,9 @@ footer li{
 @media(min-width: 600px){
 
   .category-container{
+    box-sizing: border-box;
     max-width: 1000px;
-    width: 1000px;
+    width: 100%;
   }
 
   .page-container{
@@ -241,8 +244,12 @@ footer li{
     grid-column-gap: 24px;
   }
 
-  .category-container h1{
+  .category-container h1.author-title{
     font-size: 56px;
+  }
+
+  .category-container h1{
+    font-size: 28px;
   }
 
   .page-container h1{
@@ -276,6 +283,14 @@ footer li{
     grid-template-columns: 1fr 96px;
     grid-column-gap: 24px;
     padding: 20px 0;
+  }
+
+  .category-container h1.author-title{
+    font-size: 40px;
+  }
+
+  .category-container h1{
+    font-size: 20px;
   }
 
   .category-container .article-item h2{

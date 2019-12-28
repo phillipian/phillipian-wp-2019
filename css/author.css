@@ -1,8 +1,22 @@
-.media-archive-item{
-    width: calc(33.3% - 16px);
-}
-
 .media-archive-item img{
     width: 100%;
     height: unset;
+}
+
+.media-archive:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.media-archive-item{
+    width: calc(50% - 12px);
+    margin-bottom: 24px;
+    float: left;
+}
+
+@media (min-width: 900px){
+    .media-archive-item{
+        width: calc(33.3% - 16px);
+    }
 }
