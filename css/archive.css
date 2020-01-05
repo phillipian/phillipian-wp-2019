@@ -1,0 +1,106 @@
+@media (min-width: 768px) {
+    .category-posts-container:after{
+        content: '';
+        clear: both;
+        display: block;
+    }
+
+    .category-container .article-item {
+        float: left;
+        width: calc(50% - 18px);
+        padding-bottom: 32px;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+}
+
+@media (min-width: 1000px){
+    .category-container .article-item{
+        width: calc(33% - 24px);
+    }
+}
+
+@media (min-width: 600px){
+    /*.category-container .article-item{*/
+    /*    grid-column: 2;*/
+    /*    grid-template-columns: 1fr 140px;*/
+    /*    grid-column-gap: 24px;*/
+    /*}*/
+
+    /*.category-container .article-item .article-image{*/
+    /*    height: 192px;*/
+    /*}*/
+
+    /*.category-container .article-item .article-image img{*/
+    /*    max-height: 100%;*/
+    /*}*/
+
+    .category-container h1.author-title{
+        font-size: 56px;
+    }
+
+    .category-container > p{
+        grid-column: 2/3;
+    }
+}
+
+@media(max-width: 600px){
+    /*.category-container .article-item{*/
+    /*    grid-template-columns: 1fr 96px;*/
+    /*    grid-column-gap: 24px;*/
+    /*    padding: 20px 0;*/
+    /*}*/
+
+    /*.category-container .article-item h2{*/
+    /*    font-size: 24px;*/
+    /*}*/
+
+    .category-container h1.author-title{
+        font-size: 40px;
+    }
+
+    .category-container h1{
+        font-size: 20px;
+    }
+}
+
+.category-container p{
+    font-size: 18px;
+}
+
+.category-posts-container{
+    margin-top: 32px;
+}
+
+.paginate-controls{
+    text-align: center;
+    margin-top: -32px;
+    margin-bottom: 64px;
+    position: relative;
+    z-index: 5;
+}
+
+.page-numbers{
+    font-family: 'Avenir Pro 55 Roman';
+    font-size: 16px;
+    display: inline-block;
+    padding: 12px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 2px;
+}
+
+.page-numbers.current, .page-numbers.dots{
+    border: 1px solid transparent;
+}
+
+.page-numbers:not(.current):not(.dots):hover{
+    background-color: rgba(0,0,0,0.1);
+    border: 1px solid transparent;
+}
+
+/*.category-container .article-item .article-text{*/
+/*    grid-column: 1;*/
+/*}*/
+
+/*.category-container .article-item .article-image{*/
+/*    grid-column: 2;*/
+/*}*/

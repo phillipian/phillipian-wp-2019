@@ -160,17 +160,6 @@
   display: grid;
   grid-column-gap: 24px;
 }
-
-.article-archive{
-  padding: 24px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-.article-archive:not(.article-noimage){
-    display: grid;
-    grid-template-columns: 1fr 140px;
-    grid-column-gap: 24px;
-  }
 }
 
 .home-sect{

@@ -36,7 +36,7 @@
     var $grid = $(".sports-coverage-inner").masonry({
         itemSelector: '.sports-coverage-item',
         percentPosition: true,
-        horizontalOrder: true,
+        // horizontalOrder: true,
         columnWidth: '.sports-coverage-item'
     });
     $grid.imagesLoaded(function() {

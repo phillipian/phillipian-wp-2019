@@ -2,7 +2,7 @@
 if (has_category("multimedia")):  // FOR MULTIMEDIA ARTICLE  ?>
 
 
-<div class="article-item <?php if ($archive) { ?>article-archive <?php } elseif ($sect) { ?>article-sect <?php } else { ?>article-news-side <?php } ?> article-noimage article-multimedia ">
+<div class="article-item <?php if ($archive) { ?>article-sect !article-archive <?php } elseif ($sect) { ?>article-sect <?php } else { ?>article-news-side <?php } ?> article-noimage article-multimedia ">
     <div class="article-text">
 
         <div class='article-category'><?php catsNoFeatured(); ?></div>
@@ -21,7 +21,7 @@ if (has_category("multimedia")):  // FOR MULTIMEDIA ARTICLE  ?>
 
 <?php else: // NOT MULTIMEDIA ARTICLE ?>
 
-<div class="article-item <?php if ($archive) { ?>article-archive <?php } elseif ($sect) { ?>article-sect <?php } else { ?>article-news-side <?php }
+<div class="article-item <?php if ($archive) { ?>article-sect !article-archive <?php } elseif ($sect) { ?>article-sect <?php } else { ?>article-news-side <?php }
 if (catch_that_image() == false) : ?>article-noimage<?php endif ?>">
     <div class=" article-text">
         <div class='article-category'><?php if ($catname == "Sports") {
