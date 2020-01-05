@@ -161,7 +161,7 @@
                         include "article-featured.php";
                         $i++;
                     } else {
-                        include "article-include.php";
+                        include "includes/include-article-item.php";
                     }
                 endwhile;
             endif; ?>

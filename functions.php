@@ -242,9 +242,16 @@ function plip_ads($wp_customize)
         'section' => 'plip-breaking-sec',
         'settings' => 'plip-breaking-blurb1'
     ));
+    $wp_customize->add_setting('plip-breaking-left1');
+    $wp_customize->add_control('plip-breaking-left1-control', array(
+        'label' => 'story 1 left column content as comma-separated (no spaces!) list, e.g. "news,multimedia". Default is just news.',
+        'type' => 'string',
+        'section' => 'plip-breaking-sec',
+        'settings' => 'plip-breaking-left1'
+    ));
     $wp_customize->add_setting('plip-breaking-right1');
     $wp_customize->add_control('plip-breaking-right1-control', array(
-        'label' => 'story 1 right column content as comma-separated (no spaces!) list, e.g. "social-media,commentary,multimedia". Default is just social-media.',
+        'label' => 'story 1 right column content as comma-separated (no spaces!) list, e.g. "social-media,commentary,commentary-call". Default is just social-media.',
         'type' => 'string',
         'section' => 'plip-breaking-sec',
         'settings' => 'plip-breaking-right1'
@@ -276,6 +283,13 @@ function plip_ads($wp_customize)
         'type' => 'string',
         'section' => 'plip-breaking-sec',
         'settings' => 'plip-breaking-blurb2'
+    ));
+    $wp_customize->add_setting('plip-breaking-left2');
+    $wp_customize->add_control('plip-breaking-left2-control', array(
+        'label' => 'story 2 left column content as comma-separated (no spaces!) list, e.g. "news,multimedia". Default is just news.',
+        'type' => 'string',
+        'section' => 'plip-breaking-sec',
+        'settings' => 'plip-breaking-left2'
     ));
     $wp_customize->add_setting('plip-breaking-right2');
     $wp_customize->add_control('plip-breaking-right2-control', array(

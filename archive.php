@@ -39,7 +39,7 @@
             while (have_posts()) : the_post(); ?>
                 <?php
                 $archive = true;
-                include 'article-include.php' ?>
+                include 'includes/include-article-item.php' ?>
             <?php endwhile;
             // END OF MAIN LOOP
             ?>

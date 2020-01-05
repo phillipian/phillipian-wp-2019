@@ -44,7 +44,7 @@
     if (have_posts()) : while (have_posts()) : the_post(); ?>
             <?php
             $archive = true;
-            include 'article-include.php' ?>
+            include 'includes/include-article-item.php' ?>
         <?php endwhile;
 endif;
 echo paginate_links();

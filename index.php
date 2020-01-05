@@ -29,11 +29,11 @@
         <?php endif; ?>
         <?php if (get_theme_mod('plip-breaking-check1', null)):
             $storyind = 1;
-            include 'include-breaking-news.php';
+            include 'includes/breaking-news/include-breaking-news.php';
         endif; ?>
         <?php if (get_theme_mod('plip-breaking-check2', null)):
             $storyind = 2;
-            include 'include-breaking-news.php';
+            include 'includes/breaking-news/include-breaking-news.php';
         endif; ?>
     </div>
     <div class="home-featured four-col">
@@ -55,7 +55,7 @@
             if (have_posts()) :
                 while (have_posts()) :
                     the_post();
-                    include "article-include.php";
+                    include "includes/include-article-item.php";
                 endwhile;
             endif; ?>
         </div>

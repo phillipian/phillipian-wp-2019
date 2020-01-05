@@ -15,7 +15,7 @@
 	if (have_posts()) :
 		while (have_posts()) :
 			the_post();
-			include 'article-include.php';
+			include 'includes/include-article-item.php';
 		endwhile;
 	endif;
 	?>

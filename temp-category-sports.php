@@ -13,7 +13,7 @@
                 <?php include "category-sports-sportcat-include.php" ?>
                 <h3><a href='<?php the_permalink(); ?>'>
                         <?php the_title(); ?></a></h3>
-                <?php include 'article-author-include.php' ?>
+                <?php include 'include-article-author.php' ?>
                 <div class='article-date'><span>
                         <?php the_time(get_option('date_format')); ?></span></div>
                 <?php if (catch_that_image() == false) : else  :?>
