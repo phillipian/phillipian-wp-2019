@@ -1,7 +1,12 @@
 <?php
 $catlink = get_category_link(get_cat_ID($catname));
 if ($catname == "Multimedia"): ?>
-    <h1>Live & Video</h1>
+    <div class='sect-header'>
+        <h1>
+            <a href='<?php
+            echo $catlink ?>'>Live & Video</a>
+        </h1>
+    </div>
     <div class="home-video-container">
 <?php else: ?>
     <div class='home-sect'>

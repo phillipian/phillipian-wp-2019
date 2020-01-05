@@ -1,22 +1,17 @@
 @media (min-width: 480px) {
-    .home-featured .article-item{
+    .home-featured .article-item {
         width: calc(50% - 12px);
     }
 }
 
 @media (min-width: 600px) {
-    .home-main{
+    .home-main {
         display: grid;
     }
 
     .home-video, .home-video-color {
         grid-row: 1/2;
         background-color: #222;
-    }
-
-    .home-video {
-        grid-column: 2/4;
-        min-height: 100px;
     }
 
     .home-sects-right, .home-right-color {
@@ -34,13 +29,36 @@
         grid-column: 4/5;
     }
 
-    .featured-posts{
+    .featured-posts {
         grid-column: 2/4;
     }
 
     .home-sects-right {
         grid-column: 3/4;
         padding-right: 0;
+    }
+
+    .home-video {
+        padding-right: 24px;
+        color: #fff;
+    }
+
+    .home-video-container .article-item {
+        padding: 16px;
+        background-color: #fff;
+        box-shadow: 10px 4px 24px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .home-video .sect-header h1{
+        border-top: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .home-video .sect-header h1 a{
+        color: #fff;
+    }
+
+    .home-video .sect-header h1 a:hover{
+        color: #0082ca;
     }
 }
 
@@ -56,6 +74,16 @@
         grid-column: 5/6;
     }
 
+    .home-video {
+        grid-column: 2/4;
+        min-height: 100px;
+    }
+
+    .home-video-container .article-item {
+        box-sizing: border-box;
+        width: calc(50% - 12px);
+    }
+
     .home-featured:before, .home-featured:after {
         grid-row: 1 / 6;
     }
@@ -65,11 +93,11 @@
         grid-column: 2/5;
     }
 
-    .featured-posts{
+    .featured-posts {
         grid-column: 2/5;
     }
 
-    .home-featured .article-item{
+    .home-featured .article-item {
         width: calc(33.33% - 16px);
         margin-bottom: 32px;
     }
@@ -89,14 +117,14 @@
     }
 }
 
-@media (min-width: 1200px){
+@media (min-width: 1200px) {
     .four-col {
         width: 100%;
         display: grid;
-        grid-template-columns: minmax(24px,1fr) repeat(4, 288px) minmax(24px,1fr);
+        grid-template-columns: minmax(24px, 1fr) repeat(4, 288px) minmax(24px, 1fr);
     }
 
-    .four-col:after, .four-col .rightbar{
+    .four-col:after, .four-col .rightbar {
         content: '';
         grid-column: 6/7;
     }
@@ -106,58 +134,58 @@
         grid-column: 2/6;
     }
 
-    .featured-posts{
+    .featured-posts {
         grid-column: 2/6;
     }
 
-    .home-featured .article-item{
+    .home-featured .article-item {
         width: calc(25% - 18px);
     }
 
-    .home-top-ad, .ad-spacer{
+    .home-top-ad, .ad-spacer {
         grid-column: 2/6;
     }
 }
 
-@media (max-width: 900px) and (min-width: 600px){
-    .home-main{
+@media (max-width: 900px) and (min-width: 600px) {
+    .home-main {
         grid-template-columns: minmax(24px, 1fr) repeat(2, minmax(200px, 400px)) minmax(24px, 1fr);
     }
 
-    .home-sect{
+    .home-sect {
         margin-right: 24px;
     }
 }
 
-@media (max-width: 900px){
-    .home-featured{
+@media (max-width: 900px) {
+    .home-featured {
         padding: 0 24px;
     }
 }
 
-@media (max-width: 600px){
-    .home-main{
+@media (max-width: 600px) {
+    .home-main {
         padding: 0 24px;
     }
 
-    .home-sects-right{
+    .home-sects-right {
         width: calc(100% + 48px);
         position: relative;
         left: -24px;
     }
 }
 
-.home-sects-right{
+.home-sects-right {
     box-sizing: border-box;
     background-color: #000;
     padding: 24px;
 }
 
-.home-sects-inner{
+.home-sects-inner {
     margin-top: 32px;
 }
 
-.home-featured{
+.home-featured {
     padding-bottom: 64px;
 }
 
@@ -165,51 +193,49 @@
     background-color: #eeeeee;
 }
 
-.featured-posts{
+.featured-posts {
     position: relative;
 }
 
-.featured-posts:after{
+.featured-posts:after {
     content: '';
     display: block;
     clear: both;
 }
 
-.home-featured .article-item{
+.home-featured .article-item {
     float: left;
 }
 
-.article-news-side .article-image{
+.article-news-side .article-image {
     margin-top: 12px;
 }
 
-.home-video, .home-sects-right, .home-sects-right .strip-sub{
+.home-sects-right, .home-sects-right .strip-sub {
     color: #fff;
 }
 
-.home-sects-right .article-about-top{
+.home-sects-right .article-about-top {
     background-color: #fff;
 }
 
-.home-featured h1, .home-video h1{
+.home-featured h1{
     font-family: 'ITC Cheltenham Std';
     font-size: 42px;
     font-weight: 400;
 }
 
-@media (min-width: 768px){
-    .home-video-container .article-item{
-        box-sizing: border-box;
-        width: calc(50% - 12px);
-    }
-
-    .home-video{
-        padding-right: 24px;
-    }
+.home-video h1{
+    display: block;
+    border-top: 1px solid #000;
+    padding-top: 36px;
 }
 
-@media (max-width: 600px){
-    .home-new{
+@media (min-width: 768px) {
+}
+
+@media (max-width: 600px) {
+    .home-new {
         padding-top: 64px;
     }
 }

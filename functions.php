@@ -396,10 +396,10 @@ function ba_admin_posts_filter_restrict_manage_posts()
 
 }
 
-function catsNoFeatured()
+function catsNoFeatured($catname)
 {
     foreach (get_the_category() as $c) {
-        if (!in_array($c->name, ["Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts"])) { ?>
+        if (!in_array($c->name, ["Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts", $catname])) { ?>
         <a href='<?php echo get_category_link($c->cat_ID) ?>'>
             <?php echo $c->name; ?></a><?php
         }

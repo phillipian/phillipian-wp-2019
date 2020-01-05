@@ -75,7 +75,6 @@ a{
 }
 
 .sect-header h1, .post-categories{
-  display: inline-block;
   padding-bottom: 2px;
   font-family: 'Avenir Pro 85 Heavy';
   text-transform: uppercase;
