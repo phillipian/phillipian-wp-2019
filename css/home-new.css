@@ -197,6 +197,17 @@
     font-weight: 400;
 }
 
+@media (min-width: 768px){
+    .home-video-container .article-item{
+        box-sizing: border-box;
+        width: calc(50% - 12px);
+    }
+
+    .home-video{
+        padding-right: 24px;
+    }
+}
+
 @media (max-width: 600px){
     .home-new{
         padding-top: 64px;

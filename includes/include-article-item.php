@@ -2,8 +2,7 @@
 if (has_category("multimedia")):  // FOR MULTIMEDIA ARTICLE
     ?>
 
-
-    <div class="article-item <?php if ($archive) { ?>article-sect !article-archive <?php } elseif ($sect) { ?>article-sect <?php } else { ?>article-news-side <?php } ?> article-noimage article-multimedia ">
+    <div class="article-item <?php if ($sect or $archive) { ?>article-sect <?php } else { ?>article-news-side <?php } ?> article-noimage article-multimedia ">
         <div class="article-text">
 
             <div class='article-category'><?php catsNoFeatured(); ?></div>

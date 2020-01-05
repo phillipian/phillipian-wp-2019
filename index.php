@@ -50,7 +50,7 @@
         <div class="featured-posts">
             <?php query_posts(array(
                 'category_name' => 'featured',
-                'posts_per_page' => 7
+                'posts_per_page' => 4
             ));
             if (have_posts()) :
                 while (have_posts()) :
@@ -62,18 +62,21 @@
     </div>
     <div class="home-main three-col">
         <div class="home-video">
-            <h1>Live & Video</h1>
+            <?php
+            $catname = "Multimedia";
+            include 'includes/include-home-sect.php';
+            ?>
         </div>
         <div class='home-sects-inner'>
             <?php
             $catname = "News";
-            include 'home-sect-include.php';
+            include 'includes/include-home-sect.php';
             $catname = "Commentary";
-            include 'home-sect-include.php';
+            include 'includes/include-home-sect.php';
             $catname = "Sports";
-            include 'home-sect-include.php';
+            include 'includes/include-home-sect.php';
             $catname = "Arts";
-            include 'home-sect-include.php';
+            include 'includes/include-home-sect.php';
             ?>
         </div>
         <?php include "home-right-include.php" ?>
@@ -97,6 +100,15 @@
         });
         $grid2.imagesLoaded(function () {
             $grid2.masonry();
+        });
+        var $grid3 = $(".home-video-container").masonry({
+            itemSelector: '.article-item',
+            percentPosition: true,
+            gutter: 24,
+            columnWidth: '.article-item'
+        });
+        $grid3.imagesLoaded(function () {
+            $grid3.masonry();
         });
     </script>
 
