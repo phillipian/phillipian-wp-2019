@@ -81,6 +81,7 @@
 
 .breaking-col{
     padding-left: 32px;
+    padding-bottom: 64px;
 }
 
 .breaking-col p{
@@ -121,6 +122,10 @@
 .breaking-social a{
     color: #fff;
     font-size: 20px;
+}
+
+.article-multimedia h2{
+    margin-bottom: 16px;
 }
 
 @media (min-width: 972px) {
