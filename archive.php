@@ -27,9 +27,12 @@
                 echo "<h1>Media credited to this author</h1>";
                 \Media_Credit::display_author_media( [ 'author_id' => $author->ID, 'sidebar' => false ] );
             }
+
+            if (have_posts()) {
+                echo "<h1>Articles by this author</h1>";
+            }
         }
         if (have_posts()) :
-            echo "<h1>Articles by this author</h1>";
             while (have_posts()) : the_post(); ?>
                 <?php
                 $archive = true;
