@@ -27,8 +27,6 @@ function custom_media_credit( $string, $atts, $content = null )
 
 add_filter('media_credit_shortcode', 'custom_media_credit', 10, 3);
 
-add_action('wp_loaded', 'override_image_shortcodes');
-
 // CUSTOM SCOREBOX SHORTCODE
 
 function scorebox_sc($atts, $content = null)
@@ -68,7 +66,7 @@ add_shortcode('imggallery', 'imggallery_sc');
 
 function ytembed_sc($atts, $content = null)
 {
-    return "<div class='single-image'><div class='yt-container'><iframe src='https://www.youtube.com/embed/" . $content . "'></iframe></div></div>";
+    return "<div class='wp-caption'><div class='yt-container'><iframe src='https://www.youtube.com/embed/" . $content . "'></iframe></div></div>";
 }
 
 add_shortcode('ytembed', 'ytembed_sc');

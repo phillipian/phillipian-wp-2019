@@ -11,7 +11,9 @@
             $coauthors = get_coauthors(get_the_ID());
             $last = end($coauthors)->display_name;
             foreach ($coauthors as $author) {
-                echo $author->display_name;
+                $authorID = $author->ID;
+                $authorlink = get_author_posts_url($authorID);
+                echo "<a href='" . $authorlink . "'>" . $author->display_name . "</a>";
                 if (!($author->display_name == $last)) {
                     echo ", ";
                 }
