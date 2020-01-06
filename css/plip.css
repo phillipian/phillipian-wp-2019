@@ -92,13 +92,13 @@ a{
   transition: color 0.1s ease;
 }
 
-.post-categories a, .post-categories span{
+.post-categories a{
   font-family: 'Avenir Pro 85 Heavy';
   margin-right: 16px;
 }
 
-.post-categories span{
-  opacity: 0.4;
+a.article-tag{
+  color: #999;
 }
 
 .sect-header a:hover, .post-categories a:hover{

@@ -13,7 +13,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
                     }
                 }
                 foreach (get_the_tags() as $t) { ?>
-                    <span>#<?php echo $t->name; ?></span>
+                    <a class="article-tag" href="<?php echo get_tag_link($t); ?>">#<?php echo $t->name; ?></a>
                 <?php }
                 ?>
             </div>
