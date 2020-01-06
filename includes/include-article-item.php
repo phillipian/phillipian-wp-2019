@@ -31,7 +31,13 @@ if (has_category("multimedia")):  // FOR MULTIMEDIA ARTICLE
                     catMulti();
                 } else {
                     catsNoFeatured($catname);
-                } ?>
+                }
+                if (!($breaking)){
+                    foreach (get_the_tags() as $t) { ?>
+                        <span class="article-tag">#<?php echo $t->name; ?></span>
+                    <?php }
+                }
+                ?>
             </div>
             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
             <?php include 'include-article-author.php' ?>

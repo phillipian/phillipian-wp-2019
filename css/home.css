@@ -115,6 +115,11 @@
   opacity: 0.4;
 }
 
+.article-category .article-tag{
+  color: #000;
+  opacity: 0.4;
+}
+
 .home-featured .article-category{
   font-size: 16px;
 }
@@ -164,10 +169,6 @@
 
 .home-sect{
   border-top: 1px solid #000;
-}
-
-.home-sect .article-category{
-  display: none;
 }
 
 @media (min-width: 700px){

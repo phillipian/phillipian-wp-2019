@@ -15,6 +15,7 @@
     elseif ($item == 'commentary-call'): ?>
         <p>Do you have thoughts about these policy changes? Start writing, be it a 100-word or 1000-word response, and email <a href="mailto:commentary@phillipian.net">commentary@phillipian.net</a>.</p>
     <?php else:
+        $breaking = true;
         query_posts(array(
             'category__and' => get_cat_ID($item),
             'tag__in' => $slug
@@ -31,4 +32,6 @@
             endwhile;
         endif;
     endif;
-endforeach; ?>
+endforeach;
+$breaking = false;
+?>
