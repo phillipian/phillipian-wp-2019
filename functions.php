@@ -2,24 +2,32 @@
 
 add_filter('use_block_editor_for_post', '__return_false', 10);
 
-// not needed with proprietary media-credit plugin
-//
-//function media_credit_sc($atts, $content = null)
-//{
-//    $a = shortcode_atts(array(
-//        'name' => 'The Phillipian',
-//        'id' => 'none'
-//    ), $atts);
-//    if ($a['id'] == 'none'){
-//        $credit = $a['name'];
-//    }
-//    else{
-//        $authorname = get_the_author_meta('user_firstname',$a['id']) . " " . get_the_author_meta('user_lastname',$a['id']);
-//        $credit = $authorname . "/The Phillipian";
-//    }
-//    preg_match("/<img(.*)\/>/", $content, $array1);
-//    return "<div class='single-image'>" . $array1[0] . "<div class='media-credit'><span>" . $credit . '</span></div></div><p></p>';
-//}
+add_filter('media_credit_shortcode', 'custom_media_credit');
+
+function custom_media_credit($atts)
+{
+// get name and ID attributes from media-credit shortcode, with Phillipian-specific defaults
+    $a = shortcode_atts(array(
+        'name' => 'The Phillipian',
+        'id' => 'none'
+    ), $atts);
+
+// generate proper credit text
+    if ($a['id'] == 'none') {
+        $credit = $a['name'];
+    } else {
+        $authorname = get_the_author_meta('user_firstname', $a['id']) . " " . get_the_author_meta('user_lastname', $a['id']);
+        $authorlink = get_author_posts_url($a['id']);
+        $credit = "<a href='" . $authorlink . "'>" . $authorname . "/The Phillipian</a>";
+    }
+
+    print_r($a['content']);
+
+// get the actual image enclosed
+    preg_match("/<img(.*)\/>/", $content, $array1);
+
+    return "<div class='single-image'>" . $array1[0] . "<div class='media-credit'><span>" . $credit . "</span></div></div><p></p>";
+}
 
 function caption_override_sc($atts, $content = null)
 {
@@ -28,15 +36,18 @@ function caption_override_sc($atts, $content = null)
     return "<div class='single-image'>" . do_shortcode($array2[0]) . "<div class='single-image-caption'><span>" . $array3[0] . "</span></div></div><p></p>";
 }
 
-function override_image_shortcodes(){
+function override_image_shortcodes()
+{
 //    not needed with proprietary media-credit plugin
 //    remove_shortcode('media-credit');
 //    add_shortcode('media-credit', 'media_credit_sc');
-    remove_shortcode('caption');
-    add_shortcode('caption', 'caption_override_sc');
+//    remove_shortcode('caption');
+//    add_shortcode('caption', 'caption_override_sc');
 }
 
-add_action( 'wp_loaded', 'override_image_shortcodes' );
+add_action('wp_loaded', 'override_image_shortcodes');
+
+// CUSTOM SCOREBOX SHORTCODE
 
 function scorebox_sc($atts, $content = null)
 {
@@ -51,7 +62,12 @@ function scorebox_sc($atts, $content = null)
     return "<div class='score-box'>" . $retval . "</div>";
 }
 
-function imggallery_sc($atts, $content = null){
+add_shortcode('scorebox', 'scorebox_sc');
+
+// CUSTOM IMGGALLERY SHORTCODE
+
+function imggallery_sc($atts, $content = null)
+{
     $retval = "<div class='imggallery'>" . do_shortcode($content) . "
   <div class='gallery-controls'>
   <div class='gallery-prev'><i class='fas fa-arrow-left'></i></div>
@@ -66,7 +82,7 @@ function imggallery_sc($atts, $content = null){
 
 add_shortcode('imggallery', 'imggallery_sc');
 
-add_shortcode('scorebox', 'scorebox_sc');
+// CUSTOM YTEMBED SHORTCODE
 
 function ytembed_sc($atts, $content = null)
 {
@@ -74,6 +90,8 @@ function ytembed_sc($atts, $content = null)
 }
 
 add_shortcode('ytembed', 'ytembed_sc');
+
+// JETPACK RELATED POSTS
 
 function jetpackme_remove_rp()
 {
@@ -94,6 +112,8 @@ function jetpackme_more_related_posts($options)
 
 add_filter('jetpack_relatedposts_filter_options', 'jetpackme_more_related_posts');
 
+// INCLUDE CSS, JS
+
 function plip_script_enqueue()
 {
     // wp_enqueue_style(string $handle, mixed $src, array $deps, mixed $ver, string $media);
@@ -103,6 +123,8 @@ function plip_script_enqueue()
 
 add_action('wp_enqueue_scripts', 'plip_script_enqueue');
 add_theme_support('post-thumbnails');
+
+// SET UP MENUS
 
 function plip_theme_setup()
 {
@@ -120,7 +142,7 @@ function plip_theme_setup()
 
 add_action('init', 'plip_theme_setup'); // execute after theme setup
 
-function plip_ads($wp_customize)
+function plip_customize_ads($wp_customize)
 {
     $wp_customize->add_section('plip-ad-sec', array(
         'title' => 'Advertisements'
@@ -194,6 +216,12 @@ function plip_ads($wp_customize)
         'section' => 'plip-ad-sec',
         'settings' => 'plip-ad-single2-url'
     ));
+}
+
+add_action('customize_register', 'plip_customize_ads');
+
+function plip_customize_home($wp_customize)
+{
     $wp_customize->add_section('plip-home-sec', array(
         'title' => 'Home Custom Settings'
     ));
@@ -300,31 +328,9 @@ function plip_ads($wp_customize)
     ));
 }
 
-add_action('customize_register', 'plip_ads');
+add_action('customize_register', 'plip_customize_home');
 
-function plip_ytstrip($wp_customize)
-{
-    $wp_customize->add_section('plip-ytstrip-sec', array(
-        'title' => 'Home Strip'
-    ));
-    $wp_customize->add_setting('plip-yt-title');
-    $wp_customize->add_setting('plip-yt-id');
-    $wp_customize->add_setting('plip-a8-title');
-    $wp_customize->add_control('plip-yt-title', array(
-        'label' => 'Home Strip YouTube Title',
-        'section' => 'plip-ytstrip-sec'
-    ));
-    $wp_customize->add_control('plip-yt-id', array(
-        'label' => 'Home Strip YouTube ID',
-        'section' => 'plip-ytstrip-sec'
-    ));
-    $wp_customize->add_control('plip-a8-title', array(
-        'label' => 'Home Strip Eighth Page Title',
-        'section' => 'plip-ytstrip-sec'
-    ));
-}
-
-add_action('customize_register', 'plip_ytstrip');
+// CUSTOM IMAGE GRABBING FUNCTION
 
 function catch_that_image()
 {
@@ -396,6 +402,8 @@ function ba_admin_posts_filter_restrict_manage_posts()
 
 }
 
+// CATEGORY FUNCTIONS
+
 function catsNoFeatured($catname)
 {
     foreach (get_the_category() as $c) {
@@ -433,36 +441,6 @@ function catMulti()
             <?php echo $c->name; ?></a><?php
         }
     }
-
-}
-
-function time_elapsed_string($datetime)
-{
-    $now = new DateTime;
-    $ago = new DateTime($datetime);
-    $diff = $now->diff($ago);
-
-    $diff->w = floor($diff->d / 7);
-    $diff->d -= $diff->w * 7;
-
-    $string = array(
-        'y' => 'year',
-        'm' => 'month',
-        'w' => 'week',
-        'd' => 'day',
-        'h' => 'hour',
-        'i' => 'minute',
-        // 's' => 'second',
-    );
-    foreach ($string as $k => &$v) {
-        if ($diff->$k) {
-            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
-        } else {
-            unset($string[$k]);
-        }
-    }
-
-    return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
 
 ?>
