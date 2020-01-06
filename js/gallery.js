@@ -1,5 +1,5 @@
 $('.imggallery').each(function(){
-    images = $(this).children(".single-image");
+    images = $(this).children(".wp-caption");
     numimages = images.length;
     $(this).find(".gallery-index .total").text("/" + numimages);
     images.first().addClass('selected');
@@ -21,13 +21,13 @@ function changeSlide(gallery,forward){
     selected.removeClass("selected");
     if (forward) changeTo = selected.next();
     else changeTo = selected.prev();
-    if (changeTo.is(".single-image")) {
+    if (changeTo.is(".wp-caption")) {
         changeTo.addClass("selected");
         if (forward) index = parseInt(index) + 1;
         else index = parseInt(index) - 1;
     }
     else {
-        images = gallery.children(".single-image");
+        images = gallery.children(".wp-caption");
         if (forward){
             images.first().addClass("selected");
             index = 1;  

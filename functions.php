@@ -22,25 +22,15 @@ function custom_media_credit($atts, $content = null)
 // get the actual image enclosed
     preg_match("/<img(.*)\/>/", $content, $array1);
 
-    return "<div class='single-image'>" . $array1[0] . "<div class='media-credit'><span>" . $credit . "</span></div></div><p></p>";
+    return "<div class='wp-caption'>" . $array1[0] . "<div class='media-credit'><span>" . $credit . "</span></div></div><p></p>";
 }
 
 add_filter('media_credit_shortcode', 'custom_media_credit');
 
-function caption_override_sc($atts, $content = null)
-{
-    preg_match("/\[media\-credit(.*)\[\/media-credit\]/", $content, $array2);
-    preg_match("/(?<=\[\/media-credit\])(.*)/", $content, $array3);
-    return "<div class='single-image'>" . do_shortcode($array2[0]) . "<div class='single-image-caption'><span>" . $array3[0] . "</span></div></div><p></p>";
-}
-
 function override_image_shortcodes()
 {
-//    not needed with proprietary media-credit plugin
     remove_shortcode('media-credit');
     add_shortcode('media-credit', 'custom_media_credit');
-//    remove_shortcode('caption');
-//    add_shortcode('caption', 'caption_override_sc');
 }
 
 add_action('wp_loaded', 'override_image_shortcodes');

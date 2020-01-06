@@ -85,15 +85,11 @@ div.media-credit{
     margin-bottom: 32px;
 }
 
-.single-image img{
-    display: block;
-}
-
 .imggallery{
     position: relative;
 }
 
-.imggallery > .single-image:not(.selected){
+.imggallery > .wp-caption:not(.selected){
     display: none;
 }
 
@@ -158,9 +154,9 @@ div.single-ad:nth-of-type(2){
 }
 
 @media (min-width: 1232px){
-    .single-right > .single-image, .imggallery{
+    .single-right > .wp-caption, .imggallery{
         position: relative;
-        width: calc(1200px - 332px);
+        width: calc(1200px - 332px)!important;
         left: calc(100% - 1200px + 332px);
     }
 }
