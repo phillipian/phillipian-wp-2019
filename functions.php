@@ -2,7 +2,7 @@
 
 add_filter('use_block_editor_for_post', '__return_false', 10);
 
-function custom_media_credit($atts, $content = null)
+function custom_media_credit( $string, $atts, $content = null )
 {
 // get name and ID attributes from media-credit shortcode, with Phillipian-specific defaults
     $a = shortcode_atts(array(
@@ -25,13 +25,7 @@ function custom_media_credit($atts, $content = null)
     return "<div class='wp-caption'>" . $array1[0] . "<div class='media-credit'><span>" . $credit . "</span></div></div><p></p>";
 }
 
-add_filter('media_credit_shortcode', 'custom_media_credit');
-
-function override_image_shortcodes()
-{
-    remove_shortcode('media-credit');
-    add_shortcode('media-credit', 'custom_media_credit');
-}
+add_filter('media_credit_shortcode', 'custom_media_credit', 10, 3);
 
 add_action('wp_loaded', 'override_image_shortcodes');
 
