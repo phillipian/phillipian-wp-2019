@@ -2,9 +2,7 @@
 
 add_filter('use_block_editor_for_post', '__return_false', 10);
 
-add_filter('media_credit_shortcode', 'custom_media_credit');
-
-function custom_media_credit($atts)
+function custom_media_credit($atts, $content = null)
 {
 // get name and ID attributes from media-credit shortcode, with Phillipian-specific defaults
     $a = shortcode_atts(array(
@@ -21,13 +19,13 @@ function custom_media_credit($atts)
         $credit = "<a href='" . $authorlink . "'>" . $authorname . "/The Phillipian</a>";
     }
 
-    print_r($a['content']);
-
 // get the actual image enclosed
     preg_match("/<img(.*)\/>/", $content, $array1);
 
     return "<div class='single-image'>" . $array1[0] . "<div class='media-credit'><span>" . $credit . "</span></div></div><p></p>";
 }
+
+add_filter('media_credit_shortcode', 'custom_media_credit');
 
 function caption_override_sc($atts, $content = null)
 {
@@ -39,8 +37,8 @@ function caption_override_sc($atts, $content = null)
 function override_image_shortcodes()
 {
 //    not needed with proprietary media-credit plugin
-//    remove_shortcode('media-credit');
-//    add_shortcode('media-credit', 'media_credit_sc');
+    remove_shortcode('media-credit');
+    add_shortcode('media-credit', 'custom_media_credit');
 //    remove_shortcode('caption');
 //    add_shortcode('caption', 'caption_override_sc');
 }

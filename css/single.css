@@ -56,7 +56,7 @@
     color: rgba(0,0,0,0.6);
 }
 
-.single-image div.media-credit{
+div.media-credit{
     margin: 0;
     background-color: #222;
     color: rgba(255,255,255,0.5);
@@ -72,25 +72,21 @@
     border-bottom: 2px solid rgba(255,255,255,0.3);
 }
 
-.single-image-caption{
+.wp-caption p{
     margin: 0;
+}
+
+.single-container p.wp-caption-text{
     background-color: #222;
     padding: 0 16px 16px 16px;
     color: white;
     font-size: 16px;
     text-align: left;
-}
-
-.single-image > .single-image{
-    border-bottom: 0;
+    margin-bottom: 32px;
 }
 
 .single-image img{
     display: block;
-}
-
-.single-image > p{
-    margin: 0;
 }
 
 .imggallery{
