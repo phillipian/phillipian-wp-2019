@@ -59,16 +59,17 @@ function imggallery_sc($atts, $content = null){
   <div class='gallery-next'><i class='fas fa-arrow-right'></i></div>
   </div>
   </div>";
-    $retval = str_replace("<p>","",$retval);
-    $retval = str_replace("</p>","",$retval);
-    return $retval."<p></p>";
+    $retval = str_replace("<p>", "", $retval);
+    $retval = str_replace("</p>", "", $retval);
+    return $retval . "<p></p>";
 }
 
 add_shortcode('imggallery', 'imggallery_sc');
 
 add_shortcode('scorebox', 'scorebox_sc');
 
-function ytembed_sc($atts, $content = null){
+function ytembed_sc($atts, $content = null)
+{
     return "<div class='single-image'><div class='yt-container'><iframe src='https://www.youtube.com/embed/" . $content . "'></iframe></div></div>";
 }
 
@@ -82,6 +83,7 @@ function jetpackme_remove_rp()
         remove_filter('the_content', $callback, 40);
     }
 }
+
 add_filter('wp', 'jetpackme_remove_rp', 20);
 
 function jetpackme_more_related_posts($options)
@@ -89,6 +91,7 @@ function jetpackme_more_related_posts($options)
     $options['size'] = 6;
     return $options;
 }
+
 add_filter('jetpack_relatedposts_filter_options', 'jetpackme_more_related_posts');
 
 function plip_script_enqueue()
@@ -201,57 +204,99 @@ function plip_ads($wp_customize)
         'section' => 'plip-home-sec',
         'settings' => 'plip-home-num'
     ));
-    $wp_customize->add_setting('plip-breaking-name');
-    $wp_customize->add_control('plip-breaking-name-control', array(
-        'label' => 'Name of new HOS',
-        'type' => 'string',
-        'section' => 'plip-home-sec',
-        'settings' => 'plip-breaking-name'
+    $wp_customize->add_section('plip-breaking-sec', array(
+        'title' => 'Breaking News'
     ));
-    $wp_customize->add_setting('plip-breaking-switch');
-    $wp_customize->add_control('plip-breaking-switch-control', array(
-        'label' => 'Show Breaking News?',
+    $wp_customize->add_setting('plip-breaking-banner');
+    $wp_customize->add_control('plip-breaking-banner-control', array(
+        'label' => 'red "BREAKING" banner?',
         'type' => 'checkbox',
-        'section' => 'plip-home-sec',
-        'settings' => 'plip-breaking-switch'
+        'section' => 'plip-breaking-sec',
+        'settings' => 'plip-breaking-banner'
     ));
-    $wp_customize->add_setting('plip-breaking-image');
-    $wp_customize->add_control(new WP_Customize_Media_control($wp_customize, 'plip-breaking-image-control', array(
-        'label' => 'Picture of new HOS',
-        'section' => 'plip-home-sec',
-        'settings' => 'plip-breaking-image',
-        'width' => 1000,
-        'height' => 1500,
-        'flex-width' => true,
-        'flex-height' => true
-    )));
-    $wp_customize->add_setting('plip-breaking-item1');
-    $wp_customize->add_control('plip-breaking-item1-control', array(
-        'label' => 'Breaking News Bullet Point 1',
-        'type' => 'string',
-        'section' => 'plip-home-sec',
-        'settings' => 'plip-breaking-item1'
+    $wp_customize->add_setting('plip-breaking-check1');
+    $wp_customize->add_control('plip-breaking-check1-control', array(
+        'label' => 'show first breaking story?',
+        'type' => 'checkbox',
+        'section' => 'plip-breaking-sec',
+        'settings' => 'plip-breaking-check1'
     ));
-    $wp_customize->add_setting('plip-breaking-item2');
-    $wp_customize->add_control('plip-breaking-item2-control', array(
-        'label' => 'Breaking News Bullet Point 2',
+    $wp_customize->add_setting('plip-breaking-tag1');
+    $wp_customize->add_control('plip-breaking-tag1-control', array(
+        'label' => 'story 1 tag',
         'type' => 'string',
-        'section' => 'plip-home-sec',
-        'settings' => 'plip-breaking-item2'
+        'section' => 'plip-breaking-sec',
+        'settings' => 'plip-breaking-tag1'
     ));
-    $wp_customize->add_setting('plip-breaking-item3');
-    $wp_customize->add_control('plip-breaking-item3-control', array(
-        'label' => 'Breaking News Bullet Point 3',
+    $wp_customize->add_setting('plip-breaking-headline1');
+    $wp_customize->add_control('plip-breaking-headline1-control', array(
+        'label' => 'story 1 headline',
         'type' => 'string',
-        'section' => 'plip-home-sec',
-        'settings' => 'plip-breaking-item3'
+        'section' => 'plip-breaking-sec',
+        'settings' => 'plip-breaking-headline1'
     ));
-    $wp_customize->add_setting('plip-breaking-youtube');
-    $wp_customize->add_control('plip-breaking-youtube-control', array(
-        'label' => 'Breaking News YouTube ID',
+    $wp_customize->add_setting('plip-breaking-blurb1');
+    $wp_customize->add_control('plip-breaking-blurb1-control', array(
+        'label' => 'story 1 blurb',
         'type' => 'string',
-        'section' => 'plip-home-sec',
-        'settings' => 'plip-breaking-youtube'
+        'section' => 'plip-breaking-sec',
+        'settings' => 'plip-breaking-blurb1'
+    ));
+    $wp_customize->add_setting('plip-breaking-left1');
+    $wp_customize->add_control('plip-breaking-left1-control', array(
+        'label' => 'story 1 left column content as comma-separated (no spaces!) list, e.g. "news,multimedia". Default is just news.',
+        'type' => 'string',
+        'section' => 'plip-breaking-sec',
+        'settings' => 'plip-breaking-left1'
+    ));
+    $wp_customize->add_setting('plip-breaking-right1');
+    $wp_customize->add_control('plip-breaking-right1-control', array(
+        'label' => 'story 1 right column content as comma-separated (no spaces!) list, e.g. "social-media,commentary,commentary-call". Default is just social-media.',
+        'type' => 'string',
+        'section' => 'plip-breaking-sec',
+        'settings' => 'plip-breaking-right1'
+    ));
+    $wp_customize->add_setting('plip-breaking-check2');
+    $wp_customize->add_control('plip-breaking-check2-control', array(
+        'label' => 'show second breaking story?',
+        'type' => 'checkbox',
+        'section' => 'plip-breaking-sec',
+        'settings' => 'plip-breaking-check2'
+    ));
+    $wp_customize->add_setting('plip-breaking-tag2');
+    $wp_customize->add_control('plip-breaking-tag2-control', array(
+        'label' => 'story 2 tag',
+        'type' => 'string',
+        'section' => 'plip-breaking-sec',
+        'settings' => 'plip-breaking-tag2'
+    ));
+    $wp_customize->add_setting('plip-breaking-headline2');
+    $wp_customize->add_control('plip-breaking-headline2-control', array(
+        'label' => 'story 2 headline',
+        'type' => 'string',
+        'section' => 'plip-breaking-sec',
+        'settings' => 'plip-breaking-headline2'
+    ));
+    $wp_customize->add_setting('plip-breaking-blurb2');
+    $wp_customize->add_control('plip-breaking-blurb2-control', array(
+        'label' => 'story 2 blurb',
+        'type' => 'string',
+        'section' => 'plip-breaking-sec',
+        'settings' => 'plip-breaking-blurb2'
+    ));
+    $wp_customize->add_setting('plip-breaking-left2');
+    $wp_customize->add_control('plip-breaking-left2-control', array(
+        'label' => 'story 2 left column content as comma-separated (no spaces!) list, e.g. "news,multimedia". Default is just news.',
+        'type' => 'string',
+        'section' => 'plip-breaking-sec',
+        'settings' => 'plip-breaking-left2'
+    ));
+    $wp_customize->add_setting('plip-breaking-right2');
+    $wp_customize->add_control('plip-breaking-right2-control', array(
+        'label' => 'story 2 right column content as comma-separated (no spaces!) list, e.g. "social-media,commentary,multimedia". Default is just social-media.',
+        'type' => 'string',
+        'section' => 'plip-breaking-sec',
+        'settings' => 'plip-breaking-right2'
     ));
 }
 
@@ -300,12 +345,14 @@ function custom_excerpt_length($length)
 {
     return 20;
 }
+
 add_filter('excerpt_length', 'custom_excerpt_length', 999);
 
 function custom_excerpt_more($more)
 {
     return '...';
 }
+
 add_filter('excerpt_more', 'custom_excerpt_more');
 
 add_filter('parse_query', 'ba_admin_posts_filter');
@@ -343,15 +390,16 @@ function ba_admin_posts_filter_restrict_manage_posts()
             }
         }
         ?>
-    </select> <?php _e('Value:', 'baapf'); ?><input type="TEXT" name="ADMIN_FILTER_FIELD_VALUE" value="<?php echo $current_v; ?>" />
+    </select> <?php _e('Value:', 'baapf'); ?><input type="TEXT" name="ADMIN_FILTER_FIELD_VALUE"
+                                                    value="<?php echo $current_v; ?>" />
     <?php
 
 }
 
-function catsNoFeatured()
+function catsNoFeatured($catname)
 {
     foreach (get_the_category() as $c) {
-        if (!in_array($c->name, ["Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts"])) { ?>
+        if (!in_array($c->name, ["Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts", $catname])) { ?>
         <a href='<?php echo get_category_link($c->cat_ID) ?>'>
             <?php echo $c->name; ?></a><?php
         }
@@ -377,7 +425,8 @@ function the_scorebox()
     }
 }
 
-function catMulti(){
+function catMulti()
+{
     foreach (get_the_category() as $c) {
         if (!in_array($c->name, ["Multilingual"])) { ?>
         <a href='<?php echo get_category_link($c->cat_ID) ?>'>
@@ -415,4 +464,5 @@ function time_elapsed_string($datetime)
 
     return $string ? implode(', ', $string) . ' ago' : 'just now';
 }
+
 ?>

@@ -18,7 +18,7 @@ $the_query = new WP_Query($search_query);
     </h1>
     <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post();
     $archive = true;
-    include 'article-include.php';
+    include 'includes/include-article-item.php';
     endwhile;
 else : ?>
     <p>No results found.</p>

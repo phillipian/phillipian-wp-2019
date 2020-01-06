@@ -5,7 +5,7 @@
         <p><?php the_excerpt(); ?></p>
         <?php the_scorebox(); ?>
         <div class='article-bottom'>
-            <?php include 'article-author-include.php' ?>
+            <?php include 'include-article-author.php' ?>
             <div class="article-date"><span><?php the_time(get_option('date_format')); ?></span></div>
         </div>
     </div>

@@ -1,192 +1,109 @@
-@media (min-width: 950px){
-    .breaking-grid{
-        display: flex;
-    }
-
-    .breaking-info, .breaking-image{
-        width: 50%;
-    }
-
-    .breaking-info img{
-        display: none;
-    }
-}
-
-.home-breaking-news{
-    position: relative;
-    background-color: #000;
-    padding: 0 0 0 32px;
-    color: #fff;
-    margin-bottom: 64px;
-    box-shadow: 2px 8px 32px 4px rgba(0,0,0,0.5);
-}
-
-.breaking-label{
-    position: absolute;
-    left: 50%;
-    top: 32px;
-    transform: translateX(-50%);
-    font-family: 'Avenir';
-    text-transform: uppercase;
-    font-size: 24px;
-    letter-spacing: 4px;
+.breaking-banner{
     background-color: red;
-    padding: 8px;
-    border-radius: 16px;
-    display: block;
-    width: 400px;
+    width: 100%;
+    height: 36px;
     text-align: center;
-    box-shadow: 0 0 24px 5px rgba(0,0,0,0.7);
+    color: #fff;
+    font-family: 'Avenir 85 Heavy';
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 36px;
 }
 
-.breaking-title{
-    padding-top: 128px;
-    font-size: 56px;
-    font-family: 'ITC Cheltenham Std';
-    line-height: 0.95;
+.breaking-story-outer{
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
 }
 
-.breaking-info, .breaking-image{
-    flex: 50% 0 0;
+.breaking-scroll{
+    padding: 12px;
+    background-color:#fff;
+    font-family: 'Avenir 85 Heavy';
+    text-transform: uppercase;
+    color:#000;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.breaking-story{
+    min-width: 1000px;
+    color: #fff;
+    border-bottom: 4px solid #444;
+    display: grid;
+    grid-template-columns: minmax(24px,1fr) repeat(3, minmax(200px,400px)) minmax(24px,1fr);
+}
+
+.breaking-story:before{
+    content: '';
+    grid-column: 1/2;
+}
+
+.breaking-story:after{
+    content: '';
+    grid-column: 5/6;
+}
+
+.breaking-story *{
+    box-sizing: border-box;
+}
+
+.breaking-story:before, .breaking-info{
+    background-color: #000;
+}
+
+.breaking-story:after, .breaking-col{
+    background-color: #222;
 }
 
 .breaking-info{
-    box-sizing: border-box;
-    padding-right: 32px;
-    padding-bottom: 32px;
+    padding: 64px 32px 64px 0;
 }
 
-.breaking-image{
-    /* background-color: #0082ca; */
-    background-color: #222222;
-    box-sizing: border-box;
-    padding: 72px 24px;
+.breaking-story h1{
+    margin-top: 0;
+    font-size: 36px;
+    font-family: 'ITC Cheltenham Std';
+    line-height: 1.0;
+    font-weight: 400;
 }
 
-.breaking-image img{
-    width: 100%;
-}
-
-.breaking-info p, .breaking-image p{
-    font-size: 28px;
+.breaking-info p, .breaking-col p{
+    font-size: 20px;
     opacity: 0.7;
     line-height: 1.4;
 }
 
-.breaking-info p:hover, .breaking-image p:hover{
+.breaking-info p:hover, .breaking-col p:hover{
     opacity: 1.0;
 }
 
-.breaking-info p:first-of-type{
-    margin-top: 32px;
+.breaking-col{
+    padding-left: 32px;
+    padding-bottom: 64px;
+}
+
+.breaking-col p{
+    margin: 64px 0 16px 0
 }
 
 .breaking-coverage-label{
     background-color: #0082ca;
     color: #fff;
-    padding: 8px;
+    padding: 6px;
     display: inline-block;
     font-family: 'Avenir';
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 12px;
     letter-spacing: 2px;
     margin: 64px 0 16px 0;
 }
 
-.breaking-article{
-    box-sizing: border-box;
-    width: calc(100% - 32px);
-    border: 2px solid #fff;
-    padding: 32px;
-    position: relative;
-    top: 0;
-    left: 0;
-    cursor: pointer;
-    margin: 32px 0;
+.breaking-story .article-item{
+    padding: 16px;
     background-color: #fff;
-    color: #000;
-}
-
-.breaking-article:before{
-    transition: all 0.1s ease;
-    box-sizing: border-box;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 16px;
-    top: 16px;
-    border: 2px solid #0082ca;
-    z-index: 2;
-}
-
-.breaking-article:hover{
-    transition: all 0.1s ease;
-    left: 8px;
-    top: 8px;
-    background-color: transparent;
-    color: #fff;
-}
-
-.breaking-article:hover:before{
-    transition: all 0.1s ease;
-    left: -8px;
-    top: -8px;
-    background-color: #0082ca;
-}
-
-.breaking-article h2{
-    font-family: 'ITC Cheltenham Std';
-    font-weight: 400;
-    font-size: 28px;
-    transition: all 0.1s ease;
-    margin: 0;
-    position: relative;
-    z-index: 5;
-    left: 0;
-    top: 0;
-}
-
-.breaking-article .yt-container{
-    transition: all 0.1s ease;
-    position: relative;
-    z-index: 3;
-    left: 0;
-    top: 0;
-}
-
-.breaking-article:hover h2, .breaking-article:hover .breaking-article-time, .breaking-article:hover .yt-container{
-    left: -8px;
-    top: -8px;
-    transform: scale(1.05);
-}
-
-.breaking-article-time{
-    font-family: 'Avenir';
-    text-transform: uppercase;
-    margin: 8px 0;
-    opacity: 0.7;
-    letter-spacing: 1px;
-    font-size: 14px;
-    transition: all 0.1s ease;
-    position: relative;
-    z-index: 5;
-    left: 0;
-    top: 0;
-}
-
-#breaking-input-label{
-    margin-top: 32px;
-}
-
-.breaking-input{
-    margin-top: 32px;
-}
-
-.breaking-input iframe{
-    width: 100%;
-    height: 600px;
-    border: 0;
+    box-shadow: 10px 4px 24px 6px rgba(0,0,0,0.4);
 }
 
 .breaking-social{
@@ -207,58 +124,12 @@
     font-size: 20px;
 }
 
-@media (max-width: 950px){
-    .breaking-title{
-        padding-top: 128px;
-    }
+.article-multimedia h2{
+    margin-bottom: 16px;
+}
 
-    .breaking-image img{
+@media (min-width: 972px) {
+    .breaking-scroll{
         display: none;
-    }
-
-    .breaking-image{
-        padding-left: 32px;
-        padding-top: 32px;
-        margin-top: 32px;
-        margin-left: -32px;
-    }
-
-    .breaking-info img{
-        margin: 32px auto;
-        width: 100%;
-    }
-}
-
-@media (max-width: 680px){
-    .breaking-label{
-        font-size: 20px;
-        width: 280px;
-    }
-
-    .breaking-title{
-        font-size: 56px;
-    }
-}
-
-@media (max-width: 600px){
-    .home-breaking-news{
-        margin-top: 64px;
-    }
-}
-
-@media (max-width: 500px){
-    .breaking-label{
-        font-size: 16px;
-        width: 240px;
-    }
-
-    .breaking-title{
-        font-size: 32px;
-        line-height: 1.1;
-        padding-top: 96px;
-    }
-
-    .breaking-info p{
-        font-size: 20px;
     }
 }
