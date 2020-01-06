@@ -23,7 +23,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
         <div class='article-about'>
             <div class='article-about-top'></div>
             <?php $singlepage = true;
-            include 'include-article-author.php' ?>
+            include 'includes/include-article-author.php' ?>
             <span class='article-date'>
                 <?php the_date(); ?></span>
             </span>

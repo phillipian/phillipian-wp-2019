@@ -50,7 +50,7 @@
         <div class="featured-posts">
             <?php query_posts(array(
                 'category_name' => 'featured',
-                'posts_per_page' => 4
+                'posts_per_page' => get_theme_mod('plip-home-num', 8)
             ));
             if (have_posts()) :
                 while (have_posts()) :
