@@ -191,6 +191,28 @@ h1.author-title{
   margin-bottom: 32px;
 }
 
+.author-container{
+  margin-top: 8px;
+  display: flex;
+  line-height: 42px;
+}
+
+.single-container div.author-container:last-of-type{
+  margin-bottom: 8px;
+}
+
+.author-avatar{
+  width: 42px;
+  height: 42px;
+  margin-right: 12px;
+}
+
+.author-avatar img{
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
 @media(min-width: 600px){
 
   .page-container{

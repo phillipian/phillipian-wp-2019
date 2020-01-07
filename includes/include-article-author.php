@@ -12,10 +12,16 @@
             $last = end($coauthors)->display_name;
             foreach ($coauthors as $author) {
                 $authorID = $author->ID;
-                $authorlink = get_author_posts_url($authorID);
-                echo "<a href='" . $authorlink . "'>" . $author->display_name . "</a>";
-                if (!($author->display_name == $last)) {
-                    echo ", ";
+                $authorEmail = get_the_author_meta('email', $authorID);
+                $authorLink = get_author_posts_url($authorID);
+                if ($singlepage){
+                    echo "<a href='" . $authorLink . "'><div class='author-container'><div class='author-avatar'>" . get_avatar($authorEmail) . "</div><div class='author-name'><span>" . $author->display_name . "</span></div></div></a>";
+                }
+                else{
+                    echo "<a href='" . $authorLink . "'>" . $author->display_name . "</a>";
+                    if (!($author->display_name == $last)) {
+                        echo ", ";
+                    }
                 }
             }
         } else {
