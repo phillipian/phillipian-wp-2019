@@ -55,13 +55,16 @@
   color: rgba(0,0,0,0.4);
 }
 
+.article-news-side .article-author{
+  margin-right: 6px;
+}
+
 .article-news-side .article-author, .article-news-side .article-date{
   display: inline-block;
 }
 
 .article-news-side .article-date{
   opacity: 0.4;
-  margin-left: 8px;
 }
 
 .article-about{
