@@ -1,13 +1,13 @@
 <?php
 $adarea = 'plip-ad-single1';
 $adclass = 'single-ad';
-include 'ad-include.php';
+include 'include-ad.php';
 ?>
-<?php include 'related-include.php' ?>
+<?php include 'include-related-posts.php' ?>
 <?php
 $adarea = 'plip-ad-single2';
 $adclass = 'single-ad';
-include 'ad-include.php';
+include 'include-ad.php';
 ?>
 <div class='article-about-top'></div>
-<?php include "sidebar-strip-include.php" ?>
+<?php include "include-sidebar-strip.php" ?>

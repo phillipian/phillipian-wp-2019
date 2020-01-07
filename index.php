@@ -41,7 +41,7 @@
         if (get_theme_mod('plip-breaking-switch', 'no mod') == 1) :
             $adclass = 'home-top-ad';
             $adarea = 'plip-ad-homewide';
-            include 'ad-include.php';
+            include 'includes/include-ad.php';
         else:
             echo "<div class='ad-spacer'></div>";
         endif;
@@ -79,7 +79,7 @@
             include 'includes/include-home-sect.php';
             ?>
         </div>
-        <?php include "home-right-include.php" ?>
+        <?php include "includes/include-home-right.php" ?>
         <div class="home-video-color leftbar"></div>
         <div class="home-right-color rightbar"></div>
     </div>

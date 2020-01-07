@@ -6,7 +6,7 @@
     $small = true;
     $strip_tag = '';
     $complex = false;
-    include 'home-strip-include.php';
+    include 'include-sidebar-strip-item.php';
     ?>
     <div class='strip-item strip-complex'>
         <?php
@@ -16,12 +16,12 @@
         $strip_tag = '';
         $small = true;
         $complex = true;
-        include 'home-strip-include.php';
+        include 'include-sidebar-strip-item.php';
         $strip_link = home_url() . '/join';
         $strip_img_url = get_template_directory_uri() . '/images/write.png';
         $strip_main = 'Write for <i>The Phillipian</i>';
         $strip_tag = '';
-        include 'home-strip-include.php';
+        include 'include-sidebar-strip-item.php';
         ?>
     </div>
 </div>

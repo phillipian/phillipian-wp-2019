@@ -31,15 +31,34 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
                 </span>
             </div>
             <div class='desktop-ads-related'>
-                <?php include 'single-sidebar-include.php' ?>
+                <?php include 'includes/include-single-sidebar.php' ?>
             </div>
         </div>
         <div class='single-right'>
             <div class='mobile-ads-related'>
-                <?php include 'single-sidebar-include.php' ?>
+                <?php include 'includes/include-single-sidebar.php' ?>
             </div>
             <?php the_content(); ?>
-            <?php include 'related-include.php' ?>
+
+            <?php
+            $tags = get_the_tags();
+            if (!(empty($tags))) {
+                foreach ($tags as $t) {
+                    echo "<div class='tag-posts'>";
+                    echo "<h2>Other posts with the tag #" . $t->name . "</h2>";
+                    $args = array("tag" => $t->name);
+                    $the_query = new WP_Query($args);
+                    if ($the_query->have_posts()) {
+                        while ($the_query->have_posts()) {
+                            $the_query->the_post();
+                            echo the_title();
+                        }
+                    }
+                    echo "</div>";
+                }
+            }
+            ?>
+            <?php include 'includes/include-related-posts.php' ?>
         </div>
     </div>
 
