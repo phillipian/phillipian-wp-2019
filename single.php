@@ -45,8 +45,9 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
             if (!(empty($tags))) {
                 foreach ($tags as $t) {
                     echo "<div class='tag-posts'>";
-                    echo "<h2 class='tag-title'>Other posts with the tag #" . $t->name . "</h2>";
-                    $args = array("tag" => $t->name);
+                    echo "<div class=\"article-about-top\"></div>";
+                    echo "<h2 class='tag-title'>Other posts with the tag <a href='" . get_tag_link($t) . "'>#" . $t->name . "</a></h2>";
+                    $args = array("tag" => $t->name, 'posts_per_page' => 5);
                     $the_query = new WP_Query($args);
                     if ($the_query->have_posts()) {
                         while ($the_query->have_posts()) {

@@ -1,5 +1,6 @@
 .single-container{
     font-size: 20px;
+    padding-bottom: 64px!important;
 }
 
 .single-container h1{
@@ -11,7 +12,7 @@
     font-family: 'Avenir Pro 55 Roman';
 }
 
-.single-container img{
+.single-container .wp-caption img{
     display: block;
     width: 100%;
     height: unset;
@@ -26,13 +27,18 @@
     grid-row: 4/7;
 }
 
-.related-container{
+.related-container, .tag-posts{
     margin-top: 64px;
 }
 
 .related-container h2, .tag-posts h2.tag-title{
     font-size: 24px;
     font-family: 'Avenir Pro 85 Heavy';
+}
+
+.tag-posts .article-item{
+    padding-top: 32px;
+    border-top: 1px solid rgba(0,0,0,0.1);
 }
 
 .related-container h3{
