@@ -45,13 +45,14 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
             if (!(empty($tags))) {
                 foreach ($tags as $t) {
                     echo "<div class='tag-posts'>";
-                    echo "<h2>Other posts with the tag #" . $t->name . "</h2>";
+                    echo "<h2 class='tag-title'>Other posts with the tag #" . $t->name . "</h2>";
                     $args = array("tag" => $t->name);
                     $the_query = new WP_Query($args);
                     if ($the_query->have_posts()) {
                         while ($the_query->have_posts()) {
                             $the_query->the_post();
-                            echo the_title();
+                            $archive = true;
+                            include 'includes/include-article-item.php';
                         }
                     }
                     echo "</div>";
