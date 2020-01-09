@@ -44,6 +44,23 @@ function scorebox_sc($atts, $content = null)
 
 add_shortcode('scorebox', 'scorebox_sc');
 
+// CAPTION SHORTCODE OVERRIDE
+
+function caption_override_sc($atts, $content = null)
+{
+    // for some reason default shortcode doesn't work with media-credit
+    preg_match("/\[media\-credit(.*)\[\/media-credit\]/", $content, $array2);
+    preg_match("/(?<=\[\/media-credit\])(.*)/", $content, $array3);
+    return "<div class='wp-caption'>" . do_shortcode($array2[0]) . "<p class='wp-caption-text' >" . $array3[0] . "</p></div>";
+}
+
+function override_image_shortcodes(){
+    remove_shortcode('caption');
+    add_shortcode('caption', 'caption_override_sc');
+}
+
+add_action('wp_loaded', 'override_image_shortcodes');
+
 // CUSTOM IMGGALLERY SHORTCODE
 
 function imggallery_sc($atts, $content = null)
