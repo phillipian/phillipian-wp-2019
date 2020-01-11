@@ -2,9 +2,11 @@
 $adarea = 'plip-ad-single1';
 $adclass = 'single-ad';
 include 'include-ad.php';
-?>
-<?php include 'include-related-posts.php' ?>
-<?php
+
+if (!(has_category("hidden"))){
+    include 'include-related-posts.php';
+}
+
 $adarea = 'plip-ad-single2';
 $adclass = 'single-ad';
 include 'include-ad.php';
