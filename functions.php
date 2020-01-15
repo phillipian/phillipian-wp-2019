@@ -101,7 +101,7 @@ function lotw_interactive_descript_sc($atts, $content = null){
         'top' => 0,
         'index' => 0
     ), $atts);
-    return '<div class="lotw-interactive-marker" style="left:' . $a['left'] . "%; top:" . $a['top'] . '%;" data-ind="' . $a['index'] . '"></div>' . '<div class="lotw-interactive-descript" data-ind="' . $a['index'] . '"><div class="lotw-interactive-close">close</div>' . do_shortcode($content) . '</div>';
+    return '<div class="lotw-interactive-marker" style="left:' . $a['left'] . "%; top:" . $a['top'] . '%;" data-ind="' . $a['index'] . '"></div>' . '<div class="lotw-interactive-descript" data-ind="' . $a['index'] . '"><div class="lotw-interactive-close">close</div>' . do_shortcode($content) . '</div><script src="' . get_template_directory_uri() . '/js/lotw-interactive.js"></script>' ;
 }
 
 add_shortcode('lotw-interactive', 'lotw_interactive_sc');

@@ -69,9 +69,6 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
             if (!(has_category("hidden"))){
                 include 'includes/include-related-posts.php';
             }
-            if (has_category("lotw-arts")){
-                include 'includes/include-lotw-interactive-script.php';
-            }
 
             ?>
         </div>
