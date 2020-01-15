@@ -47,6 +47,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
             <?php
             $tags = get_the_tags();
             if (!(empty($tags))) {
+                $singlepage = false;
                 foreach ($tags as $t) {
                     echo "<div class='tag-posts'>";
                     echo "<div class=\"article-about-top\"></div>";

@@ -12,6 +12,10 @@
     font-family: 'Avenir Pro 55 Roman';
 }
 
+.single-container .article-item{
+    font-size: 16px;
+}
+
 .single-container .wp-caption img{
     display: block;
     width: 100%;
