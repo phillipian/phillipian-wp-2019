@@ -442,10 +442,11 @@ h1.author-title{
 }
 
 .lotw-interactive-descript{
+  z-index: 1;
   background-color: #fff;
   box-shadow: 4px 4px 24px 4px rgba(0,0,0,0.4);
   padding: 20px;
-  width: 800px;
+  width: 650px;
   box-sizing: border-box;
   max-width: 100vw;
   transform: translateX(-50%);

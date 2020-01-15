@@ -88,6 +88,25 @@ function ytembed_sc($atts, $content = null)
 
 add_shortcode('ytembed', 'ytembed_sc');
 
+// LOTW-INTERACTIVE SHORTCODE
+
+function lotw_interactive_sc($atts, $content = null)
+{
+    return '<div class="lotw-interactive-container">' . do_shortcode($content) . '</div>';
+}
+
+function lotw_interactive_descript_sc($atts, $content = null){
+    $a = shortcode_atts(array(
+        'left' => 0,
+        'top' => 0,
+        'index' => 0
+    ), $atts);
+    return '<div class="lotw-interactive-marker" style="left:' . $a['left'] . "%; top:" . $a['top'] . '%;" data-ind="' . $a['index'] . '"></div>' . '<div class="lotw-interactive-descript" data-ind="' . $a['index'] . '"><div class="lotw-interactive-close">close</div>' . do_shortcode($content) . '</div>';
+}
+
+add_shortcode('lotw-interactive', 'lotw_interactive_sc');
+add_shortcode('descript', 'lotw_interactive_descript_sc');
+
 // JETPACK RELATED POSTS
 
 function jetpackme_remove_rp()
