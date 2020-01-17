@@ -10,5 +10,12 @@
     ?>
     <div class='article-about-top'></div>
     <h3>Multilingual</h3>
-    <?php include "include-multilingual-grid.php" ?>
+    <?php
+
+    include "include-multilingual-grid.php";
+    $adclass = 'home-side-ad';
+    $adarea = 'plip-ad-homesmall-2';
+    include 'include-ad.php';
+
+    ?>
 </div>

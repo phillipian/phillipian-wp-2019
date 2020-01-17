@@ -195,6 +195,23 @@ function plip_customize_ads($wp_customize)
         'section' => 'plip-ad-sec',
         'settings' => 'plip-ad-homesmall-url'
     ));
+    $wp_customize->add_setting('plip-ad-homesmall-2');
+    $wp_customize->add_control(new WP_Customize_Media_control($wp_customize, 'plip-ad-homesmall-2-control', array(
+        'label' => 'Home Small Ad 2',
+        'section' => 'plip-ad-sec',
+        'settings' => 'plip-ad-homesmall-2',
+        'width' => 300,
+        'height' => 250,
+        'flex-width' => true,
+        'flex-height' => true
+    )));
+    $wp_customize->add_setting('plip-ad-homesmall-2-url');
+    $wp_customize->add_control('plip-ad-homesmall-2-url-control', array(
+        'label' => 'Home Small Ad 2 Link',
+        'type' => 'url',
+        'section' => 'plip-ad-sec',
+        'settings' => 'plip-ad-homesmall-2-url'
+    ));
     $wp_customize->add_setting('plip-ad-single1');
     $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-ad-single1-control', array(
         'label' => 'Single Ad 1',

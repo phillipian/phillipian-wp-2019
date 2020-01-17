@@ -21,32 +21,8 @@
         </div>
     </div>
 
-    <div class='home-new'>
-        <?php if (get_theme_mod('plip-breaking-banner', null)):?>
-        <div class="breaking-banner">
-            <span>Breaking News</span>
-        </div>
-        <?php endif; ?>
-        <?php if (get_theme_mod('plip-breaking-check1', null)):
-            $storyind = 1;
-            include 'includes/breaking-news/include-breaking-news.php';
-        endif; ?>
-        <?php if (get_theme_mod('plip-breaking-check2', null)):
-            $storyind = 2;
-            include 'includes/breaking-news/include-breaking-news.php';
-        endif; ?>
-    </div>
     <div class="home-featured four-col">
-        <?php
-        if (get_theme_mod('plip-breaking-switch', 'no mod') == 1) :
-            $adclass = 'home-top-ad';
-            $adarea = 'plip-ad-homewide';
-            include 'includes/include-ad.php';
-        else:
-            echo "<div class='ad-spacer'></div>";
-        endif;
-        ?>
-        <h1>Featured</h1>
+        <h1 style="grid-row: 1;">Featured</h1>
         <div class="featured-posts">
             <?php query_posts(array(
                 'category_name' => 'featured',
@@ -59,6 +35,30 @@
                 endwhile;
             endif; ?>
         </div>
+        <?php
+        if (get_theme_mod('plip-breaking-switch', 'no mod') == 1) :
+            $adclass = 'home-top-ad';
+            $adarea = 'plip-ad-homewide';
+            include 'includes/include-ad.php';
+        else:
+            echo "<div class='ad-spacer'></div>";
+        endif;
+        ?>
+    </div>
+    <div class='home-new'>
+        <?php if (get_theme_mod('plip-breaking-banner', null)):?>
+            <div class="breaking-banner">
+                <span>Breaking News</span>
+            </div>
+        <?php endif; ?>
+        <?php if (get_theme_mod('plip-breaking-check1', null)):
+            $storyind = 1;
+            include 'includes/breaking-news/include-breaking-news.php';
+        endif; ?>
+        <?php if (get_theme_mod('plip-breaking-check2', null)):
+            $storyind = 2;
+            include 'includes/breaking-news/include-breaking-news.php';
+        endif; ?>
     </div>
     <div class="home-main three-col">
         <div class="home-video">
