@@ -374,8 +374,13 @@ function catch_that_image()
     $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
     $first_img = $matches[1][0];
 
-    if (empty($first_img)) { //Defines a default image
-        $first_img = false;
+    if (empty($first_img)) {
+        // see if it's just an issue with image not having quotes, not necessarily missing them entirely
+        $output = preg_match_all('<img.+src=([^\'"\s]+)[\'"\s].*>', $post->post_content, $matches);
+        $first_img = $matches[1][0];
+        if (empty($first_img)){
+            $first_img = false;
+        }
     }
     return $first_img;
 }
