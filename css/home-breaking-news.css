@@ -69,13 +69,13 @@
     font-weight: 400;
 }
 
-.breaking-info p, .breaking-col p{
+.breaking-info p, .breaking-info li, .breaking-col p{
     font-size: 20px;
     opacity: 0.7;
     line-height: 1.4;
 }
 
-.breaking-info p:hover, .breaking-col p:hover{
+.breaking-info li:hover, .breaking-info p:hover, .breaking-col p:hover{
     opacity: 1.0;
 }
 
