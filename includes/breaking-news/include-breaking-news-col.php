@@ -21,7 +21,7 @@
             'tag__in' => $slug
         ));
         if (have_posts()) :
-            if ($item == "news"): ?>
+            if ($item == "breaking"): ?>
                 <div class="breaking-coverage-label"><span>Our Latest Coverage</span></div>
             <?php else: ?>
                 <div class="breaking-coverage-label"><span><?php echo $item ?></span></div>
