@@ -10,7 +10,7 @@
                 <li>Off-campus (Domestic): $185</li>
                 <li>Off-campus (International): $225</li>
             </ul>
-            <p>To subscribe, contact Aissata Bah at <a href='mailto:business@phillipian.net'>business@phillipian.net</a>.</p>
+            <p>To subscribe, contact Henrique Chamon at <a href='mailto:business@phillipian.net'>business@phillipian.net</a>.</p>
         </div>
     </div>
 </div>
