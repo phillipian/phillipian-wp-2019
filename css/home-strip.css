@@ -77,6 +77,36 @@
     font-family: 'Avenir Pro 55 Roman'!important;
 }
 
+ul.sub-menu {
+    display: none;
+    position: absolute;
+    flex-flow: column;
+    background: rgba(51, 51, 51, 0.83);
+    width: 5.2em;
+    text-align: center;
+}
+
+ul.sub-menu li {
+    margin-right: 0px;
+}
+
+ul.inline-sub-menu {
+    display: flex !important;
+    position: relative;
+    flex-flow: row nowrap;
+    margin-left: 16px;
+    background: none;
+    width: auto;
+}
+
+ul.inline-sub-menu li {
+    margin-right: 16px;
+}
+
+.sub-menu:not(.inline-sub-menu) a {
+    color: rgba(165, 165, 165, 1);
+}
+
 .home-strip-outer{
     overflow-x: auto;
 }
