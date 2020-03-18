@@ -82,8 +82,11 @@ ul.sub-menu {
     position: absolute;
     flex-flow: column;
     background: rgba(51, 51, 51, 0.83);
-    width: 5.2em;
+    width: auto;
+    padding-left: .5em;
+    padding-right: .5em;
     text-align: center;
+    min-width: 5.2em;
 }
 
 ul.sub-menu li {
