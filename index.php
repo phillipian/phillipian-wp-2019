@@ -32,31 +32,55 @@
         include 'includes/breaking-news/include-breaking-news.php';
     endif; ?>
 </div>
+    <div class="main-container">
+        <div class="main-grid">
+            <div class="first-post">
+                <?php
+                        query_posts(array(
+                            'category_name' => 'top-posts',
+                            'posts_per_page' => 1
+                        ));
+                        if (have_posts()) :
+                            while (have_posts()) :
+                                the_post();
+                        include "includes/include-top-article-item.php";
+                        endwhile;
+                        endif;
+                ?>
+            </div>
+            <div class="top-stories">
+                    <h1>This month's top stories</h1> 
+                    <?php
+                        $sect = true;
+                        wp_reset_query();
+                        query_posts(array(
+                            'category_name' => 'featured',
+                            'posts_per_page' => get_theme_mod('plip-home-num', 3)
+                        ));
+                        if (have_posts()) :
+                            while (have_posts()) :
+                                the_post();
+                                include "includes/include-article-item.php";
+                            endwhile;
+                                endif;
 
-<div class="home-featured four-col">
-    <h1 style="grid-row: 1;">Featured</h1>
-    <div class="featured-posts">
-        <?php query_posts(array(
-            'category_name' => 'featured',
-            'posts_per_page' => get_theme_mod('plip-home-num', 8)
-        ));
-        if (have_posts()) :
-            while (have_posts()) :
-                the_post();
-                include "includes/include-article-item.php";
-            endwhile;
-        endif; ?>
+                    $catlink = get_category_link(get_cat_ID($catname));
+                     ?>
+                    <a class='sect-more' href='<?php
+                    echo $catlink ?>'>All Featured Articles ></a>
+            </div>
+        </div>
+        <?php
+        // TODO: Ad support with new layout?
+        if (get_theme_mod('plip-breaking-switch', 'no mod') == 1) :
+            $adclass = 'home-top-ad';
+            $adarea = 'plip-ad-homewide';
+            include 'includes/include-ad.php';
+        else :
+            echo "<div class='ad-spacer'></div>";
+        endif;
+        ?>
     </div>
-    <?php
-    if (get_theme_mod('plip-breaking-switch', 'no mod') == 1) :
-        $adclass = 'home-top-ad';
-        $adarea = 'plip-ad-homewide';
-        include 'includes/include-ad.php';
-    else :
-        echo "<div class='ad-spacer'></div>";
-    endif;
-    ?>
-</div>
 <div class="home-main three-col">
     <div class="home-video">
         <?php

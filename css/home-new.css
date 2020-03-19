@@ -203,6 +203,24 @@
     clear: both;
 }
 
+.first-post {
+    grid-row: 1;
+    grid-column: 1/3;
+    border-right: 1px solid #DEDEDE;
+    padding-right: 20px;
+    height: 98%;
+}
+
+.main-container {
+    margin: 0 15px;
+}
+
+.main-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .home-featured .article-item {
     float: left;
 }
@@ -223,6 +241,19 @@
     font-family: 'ITC Cheltenham Std';
     font-size: 42px;
     font-weight: 400;
+}
+
+.top-stories {
+    grid-row: 1;
+    grid-column: 3/4;
+    padding-left: 20px;
+}
+
+.top-stories h1 {
+    font-family: 'ITC Cheltenham Std';
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
 }
 
 .home-video h1{

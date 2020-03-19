@@ -19,6 +19,10 @@
   max-height: 360px;
 }
 
+.first-post .article-news-side .article-image img {
+    max-height: 100%;
+}
+
 .article-news-side, .article-sect{
   margin-bottom: 42px;
 }
@@ -27,6 +31,10 @@
   grid-column: 1/2;
   position: relative;
   padding-bottom: 42px;
+}
+
+.article-text-bottom {
+    margin-top: 4px;
 }
 
 .article-news-main .article-image{
@@ -118,7 +126,7 @@
   opacity: 0.4;
 }
 
-.home-featured .article-category{
+.home-featured .article-category, .first-post .article-category {
   font-size: 16px;
 }
 
