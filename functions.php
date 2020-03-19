@@ -400,6 +400,13 @@ function custom_excerpt_more($more)
 
 add_filter('excerpt_more', 'custom_excerpt_more');
 
+function wpsesess_ddecode_excerpt( $excerpt )
+{
+    $content = preg_replace('#\[[^\]]+\]#', '', $excerpt);
+    return apply_filters('the_content', $content);
+}
+add_filter( 'the_excerpt', 'wpsesess_ddecode_excerpt' );
+
 add_filter('parse_query', 'ba_admin_posts_filter');
 add_action('restrict_manage_posts', 'ba_admin_posts_filter_restrict_manage_posts');
 

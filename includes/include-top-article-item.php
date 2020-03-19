@@ -46,4 +46,7 @@ if ($is_multimedia) {
         <?php include 'include-article-author.php' ?>
         <div class="article-date"><span><?php the_time("M j, Y"); ?></span></div>
     </div>
+    <div class="article-excerpt">
+        <?php the_excerpt(); ?>
+    </div>
 </div>

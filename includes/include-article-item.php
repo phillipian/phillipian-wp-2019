@@ -46,4 +46,7 @@ if ($is_multimedia) {
         <?php endif; ?>
         <?php the_scorebox();
     endif; ?>
+    <div class="article-excerpt">
+        <?php the_excerpt(); ?>
+    </div>
 </div>

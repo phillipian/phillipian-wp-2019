@@ -84,7 +84,7 @@ a{
 }
 
 .sect-header h1{
-  margin: 36px 0 24px 0;
+  margin: 10px 0 24px 0;
 }
 
 .sect-header a, .post-categories a{
@@ -168,7 +168,7 @@ h1.author-title{
 
 .home-side-ad{
   max-width: 300px;
-  margin: 32px auto;
+  margin: auto auto;
 }
 
 .ad img, .home-top-ad img, .sidebar-ad img, .single-ad img{

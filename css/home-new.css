@@ -4,9 +4,55 @@
     }
 }
 
+
 @media (min-width: 600px) {
     .home-main {
         display: grid;
+    }
+
+    .main-grid {
+        grid-template-areas:
+            ' firstPost  topStories '
+            ' hr         hr         '
+            ' sectHolder sectHolder2 ' /* sects will automatically take up sectHolder/sectHolder2 area as 1fr */
+            ' sectHolder ad         '
+            ' sectHolder ad         ';
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    hr {
+        grid-area: hr;
+        border: 0;
+        clear:both;
+        display:block;
+        width: 96%;
+        background-color: #ADADAD;
+        height: 1px;
+    }
+
+    .first-post {
+        border-right: 1px solid #ADADAD;
+        height: 100%;
+    }
+
+    .top-stories {
+        padding-left: 20px;
+    }
+
+    .main-grid .home-sect {
+        padding: 0 20px;
+    }
+
+    .main-grid .home-sect:nth-child(6n) {
+        padding-right: 0px;
+    }
+
+    .main-grid .home-sect:nth-child(4n), .main-grid .home-sect:nth-child(7n) {
+        padding-left: 0px;
+    }
+
+    .home-sect .article-item {
+        min-height: 170px;
     }
 
     .home-video, .home-video-color {
@@ -62,7 +108,27 @@
     }
 }
 
+
 @media (min-width: 900px) {
+    .main-grid {
+        grid-template-areas:
+            ' firstPost firstPost topStories '
+            ' hr        hr        hr         '
+            ' sect      sect      ad         '
+            ' sect      sect      ad         ';
+
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .home-sect .article-item {
+        min-height: 200px;
+    }
+
+    .main-grid .home-sect:nth-child(5n), .main-grid .home-sect:nth-child(8n) {
+        border-right: 1px solid #ADADAD;
+        padding-right: 10px;
+    }
+
     .three-col, .four-col {
         width: 100%;
         display: grid;
@@ -118,6 +184,9 @@
 }
 
 @media (min-width: 1200px) {
+    .main-container {
+        margin: 0 45px;
+    }
     .four-col {
         width: 100%;
         display: grid;
@@ -143,7 +212,13 @@
     }
 
     .home-top-ad, .ad-spacer {
-        grid-column: 2/6;
+        grid-column: 3fr;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main-container {
+        margin: 0 25px;
     }
 }
 
@@ -151,19 +226,56 @@
     .home-main {
         grid-template-columns: minmax(24px, 1fr) repeat(2, minmax(200px, 400px)) minmax(24px, 1fr);
     }
-
-    .home-sect {
-        margin-right: 24px;
-    }
 }
 
 @media (max-width: 900px) {
     .home-featured {
         padding: 0 24px;
     }
+
+    .home-side-ad {
+        margin: 0 auto !important;
+    }
 }
 
 @media (max-width: 600px) {
+    .main-container {
+        margin: 24px;
+    }
+    
+    .main-grid {
+        grid-template-areas:
+            ' firstPost  '
+            ' topStories '
+            ' hr         '
+            ' sectHolder '
+            ' sectHolder '
+            ' sectHolder '
+            ' sectHolder '
+            ' ad ';
+    }
+
+    .first-post .article-image {
+        width: 100%;
+    }
+
+    .first-post {
+        margin-bottom: 30px;
+    }
+
+    .top-stories h1 {
+        display: none;
+    }
+
+    hr {
+        display: none;
+    }
+
+    .home-sect {
+        border-top: 1px solid #000;
+        padding-top: 10px;
+    }
+
     .home-main {
         padding: 0 24px;
     }
@@ -173,6 +285,7 @@
         position: relative;
         left: -24px;
     }
+
 }
 
 .home-sects-right {
@@ -204,21 +317,25 @@
 }
 
 .first-post {
-    grid-row: 1;
-    grid-column: 1/3;
-    border-right: 1px solid #DEDEDE;
-    padding-right: 20px;
-    height: 98%;
+    grid-area: firstPost;
 }
 
-.main-container {
-    margin: 0 15px;
+.article-excerpt {
+    grid-column: 1/3;
+}
+
+.article-excerpt p {
+    margin: 0;
+    margin-bottom: 5px;
 }
 
 .main-grid {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(3, 1fr);
+}
+
+.home-side-ad {
+    grid-area: ad;
 }
 
 .home-featured .article-item {
@@ -244,9 +361,7 @@
 }
 
 .top-stories {
-    grid-row: 1;
-    grid-column: 3/4;
-    padding-left: 20px;
+    grid-area: topStories;
 }
 
 .top-stories h1 {

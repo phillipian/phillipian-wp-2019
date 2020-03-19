@@ -22,7 +22,7 @@ $sect = true;
 wp_reset_query();
 query_posts(array(
     'cat' => get_cat_ID($catname),
-    'posts_per_page' => 5
+    'posts_per_page' => 1
 ));
 if (have_posts()) :
     while (have_posts()) :

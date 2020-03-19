@@ -34,7 +34,7 @@
 </div>
     <div class="main-container">
         <div class="main-grid">
-            <div class="first-post">
+            <div class="first-post column-divider">
                 <?php
                         query_posts(array(
                             'category_name' => 'top-posts',
@@ -69,6 +69,22 @@
                     <a class='sect-more' href='<?php
                     echo $catlink ?>'>All Featured Articles ></a>
             </div>
+            <hr>
+            <?php
+                $catname = "News";
+                include 'includes/include-home-sect.php';
+                $catname = "Sports";
+                include 'includes/include-home-sect.php';
+
+                $adclass = 'home-side-ad';
+                $adarea = 'plip-ad-homesmall';
+                include 'includes/include-ad.php';
+
+                $catname = "Arts";
+                include 'includes/include-home-sect.php';
+                $catname = "Commentary";
+                include 'includes/include-home-sect.php';
+            ?>
         </div>
         <?php
         // TODO: Ad support with new layout?
@@ -101,10 +117,9 @@
         ?>
     </div>
     <?php include "includes/include-home-right.php" ?>
-    <div class="home-video-color leftbar"></div>
-    <div class="home-right-color rightbar"></div>
 </div>
 <script>
+/*
     var $grid1 = $(".featured-posts").masonry({
         itemSelector: '.article-news-side',
         gutter: 24,
@@ -131,6 +146,7 @@
     $grid3.imagesLoaded(function() {
         $grid3.masonry();
     });
+ */
 </script>
 
 
