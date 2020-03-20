@@ -60,4 +60,3 @@ $('.sub-menu').parent().hover(function() {
 }, function() {
     $(this).children('.sub-menu').fadeOut(200);
 });
-

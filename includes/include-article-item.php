@@ -47,6 +47,6 @@ if ($is_multimedia) {
         <?php the_scorebox();
     endif; ?>
     <div class="article-excerpt">
-        <?php the_excerpt(); ?>
+        <?php echo the_excerpt(); ?>
     </div>
 </div>

@@ -148,12 +148,16 @@ function plip_theme_setup()
     add_theme_support('menus');
     register_nav_menus(array(
         'primary' => __('Primary Header Navigation'),
-        'secondary' => __('Footer Navigation'),
         'home-cats' => __('Home Category Bar'),
         'sections-1' => __('Sections Dropdown 1'),
         'sections-2' => __('Sections Dropdown 2'),
         'sections-3' => __('Sections Dropdown 3'),
-        'sections-4' => __('Sections Dropdown 4')
+        'sections-4' => __('Sections Dropdown 4'),
+        'footer-links' => __('Footer Quick Links'),
+        'footer-inquiries' => __('Footer Inquiries'),
+        'footer-policies' => __('Footer Policies'),
+        'footer-follow' => __('Footer Follow Us'),
+        'footer-multilingual' => __('Footer Multilingual')
     ));
 }
 

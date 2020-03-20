@@ -32,8 +32,8 @@
         include 'includes/breaking-news/include-breaking-news.php';
     endif; ?>
 </div>
-    <div class="main-container">
-        <div class="main-grid">
+    <div class="top-container">
+        <div class="top-grid">
             <div class="first-post column-divider">
                 <?php
                         query_posts(array(
@@ -63,14 +63,15 @@
                                 include "includes/include-article-item.php";
                             endwhile;
                                 endif;
-
-                    $catlink = get_category_link(get_cat_ID($catname));
+                        $catlink = get_category_link(get_cat_ID($catname));
                      ?>
                     <a class='sect-more' href='<?php
                     echo $catlink ?>'>All Featured Articles ></a>
             </div>
             <hr>
             <?php
+                $numposts = 1;
+
                 $catname = "News";
                 include 'includes/include-home-sect.php';
                 $catname = "Sports";
@@ -85,6 +86,7 @@
                 $catname = "Commentary";
                 include 'includes/include-home-sect.php';
             ?>
+            </div>
         </div>
         <?php
         // TODO: Ad support with new layout?
@@ -97,57 +99,18 @@
         endif;
         ?>
     </div>
-<div class="home-main three-col">
-    <div class="home-video">
+    <div class="bottom-container">
         <?php
-        $catname = "Multimedia";
-        include 'includes/include-home-sect.php';
+            include 'includes/include-banner.php';
         ?>
+        <div class="home-video">
+            <?php
+            $catname = "Multimedia";
+            $numposts = 4;
+            include 'includes/include-home-sect.php';
+            ?>
+        </div>
     </div>
-    <div class='home-sects-inner'>
-        <?php
-        $catname = "News";
-        include 'includes/include-home-sect.php';
-        $catname = "Commentary";
-        include 'includes/include-home-sect.php';
-        $catname = "Sports";
-        include 'includes/include-home-sect.php';
-        $catname = "Arts";
-        include 'includes/include-home-sect.php';
-        ?>
-    </div>
-    <?php include "includes/include-home-right.php" ?>
-</div>
-<script>
-/*
-    var $grid1 = $(".featured-posts").masonry({
-        itemSelector: '.article-news-side',
-        gutter: 24,
-        columnWidth: '.article-news-side'
-    });
-    $grid1.imagesLoaded(function() {
-        $grid1.masonry();
-    });
-    var $grid2 = $(".home-sects-inner").masonry({
-        itemSelector: '.home-sect',
-        percentPosition: true,
-        gutter: 36,
-        columnWidth: '.home-sect'
-    });
-    $grid2.imagesLoaded(function() {
-        $grid2.masonry();
-    });
-    var $grid3 = $(".home-video-container").masonry({
-        itemSelector: '.article-item',
-        percentPosition: true,
-        gutter: 24,
-        columnWidth: '.article-item'
-    });
-    $grid3.imagesLoaded(function() {
-        $grid3.masonry();
-    });
- */
 </script>
-
 
 <?php get_footer(); ?>
