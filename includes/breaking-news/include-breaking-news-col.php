@@ -13,7 +13,7 @@
         </div>
     <?php
     elseif ($item == 'commentary-call'): ?>
-        <p>Do you have thoughts about these policy changes? Start writing, be it a 100-word or 1000-word response, and email <a href="mailto:commentary@phillipian.net">commentary@phillipian.net</a>.</p>
+        <p>Do you have thoughts about these events and decisions? Start writing, be it a 100-word or 1000-word response, and email <a href="mailto:commentary@phillipian.net">commentary@phillipian.net</a>.</p>
     <?php else:
         $breaking = true;
         query_posts(array(
