@@ -76,11 +76,18 @@
                 include 'includes/include-home-sect.php';
                 $catname = "Sports";
                 include 'includes/include-home-sect.php';
-
+            ?>
+            <div class='ad-sect'>
+            <?php
                 $adclass = 'home-side-ad';
                 $adarea = 'plip-ad-homesmall';
                 include 'includes/include-ad.php';
 
+                $adarea = 'plip-ad-homesmall-2';
+                include 'includes/include-ad.php';
+            ?>
+            </div>
+            <?php
                 $catname = "Arts";
                 include 'includes/include-home-sect.php';
                 $catname = "Commentary";

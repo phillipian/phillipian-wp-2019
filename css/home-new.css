@@ -12,11 +12,12 @@
 
     .top-grid {
         grid-template-areas:
-            ' firstPost  topStories '
-            ' hr         hr         '
+            ' firstPost  topStories  '
+            ' hr         hr          '
             ' sectHolder sectHolder2 ' /* sects will automatically take up sectHolder/sectHolder2 area as 1fr */
-            ' sectHolder ad         '
-            ' sectHolder ad         ';
+            ' sectHolder ad          '
+            ' sectHolder ad          '
+            ' banner     banner      ';
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -59,20 +60,13 @@
         background-color: #222;
     }
 
+    .home-top-ad {
+        padding: 0 25px;
+    }
 
     .home-sects-right, .home-right-color {
         grid-row: 1/3;
         background-color: #000;
-    }
-
-    .three-col:before, .four-col:before, .leftbar {
-        content: '';
-        grid-column: 1/2;
-    }
-
-    .three-col:after, .four-col:after, .rightbar {
-        content: '';
-        grid-column: 4/5;
     }
 
     .featured-posts {
@@ -135,9 +129,8 @@
         padding-right: 10px;
     }
 
-    .three-col:after, .four-col:after, .rightbar {
-        content: '';
-        grid-column: 5/6;
+    .home-top-ad {
+        padding: 0 45px;
     }
 
     .home-video {
@@ -177,10 +170,6 @@
         padding-right: 32px;
     }
 
-    .home-top-ad, .ad-spacer {
-        grid-column: 2/5;
-    }
-
     .home-video .article-item {
         flex-basis: calc(25% - 20px);
     }
@@ -189,11 +178,6 @@
 @media (min-width: 1200px) {
     .top-container {
         margin: 0 45px;
-    }
-
-    .four-col:after, .four-col .rightbar {
-        content: '';
-        grid-column: 6/7;
     }
 
     .home-featured h1 {
@@ -207,10 +191,6 @@
 
     .home-featured .article-item {
         width: calc(25% - 18px);
-    }
-
-    .home-top-ad, .ad-spacer {
-        grid-column: 3fr;
     }
 
     .footer-inner {
@@ -234,10 +214,6 @@
     .home-featured {
         padding: 0 24px;
     }
-
-    .home-side-ad {
-        margin: 0 auto !important;
-    }
 }
 
 @media (max-width: 600px) {
@@ -254,7 +230,9 @@
             ' sectHolder '
             ' sectHolder '
             ' sectHolder '
-            ' ad ';
+            ' banner     '
+            ' ad         '
+            ' ad         ';
     }
 
     .first-post .article-image {
@@ -280,6 +258,10 @@
 
     .home-main {
         padding: 0 24px;
+    }
+
+    .home-top-ad {
+        display: none;
     }
 
     .home-sects-right {
@@ -383,8 +365,14 @@
     width: 100%;
 }
 
-.home-side-ad {
+.ad-sect {
     grid-area: ad;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-side-ad img {
+    max-width: 250px;
 }
 
 .bottom-container {
