@@ -72,6 +72,37 @@
   margin-right: 0;
 }
 
+@media (min-width: 1200px){
+    .home-cat .sub-menu{
+        position: absolute;
+        display: none;
+        padding: 4px 8px;
+        background-color: #000;
+    }
+
+    .home-cat ul li:hover > .sub-menu{
+        display: block;
+    }
+
+    .home-cat .sub-menu li{
+        margin: 0;
+    }
+
+    .home-cat .sub-menu li a{
+        color: #fff;
+    }
+}
+
+@media (max-width: 1200px){
+    .home-cat ul li{
+        display: flex;
+    }
+
+    .home-cat .sub-menu{
+        margin-left: 16px;
+    }
+}
+
 .home-cat a{
     color: rgba(0,0,0,0.5);
     font-family: 'Avenir Pro 55 Roman'!important;
