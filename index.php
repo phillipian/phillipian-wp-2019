@@ -17,6 +17,13 @@
         <?php wp_nav_menu(array('theme_location' => 'home-cats')) ?>
     </div>
 </div>
+
+<?php if (get_theme_mod('plip-banner-check')){?>
+    <a href="<?php echo get_theme_mod('plip-banner-link')?>">
+        <div class="home-banner"><span><?php echo get_theme_mod('plip-banner-blurb')?></span></div>
+    </a>
+<?php } ?>
+
 <div class='home-new'>
     <?php if (get_theme_mod('plip-breaking-banner', null)) : ?>
         <div class="breaking-banner">
@@ -36,7 +43,7 @@
 <div class="home-container">
     <div class="home-left">
         <?php
-        $includes = explode(",", get_theme_mod('plip-home-left'));
+        $includes = explode(",", get_theme_mod('plip-home-left', 'News,Sports'));
         foreach ($includes as $item){
             $catname = $item;
             include 'includes/include-home-sect.php';
@@ -45,7 +52,7 @@
     </div>
     <div class="home-right">
         <?php
-        $includes = explode(",", get_theme_mod('plip-home-right'));
+        $includes = explode(",", get_theme_mod('plip-home-right', 'Commentary,Arts'));
         foreach ($includes as $item){
             $catname = $item;
             include 'includes/include-home-sect.php';

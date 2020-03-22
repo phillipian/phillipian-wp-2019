@@ -300,6 +300,27 @@ function plip_customize_home($wp_customize)
         'section' => 'plip-home-sec',
         'settings' => 'plip-home-sect-num'
     ));
+    $wp_customize->add_setting('plip-banner-check');
+    $wp_customize->add_control('plip-banner-check-control', array(
+        'label' => 'show top banner?',
+        'type' => 'checkbox',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-banner-check'
+    ));
+    $wp_customize->add_setting('plip-banner-blurb');
+    $wp_customize->add_control('plip-banner-blurb-control', array(
+        'label' => 'top banner text',
+        'type' => 'string',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-banner-blurb'
+    ));
+    $wp_customize->add_setting('plip-banner-link');
+    $wp_customize->add_control('plip-banner-link-control', array(
+        'label' => 'top banner link',
+        'type' => 'string',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-banner-link'
+    ));
     $wp_customize->add_section('plip-breaking-sec', array(
         'title' => 'Breaking News'
     ));

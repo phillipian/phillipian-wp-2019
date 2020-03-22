@@ -1,13 +1,20 @@
-.breaking-banner{
-    background-color: #9c0000;
+.breaking-banner, .home-banner{
     width: 100%;
     height: 36px;
     text-align: center;
     color: #fff;
     font-family: 'Avenir 85 Heavy';
+    line-height: 36px;
+}
+
+.home-banner{
+    background-color: #0082ca;
+}
+
+.breaking-banner{
+    background-color: #9c0000;
     text-transform: uppercase;
     letter-spacing: 2px;
-    line-height: 36px;
 }
 
 .breaking-story-outer{
