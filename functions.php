@@ -265,6 +265,20 @@ function plip_customize_home($wp_customize)
         'section' => 'plip-home-sec',
         'settings' => 'plip-home-num'
     ));
+    $wp_customize->add_setting('plip-home-left');
+    $wp_customize->add_control('plip-home-left-control', array(
+       'label' => 'Left column categories',
+       'type' => 'string',
+       'section' => 'plip-home-sec',
+       'settings' => 'plip-home-left'
+    ));
+    $wp_customize->add_setting('plip-home-right');
+    $wp_customize->add_control('plip-home-right-control', array(
+        'label' => 'Left column categories',
+        'type' => 'string',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-home-right'
+    ));
     $wp_customize->add_section('plip-breaking-sec', array(
         'title' => 'Breaking News'
     ));
@@ -383,6 +397,17 @@ function catch_that_image()
         }
     }
     return $first_img;
+}
+
+// Code from https://www.wordpressaddicted.com/wordpress-get-tag-id-by-tag-name/:
+
+function get_tag_ID($tag_name) {
+    $tag = get_term_by('name', $tag_name, 'post_tag');
+    if ($tag) {
+        return $tag->term_id;
+    } else {
+        return 0;
+    }
 }
 
 function custom_excerpt_length($length)

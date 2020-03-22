@@ -33,81 +33,26 @@
     endif; ?>
 </div>
 
-<div class="home-featured four-col">
-    <h1 style="grid-row: 1;">Featured</h1>
-    <div class="featured-posts">
-        <?php query_posts(array(
-            'category_name' => 'featured',
-            'posts_per_page' => get_theme_mod('plip-home-num', 8)
-        ));
-        if (have_posts()) :
-            while (have_posts()) :
-                the_post();
-                include "includes/include-article-item.php";
-            endwhile;
-        endif; ?>
-    </div>
-    <?php
-    if (get_theme_mod('plip-breaking-switch', 'no mod') == 1) :
-        $adclass = 'home-top-ad';
-        $adarea = 'plip-ad-homewide';
-        include 'includes/include-ad.php';
-    else :
-        echo "<div class='ad-spacer'></div>";
-    endif;
-    ?>
-</div>
-<div class="home-main three-col">
-    <div class="home-video">
+<div class="home-container">
+    <div class="home-left">
         <?php
-        $catname = "Multimedia";
-        include 'includes/include-home-sect.php';
+        $includes = explode(",", get_theme_mod('plip-home-left'));
+        foreach ($includes as $item){
+            $catname = $item;
+            include 'includes/include-home-sect.php';
+        }
         ?>
     </div>
-    <div class='home-sects-inner'>
+    <div class="home-right">
         <?php
-        $catname = "News";
-        include 'includes/include-home-sect.php';
-        $catname = "Commentary";
-        include 'includes/include-home-sect.php';
-        $catname = "Sports";
-        include 'includes/include-home-sect.php';
-        $catname = "Arts";
-        include 'includes/include-home-sect.php';
+        $includes = explode(",", get_theme_mod('plip-home-right'));
+        foreach ($includes as $item){
+            $catname = $item;
+            include 'includes/include-home-sect.php';
+        }
         ?>
     </div>
-    <?php include "includes/include-home-right.php" ?>
-    <div class="home-video-color leftbar"></div>
-    <div class="home-right-color rightbar"></div>
 </div>
-<script>
-    var $grid1 = $(".featured-posts").masonry({
-        itemSelector: '.article-news-side',
-        gutter: 24,
-        columnWidth: '.article-news-side'
-    });
-    $grid1.imagesLoaded(function() {
-        $grid1.masonry();
-    });
-    var $grid2 = $(".home-sects-inner").masonry({
-        itemSelector: '.home-sect',
-        percentPosition: true,
-        gutter: 36,
-        columnWidth: '.home-sect'
-    });
-    $grid2.imagesLoaded(function() {
-        $grid2.masonry();
-    });
-    var $grid3 = $(".home-video-container").masonry({
-        itemSelector: '.article-item',
-        percentPosition: true,
-        gutter: 24,
-        columnWidth: '.article-item'
-    });
-    $grid3.imagesLoaded(function() {
-        $grid3.masonry();
-    });
-</script>
 
 
 <?php get_footer(); ?>

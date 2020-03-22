@@ -155,9 +155,6 @@
   font-size: 20px;
 }
 
-@media (min-width: 1200px){
-}
-
 @media (min-width: 768px){
 .article-news-main{
   display: grid;
@@ -178,10 +175,10 @@
 }
 
 @media (min-width: 900px){
-  .home-sect{
-    width: calc(50% - 36px);
-    float: left;
-  }
+  /*.home-sect{*/
+  /*  width: calc(50% - 36px);*/
+  /*  float: left;*/
+  /*}*/
 
   .home-featured .article-item{
     margin-top: 32px;

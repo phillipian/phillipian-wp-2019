@@ -151,10 +151,6 @@
     .home-main {
         grid-template-columns: minmax(24px, 1fr) repeat(2, minmax(200px, 400px)) minmax(24px, 1fr);
     }
-
-    .home-sect {
-        margin-right: 24px;
-    }
 }
 
 @media (max-width: 900px) {
