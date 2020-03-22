@@ -78,6 +78,7 @@
         display: none;
         padding: 4px 8px;
         background-color: #000;
+        z-index: 1;
     }
 
     .home-cat ul li:hover > .sub-menu{
