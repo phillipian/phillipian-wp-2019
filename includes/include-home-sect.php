@@ -64,7 +64,7 @@ else {
     wp_reset_query();
     query_posts(array(
         'cat' => get_cat_ID($catname),
-        'posts_per_page' => 5
+        'posts_per_page' => get_theme_mod('plip-home-sect-num')
     ));
     if (have_posts()) :
         while (have_posts()) :

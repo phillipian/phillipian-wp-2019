@@ -265,6 +265,18 @@ function plip_customize_home($wp_customize)
         'section' => 'plip-home-sec',
         'settings' => 'plip-home-num'
     ));
+    $wp_customize->add_setting('plip-home-style', array(
+        'default' => 'default'
+    ));
+    $wp_customize->add_control('plip-home-style-control', array(
+        'label' => 'Homepage style',
+        'type' => 'select',
+        'choices' => array(
+                'default' => 'Default: Top Posts, Single Featured With Blurb'
+        ),
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-home-style'
+    ));
     $wp_customize->add_setting('plip-home-left');
     $wp_customize->add_control('plip-home-left-control', array(
        'label' => 'Left column categories',
@@ -278,6 +290,15 @@ function plip_customize_home($wp_customize)
         'type' => 'string',
         'section' => 'plip-home-sec',
         'settings' => 'plip-home-right'
+    ));
+    $wp_customize->add_setting('plip-home-sect-num', array(
+        'default' => 4
+    ));
+    $wp_customize->add_control('plip-home-sect-num-control', array(
+        'label' => 'Number of posts per section',
+        'type' => 'number',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-home-sect-num'
     ));
     $wp_customize->add_section('plip-breaking-sec', array(
         'title' => 'Breaking News'
