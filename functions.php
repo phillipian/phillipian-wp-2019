@@ -419,6 +419,18 @@ function plip_customize_home($wp_customize)
 
 add_action('customize_register', 'plip_customize_home');
 
+// WordPress Popular Posts Custom HTML
+
+function custom_wpp_markup($popular_posts, $instance){
+    foreach ($popular_posts as $popular_post){
+        $post = get_post($popular_post->ID);
+
+        echo $post->post_title;
+    }
+}
+
+add_filter( 'wpp_custom_html', 'custom_wpp_markup', 10, 2 );
+
 // CUSTOM IMAGE GRABBING FUNCTION
 
 function catch_that_image()

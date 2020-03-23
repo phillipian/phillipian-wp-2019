@@ -41,6 +41,18 @@
 </div>
 
 <div class="home-container">
+    <div class="home-popular">
+        <?php
+        if ( function_exists('wpp_get_mostpopular') ) {
+            /* Get up to the top 5 commented posts from the last 7 days */
+            wpp_get_mostpopular(array(
+                'limit' => 5,
+                'range' => 'last30days',
+                'order_by' => 'views'
+            ));
+        }
+        ?>
+    </div>
     <div class="home-left">
         <?php
         $includes = explode(",", get_theme_mod('plip-home-left', 'News,Sports'));
