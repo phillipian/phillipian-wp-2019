@@ -423,9 +423,9 @@ add_action('customize_register', 'plip_customize_home');
 
 function custom_wpp_markup($popular_posts, $instance){
     foreach ($popular_posts as $popular_post){
-        $post = get_post($popular_post->ID);
-
-        echo $post->post_title;
+        $currpost = $popular_post->id;
+        $sect = true;
+        include 'includes/include-article-item.php';
     }
 }
 
@@ -433,9 +433,9 @@ add_filter( 'wpp_custom_html', 'custom_wpp_markup', 10, 2 );
 
 // CUSTOM IMAGE GRABBING FUNCTION
 
-function catch_that_image()
+function catch_that_image($post_id)
 {
-    global $post, $posts;
+    $post = get_post($post_id);
     $first_img = '';
     ob_start();
     ob_end_clean();
@@ -521,9 +521,9 @@ function ba_admin_posts_filter_restrict_manage_posts()
 
 // CATEGORY FUNCTIONS
 
-function catsNoFeatured($catname)
+function catsNoFeatured($catname, $post_id)
 {
-    foreach (get_the_category() as $c) {
+    foreach (get_the_category($post_id) as $c) {
         if (!in_array($c->name, ["Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts", $catname])) { ?>
         <a href='<?php echo get_category_link($c->cat_ID) ?>'>
             <?php echo $c->name; ?></a><?php
@@ -531,9 +531,9 @@ function catsNoFeatured($catname)
     }
 }
 
-function catsSports()
+function catsSports($post_id)
 {
-    foreach (get_the_category() as $c) {
+    foreach (get_the_category($post_id) as $c) {
         if (!in_array($c->name, ["Sports", "Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts"])) { ?>
         <a href='<?php echo get_category_link($c->cat_ID) ?>'>
             <?php echo $c->name; ?></a><?php
@@ -550,9 +550,9 @@ function the_scorebox()
     }
 }
 
-function catMulti()
+function catMulti($post_id)
 {
-    foreach (get_the_category() as $c) {
+    foreach (get_the_category($post_id) as $c) {
         if (!in_array($c->name, ["Multilingual"])) { ?>
         <a href='<?php echo get_category_link($c->cat_ID) ?>'>
             <?php echo $c->name; ?></a><?php

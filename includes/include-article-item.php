@@ -1,35 +1,45 @@
-<?php $is_multimedia = has_category("multimedia"); ?>
+<?php
+if (!isset($currpost)){
+    $post_id = get_the_ID();
+}
+else{
+    $post_id = $currpost;
+}
+$is_multimedia = in_category("multimedia", $post_id);
+?>
 
 <div class="article-item <?php
 if ($sect or $archive) { ?>article-sect <?php } else { ?>article-news-side <?php }
 if ($is_multimedia) {
     echo "article-noimage article-multimedia";
 } else {
-    if (catch_that_image() == false) {
+    if (catch_that_image($post_id) == false) {
         echo "article-noimage";
     }
 } ?>">
     <div class=" article-text">
         <div class='article-category'>
             <?php if ($catname == "Sports") {
-                catsSports();
+                catsSports($post_id);
             } elseif ($multilingual) {
-                catMulti();
+                catMulti($post_id);
             } else {
-                catsNoFeatured($catname);
+                catsNoFeatured($catname, $post_id);
             }
             if (!($breaking) && !(is_tag())) {
-                foreach (get_the_tags() as $t) { ?>
-                    <a class="article-tag" href="<?php echo get_tag_link($t); ?>">#<?php echo $t->name; ?></a>
-                <?php }
+                if (has_tag('', $post_id)) {
+                    foreach (get_the_tags($post_id) as $t) { ?>
+                        <a class="article-tag" href="<?php echo get_tag_link($t); ?>">#<?php echo $t->name; ?></a>
+                    <?php }
+                }
             }
             ?>
         </div>
-        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <h2><a href="<?php echo get_the_permalink($post_id); ?>"><?php echo get_the_title($post_id); ?></a></h2>
         <?php
 
         if ($is_multimedia) {
-            $postcontent = get_the_content();
+            $postcontent = get_the_content($post_id);
             preg_match("/\[ytembed(.*)\[\/ytembed\]/", $postcontent, $youtubematches);
             echo do_shortcode($youtubematches[0]);
         }
@@ -40,8 +50,8 @@ if ($is_multimedia) {
     </div>
     <?php
     if (!($is_multimedia)):
-        if (!(catch_that_image() == false)) : ?>
-            <div class='article-image'><a href='<?php the_permalink(); ?>'><img src='<?php echo catch_that_image() ?>'></a>
+        if (!(catch_that_image($post_id) == false)) : ?>
+            <div class='article-image'><a href='<?php echo get_the_permalink($post_id); ?>'><img src='<?php echo catch_that_image($post_id) ?>'></a>
             </div>
         <?php endif; ?>
         <?php the_scorebox();
