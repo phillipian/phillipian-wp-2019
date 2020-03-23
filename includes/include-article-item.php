@@ -52,7 +52,7 @@ if ($is_multimedia) {
         <?php include 'include-article-author.php' ?>
         <div class="article-date">
             <span>
-                <?php the_time("M j, Y");
+                <?php echo get_the_time("M j, Y", $post_id);
                 ?>
             </span>
         </div>

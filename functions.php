@@ -272,7 +272,8 @@ function plip_customize_home($wp_customize)
         'label' => 'Homepage style',
         'type' => 'select',
         'choices' => array(
-                'horizontal' => 'Top Posts & Single Lede Story, Horizontal Image',
+                'horizontal' => 'Top Posts & Single Lede Story, Horizontal Image, Image First',
+                'horizontal-headline' => 'Top Posts & Single Lede Story, Horizontal Image, Headline First',
                 'vertical' => 'Top Posts & Single Lede Story, Vertical Image',
                 'text' => 'Top Posts & Single Lede Story, Text Blurb'
         ),

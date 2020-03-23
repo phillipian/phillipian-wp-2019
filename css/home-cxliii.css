@@ -12,6 +12,7 @@
     }
 
     .home-lede{
+        margin-top: 48px;
         grid-column: 1/3;
         grid-row: 1;
     }
@@ -28,6 +29,8 @@
     }
 }
 
+/* HOME POPULAR */
+
 .home-popular h1{
     font-size: 24px;
     font-family: 'ITC Cheltenham Std';
@@ -37,4 +40,55 @@
 .viewcount{
     opacity: 0.4;
     display: inline;
+}
+
+/* LEDE */
+/* LEDE */
+/* LEDE */
+
+.home-lede{
+    display: grid;
+}
+
+/* LEDE-HORIZONTAL */
+
+.lede-horizontal{
+    grid-template-rows: repeat(2, minmax(min-content, max-content));
+}
+
+.lede-horizontal .article-text{
+    margin-top: 24px;
+}
+
+.lede-horizontal h2{
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.lede-horizontal-headline .article-text{
+    grid-row: 1;
+    margin-top: 0;
+}
+
+.lede-horizontal-headline .article-image{
+    margin-top: 24px;
+}
+
+/* LEDE-VERTICAL */
+
+.lede-vertical{
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: minmax(min-content, max-content) 1fr;
+    grid-column-gap: 24px;
+}
+
+.lede-vertical .article-text{
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.lede-vertical .article-author{
+    margin-top: auto;
 }

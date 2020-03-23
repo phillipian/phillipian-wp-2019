@@ -9,6 +9,7 @@
 
 .article-image img{
   max-width: 100%;
+  display: block;
 }
 
 .article-news-side h2{
