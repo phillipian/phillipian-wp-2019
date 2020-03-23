@@ -19,7 +19,11 @@ if ($is_multimedia) {
 } ?>">
     <div class=" article-text">
         <div class='article-category'>
-            <?php if ($catname == "Sports") {
+            <?php
+            if (isset($views)){
+                echo "<div class='viewcount'><span> <i class=\"fas fa-eye\"></i> " . $views . " views</span></div>";
+            }
+            if ($catname == "Sports") {
                 catsSports($post_id);
             } elseif ($multilingual) {
                 catMulti($post_id);
@@ -46,7 +50,12 @@ if ($is_multimedia) {
 
         ?>
         <?php include 'include-article-author.php' ?>
-        <div class="article-date"><span><?php the_time("M j, Y"); ?></span></div>
+        <div class="article-date">
+            <span>
+                <?php the_time("M j, Y");
+                ?>
+            </span>
+        </div>
     </div>
     <?php
     if (!($is_multimedia)):

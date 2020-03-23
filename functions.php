@@ -300,6 +300,15 @@ function plip_customize_home($wp_customize)
         'section' => 'plip-home-sec',
         'settings' => 'plip-home-sect-num'
     ));
+    $wp_customize->add_setting('plip-home-pop-num', array(
+        'default' => 3
+    ));
+    $wp_customize->add_control('plip-home-pop-num-control', array(
+        'label' => 'Number of popular posts to display',
+        'type' => 'number',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-home-pop-num'
+    ));
     $wp_customize->add_setting('plip-banner-check');
     $wp_customize->add_control('plip-banner-check-control', array(
         'label' => 'show top banner?',
@@ -425,7 +434,9 @@ function custom_wpp_markup($popular_posts, $instance){
     foreach ($popular_posts as $popular_post){
         $currpost = $popular_post->id;
         $sect = true;
+        $views = $popular_post->pageviews;
         include 'includes/include-article-item.php';
+        $views = null;
     }
 }
 
