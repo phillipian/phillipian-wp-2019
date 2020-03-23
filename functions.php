@@ -266,13 +266,15 @@ function plip_customize_home($wp_customize)
         'settings' => 'plip-home-num'
     ));
     $wp_customize->add_setting('plip-home-style', array(
-        'default' => 'default'
+        'default' => 'horizontal'
     ));
     $wp_customize->add_control('plip-home-style-control', array(
         'label' => 'Homepage style',
         'type' => 'select',
         'choices' => array(
-                'default' => 'Default: Top Posts, Single Featured With Blurb'
+                'horizontal' => 'Top Posts & Single Lede Story, Horizontal Image',
+                'vertical' => 'Top Posts & Single Lede Story, Vertical Image',
+                'text' => 'Top Posts & Single Lede Story, Text Blurb'
         ),
         'section' => 'plip-home-sec',
         'settings' => 'plip-home-style'
@@ -535,7 +537,7 @@ function ba_admin_posts_filter_restrict_manage_posts()
 function catsNoFeatured($catname, $post_id)
 {
     foreach (get_the_category($post_id) as $c) {
-        if (!in_array($c->name, ["Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts", $catname])) { ?>
+        if (!in_array($c->name, ["Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts", "lede", $catname])) { ?>
         <a href='<?php echo get_category_link($c->cat_ID) ?>'>
             <?php echo $c->name; ?></a><?php
         }
@@ -545,7 +547,7 @@ function catsNoFeatured($catname, $post_id)
 function catsSports($post_id)
 {
     foreach (get_the_category($post_id) as $c) {
-        if (!in_array($c->name, ["Sports", "Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts"])) { ?>
+        if (!in_array($c->name, ["Sports", "Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts", "lede"])) { ?>
         <a href='<?php echo get_category_link($c->cat_ID) ?>'>
             <?php echo $c->name; ?></a><?php
         }

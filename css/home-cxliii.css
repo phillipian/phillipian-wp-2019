@@ -10,12 +10,28 @@
     .home-container{
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .home-lede{
+        grid-column: 1/3;
+        grid-row: 1;
+    }
 }
 
 @media (min-width: 1100px){
     .home-container{
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .home-popular{
+        grid-column: 3;
+        grid-row: 1;
+    }
+}
+
+.home-popular h1{
+    font-size: 24px;
+    font-family: 'ITC Cheltenham Std';
+    margin: 48px 0 32px 0;
 }
 
 .viewcount{

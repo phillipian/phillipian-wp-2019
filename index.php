@@ -41,6 +41,7 @@
 </div>
 
 <div class="home-container">
+    <?php include 'includes/include-home-lede.php' ?>
     <div class="home-popular">
         <h1>This Month's Top Stories</h1>
         <?php

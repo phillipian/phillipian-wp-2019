@@ -6,7 +6,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
         <div class='article-category'>
             <div class='post-categories'>
                 <? foreach (get_the_category() as $c) {
-                    if ($c->name != 'Featured Posts') {
+                    if ($c->name != 'Featured Posts' && $c->name != 'lede') {
                         if ($c->name != 'Hidden') {?>
                         <a href='<?php echo get_category_link($c->cat_ID) ?>'>
                             <?php echo $c->name; ?></a>
