@@ -245,8 +245,10 @@
     flex-flow: row wrap;
 }
 
-.live-posts .article-item{
-    margin-right: 24px;
+@media (min-width: 500px){
+    .live-posts .article-item{
+        margin-right: 24px;
+    }
 }
 
 @media (min-width: 500px) and (max-width: 800px){
