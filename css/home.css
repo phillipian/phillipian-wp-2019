@@ -34,8 +34,8 @@
   grid-column: 2/4;
 }
 
-.article-news-side .article-image{
-  /*max-height: 300px;*/
+.article-news-side .article-image {
+  margin-top: 12px;
 }
 
 .sect-header + .article-sect h2{

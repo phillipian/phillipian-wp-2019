@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/navbar.css' ?>" type='text/css' ">
     <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/home.css' ?>" type='text/css' ">
-    <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/home-cxliii.css' ?>" type='text/css' ">
+    <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/home-lede-and-popular.css' ?>" type='text/css' ">
     <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/home-breaking-news.css' ?>" type='text/css' ">
     <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/list-reset.css' ?>" type='text/css' ">
     <link rel=" stylesheet" href="<?php echo get_template_directory_uri() . '/css/about.css' ?>" type='text/css' ">
