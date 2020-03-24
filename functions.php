@@ -296,10 +296,17 @@ function plip_customize_home($wp_customize)
                 'horizontal-headline' => 'Top Posts & Single Lede Story, Horizontal Image, Headline First',
                 'horizontal-overlay' => 'Top Posts & Single Lede Story, Horizontal Image, Headline Overlayed',
                 'vertical' => 'Top Posts & Single Lede Story, Vertical Image',
-                'text' => 'Top Posts & Single Lede Story, Text Blurb'
+                'text' => '[WIP don\'t use yet] Top Posts & Single Lede Story, Text Blurb'
         ),
         'section' => 'plip-home-sec',
         'settings' => 'plip-home-style'
+    ));
+    $wp_customize->add_setting('plip-home-views-check');
+    $wp_customize->add_control('plip-home-views-check-control', array(
+        'label' => 'show viewcounts for popular posts?',
+        'type' => 'checkbox',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-home-views-check'
     ));
     $wp_customize->add_setting('plip-home-left');
     $wp_customize->add_control('plip-home-left-control', array(
@@ -316,7 +323,7 @@ function plip_customize_home($wp_customize)
         'settings' => 'plip-home-right'
     ));
     $wp_customize->add_setting('plip-home-sect-num', array(
-        'default' => 4
+        'default' => 5
     ));
     $wp_customize->add_control('plip-home-sect-num-control', array(
         'label' => 'Number of posts per section',

@@ -20,7 +20,7 @@ if ($is_multimedia) {
     <div class=" article-text">
         <div class='article-category'>
             <?php
-            if (isset($views)){
+            if (isset($views) && get_theme_mod('plip-home-views-check', false)){
                 echo "<div class='viewcount'><span> <i class=\"fas fa-eye\"></i> " . $views . " views</span></div>";
             }
             if ($catname == "Sports") {
