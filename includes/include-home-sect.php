@@ -5,8 +5,8 @@
 if (substr($catname, 0, 1) == "#"){
 
     $tagname = substr($catname, 1);
-
     $taglink = get_tag_link(get_tag_ID($tagname));
+    $sect = true;
 
     ?>
 

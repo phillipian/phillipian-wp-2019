@@ -16,9 +16,12 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
                         }
                     }
                 }
-                foreach (get_the_tags() as $t) { ?>
-                    <a class="article-tag" href="<?php echo get_tag_link($t); ?>">#<?php echo $t->name; ?></a>
-                <?php }
+
+                if (has_tag('')) {
+                    foreach (get_the_tags() as $t) { ?>
+                        <a class="article-tag" href="<?php echo get_tag_link($t); ?>">#<?php echo $t->name; ?></a>
+                    <?php }
+                }
                 ?>
             </div>
         </div>
