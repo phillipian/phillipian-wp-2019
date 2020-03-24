@@ -445,7 +445,7 @@ function custom_wpp_markup($popular_posts, $instance){
 
 add_filter( 'wpp_custom_html', 'custom_wpp_markup', 10, 2 );
 
-// CUSTOM IMAGE GRABBING FUNCTION
+// IMAGE GRABBING FUNCTION (not mine)
 
 function catch_that_image($post_id)
 {
@@ -465,6 +465,13 @@ function catch_that_image($post_id)
         }
     }
     return $first_img;
+}
+
+function get_lede_credit($post_id){ // this needs much more logic
+    $content = get_post_field('post_content', $post_id);
+    $matches = '';
+    preg_match('/name=(\"|\')(.*?)(\"|\')/',$content,$matches);
+    return $matches[2];
 }
 
 // Code from https://www.wordpressaddicted.com/wordpress-get-tag-id-by-tag-name/:

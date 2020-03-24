@@ -16,7 +16,9 @@ $is_multimedia = in_category("multimedia", $post_id);
     <?php
 
     if (!($is_multimedia)):
-        if (!(catch_that_image($post_id) == false)) : ?>
+        if (!(catch_that_image($post_id) == false)) :
+            $credit = get_lede_credit($post_id);
+            ?>
             <div class='article-image'>
                 <a href='<?php echo get_the_permalink($post_id); ?>'>
                     <img src='<?php echo catch_that_image($post_id) ?>'>
