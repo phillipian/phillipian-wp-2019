@@ -228,7 +228,7 @@
 }
 
 .home-live .sect-header h1{
-    margin: 0;
+    margin: 0 0 24px 0;
 }
 
 .home-live h1 a{
@@ -240,7 +240,6 @@
 }
 
 .live-posts{
-    margin-top: 24px;
     display: flex;
     flex-flow: row wrap;
 }
@@ -299,4 +298,8 @@
 
 .live-posts .article-item .article-date{
     color: rgba(255,255,255,0.7);
+}
+
+.home-multilingual{
+    background-color: #000;
 }

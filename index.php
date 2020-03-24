@@ -120,5 +120,18 @@
     </div>
 </div>
 
+<div class="home-live home-multilingual">
+    <div class="home-live-inner">
+        <div class='sect-header'>
+            <h1>
+                <a href='<?php echo get_category_link(get_cat_ID("Multilingual")) ?>'>Multilingual</a>
+            </h1>
+        </div>
+        <?php
+        include 'includes/include-multilingual-grid.php';
+        ?>
+    </div>
+</div>
+
 
 <?php get_footer(); ?>
