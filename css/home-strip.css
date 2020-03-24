@@ -7,19 +7,6 @@
   .home-top{
     display: none;
   }
-
-  .home-featured{
-    margin-top: 96px;
-  }
-}
-
-.home-logo{
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.home-logo img{
-    width: 100%;
 }
 
 .home-tagline{
@@ -109,21 +96,29 @@
     font-family: 'Avenir Pro 55 Roman'!important;
 }
 
-.home-strip-outer{
-    overflow-x: auto;
-}
+/* HOME-STRIP */
 
 .home-strip{
-  width: 1200px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid rgba(0,0,0,0.1);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding: 12px 0;
+    background-color: #000;
+    width: 100%;
 }
 
-.home-strip a{
-    color: unset;
+.home-strip .sidebar-strip{
+    display: grid;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+
+@media (min-width: 600px){
+    .home-strip .sidebar-strip{
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 24px;
+    }
+}
+
+.home-strip a, .home-strip .strip-sub{
+    color: #fff;
 }
 
 .strip-square{

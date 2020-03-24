@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 <div class='home-top'>
-    <!--<div class='home-logo'><img src='<?php /* echo get_template_directory_uri() . '/images/nameplate.png'; */ ?>'></div>-->
     <div class='home-tagline'>
         <span><a href='about' title='Truth Above All: About The Phillipian'>Veritas Super Omnia</a></span>
         <span class='dot'> • </span>
@@ -90,6 +89,12 @@
             ?>
         </div>
     </div>
+</div>
+
+<div class="home-strip">
+    <?php
+    include 'includes/include-sidebar-strip.php';
+    ?>
 </div>
 
 
