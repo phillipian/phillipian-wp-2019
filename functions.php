@@ -277,13 +277,6 @@ function plip_customize_home($wp_customize)
     $wp_customize->add_section('plip-home-sec', array(
         'title' => 'Home Custom Settings'
     ));
-    $wp_customize->add_setting('plip-home-num');
-    $wp_customize->add_control('plip-home-num-control', array(
-        'label' => 'Number of featured posts',
-        'type' => 'number',
-        'section' => 'plip-home-sec',
-        'settings' => 'plip-home-num'
-    ));
     $wp_customize->add_setting('plip-home-style', array(
         'default' => 'none'
     ));
