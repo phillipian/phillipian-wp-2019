@@ -89,6 +89,12 @@
             ?>
         </div>
     </div>
+
+    <?php
+    $adclass = 'home-top-ad';
+    $adarea = 'plip-ad-homewide-2';
+    include 'includes/include-ad.php';
+    ?>
 </div>
 
 <div class="home-strip">

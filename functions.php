@@ -169,7 +169,9 @@ function plip_customize_ads($wp_customize)
         'section' => 'plip-ad-sec',
         'settings' => 'plip-ad-homewide',
         'width' => 1200,
-        'height' => 200
+        'height' => 200,
+        'flex-width' => true,
+        'flex-height' => true
     )));
     $wp_customize->add_setting('plip-ad-homewide-url');
     $wp_customize->add_control('plip-ad-homewide-url', array(
@@ -177,6 +179,23 @@ function plip_customize_ads($wp_customize)
         'type' => 'url',
         'section' => 'plip-ad-sec',
         'settings' => 'plip-ad-homewide-url'
+    ));
+    $wp_customize->add_setting('plip-ad-homewide-2');
+    $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-ad-homewide-2-control', array(
+        'label' => 'Home Wide Ad 2',
+        'section' => 'plip-ad-sec',
+        'settings' => 'plip-ad-homewide-2',
+        'width' => 1200,
+        'height' => 200,
+        'flex-width' => true,
+        'flex-height' => true
+    )));
+    $wp_customize->add_setting('plip-ad-homewide-2-url');
+    $wp_customize->add_control('plip-ad-homewide-2-url', array(
+        'label' => 'Home Wide Ad 2 Link',
+        'type' => 'url',
+        'section' => 'plip-ad-sec',
+        'settings' => 'plip-ad-homewide-2-url'
     ));
     $wp_customize->add_setting('plip-ad-homesmall');
     $wp_customize->add_control(new WP_Customize_Media_control($wp_customize, 'plip-ad-homesmall-control', array(
