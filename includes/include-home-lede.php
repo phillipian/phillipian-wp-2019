@@ -11,7 +11,7 @@ $is_multimedia = in_category("multimedia", $post_id);
 
 ?>
 
-<div class="home-lede article-item lede-<?php echo $style; if ($style == 'horizontal-headline') echo ' lede-horizontal'; ?>">
+<div class="home-lede article-item lede-<?php echo $style; if ($style == 'horizontal-headline' || $style == 'horizontal-overlay') echo ' lede-horizontal'; ?>">
 
     <?php
 
@@ -28,22 +28,22 @@ $is_multimedia = in_category("multimedia", $post_id);
             }
             ?>
             <div class='article-image'>
-                <div class="article-image-inner">
-                    <a href='<?php echo get_the_permalink($post_id); ?>'>
-                        <img src='<?php echo catch_that_image($post_id) ?>'>
-                    </a>
-                    <div class="lede-byline">
-                        <?php
-                        if (isset($url)){?>
-                            <a href="<?php echo $url ?>"><span><?php echo $byline ?></span></a>
+                    <div class="article-image-inner">
+                        <a href='<?php echo get_the_permalink($post_id); ?>'>
+                            <img src='<?php echo catch_that_image($post_id) ?>'>
+                        </a>
+                        <div class="lede-byline">
                             <?php
-                        }
-                        else{?>
-                            <span><?php echo $byline ?></span>
-                        <?php }
-                        ?>
+                            if (isset($url)){?>
+                                <a href="<?php echo $url ?>"><span><?php echo $byline ?></span></a>
+                                <?php
+                            }
+                            else{?>
+                                <span><?php echo $byline ?></span>
+                            <?php }
+                            ?>
+                        </div>
                     </div>
-                </div>
             </div>
         <?php endif; ?>
         <?php the_scorebox();
