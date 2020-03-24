@@ -74,11 +74,21 @@
     </div>
 
     <div class="home-sidebar">
-        <?php
-        $adclass = 'home-side-ad';
-        $adarea = 'plip-ad-homesmall';
-        include 'includes/include-ad.php';
-        ?>
+        <div class="sidebar-masthead">
+            <a href="<?php echo get_home_url() ?>/about/">
+                <img src='<?php echo get_template_directory_uri(). "/images/masthead-02-06-2020.png"?>'>
+            </a>
+        </div>
+        <div class="sidebar-ads">
+            <?php
+            $adclass = 'home-side-ad';
+            $adarea = 'plip-ad-homesmall';
+            include 'includes/include-ad.php';
+            $adclass = 'home-side-ad';
+            $adarea = 'plip-ad-homesmall-2';
+            include 'includes/include-ad.php';
+            ?>
+        </div>
     </div>
 </div>
 
