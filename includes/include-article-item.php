@@ -43,7 +43,7 @@ if ($is_multimedia) {
         <?php
 
         if ($is_multimedia) {
-            $postcontent = get_the_content($post_id);
+            $postcontent = get_post_field('post_content', $post_id);;
             preg_match("/\[ytembed(.*)\[\/ytembed\]/", $postcontent, $youtubematches);
             echo do_shortcode($youtubematches[0]);
         }

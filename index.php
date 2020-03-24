@@ -98,11 +98,25 @@
 </div>
 
 <div class="home-live">
-    <div class='sect-header'>
-        <h1>
-            <a href='<?php
-            echo get_category_link(get_cat_ID("Multimedia")) ?>'>Live & Video</a>
-        </h1>
+    <div class="home-live-inner">
+        <div class='sect-header'>
+            <h1>
+                <a href='<?php echo get_category_link(get_cat_ID("Multimedia")) ?>'>Live & Video</a>
+            </h1>
+        </div>
+        <div class="live-posts">
+            <?php
+            $posts = get_posts(array(
+                'numberposts' => 4,
+                'category' => get_cat_ID("Multimedia")
+            ));
+            foreach ($posts as $post){
+                $currpost = $post->ID;
+                include 'includes/include-article-item.php';
+            }
+            ?>
+        </div>
+        <a class='sect-more' href='<?php echo get_category_link(get_cat_ID("Multimedia")) ?>'>All Multimedia ></a>
     </div>
 </div>
 

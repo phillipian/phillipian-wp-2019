@@ -41,16 +41,7 @@ if (substr($catname, 0, 1) == "#"){
 // ELSE, IT'S A CATEGORY
 
 else {
-    $catlink = get_category_link(get_cat_ID($catname));
-    if ($catname == "Multimedia"): ?>
-        <div class='sect-header'>
-            <h1>
-                <a href='<?php
-                echo $catlink ?>'>Live & Video</a>
-            </h1>
-        </div>
-        <div class="home-video-container">
-    <?php else: ?>
+    $catlink = get_category_link(get_cat_ID($catname));?>
         <div class='home-sect'>
         <div class='sect-header'>
             <h1>
@@ -59,7 +50,7 @@ else {
                     echo $catname ?></a>
             </h1>
         </div>
-    <?php endif;
+    <?php
     $sect = true;
     wp_reset_query();
     query_posts(array(
