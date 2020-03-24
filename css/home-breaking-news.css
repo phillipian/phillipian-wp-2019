@@ -3,7 +3,7 @@
     height: 36px;
     text-align: center;
     color: #fff;
-    font-family: 'Avenir 85 Heavy';
+    font-family: 'Avenir Pro 85 Heavy';
     line-height: 36px;
 }
 
@@ -26,7 +26,7 @@
 .breaking-scroll{
     padding: 12px;
     background-color:#fff;
-    font-family: 'Avenir 85 Heavy';
+    font-family: 'Avenir Pro 85 Heavy';
     text-transform: uppercase;
     color:#000;
     position: absolute;

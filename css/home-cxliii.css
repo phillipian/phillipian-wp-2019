@@ -48,6 +48,11 @@
 
 .home-lede{
     display: grid;
+    margin-bottom: 48px;
+}
+
+.home-lede .article-image{
+    position: relative;
 }
 
 /* LEDE-HORIZONTAL */
@@ -96,4 +101,24 @@
 .lede-vertical p{
     line-height: 1.4;
     opacity: 0.4;
+}
+
+.lede-byline{
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-family: 'Avenir Pro 85 Heavy';
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.8);
+    font-size: 12px;
+}
+
+.lede-byline a{
+    color: rgba(255,255,255,0.6);
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+
+.lede-byline a:hover{
+    color: #fff;
+    border-bottom: 2px solid rgba(255,255,255,0.6);
 }

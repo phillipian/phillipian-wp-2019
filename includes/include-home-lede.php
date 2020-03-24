@@ -18,12 +18,30 @@ $is_multimedia = in_category("multimedia", $post_id);
     if (!($is_multimedia)):
         if (!(catch_that_image($post_id) == false)) :
             $credit = get_lede_credit($post_id);
+            if (is_int($credit)){
+                $name = get_user_meta($credit, 'first_name', true) . " " . get_user_meta($credit, 'last_name', true);
+                $url = get_author_posts_url($credit);
+                $byline = $name . "/The Phillipian";
+            }
+            else{
+                $byline = $credit;
+            }
             ?>
             <div class='article-image'>
                 <a href='<?php echo get_the_permalink($post_id); ?>'>
                     <img src='<?php echo catch_that_image($post_id) ?>'>
                 </a>
-                <span><?php echo $credit ?></span>
+                <div class="lede-byline">
+                    <?php
+                    if (isset($url)){?>
+                        <a href="<?php echo $url ?>"><span><?php echo $byline ?></span></a>
+                        <?php
+                    }
+                    else{?>
+                        <span><?php echo $byline ?></span>
+                    <?php }
+                    ?>
+                </div>
             </div>
         <?php endif; ?>
         <?php the_scorebox();
