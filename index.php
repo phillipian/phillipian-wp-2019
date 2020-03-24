@@ -41,22 +41,13 @@
 </div>
 
 <div class="home-container">
-    <?php include 'includes/include-home-lede.php' ?>
-    <div class="home-popular">
-        <h1>This Month's Top Stories</h1>
-        <?php
-        if ( function_exists('wpp_get_mostpopular') ) {
-            /* Get up to the top 5 commented posts from the last 7 days */
-            wpp_get_mostpopular(array(
-                'limit' => get_theme_mod('plip-home-pop-num', 3),
-                'range' => 'last30days',
-                'order_by' => 'views'
-            ));
-        }
-        ?>
-    </div>
+    <?php
+    include 'includes/include-home-lede.php';
+    include 'includes/include-home-popular.php';
+    ?>
     <div class="home-left">
         <?php
+        include 'includes/include-home-popular.php';
         $includes = explode(",", get_theme_mod('plip-home-left', 'News,Sports'));
         foreach ($includes as $item){
             $catname = $item;
