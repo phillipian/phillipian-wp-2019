@@ -1,6 +1,11 @@
 <?php
 
-$style = get_theme_mod('plip-home-style', 'vertical');
+$style = get_theme_mod('plip-home-style', 'none');
+
+if ($style == 'none'){
+
+}
+else{
 
 $post = get_posts(array(
    'numberposts' => 1,
@@ -76,3 +81,4 @@ $is_multimedia = in_category("multimedia", $post_id);
     </div>
 
 </div>
+<?php } ?>

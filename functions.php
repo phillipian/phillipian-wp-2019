@@ -285,12 +285,13 @@ function plip_customize_home($wp_customize)
         'settings' => 'plip-home-num'
     ));
     $wp_customize->add_setting('plip-home-style', array(
-        'default' => 'horizontal'
+        'default' => 'none'
     ));
     $wp_customize->add_control('plip-home-style-control', array(
         'label' => 'Homepage style',
         'type' => 'select',
         'choices' => array(
+                'none' => 'None: Hide Top Posts & Lede [i.e. if you want just breaking news]',
                 'horizontal' => 'Top Posts & Single Lede Story, Horizontal Image, Image First',
                 'horizontal-headline' => 'Top Posts & Single Lede Story, Horizontal Image, Headline First',
                 'horizontal-overlay' => 'Top Posts & Single Lede Story, Horizontal Image, Headline Overlayed',

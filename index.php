@@ -42,7 +42,7 @@
 <div class="home-container">
     <?php
     include 'includes/include-home-lede.php';
-    include 'includes/include-home-popular.php'; // DISPLAYS ONLY WHEN FULL 3 COLUMN WIDTH
+    if (get_theme_mod('plip-home-style', 'none') != 'none') include 'includes/include-home-popular.php'; // DISPLAYS ONLY WHEN FULL 3 COLUMN WIDTH
     ?>
 
     <?php
