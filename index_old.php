@@ -76,7 +76,7 @@
         include 'includes/include-home-sect.php';
         ?>
     </div>
-    <?php include "includes/include-home-right.php" ?>
+    <?php include "includes/include-home-right-DEPRECATED.php" ?>
     <div class="home-video-color leftbar"></div>
     <div class="home-right-color rightbar"></div>
 </div>

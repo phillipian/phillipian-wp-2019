@@ -8,7 +8,7 @@ $rightincludes = explode(",", get_theme_mod('plip-breaking-right' . $ind, "socia
 ?>
 
 <div class="breaking-story-outer">
-    <div class="breaking-story three-col">
+    <div class="breaking-story">
         <div class="breaking-info">
             <h1><?php echo $headline ?></h1>
             <p><?php echo $blurb ?></p>

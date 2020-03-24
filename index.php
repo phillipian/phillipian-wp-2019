@@ -97,5 +97,14 @@
     ?>
 </div>
 
+<div class="home-live">
+    <div class='sect-header'>
+        <h1>
+            <a href='<?php
+            echo get_category_link(get_cat_ID("Multimedia")) ?>'>Live & Video</a>
+        </h1>
+    </div>
+</div>
+
 
 <?php get_footer(); ?>
