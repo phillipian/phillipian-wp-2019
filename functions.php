@@ -469,9 +469,19 @@ function catch_that_image($post_id)
 
 function get_lede_credit($post_id){ // this needs much more logic
     $content = get_post_field('post_content', $post_id);
+
+    $block = '';
+    preg_match('/\media-credit(.*?)\]/', $content, $block);
+    $block = $block[1];
+
     $matches = '';
-    preg_match('/name=(\"|\')(.*?)(\"|\')/',$content,$matches);
-    return $matches[2];
+    if (preg_match('/(id=("?|\'?))(.*?)("?\s|"?$)/', $block, $matches)){
+        return intval($matches[3]);
+    }
+    else{
+        preg_match('/name=(\"|\')(.*?)(\"|\')/',$content,$matches);
+        return $matches[2];
+    }
 }
 
 // Code from https://www.wordpressaddicted.com/wordpress-get-tag-id-by-tag-name/:

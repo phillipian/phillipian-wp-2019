@@ -23,6 +23,7 @@ $is_multimedia = in_category("multimedia", $post_id);
                 <a href='<?php echo get_the_permalink($post_id); ?>'>
                     <img src='<?php echo catch_that_image($post_id) ?>'>
                 </a>
+                <span><?php echo $credit ?></span>
             </div>
         <?php endif; ?>
         <?php the_scorebox();
