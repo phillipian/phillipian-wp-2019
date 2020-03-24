@@ -43,11 +43,18 @@
 <div class="home-container">
     <?php
     include 'includes/include-home-lede.php';
-    include 'includes/include-home-popular.php';
+    include 'includes/include-home-popular.php'; // DISPLAYS ONLY WHEN FULL 3 COLUMN WIDTH
     ?>
+
+    <?php
+    $adclass = 'home-top-ad';
+    $adarea = 'plip-ad-homewide';
+    include 'includes/include-ad.php';
+    ?>
+
     <div class="home-left">
         <?php
-        include 'includes/include-home-popular.php';
+        include 'includes/include-home-popular.php'; // HIDDEN ON DESKTOP VIEW, DISPLAYS WHEN COLLAPSED TO 1/2 COLUMNS
         $includes = explode(",", get_theme_mod('plip-home-left', 'News,Sports'));
         foreach ($includes as $item){
             $catname = $item;
@@ -55,6 +62,7 @@
         }
         ?>
     </div>
+
     <div class="home-right">
         <?php
         $includes = explode(",", get_theme_mod('plip-home-right', 'Commentary,Arts'));
@@ -62,6 +70,14 @@
             $catname = $item;
             include 'includes/include-home-sect.php';
         }
+        ?>
+    </div>
+
+    <div class="home-sidebar">
+        <?php
+        $adclass = 'home-side-ad';
+        $adarea = 'plip-ad-homesmall';
+        include 'includes/include-ad.php';
         ?>
     </div>
 </div>

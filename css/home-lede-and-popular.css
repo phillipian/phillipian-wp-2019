@@ -1,9 +1,13 @@
-.home-container{
+.home-container {
     max-width: 1200px;
     padding: 0 24px;
     display: grid;
     grid-column-gap: 42px;
     margin: 0 auto;
+}
+
+.home-top-ad{
+    margin: 48px 0;
 }
 
 @media (min-width: 700px){
@@ -14,6 +18,10 @@
     .home-lede{
         grid-column: 1/3;
         grid-row: 1;
+    }
+
+    .home-top-ad{
+        grid-column: 1/3;
     }
 }
 
@@ -29,6 +37,10 @@
 
     .home-left .home-popular{
         display: none;
+    }
+
+    .home-top-ad{
+        grid-column: 1/4;
     }
 }
 
