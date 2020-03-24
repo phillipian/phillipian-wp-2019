@@ -480,7 +480,7 @@ function get_tag_ID($tag_name) {
 
 function custom_excerpt_length($length)
 {
-    return 20;
+    return 80;
 }
 
 add_filter('excerpt_length', 'custom_excerpt_length', 999);
@@ -491,6 +491,28 @@ function custom_excerpt_more($more)
 }
 
 add_filter('excerpt_more', 'custom_excerpt_more');
+
+function sz_stripall($str){
+    return wp_strip_all_tags(strip_shortcodes($str));
+}
+
+// Code from https://stackoverflow.com/a/12445298
+
+function get_snippet( $str, $wordCount = 10 ) {
+    return implode(
+        '',
+        array_slice(
+            preg_split(
+                '/([\s,\.;\?\!]+)/',
+                $str,
+                $wordCount*2+1,
+                PREG_SPLIT_DELIM_CAPTURE
+            ),
+            0,
+            $wordCount*2-1
+        )
+    );
+}
 
 add_filter('parse_query', 'ba_admin_posts_filter');
 add_action('restrict_manage_posts', 'ba_admin_posts_filter_restrict_manage_posts');

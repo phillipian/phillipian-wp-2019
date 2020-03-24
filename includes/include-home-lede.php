@@ -32,6 +32,12 @@ $is_multimedia = in_category("multimedia", $post_id);
 
         include 'include-home-lede-headline.php';
 
+        if ($style == 'vertical'){
+            $content = get_post_field('post_content', $post_id);
+            $excerpt = get_snippet(sz_stripall($content),70);
+            echo "<p>" . $excerpt . "...</p>";
+        }
+
         $currpost = $post_id;
         include 'include-article-author.php';
         $currpost = null;
