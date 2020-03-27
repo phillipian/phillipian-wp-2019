@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 <div class='home-top'>
-    <!--<div class='home-logo'><img src='<?php /* echo get_template_directory_uri() . '/images/nameplate.png'; */ ?>'></div>-->
     <div class='home-tagline'>
         <span><a href='about' title='Truth Above All: About The Phillipian'>Veritas Super Omnia</a></span>
         <span class='dot'> • </span>
@@ -17,6 +16,13 @@
         <?php wp_nav_menu(array('theme_location' => 'home-cats')) ?>
     </div>
 </div>
+
+<?php if (get_theme_mod('plip-banner-check')){?>
+    <a href="<?php echo get_theme_mod('plip-banner-link')?>">
+        <div class="home-banner"><span><?php echo get_theme_mod('plip-banner-blurb')?></span></div>
+    </a>
+<?php } ?>
+
 <div class='home-new'>
     <?php if (get_theme_mod('plip-breaking-banner', null)) : ?>
         <div class="breaking-banner">
@@ -33,81 +39,105 @@
     endif; ?>
 </div>
 
-<div class="home-featured four-col">
-    <h1 style="grid-row: 1;">Featured</h1>
-    <div class="featured-posts">
-        <?php query_posts(array(
-            'category_name' => 'featured',
-            'posts_per_page' => get_theme_mod('plip-home-num', 8)
-        ));
-        if (have_posts()) :
-            while (have_posts()) :
-                the_post();
-                include "includes/include-article-item.php";
-            endwhile;
-        endif; ?>
-    </div>
+<div class="home-container">
     <?php
-    if (get_theme_mod('plip-breaking-switch', 'no mod') == 1) :
-        $adclass = 'home-top-ad';
-        $adarea = 'plip-ad-homewide';
-        include 'includes/include-ad.php';
-    else :
-        echo "<div class='ad-spacer'></div>";
-    endif;
+    include 'includes/include-home-lede.php';
+    if (get_theme_mod('plip-home-style', 'none') != 'none') include 'includes/include-home-popular.php'; // DISPLAYS ONLY WHEN FULL 3 COLUMN WIDTH
+    ?>
+
+    <?php
+    $adclass = 'home-top-ad';
+    $adarea = 'plip-ad-homewide';
+    include 'includes/include-ad.php';
+    ?>
+
+    <div class="home-left">
+        <?php
+        include 'includes/include-home-popular.php'; // HIDDEN ON DESKTOP VIEW, DISPLAYS WHEN COLLAPSED TO 1/2 COLUMNS
+        $includes = explode(",", get_theme_mod('plip-home-left', 'News,Sports'));
+        foreach ($includes as $item){
+            $catname = $item;
+            include 'includes/include-home-sect.php';
+        }
+        ?>
+    </div>
+
+    <div class="home-right">
+        <?php
+        $includes = explode(",", get_theme_mod('plip-home-right', 'Commentary,Arts'));
+        foreach ($includes as $item){
+            $catname = $item;
+            include 'includes/include-home-sect.php';
+        }
+        ?>
+    </div>
+
+    <div class="home-sidebar">
+        <div class="sidebar-masthead">
+            <a href="<?php echo get_home_url() ?>/about/">
+                <img src='<?php echo get_template_directory_uri(). "/images/masthead-02-06-2020.png"?>'>
+            </a>
+        </div>
+        <div class="sidebar-ads">
+            <?php
+            $adclass = 'home-side-ad';
+            $adarea = 'plip-ad-homesmall';
+            include 'includes/include-ad.php';
+            $adclass = 'home-side-ad';
+            $adarea = 'plip-ad-homesmall-2';
+            include 'includes/include-ad.php';
+            ?>
+        </div>
+    </div>
+
+    <?php
+    $adclass = 'home-top-ad';
+    $adarea = 'plip-ad-homewide-2';
+    include 'includes/include-ad.php';
     ?>
 </div>
-<div class="home-main three-col">
-    <div class="home-video">
-        <?php
-        $catname = "Multimedia";
-        include 'includes/include-home-sect.php';
-        ?>
-    </div>
-    <div class='home-sects-inner'>
-        <?php
-        $catname = "News";
-        include 'includes/include-home-sect.php';
-        $catname = "Commentary";
-        include 'includes/include-home-sect.php';
-        $catname = "Sports";
-        include 'includes/include-home-sect.php';
-        $catname = "Arts";
-        include 'includes/include-home-sect.php';
-        ?>
-    </div>
-    <?php include "includes/include-home-right.php" ?>
-    <div class="home-video-color leftbar"></div>
-    <div class="home-right-color rightbar"></div>
+
+<div class="home-strip">
+    <?php
+    include 'includes/include-sidebar-strip.php';
+    ?>
 </div>
-<script>
-    var $grid1 = $(".featured-posts").masonry({
-        itemSelector: '.article-news-side',
-        gutter: 24,
-        columnWidth: '.article-news-side'
-    });
-    $grid1.imagesLoaded(function() {
-        $grid1.masonry();
-    });
-    var $grid2 = $(".home-sects-inner").masonry({
-        itemSelector: '.home-sect',
-        percentPosition: true,
-        gutter: 36,
-        columnWidth: '.home-sect'
-    });
-    $grid2.imagesLoaded(function() {
-        $grid2.masonry();
-    });
-    var $grid3 = $(".home-video-container").masonry({
-        itemSelector: '.article-item',
-        percentPosition: true,
-        gutter: 24,
-        columnWidth: '.article-item'
-    });
-    $grid3.imagesLoaded(function() {
-        $grid3.masonry();
-    });
-</script>
+
+<div class="home-live">
+    <div class="home-live-inner">
+        <div class='sect-header'>
+            <h1>
+                <a href='<?php echo get_category_link(get_cat_ID("Multimedia")) ?>'>Live & Video</a>
+            </h1>
+        </div>
+        <div class="live-posts">
+            <?php
+            $posts = get_posts(array(
+                'numberposts' => 4,
+                'category' => get_cat_ID("Multimedia")
+            ));
+            foreach ($posts as $post){
+                $currpost = $post->ID;
+                include 'includes/include-article-item.php';
+            }
+            ?>
+        </div>
+        <a class='sect-more' href='<?php echo get_category_link(get_cat_ID("Multimedia")) ?>'>All Multimedia ></a>
+    </div>
+</div>
+
+<div class="home-live home-multilingual">
+    <div class="home-live-inner">
+        <div class='sect-header'>
+            <h1>
+                <a href='<?php echo get_category_link(get_cat_ID("Multilingual")) ?>'>Multilingual</a>
+            </h1>
+        </div>
+        <?php
+        include 'includes/include-multilingual-grid.php';
+        ?>
+    </div>
+</div>
 
 
 <?php get_footer(); ?>

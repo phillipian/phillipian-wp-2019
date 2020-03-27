@@ -1,0 +1,143 @@
+.article-image img{
+  max-width: 100%;
+  display: block;
+}
+
+.article-news-side h2{
+  font-size: 24px;
+}
+
+.article-news-side .article-image img{
+  max-height: 360px;
+}
+
+.article-news-side, .article-sect{
+  margin-bottom: 42px;
+}
+
+.article-news-side .article-image {
+  margin-top: 12px;
+}
+
+.sect-header + .article-sect h2{
+  font-size: 24px;
+}
+
+.article-sect .article-image{
+  text-align: right;
+}
+
+.article-sect .article-image img{
+  max-height: 140px;
+}
+
+.article-item .article-author, .sports-coverage-item .article-author{
+  font-family: 'Avenir Pro 85 Heavy';
+  padding-bottom: 2px;
+  color: rgba(0,0,0,0.4);
+}
+
+.article-news-side .article-author{
+  margin-right: 6px;
+}
+
+.article-news-side .article-author, .article-news-side .article-date{
+  display: inline-block;
+}
+
+.article-news-side .article-date{
+  opacity: 0.4;
+}
+
+.article-about{
+  font-family: 'Avenir Pro 85 Heavy';
+}
+
+.article-date{
+  font-family: 'Avenir Pro 55 Roman';
+  color: rgba(0,0,0,0.6);
+}
+
+.article-news-side h2, .article-sect h2{
+  font-size: 18px;
+}
+
+.article-news-side .score-box{
+  margin-top: 12px;
+}
+
+.article-item .article-category{
+  font-size: 12px;
+}
+
+.article-category{
+  font-family: 'Avenir Pro 85 Heavy';
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.article-category a:hover{
+  opacity: 0.4;
+}
+
+.article-item h2{
+  font-family: 'ITC Cheltenham Std';
+  line-height: 1.1;
+  margin: 0;
+}
+
+.article-item h2 a, .sports-coverage-item h3 a{
+  color: #000;
+  transition: color 0.1s ease;
+}
+
+.article-item h2 a:hover, .sports-coverage-item h3 a:hover{
+  color: rgba(0,0,0,0.5);
+}
+
+.article-image:hover{
+  opacity: 0.8;
+}
+
+.article-sect:not(.article-noimage){
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  grid-column-gap: 24px;
+}
+
+.sect-more{
+  display: block;
+  text-align: right;
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.home-sect{
+  border-top: 1px solid #000;
+}
+
+@media (min-width: 900px){
+
+  .home-featured .article-item{
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 768px){
+  .article-news-side{
+    width: 100%;
+  }
+
+  .article-archive .article-image{
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 1100px){
+  .article-news-side:not(.article-noimage), .article-sect:not(.article-noimage){
+    grid-template-columns: 1fr 96px;
+  }
+}

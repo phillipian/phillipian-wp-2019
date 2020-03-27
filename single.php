@@ -6,7 +6,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
         <div class='article-category'>
             <div class='post-categories'>
                 <? foreach (get_the_category() as $c) {
-                    if ($c->name != 'Featured Posts') {
+                    if ($c->name != 'Featured Posts' && $c->name != 'lede') {
                         if ($c->name != 'Hidden') {?>
                         <a href='<?php echo get_category_link($c->cat_ID) ?>'>
                             <?php echo $c->name; ?></a>
@@ -16,9 +16,12 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
                         }
                     }
                 }
-                foreach (get_the_tags() as $t) { ?>
-                    <a class="article-tag" href="<?php echo get_tag_link($t); ?>">#<?php echo $t->name; ?></a>
-                <?php }
+
+                if (has_tag('')) {
+                    foreach (get_the_tags() as $t) { ?>
+                        <a class="article-tag" href="<?php echo get_tag_link($t); ?>">#<?php echo $t->name; ?></a>
+                    <?php }
+                }
                 ?>
             </div>
         </div>

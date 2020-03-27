@@ -169,7 +169,9 @@ function plip_customize_ads($wp_customize)
         'section' => 'plip-ad-sec',
         'settings' => 'plip-ad-homewide',
         'width' => 1200,
-        'height' => 200
+        'height' => 200,
+        'flex-width' => true,
+        'flex-height' => true
     )));
     $wp_customize->add_setting('plip-ad-homewide-url');
     $wp_customize->add_control('plip-ad-homewide-url', array(
@@ -177,6 +179,23 @@ function plip_customize_ads($wp_customize)
         'type' => 'url',
         'section' => 'plip-ad-sec',
         'settings' => 'plip-ad-homewide-url'
+    ));
+    $wp_customize->add_setting('plip-ad-homewide-2');
+    $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-ad-homewide-2-control', array(
+        'label' => 'Home Wide Ad 2',
+        'section' => 'plip-ad-sec',
+        'settings' => 'plip-ad-homewide-2',
+        'width' => 1200,
+        'height' => 200,
+        'flex-width' => true,
+        'flex-height' => true
+    )));
+    $wp_customize->add_setting('plip-ad-homewide-2-url');
+    $wp_customize->add_control('plip-ad-homewide-2-url', array(
+        'label' => 'Home Wide Ad 2 Link',
+        'type' => 'url',
+        'section' => 'plip-ad-sec',
+        'settings' => 'plip-ad-homewide-2-url'
     ));
     $wp_customize->add_setting('plip-ad-homesmall');
     $wp_customize->add_control(new WP_Customize_Media_control($wp_customize, 'plip-ad-homesmall-control', array(
@@ -258,12 +277,82 @@ function plip_customize_home($wp_customize)
     $wp_customize->add_section('plip-home-sec', array(
         'title' => 'Home Custom Settings'
     ));
-    $wp_customize->add_setting('plip-home-num');
-    $wp_customize->add_control('plip-home-num-control', array(
-        'label' => 'Number of featured posts',
+    $wp_customize->add_setting('plip-home-style', array(
+        'default' => 'none'
+    ));
+    $wp_customize->add_control('plip-home-style-control', array(
+        'label' => 'Homepage style',
+        'type' => 'select',
+        'choices' => array(
+                'none' => 'None: Hide Top Posts & Lede [i.e. if you want just breaking news]',
+                'horizontal' => 'Top Posts & Single Lede Story, Horizontal Image, Image First',
+                'horizontal-headline' => 'Top Posts & Single Lede Story, Horizontal Image, Headline First',
+                'horizontal-overlay' => 'Top Posts & Single Lede Story, Horizontal Image, Headline Overlayed',
+                'vertical' => 'Top Posts & Single Lede Story, Vertical Image',
+                'text' => '[WIP don\'t use yet] Top Posts & Single Lede Story, Text Blurb'
+        ),
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-home-style'
+    ));
+    $wp_customize->add_setting('plip-home-views-check');
+    $wp_customize->add_control('plip-home-views-check-control', array(
+        'label' => 'show viewcounts for popular posts?',
+        'type' => 'checkbox',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-home-views-check'
+    ));
+    $wp_customize->add_setting('plip-home-left');
+    $wp_customize->add_control('plip-home-left-control', array(
+       'label' => 'Left column categories',
+       'type' => 'string',
+       'section' => 'plip-home-sec',
+       'settings' => 'plip-home-left'
+    ));
+    $wp_customize->add_setting('plip-home-right');
+    $wp_customize->add_control('plip-home-right-control', array(
+        'label' => 'Left column categories',
+        'type' => 'string',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-home-right'
+    ));
+    $wp_customize->add_setting('plip-home-sect-num', array(
+        'default' => 5
+    ));
+    $wp_customize->add_control('plip-home-sect-num-control', array(
+        'label' => 'Number of posts per section',
         'type' => 'number',
         'section' => 'plip-home-sec',
-        'settings' => 'plip-home-num'
+        'settings' => 'plip-home-sect-num'
+    ));
+    $wp_customize->add_setting('plip-home-pop-num', array(
+        'default' => 3
+    ));
+    $wp_customize->add_control('plip-home-pop-num-control', array(
+        'label' => 'Number of popular posts to display',
+        'type' => 'number',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-home-pop-num'
+    ));
+    $wp_customize->add_setting('plip-banner-check');
+    $wp_customize->add_control('plip-banner-check-control', array(
+        'label' => 'show top banner?',
+        'type' => 'checkbox',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-banner-check'
+    ));
+    $wp_customize->add_setting('plip-banner-blurb');
+    $wp_customize->add_control('plip-banner-blurb-control', array(
+        'label' => 'top banner text',
+        'type' => 'string',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-banner-blurb'
+    ));
+    $wp_customize->add_setting('plip-banner-link');
+    $wp_customize->add_control('plip-banner-link-control', array(
+        'label' => 'top banner link',
+        'type' => 'string',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-banner-link'
     ));
     $wp_customize->add_section('plip-breaking-sec', array(
         'title' => 'Breaking News'
@@ -363,11 +452,25 @@ function plip_customize_home($wp_customize)
 
 add_action('customize_register', 'plip_customize_home');
 
-// CUSTOM IMAGE GRABBING FUNCTION
+// WordPress Popular Posts Custom HTML
 
-function catch_that_image()
+function custom_wpp_markup($popular_posts, $instance){
+    foreach ($popular_posts as $popular_post){
+        $currpost = $popular_post->id;
+        $sect = true;
+        $views = $popular_post->pageviews;
+        include 'includes/include-article-item.php';
+        $views = null;
+    }
+}
+
+add_filter( 'wpp_custom_html', 'custom_wpp_markup', 10, 2 );
+
+// IMAGE GRABBING FUNCTION (not mine)
+
+function catch_that_image($post_id)
 {
-    global $post, $posts;
+    $post = get_post($post_id);
     $first_img = '';
     ob_start();
     ob_end_clean();
@@ -385,9 +488,37 @@ function catch_that_image()
     return $first_img;
 }
 
+function get_lede_credit($post_id){ // this needs much more logic
+    $content = get_post_field('post_content', $post_id);
+
+    $block = '';
+    preg_match('/\media-credit(.*?)\]/', $content, $block);
+    $block = $block[1];
+
+    $matches = '';
+    if (preg_match('/(id=("?|\'?))(.*?)("?\s|"?$)/', $block, $matches)){
+        return intval($matches[3]);
+    }
+    else{
+        preg_match('/name=(\"|\')(.*?)(\"|\')/',$content,$matches);
+        return $matches[2];
+    }
+}
+
+// Code from https://www.wordpressaddicted.com/wordpress-get-tag-id-by-tag-name/:
+
+function get_tag_ID($tag_name) {
+    $tag = get_term_by('name', $tag_name, 'post_tag');
+    if ($tag) {
+        return $tag->term_id;
+    } else {
+        return 0;
+    }
+}
+
 function custom_excerpt_length($length)
 {
-    return 20;
+    return 80;
 }
 
 add_filter('excerpt_length', 'custom_excerpt_length', 999);
@@ -398,6 +529,28 @@ function custom_excerpt_more($more)
 }
 
 add_filter('excerpt_more', 'custom_excerpt_more');
+
+function sz_stripall($str){
+    return wp_strip_all_tags(strip_shortcodes($str));
+}
+
+// Code from https://stackoverflow.com/a/12445298
+
+function get_snippet( $str, $wordCount = 10 ) {
+    return implode(
+        '',
+        array_slice(
+            preg_split(
+                '/([\s,\.;\?\!]+)/',
+                $str,
+                $wordCount*2+1,
+                PREG_SPLIT_DELIM_CAPTURE
+            ),
+            0,
+            $wordCount*2-1
+        )
+    );
+}
 
 add_filter('parse_query', 'ba_admin_posts_filter');
 add_action('restrict_manage_posts', 'ba_admin_posts_filter_restrict_manage_posts');
@@ -442,20 +595,20 @@ function ba_admin_posts_filter_restrict_manage_posts()
 
 // CATEGORY FUNCTIONS
 
-function catsNoFeatured($catname)
+function catsNoFeatured($catname, $post_id)
 {
-    foreach (get_the_category() as $c) {
-        if (!in_array($c->name, ["Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts", $catname])) { ?>
+    foreach (get_the_category($post_id) as $c) {
+        if (!in_array($c->name, ["Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts", "lede", $catname])) { ?>
         <a href='<?php echo get_category_link($c->cat_ID) ?>'>
             <?php echo $c->name; ?></a><?php
         }
     }
 }
 
-function catsSports()
+function catsSports($post_id)
 {
-    foreach (get_the_category() as $c) {
-        if (!in_array($c->name, ["Sports", "Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts"])) { ?>
+    foreach (get_the_category($post_id) as $c) {
+        if (!in_array($c->name, ["Sports", "Winter Sports", "Spring Sports", "Fall Sports", "Featured Posts", "lede"])) { ?>
         <a href='<?php echo get_category_link($c->cat_ID) ?>'>
             <?php echo $c->name; ?></a><?php
         }
@@ -471,9 +624,9 @@ function the_scorebox()
     }
 }
 
-function catMulti()
+function catMulti($post_id)
 {
-    foreach (get_the_category() as $c) {
+    foreach (get_the_category($post_id) as $c) {
         if (!in_array($c->name, ["Multilingual"])) { ?>
         <a href='<?php echo get_category_link($c->cat_ID) ?>'>
             <?php echo $c->name; ?></a><?php
