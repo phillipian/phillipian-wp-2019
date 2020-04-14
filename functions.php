@@ -133,7 +133,20 @@ add_filter('jetpack_relatedposts_filter_options', 'jetpackme_more_related_posts'
 function plip_script_enqueue()
 {
     // wp_enqueue_style(string $handle, mixed $src, array $deps, mixed $ver, string $media);
-    wp_enqueue_style('customstyle', get_template_directory_uri() . '/css/plip.css', array(), null, 'all');
+    wp_enqueue_style('plip-main', get_template_directory_uri() . '/css/plip.css', array(), null, 'all');
+    wp_enqueue_style('plip-navbar', get_template_directory_uri() . '/css/navbar.css', array(), null, 'all');
+    wp_enqueue_style('plip-article-item', get_template_directory_uri() . '/css/article-item.css', array(), null, 'all');
+    wp_enqueue_style('plip-home', get_template_directory_uri() . '/css/home.css', array(), null, 'all');
+    wp_enqueue_style('plip-home-breaking-news', get_template_directory_uri() . '/css/home-breaking-news.css', array(), null, 'all');
+    wp_enqueue_style('plip-list-reset', get_template_directory_uri() . '/css/list-reset.css', array(), null, 'all');
+    wp_enqueue_style('plip-about', get_template_directory_uri() . '/css/about.css', array(), null, 'all');
+    wp_enqueue_style('plip-home-strip', get_template_directory_uri() . '/css/home-strip.css', array(), null, 'all');
+    wp_enqueue_style('plip-subscribe', get_template_directory_uri() . '/css/subscribe.css', array(), null, 'all');
+    wp_enqueue_style('plip-single', get_template_directory_uri() . '/css/single.css', array(), null, 'all');
+    wp_enqueue_style('plip-sports', get_template_directory_uri() . '/css/sports.css', array(), null, 'all');
+    wp_enqueue_style('plip-author', get_template_directory_uri() . '/css/author.css', array(), null, 'all');
+    wp_enqueue_style('plip-archive', get_template_directory_uri() . '/css/archive.css', array(), null, 'all');
+    wp_enqueue_style('plip-fontface', get_template_directory_uri() . '/css/fonts/fontface.css', array(), null, 'all');
     wp_enqueue_script('customjs', get_template_directory_uri() . '/js/section-dropdown.js', array('jquery'), null, true);
 }
 
