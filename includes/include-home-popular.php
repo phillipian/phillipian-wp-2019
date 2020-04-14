@@ -5,8 +5,11 @@
         /* Get up to the top 5 commented posts from the last 7 days */
         wpp_get_mostpopular(array(
             'limit' => get_theme_mod('plip-home-pop-num', 3),
-            'range' => 'last30days',
-            'order_by' => 'views'
+            'range' => 'custom',
+            'time_quantity' => get_theme_mod('plip-home-pop-weeks', 4),
+            'time_unit' => 'week',
+            'order_by' => 'views',
+            'freshness' => 1
         ));
     }
     ?>

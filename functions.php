@@ -346,6 +346,15 @@ function plip_customize_home($wp_customize)
         'section' => 'plip-home-sec',
         'settings' => 'plip-home-pop-num'
     ));
+    $wp_customize->add_setting('plip-home-pop-weeks', array(
+        'default' => 4
+    ));
+    $wp_customize->add_control('plip-home-pop-weeks-control', array(
+        'label' => 'Period of time to draw popular posts from (past x weeks)',
+        'type' => 'number',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-home-pop-weeks'
+    ));
     $wp_customize->add_setting('plip-banner-check');
     $wp_customize->add_control('plip-banner-check-control', array(
         'label' => 'show top banner?',
