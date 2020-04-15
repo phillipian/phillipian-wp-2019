@@ -106,7 +106,7 @@
     <div class="home-sidebar">
         <div class="sidebar-masthead">
             <a href="<?php echo get_home_url() ?>/about/">
-                <img src='<?php echo get_template_directory_uri(). "/images/masthead-02-06-2020.png"?>'>
+                <img src='<?php echo wp_get_attachment_url(get_theme_mod('plip-masthead'))?>'>
             </a>
         </div>
         <div class="sidebar-ads">

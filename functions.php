@@ -295,6 +295,16 @@ add_action('customize_register', 'plip_customize_ads');
 
 function plip_customize_home($wp_customize)
 {
+    $wp_customize->add_setting('plip-masthead');
+    $wp_customize->add_control(new WP_Customize_Media_control($wp_customize, 'plip-masthead-control', array(
+        'label' => 'Masthead',
+        'section' => 'title_tagline',
+        'settings' => 'plip-masthead',
+        'width' => 1000,
+        'height' => 1500,
+        'flex-width' => true,
+        'flex-height' => true
+    )));
     $wp_customize->add_section('plip-home-sec', array(
         'title' => 'Home Custom Settings'
     ));
