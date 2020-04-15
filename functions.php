@@ -274,12 +274,20 @@ function plip_customize_ads($wp_customize)
         'section' => 'plip-ad-sec',
         'settings' => 'plip-ad-single2-url'
     ));
-    $wp_customize->add_setting('plip-ad-single2-url');
-    $wp_customize->add_control('plip-ad-single2-url', array(
-        'label' => 'Single Ad 2 Link',
+    $wp_customize->add_setting('plip-ad-single3');
+    $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'plip-ad-single3-control', array(
+        'label' => 'Single Ad 3',
+        'section' => 'plip-ad-sec',
+        'settings' => 'plip-ad-single3',
+        'width' => 300,
+        'height' => 250
+    )));
+    $wp_customize->add_setting('plip-ad-single3-url');
+    $wp_customize->add_control('plip-ad-single3-url', array(
+        'label' => 'Some Ad 3 Link',
         'type' => 'url',
         'section' => 'plip-ad-sec',
-        'settings' => 'plip-ad-single2-url'
+        'settings' => 'plip-ad-single3-url'
     ));
 }
 

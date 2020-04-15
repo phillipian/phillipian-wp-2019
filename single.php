@@ -42,9 +42,6 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
             </div>
         </div>
         <div class='single-right'>
-            <div class='mobile-ads-related'>
-                <?php include 'includes/include-single-sidebar.php' ?>
-            </div>
             <?php the_content(); ?>
 
             <?php
@@ -74,6 +71,10 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
             }
 
             ?>
+
+            <div class='mobile-ads-related'>
+                <?php include 'includes/include-single-sidebar.php' ?>
+            </div>
         </div>
     </div>
 

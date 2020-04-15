@@ -11,5 +11,12 @@ $adarea = 'plip-ad-single2';
 $adclass = 'single-ad';
 include 'include-ad.php';
 ?>
+
 <div class='article-about-top'></div>
-<?php include "include-sidebar-strip.php" ?>
+<?php include "include-sidebar-strip.php";
+
+$adarea = 'plip-ad-single3';
+$adclass = 'single-ad';
+include 'include-ad.php';
+
+?>

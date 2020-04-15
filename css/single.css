@@ -141,10 +141,6 @@ div.media-credit{
     margin-bottom: 16px;
 }
 
-div.single-ad:nth-of-type(2){
-    display: none;
-}
-
 @media (min-width: 1200px){
     .single-container{
         grid-template-columns: 1fr 728px 300px;
@@ -234,10 +230,6 @@ div.single-ad:nth-of-type(2){
 
     .desktop-ads-related{
         display: none;
-    }
-
-    .mobile-ads-related{
-        grid-row: 6;
     }
 
     .article-about{
