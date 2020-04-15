@@ -2,9 +2,15 @@
 
 $cattype = substr($catname, 0, 1);
 
+// IF POPULAR POSTS
+
+if ($catname == "popular"){
+    include 'include-home-popular.php';
+}
+
 // IF POST
 
-if ($cattype == "*"){
+else if ($cattype == "*"){
 
     echo "<div class='article-spotlight-outer'><div class='pin-banner'><span><i class=\"fas fa-thumbtack\"></i> Pinned Article</span></div>";
 
@@ -49,11 +55,9 @@ else if ($cattype == "#"){
 
     wp_reset_query();
     query_posts(array(
-        'tag__in' => get_term_by('slug', $tagname, 'post_tag')
+        'tag__in' => get_term_by('slug', $tagname, 'post_tag'),
+        'posts_per_page' => get_theme_mod('plip-home-sect-num')
     ));
-
-
-
     if (have_posts()) :
         while (have_posts()) :
             the_post();
@@ -61,7 +65,14 @@ else if ($cattype == "#"){
         endwhile;
     endif;
 
-    echo "</div>";
+    ?>
+
+    <a class='sect-more' href='<?php
+    echo $catlink ?>'>All Articles Tagged <?php
+        echo $catname ?> ></a>
+    </div>
+
+    <?php
 }
 
 // ELSE, IT'S A CATEGORY

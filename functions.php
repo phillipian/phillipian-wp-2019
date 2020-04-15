@@ -307,6 +307,14 @@ function plip_customize_home($wp_customize)
         'section' => 'plip-home-sec',
         'settings' => 'plip-home-style'
     ));
+    $wp_customize->add_setting('plip-home-lede-right');
+    $wp_customize->add_control('plip-home-lede-right-control', array(
+        'label' => 'Home lede right column content.',
+        'description' => '"popular" for popular posts; "*[POSTID]" for a pinned post; "#[TAG]" for latest posts in tag; and just "[CATEGORY NAME]" for latest posts in category.',
+        'type' => 'string',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-home-lede-right'
+    ));
     $wp_customize->add_setting('plip-home-views-check');
     $wp_customize->add_control('plip-home-views-check-control', array(
         'label' => 'show viewcounts for popular posts?',
@@ -317,13 +325,15 @@ function plip_customize_home($wp_customize)
     $wp_customize->add_setting('plip-home-left');
     $wp_customize->add_control('plip-home-left-control', array(
        'label' => 'Left column categories',
-       'type' => 'string',
+        'description' => 'Types of items that can be included in this list: "popular" for popular posts; "*[POSTID]" for a pinned post; "#[TAG]" for latest posts in tag; and just "[CATEGORY NAME]" for latest posts in category.',
+        'type' => 'string',
        'section' => 'plip-home-sec',
        'settings' => 'plip-home-left'
     ));
     $wp_customize->add_setting('plip-home-right');
     $wp_customize->add_control('plip-home-right-control', array(
         'label' => 'Left column categories',
+        'description' => 'Types of items that can be included in this list: "popular" for popular posts; "*[POSTID]" for a pinned post; "#[TAG]" for latest posts in tag; and just "[CATEGORY NAME]" for latest posts in category.',
         'type' => 'string',
         'section' => 'plip-home-sec',
         'settings' => 'plip-home-right'

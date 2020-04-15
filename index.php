@@ -41,8 +41,24 @@
 
 <div class="home-container">
     <?php
+
     include 'includes/include-home-lede.php';
-    if (get_theme_mod('plip-home-style', 'none') != 'none') include 'includes/include-home-popular.php'; // DISPLAYS ONLY WHEN FULL 3 COLUMN WIDTH
+
+    // DISPLAYS ONLY WHEN FULL 3 COLUMN WIDTH
+
+    if (get_theme_mod('plip-home-style', 'none') != 'none'){ ?>
+
+        <div class="home-lede-right">
+
+        <?php
+        $catname = get_theme_mod('plip-home-lede-right', 'popular');
+        include 'includes/include-home-sect.php';
+        ?>
+
+        </div>
+
+        <?php
+    }
     ?>
 
     <?php
@@ -53,7 +69,22 @@
 
     <div class="home-left">
         <?php
-        include 'includes/include-home-popular.php'; // HIDDEN ON DESKTOP VIEW, DISPLAYS WHEN COLLAPSED TO 1/2 COLUMNS
+
+        if (get_theme_mod('plip-home-style', 'none') != 'none'){
+            ?>
+
+            <div class="home-lede-right-mobile">
+
+                <?php
+                $catname = get_theme_mod('plip-home-lede-right', 'popular');
+                include 'includes/include-home-sect.php';
+                ?>
+
+            </div>
+
+            <?php
+        }
+
         $includes = explode(",", get_theme_mod('plip-home-left', 'News,Sports'));
         foreach ($includes as $item){
             $catname = $item;

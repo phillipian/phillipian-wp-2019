@@ -115,7 +115,7 @@
   font-size: 20px;
 }
 
-.home-sect{
+.home-left .home-sect, .home-right .home-sect, .home-left .home-popular, .home-right .home-popular{
   border-top: 1px solid #000;
 }
 
@@ -131,7 +131,7 @@
   margin-bottom: 24px;
   padding: 20px;
   box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.24);
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 }
 
 .article-spotlight-outer .sect-more{
