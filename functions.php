@@ -297,15 +297,22 @@ function plip_customize_home($wp_customize)
         'label' => 'Homepage style',
         'type' => 'select',
         'choices' => array(
-                'none' => 'None: Hide Top Posts & Lede [i.e. if you want just breaking news]',
-                'horizontal' => 'Top Posts & Single Lede Story, Horizontal Image, Image First',
-                'horizontal-headline' => 'Top Posts & Single Lede Story, Horizontal Image, Headline First',
-                'horizontal-overlay' => 'Top Posts & Single Lede Story, Horizontal Image, Headline Overlayed',
-                'vertical' => 'Top Posts & Single Lede Story, Vertical Image',
-                'text' => '[WIP don\'t use yet] Top Posts & Single Lede Story, Text Blurb'
+                'none' => 'None: Hide Lede [i.e. if you want just breaking news]',
+                'horizontal' => 'Lede Right & Single Lede Story, Horizontal Image, Image First',
+                'horizontal-headline' => 'Lede Right & Single Lede Story, Horizontal Image, Headline First',
+                'horizontal-overlay' => 'Lede Right & Single Lede Story, Horizontal Image, Headline Overlayed',
+                'vertical' => 'Lede Right & Single Lede Story, Vertical Image',
+                'text' => '[WIP don\'t use yet] Lede Right & Single Lede Story, Text Blurb'
         ),
         'section' => 'plip-home-sec',
         'settings' => 'plip-home-style'
+    ));
+    $wp_customize->add_setting('plip-home-lede-id');
+    $wp_customize->add_control('plip-home-lede-id-control', array(
+        'label' => 'Post ID of lede story',
+        'type' => 'number',
+        'section' => 'plip-home-sec',
+        'settings' => 'plip-home-lede-id'
     ));
     $wp_customize->add_setting('plip-home-lede-right');
     $wp_customize->add_control('plip-home-lede-right-control', array(

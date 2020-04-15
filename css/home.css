@@ -123,6 +123,10 @@
     margin-top: 24px;
 }
 
+.lede-horizontal .wp-caption .yt-container{
+    margin-bottom: 0;
+}
+
 .lede-horizontal h2{
     margin-bottom: 8px;
 }
@@ -132,7 +136,7 @@
     margin-top: 0;
 }
 
-.lede-horizontal-headline .article-image{
+.lede-horizontal-headline .article-image, .lede-horizontal-headline .wp-caption{
     margin-top: 24px;
 }
 
