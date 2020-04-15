@@ -9,7 +9,9 @@ $is_multimedia = in_category("multimedia", $post_id);
 ?>
 
 <div class="article-item <?php
-if ($sect or $archive) { ?>article-sect <?php } else { ?>article-news-side <?php }
+if ($sect or $archive) echo "article-sect ";
+else if ($spotlight) echo "article-spotlight ";
+else echo "article-news-side ";
 if ($is_multimedia) {
     echo "article-noimage article-multimedia";
 } else {
@@ -56,6 +58,14 @@ if ($is_multimedia) {
                 ?>
             </span>
         </div>
+        <?php
+        if ($spotlight) {
+            $postcontent = get_post_field('post_content', $post_id);;
+            $doc = new DOMDocument();
+            $doc->loadHTML('<?xml encoding="utf-8" ?>' . get_snippet(strip_shortcodes($postcontent), 200) . "...");
+            echo "<div class='article-spotlight-content'>" . $doc->saveHTML() . "</div>";
+        }
+        ?>
     </div>
     <?php
     if (!($is_multimedia)):

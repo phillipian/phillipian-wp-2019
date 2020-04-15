@@ -54,7 +54,7 @@ a{
   padding-top: 128px!important;
 }
 
-.single-container p, .category-container p, .lotw-text p{
+.single-container p, .category-container p, .lotw-text p, .single-container li{
     line-height: 1.5;
     font-size: 20px;
 }

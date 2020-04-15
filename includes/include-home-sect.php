@@ -1,8 +1,34 @@
 <?php
 
-// IF TAG
+$cattype = substr($catname, 0, 1);
 
-if (substr($catname, 0, 1) == "#"){
+// IF POST
+
+if ($cattype == "*"){
+
+    echo "<div class='article-spotlight-outer'><div class='pin-banner'><span><i class=\"fas fa-thumbtack\"></i> Pinned Article</span></div>";
+
+    $currpost = substr($catname, 1);
+    $spotlight = true;
+
+    include 'include-article-item.php';
+
+    $currpost = null;
+    $spotlight = false;
+
+    ?>
+
+    <a class='sect-more' href='<?php echo get_the_permalink($post_id); ?>'>Read Full Article ></a>
+
+    </div>
+
+    <?php
+
+}
+
+// ELSE IF TAG
+
+else if ($cattype == "#"){
 
     $tagname = substr($catname, 1);
     $taglink = get_tag_link(get_tag_ID($tagname));
