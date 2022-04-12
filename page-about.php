@@ -30,7 +30,7 @@
         <div class='about-disc'>
             <p>Students involved in organizations covered by <i>The Phillipian</i> will not play any role in assigning, writing, producing, or editing content regarding said organizations.</p>
             <p><i>The Phillipian</i> welcomes all letters to the Editor. We try to print all letters, but because of space limitations, we enforce a 500-word limit. We reserve the right to edit all submitted letters. Letters must be responses to articles already published by <i>The Phillipian</i>. We will not publish any anonymous letters. Please submit letters by the Monday of each week to phillipian@phillipian.net or to our newsroom in the basement of Morse Hall.</p>
-            <p>To subscribe, email subscribe@ phillipian.net, or write to <i>The Phillipian</i>, 180 Main Street, Andover, Mass., 01810. All contents of <i>The Phillipian</i> copyright © 2018, The Trustees of Phillips Academy, Inc. Reproduction of any material herein without the expressed written consent of The Trustees of Phillips Academy, Inc. and the Editorial Board of <i>The Phillipian</i> is strictly prohibited.</p>
+            <p>To subscribe, email subscribe @phillipian.net, or write to <i>The Phillipian</i>, 180 Main Street, Andover, Mass., 01810. All contents of <i>The Phillipian</i> copyright © 2022, The Trustees of Phillips Academy, Inc. Reproduction of any material herein without the expressed written consent of The Trustees of Phillips Academy, Inc. and the Editorial Board of <i>The Phillipian</i> is strictly prohibited.</p>
         </div>
     </div>
 </div>
