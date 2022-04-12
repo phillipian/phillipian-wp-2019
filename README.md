@@ -20,4 +20,6 @@ Complete redesign of _The Phillipian_'s website by CXLII. Website redesign by Sa
 ## Technical
 This template is currently being used at [phillipian.net](http://phillipian.net/), hosted on Dreamhost. Changes are deployed to Dreamhost manually via FTP (WinSCP Folder Synchronization feature), so what's on the website may not be up to date with the repository, or the other way around.
 
+You can edit the main phillipian.net file, but make sure to edit your edits in a branch before committing. (-claire, cxlv digital editor)
+
 For development purposes, I ([@wwsalmon](https://github.com/wwsalmon) (EDE CXLII)) recommend setting up a Wordpress installation with MAMP and cloning this repo into the Wordpress installation's themes folder.
