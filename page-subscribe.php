@@ -10,7 +10,7 @@
                 <li>Off-campus (Domestic): $185</li>
                 <li>Off-campus (International): $225</li>
             </ul>
-            <p>To subscribe, contact Henrique Chamon at <a href='mailto:business@phillipian.net'>business@phillipian.net</a>.</p>
+            <p>To subscribe fill out our form <a href="https://docs.google.com/forms/d/1LconLAQsCEaY91BywDG_dwdXqa1osMaC9zvSJxnv1v0/edit">here</a> (or if you have any inquiries, email Isabella Alvarez Martinez, Chief Financial Officer, at <a href="mailto:business@phillipian.net">business@phillipian.net</a>)</p>
         </div>
     </div>
 </div>
