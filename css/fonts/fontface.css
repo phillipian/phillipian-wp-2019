@@ -95,3 +95,11 @@
   font-weight: 600;
   font-style: italic;
 }
+
+@font-face {
+  font-family: 'Avenir Pro 85 Heavy';
+  src: url("AvenirLTProHeavy.otf");
+  font-weight: 85;
+  font-style: normal;
+}
+
